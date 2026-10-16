@@ -1,0 +1,299 @@
+/* ==========================================================================
+   AURA PMU & MICROBLADING STUDIO - DASHBOARD STYLES (CLIENT & ADMIN)
+   ========================================================================== */
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--pmu-bg-main);
+}
+
+/* 1. SIDEBAR */
+.dashboard-sidebar {
+  width: 280px;
+  background-color: var(--pmu-bg-surface);
+  border-right: 1px solid var(--pmu-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid var(--pmu-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header .pmu-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.sidebar-header .pmu-brand-name {
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+
+.sidebar-header .pmu-brand-tagline {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+}
+
+
+.sidebar-menu {
+  list-style: none;
+  padding: 1.25rem 0.85rem;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.sidebar-heading {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pmu-text-light);
+  font-weight: 700;
+  padding: 0.75rem 0.85rem 0.35rem;
+}
+
+.sidebar-item {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--pmu-radius-md);
+  color: var(--pmu-text-muted);
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: var(--pmu-transition-fast);
+  text-decoration: none;
+}
+
+.sidebar-link i {
+  font-size: 1.1rem;
+  width: 22px;
+  color: var(--pmu-text-light);
+  transition: var(--pmu-transition-fast);
+}
+
+.sidebar-link:hover {
+  background-color: var(--pmu-bg-subtle);
+  color: var(--pmu-text-main);
+}
+
+.sidebar-link:hover i {
+  color: var(--pmu-primary);
+}
+
+.sidebar-link.active {
+  background: var(--pmu-primary-ultra-light);
+  color: var(--pmu-primary-dark);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .sidebar-link.active {
+  color: var(--pmu-primary-light);
+}
+
+.sidebar-link.active i {
+  color: var(--pmu-primary);
+}
+
+.sidebar-footer {
+  padding: 1.25rem;
+  border-top: 1px solid var(--pmu-border);
+}
+
+/* 2. MAIN DASHBOARD CONTENT AREA */
+.dashboard-main {
+  flex-grow: 1;
+  margin-left: 280px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Dashboard Topbar */
+.dashboard-topbar {
+  height: 72px;
+  background-color: var(--pmu-bg-surface);
+  border-bottom: 1px solid var(--pmu-border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.dashboard-content {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+/* 3. METRIC CARDS */
+.metric-card {
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--pmu-shadow-sm);
+  transition: var(--pmu-transition);
+}
+
+.metric-card:hover {
+  border-color: var(--pmu-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--pmu-shadow-md);
+}
+
+.metric-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--pmu-radius-md);
+  background: var(--pmu-primary-ultra-light);
+  color: var(--pmu-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.metric-value {
+  font-family: var(--pmu-font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--pmu-text-main);
+  line-height: 1.1;
+  margin-top: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--pmu-text-muted);
+  font-weight: 500;
+}
+
+/* 4. HEALING TIMELINE WIDGET */
+.healing-tracker {
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  padding: 1.75rem;
+}
+
+.healing-progress-bar {
+  height: 8px;
+  background-color: var(--pmu-bg-subtle);
+  border-radius: var(--pmu-radius-full);
+  overflow: hidden;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.healing-progress-fill {
+  height: 100%;
+  background: var(--pmu-gradient-gold);
+  border-radius: var(--pmu-radius-full);
+  transition: width 1s ease;
+}
+
+.healing-stage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--pmu-radius-full);
+  background-color: var(--pmu-primary-ultra-light);
+  color: var(--pmu-primary-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* 5. DASHBOARD TABLES */
+.dashboard-table-card {
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  overflow: hidden;
+}
+
+.table th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pmu-text-muted);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--pmu-border);
+}
+
+.table td {
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+  font-size: 0.92rem;
+  color: var(--pmu-text-main);
+  border-bottom: 1px solid var(--pmu-border);
+}
+
+/* Mobile Sidebar Toggle */
+@media (max-width: 991px) {
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .dashboard-sidebar.show {
+    transform: translateX(0);
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+  }
+
+  .dashboard-topbar {
+    padding: 0 1rem;
+  }
+
+  .dashboard-content {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Dashboard Footer Integration */
+.dashboard-main > .pmu-footer {
+  margin-top: auto;
+  width: 100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-main .pmu-footer-top {
+  padding: 3.5rem 1.5rem 2.5rem;
+}
+@media (max-width: 767.98px) {
+  .dashboard-main .pmu-footer-top {
+    padding: 2.75rem 1.25rem 2rem;
+  }
+}
+
+[dir="rtl"] .dashboard-main > .pmu-footer {
+  border-left: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+

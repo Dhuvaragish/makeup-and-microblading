@@ -1,0 +1,273 @@
+[
+  {
+    "id": "srv-microblading",
+    "slug": "microblading",
+    "name": "Signature Microblading",
+    "category": "brows",
+    "price": 550,
+    "touchUpPrice": 150,
+    "duration": "120 mins",
+    "painLevel": "Minimal (1/5 with topical numbing)",
+    "healingTime": "10-14 days (Full color 4-6 weeks)",
+    "retention": "12-18 months",
+    "shortDescription": "Hyper-realistic, hand-drawn hair strokes designed to mimic natural eyebrow hairs for fuller, seamless arches.",
+    "fullDescription": "Our Signature Microblading utilizes ultra-fine medical grade nano-blades to implant hypoallergenic, vegan pigments into the upper dermis. Each stroke is customized to flow with your natural brow growth pattern, bone structure, and facial proportions using the golden ratio method.",
+    "benefits": [
+      "Natural 3D hair-like stroke effect",
+      "Custom Golden Ratio brow mapping",
+      "Saves 20+ minutes of daily morning makeup",
+      "Waterproof and smudge-resistant",
+      "Ideal for normal to dry skin types"
+    ],
+    "steps": [
+      "Consultation & Facial Symmetry Mapping (30 mins)",
+      "Pigment Color Formulation & Skin Matching (15 mins)",
+      "Medical-Grade Topical Numbing (25 mins)",
+      "Precision Micro-stroking Procedure (45 mins)",
+      "Pigment Mask & Sterile Post-Care Seal (10 mins)"
+    ],
+    "image": "assets/images/brows/microblading.jpg",
+    "popular": true
+  },
+  {
+    "id": "srv-powder-brows",
+    "slug": "powder-brows",
+    "name": "Ombré Powder Brows",
+    "category": "brows",
+    "price": 580,
+    "touchUpPrice": 160,
+    "duration": "150 mins",
+    "painLevel": "Minimal (1/5)",
+    "healingTime": "7-10 days",
+    "retention": "2-3 years",
+    "shortDescription": "Soft powdery makeup finish featuring lighter ombre bulb fronts fading into defined, velvety tails.",
+    "fullDescription": "Ombré Powder Brows are achieved with an advanced digital micropigmentation machine creating hundreds of thousands of microscopic pigment dots. The result is a soft powdered makeup look that is gentle on all skin types including oily or mature skin.",
+    "benefits": [
+      "Soft misty powdered finish",
+      "Superior retention for oily or large-pore skin",
+      "Less invasive with minimal skin trauma",
+      "Lasts up to 3 years before touch-up",
+      "Completely customizable density"
+    ],
+    "steps": [
+      "Brow Design & Symmetry Contouring (30 mins)",
+      "Color Matching & Undertone Analysis (15 mins)",
+      "Primary Numbing Application (20 mins)",
+      "Digital Pixel Machine Shading (70 mins)",
+      "Soothing Botanical Aftercare Dressing (15 mins)"
+    ],
+    "image": "assets/images/brows/powder-brows.jpg",
+    "popular": true
+  },
+  {
+    "id": "srv-combo-brows",
+    "slug": "combo-brows",
+    "name": "Combination Hybrid Brows",
+    "category": "brows",
+    "price": 650,
+    "touchUpPrice": 180,
+    "duration": "165 mins",
+    "painLevel": "Minimal (1-2/5)",
+    "healingTime": "10-14 days",
+    "retention": "18-24 months",
+    "shortDescription": "The ultimate transformation combining hair strokes at the head with soft powder shading through the tail.",
+    "fullDescription": "Combination brows give you the best of both worlds: delicate realistic hair strokes at the head of the brow for natural softness, combined with gentle machine powder shading through the body and tail for crisp definition and depth.",
+    "benefits": [
+      "Combines realistic hair strokes + 3D depth",
+      "Great for clients with sparse or patchy brows",
+      "Tail stays crisp and defined throughout the day",
+      "Suitable for all skin types",
+      "Seamless blend with existing eyebrow hair"
+    ],
+    "steps": [
+      "Custom Brow Architecture & Golden Ratio (30 mins)",
+      "Pigment Formulation for Multi-Depth Effect (15 mins)",
+      "Topical Anaesthetic Infusion (20 mins)",
+      "Microblade Front Strokes (30 mins)",
+      "Pixel Shading Arch to Tail (60 mins)",
+      "Finishing Pigment Lock (10 mins)"
+    ],
+    "image": "assets/images/brows/combo-brows.jpg",
+    "popular": true
+  },
+  {
+    "id": "srv-nano-brows",
+    "slug": "nano-brows",
+    "name": "Digital Nano Hairstrokes",
+    "category": "brows",
+    "price": 720,
+    "touchUpPrice": 200,
+    "duration": "180 mins",
+    "painLevel": "Ultra Low (0.5/5)",
+    "healingTime": "7-10 days",
+    "retention": "2-3 years",
+    "shortDescription": "High-precision single acupuncture needle hair strokes made with medical digital device. Zero skin slicing.",
+    "fullDescription": "Digital Nano Brows represent the pinnacle of PMU technology. Using a microscopic 0.18mm acupuncture needle and high-precision motor, hair strokes are deposited as micro-dots rather than blade incisions, ensuring zero scarring risk and supreme retention across all skin types.",
+    "benefits": [
+      "Non-cutting digital technique",
+      "Exceptional longevity on oily, mature or sensitive skin",
+      "Zero scar tissue formation",
+      "Fast healing with minimal scabbing",
+      "Crisp stroke retention after healing"
+    ],
+    "steps": [
+      "Advanced Morphological Facial Scan (30 mins)",
+      "Pigment Selection with Organic Hybrid Pigments (15 mins)",
+      "Gentle Topical Anesthetic (20 mins)",
+      "High-Frequency Nano Needle Delivery (95 mins)",
+      "Cold Compress & Cell Regenerating Serum (20 mins)"
+    ],
+    "image": "assets/images/brows/nano-brows.jpg",
+    "popular": false
+  },
+  {
+    "id": "srv-lip-blush",
+    "slug": "lip-blush",
+    "name": "Velvet Lip Blush & Tint",
+    "category": "lips",
+    "price": 600,
+    "touchUpPrice": 175,
+    "duration": "150 mins",
+    "painLevel": "Low-Moderate (2/5 with secondary numbing)",
+    "healingTime": "5-7 days (chapping phase)",
+    "retention": "2-4 years",
+    "shortDescription": "Translucent mineral wash that restores natural borders, balances lip symmetry, and provides a healthy flush.",
+    "fullDescription": "Lip Blush is a semi-permanent tattoo that deposits botanical mineral pigments into the lips, creating an effortless wash of color and enhancing natural lip symmetry. It defines the Cupid's bow and vermilion border without looking like harsh 90s lip liner.",
+    "benefits": [
+      "Restores natural lip shape and pale borders",
+      "Creates the illusion of fuller, juicier lips without fillers",
+      "Corrects mild asymmetry and loss of vermilion border",
+      "Wake up with fresh, youthful tint everyday",
+      "Custom shade range from nude rose to berry peach"
+    ],
+    "steps": [
+      "Lip Contour Mapping & Symmetry Balance (25 mins)",
+      "Custom Color Swatching & Undertone Test (15 mins)",
+      "Deep Numbing Application (25 mins)",
+      "Gentle Pixel Machine Stippling (75 mins)",
+      "Soothing Hydrogel Mask & Arnica Seal (10 mins)"
+    ],
+    "image": "assets/images/lips/lip-blush-1.jpg",
+    "popular": true
+  },
+  {
+    "id": "srv-lip-neutralization",
+    "slug": "lip-neutralization",
+    "name": "Dark Lip Color Neutralization",
+    "category": "lips",
+    "price": 650,
+    "touchUpPrice": 180,
+    "duration": "150 mins",
+    "painLevel": "Low-Moderate (2/5)",
+    "healingTime": "5-7 days",
+    "retention": "2-3 years",
+    "shortDescription": "Specialized color corrective treatment neutralizing cool, dark, or hyper-pigmented tones before depositing target color.",
+    "fullDescription": "Dark lip neutralization is a specialized multi-session technique formulated specifically for melanin-rich lips exhibiting cool blue, purple, or brown undertones. Using warm corrective orange and warm-peach pigments, we neutralize melanin undertones to achieve an even, radiant canvas.",
+    "benefits": [
+      "Specifically engineered for melanin-rich lips",
+      "Cancels out cool blue/purple undertones safely",
+      "Even, bright and warm balanced lip tone",
+      "Prevents trauma-induced hyperpigmentation",
+      "Perfection across 2 to 3 tailored sessions"
+    ],
+    "steps": [
+      "Fitzpatrick Skin & Melanin Tone Assessment (20 mins)",
+      "Warm Orange Neutralizer Color Blending (15 mins)",
+      "Triple-Action Topical Numbing (25 mins)",
+      "Gentle Low-Impact Shading (80 mins)",
+      "Cold Barrier & Vitamin E Dressing (10 mins)"
+    ],
+    "image": "assets/images/lips/lip-neutralize.jpg",
+    "popular": false
+  },
+  {
+    "id": "srv-brow-correction",
+    "slug": "brow-correction",
+    "name": "Old PMU Brow Color Correction",
+    "category": ["brows", "touch-up"],
+    "price": 500,
+    "touchUpPrice": 150,
+    "duration": "120 mins",
+    "painLevel": "Minimal (1/5)",
+    "healingTime": "10-14 days",
+    "retention": "18-24 months",
+    "shortDescription": "Color shift neutralization for outdated tattoo brows that have turned blue, red, pink, or gray over time.",
+    "fullDescription": "If your previous permanent makeup has faded into an unwanted salmon-pink, slate-gray, or greenish-blue tint, our color correction protocol utilizes color theory and warm modifier pigments to restore a rich, flattering golden-brown tone without painful laser sessions.",
+    "benefits": [
+      "Neutralizes unsightly orange, red, grey or blue hues",
+      "Re-establishes clean symmetry and modern shape",
+      "Saves client from painful laser removal if faded enough",
+      "Safe organic iron-oxide and hybrid formulas",
+      "Includes follow-up color assessment"
+    ],
+    "steps": [
+      "Pigment Degradation & Depth Inspection (20 mins)",
+      "Opposite Color Theory Neutralizer Formulation (15 mins)",
+      "Pre-Procedure Numbing (20 mins)",
+      "Color Shift Implantation (55 mins)",
+      "Color Stabilization Seal (10 mins)"
+    ],
+    "image": "assets/images/brows/brow-correction.jpg",
+    "popular": false
+  },
+  {
+    "id": "srv-annual-touchup",
+    "slug": "annual-touchup",
+    "name": "Annual Color Boost & Touch-Up",
+    "category": "touch-up",
+    "price": 280,
+    "touchUpPrice": 120,
+    "duration": "90 mins",
+    "painLevel": "Minimal (1/5)",
+    "healingTime": "5-7 days",
+    "retention": "12-18 months",
+    "shortDescription": "Recommended 12-18 month color boost for existing studio clients to refresh pigment vibrancy and crisp outlines.",
+    "fullDescription": "Permanent makeup gradually fades as your skin regenerates and is exposed to UV light. An annual touch-up refreshes the color vibrancy, tightens the shape, and ensures your brows or lips look continuously fresh and polished year-round.",
+    "benefits": [
+      "Maintains flawless pigment intensity",
+      "Refines shape changes as skin matures",
+      "Cost-effective ongoing maintenance",
+      "Quicker procedure and faster healing",
+      "Exclusively for returning Aura studio clients"
+    ],
+    "steps": [
+      "Shape & Color Checkup (15 mins)",
+      "Numbing Application (20 mins)",
+      "Color Refresh Stroking / Shading (45 mins)",
+      "Post-Care Re-application (10 mins)"
+    ],
+    "image": "assets/images/brows/annual-touchup.jpg",
+    "popular": true
+  },
+  {
+    "id": "srv-duo-package",
+    "slug": "duo-package",
+    "name": "Signature Brow & Lip Atelier Duo",
+    "category": ["brows", "lips", "touch-up"],
+    "price": 1050,
+    "touchUpPrice": 280,
+    "duration": "240 mins",
+    "painLevel": "Minimal (1-2/5 with secondary numbing)",
+    "healingTime": "7-10 days",
+    "retention": "2-4 years",
+    "shortDescription": "The ultimate harmonized transformation pairing our Signature Brows with a lush Velvet Lip Blush for total facial balance.",
+    "fullDescription": "Our flagship atelier experience. Why choose one when you can harmonize both? The Brow & Lip Duo aligns your brow arch flow, facial symmetry, and lip vermilion border in a single curated journey, saving $150 compared to separate sessions and ensuring matched pigment harmony.",
+    "benefits": [
+      "Complete brow & lip facial symmetry harmony",
+      "Includes complimentary 6-week touch-up for both areas",
+      "Exclusive $150 package savings",
+      "Custom Golden Ratio mapping & undertone match",
+      "Wake up completely ready every single day"
+    ],
+    "steps": [
+      "Full Face Morphological Scan & Golden Ratio Mapping (30 mins)",
+      "Custom Pigment Palette Blending (15 mins)",
+      "Topical Anesthetic Application (25 mins)",
+      "Signature Eyebrow Micro-Pigmentation (85 mins)",
+      "Velvet Lip Blush Implantation (70 mins)",
+      "Soothing Botanical Barrier Dressing & Care Kit (15 mins)"
+    ],
+    "image": "assets/images/brows/duo-package.jpg",
+    "popular": true
+  }
+]

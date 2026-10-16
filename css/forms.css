@@ -1,0 +1,338 @@
+/* ==========================================================================
+   AURA PMU & MICROBLADING STUDIO - FORMS & BOOKING WIZARD STYLES
+   ========================================================================== */
+
+/* 1. INPUTS & SELECTS */
+.form-control,
+.form-select {
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  color: var(--pmu-text-main);
+  border-radius: var(--pmu-radius-md);
+  padding: 0.75rem 1.15rem;
+  font-size: 0.95rem;
+  transition: var(--pmu-transition-fast);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--pmu-bg-surface);
+  border-color: var(--pmu-border-focus);
+  color: var(--pmu-text-main);
+  box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.2);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--pmu-text-light);
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: var(--pmu-text-main);
+}
+
+/* Input with icon */
+.input-icon-group {
+  position: relative;
+}
+
+.input-icon-group i {
+  position: absolute;
+  left: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pmu-primary);
+  pointer-events: none;
+}
+
+.input-icon-group .form-control {
+  padding-left: 2.85rem;
+}
+
+.input-icon-group .form-control.is-invalid,
+.input-icon-group .form-control.is-valid {
+  background-image: none !important;
+}
+
+/* 2. CUSTOM CHECKBOXES & RADIOS */
+.form-check-input {
+  width: 1.25em;
+  height: 1.25em;
+  background-color: var(--pmu-bg-surface);
+  border: 1.5px solid var(--pmu-border);
+  cursor: pointer;
+  transition: var(--pmu-transition-fast);
+}
+
+.form-check-input:checked {
+  background-color: var(--pmu-primary);
+  border-color: var(--pmu-primary);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.25);
+  border-color: var(--pmu-primary);
+}
+
+.form-check-label {
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--pmu-text-main);
+  user-select: none;
+}
+
+/* 3. TIME SLOT SELECTION BUTTONS */
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+}
+
+.time-slot-btn {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border-radius: var(--pmu-radius-md);
+  border: 1px solid var(--pmu-border);
+  background-color: var(--pmu-bg-surface);
+  color: var(--pmu-text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--pmu-transition-fast);
+}
+
+.time-slot-btn:hover {
+  border-color: var(--pmu-primary);
+  color: var(--pmu-primary);
+  background-color: var(--pmu-bg-subtle);
+}
+
+.time-slot-btn.selected {
+  background: var(--pmu-gradient-gold);
+  border-color: var(--pmu-primary);
+  color: #1a1b1f;
+  box-shadow: 0 4px 12px rgba(197, 168, 128, 0.4);
+}
+
+.time-slot-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* 4. BOOKING WIZARD STEPS */
+.wizard-stepper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.wizard-stepper::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background-color: var(--pmu-border);
+  z-index: 1;
+}
+
+.wizard-step-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.step-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--pmu-bg-surface);
+  border: 2px solid var(--pmu-border);
+  color: var(--pmu-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  transition: var(--pmu-transition);
+}
+
+.wizard-step-item.active .step-circle {
+  border-color: var(--pmu-primary);
+  background: var(--pmu-gradient-gold);
+  color: #1a1b1f;
+  box-shadow: 0 0 0 5px rgba(197, 168, 128, 0.2);
+}
+
+.wizard-step-item.completed .step-circle {
+  border-color: var(--pmu-primary);
+  background-color: var(--pmu-primary);
+  color: #ffffff;
+}
+
+.step-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pmu-text-muted);
+}
+
+.wizard-step-item.active .step-title {
+  color: var(--pmu-primary);
+}
+
+/* 5. SELECTION CARD (Service / Artist selection in booking) */
+.selectable-card {
+  border: 1.5px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  padding: 1.25rem;
+  cursor: pointer;
+  background-color: var(--pmu-bg-surface);
+  transition: var(--pmu-transition);
+}
+
+.selectable-card:hover {
+  border-color: var(--pmu-primary);
+  transform: translateY(-2px);
+}
+
+.selectable-card.selected {
+  border-color: var(--pmu-primary);
+  background-color: var(--pmu-primary-ultra-light);
+  box-shadow: 0 4px 16px rgba(197, 168, 128, 0.25);
+}
+
+/* 6. MEDICAL QUESTIONNAIRE ITEM */
+.contraindication-item {
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-md);
+  padding: 1rem 1.25rem;
+  background-color: var(--pmu-bg-surface);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 7. AUTHENTICATION & PORTAL CARDS */
+.pmu-btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--pmu-radius-full);
+  transition: var(--pmu-transition);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  width: 100%;
+}
+
+.pmu-btn-apple {
+  background-color: #1a1a1c;
+  color: #ffffff !important;
+  border: 1px solid #1a1a1c;
+}
+
+.pmu-btn-apple:hover {
+  background-color: #000000;
+  color: #ffffff !important;
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.pmu-btn-google {
+  background-color: var(--pmu-bg-surface);
+  color: var(--pmu-text-main) !important;
+  border: 1px solid var(--pmu-border);
+}
+
+.pmu-btn-google:hover {
+  background-color: var(--pmu-bg-subtle);
+  border-color: var(--pmu-primary);
+  color: var(--pmu-text-main) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(197, 168, 128, 0.22);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.35rem 0;
+  color: var(--pmu-text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--pmu-border);
+}
+
+.auth-divider span {
+  padding: 0 1rem;
+}
+
+.btn-toggle-password {
+  position: absolute;
+  right: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0.35rem;
+  color: var(--pmu-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: var(--pmu-transition-fast);
+  line-height: 1;
+}
+
+.btn-toggle-password:hover {
+  color: var(--pmu-primary);
+}
+
+.btn-toggle-password:focus-visible {
+  outline: 2px solid var(--pmu-primary);
+  border-radius: 4px;
+}
+
+.btn-toggle-password i {
+  position: static !important;
+  transform: none !important;
+  color: inherit !important;
+  pointer-events: none;
+  font-size: 0.95rem;
+}
+
+/* RTL adaptations */
+[dir="rtl"] .btn-toggle-password {
+  right: auto;
+  left: 1.15rem;
+}
+
+[dir="rtl"] .input-icon-group .form-control.pe-5 {
+  padding-right: 2.85rem !important;
+  padding-left: 2.85rem !important;
+}

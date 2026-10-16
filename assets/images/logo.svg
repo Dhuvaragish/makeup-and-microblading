@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" width="100%" height="100%">
+  <defs>
+    <!-- Rich metallic gold gradient -->
+    <linearGradient id="auraGoldGradG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a7332"/>
+      <stop offset="25%" stop-color="#c5a880"/>
+      <stop offset="50%" stop-color="#f5e9d6"/>
+      <stop offset="75%" stop-color="#dfcaa7"/>
+      <stop offset="100%" stop-color="#84622b"/>
+    </linearGradient>
+
+    <linearGradient id="auraGoldLightG" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faedd9"/>
+      <stop offset="40%" stop-color="#dfcaa7"/>
+      <stop offset="80%" stop-color="#c5a880"/>
+      <stop offset="100%" stop-color="#735222"/>
+    </linearGradient>
+
+    <radialGradient id="auraBgGradG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a2824"/>
+      <stop offset="70%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#0e0e11"/>
+    </radialGradient>
+
+    <filter id="auraShadowG" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Left Icon Emblem (Scale 50/100 = 0.5, centered at (28, 28)) -->
+  <g transform="translate(6, 6) scale(0.44)">
+    <circle cx="50" cy="50" r="48" fill="url(#auraBgGradG)"/>
+    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#auraGoldGradG)" stroke-width="2"/>
+    <circle cx="50" cy="50" r="42.5" fill="none" stroke="url(#auraGoldLightG)" stroke-width="0.9" opacity="0.8"/>
+
+    <g filter="url(#auraShadowG)">
+      <path d="M 50 15.5 Q 50 19 52.5 19 Q 50 19 50 22.5 Q 50 19 47.5 19 Q 50 19 50 15.5 Z" fill="url(#auraGoldLightG)"/>
+      <circle cx="50" cy="19" r="0.7" fill="#ffffff"/>
+
+      <path d="M 33 69 L 36.5 69 C 39.5 58, 44 43, 48.5 28 L 51 28 C 46 43, 40.5 60, 37.5 69 L 41 69 L 41 70 L 33 70 Z" fill="url(#auraGoldGradG)"/>
+      <path d="M 49 28 L 53 28 L 65.5 68 L 68.5 68 L 68.5 70 L 59 70 L 59 68 L 62 68 L 51.5 35 L 48.5 45 Z" fill="url(#auraGoldLightG)"/>
+
+      <path d="M 23 48.5 C 21 44, 25.5 41.5, 30 43.5 C 36 46, 43.5 42, 53 35 C 62.5 28, 71.5 29.5, 78.5 37.5 C 74.5 34.5, 67 33, 58 38 C 47.5 44, 38.5 50.5, 30 50.5 C 25.5 50.5, 23 48.5, 23 48.5 Z" fill="url(#auraGoldGradG)"/>
+      <circle cx="23.5" cy="48.5" r="1.6" fill="url(#auraGoldLightG)"/>
+    </g>
+  </g>
+
+  <!-- Typography Right Side -->
+  <g transform="translate(62, 0)">
+    <text x="0" y="31" font-family="'Playfair Display', Georgia, serif" font-size="25" font-weight="700" letter-spacing="3.5" fill="currentColor">AURA</text>
+    <text x="1" y="45" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="8" font-weight="600" letter-spacing="2" fill="#c5a880" text-transform="uppercase">PERMANENT MAKEUP &amp; BROWS</text>
+  </g>
+</svg>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Pricing | AURA Permanent Makeup & Microblading</title>
+  <meta name="description" content="Explore our complete menu of permanent makeup services: Microblading, Ombré Powder Brows, Velvet Lip Blush, Digital Nano Strokes, and Touch-ups.">
+  
+  <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="pmu-topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
+        <span class="pmu-topbar-item"><i class="fa-regular fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="pmu-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="pmu-brand" href="index.html">
+          <div class="pmu-brand-icon">A</div>
+          <div class="pmu-brand-text">
+            <span class="pmu-brand-name">AURA</span>
+            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+          <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="pmuNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="services.html"><i class="fa-solid fa-list-check"></i> All PMU Services</a></li>
+                <li><a class="dropdown-item" href="service-details.html"><i class="fa-solid fa-circle-info"></i> Service Details</a></li>
+                <li><a class="dropdown-item" href="consultation.html"><i class="fa-solid fa-comments"></i> Virtual Consultation</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="header-actions">
+            <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
+              <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
+              <span class="lang-label visually-hidden">EN (LTR)</span>
+            </button>
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+              <i class="fa-solid fa-moon theme-toggle-icon"></i>
+            </button>
+            <div class="header-user-status">
+              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+            </div>
+            <a href="booking.html" class="btn-pmu-gold">Book Treatment</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="pmu-page-banner pmu-banner-services py-5">
+    <div class="container text-center py-4">
+      <span class="section-eyebrow">Service Catalog & Investment</span>
+      <h1 class="display-4 font-serif fw-bold mb-3">Permanent Makeup Treatments</h1>
+      <p class="text-muted lead mx-auto" style="max-width: 650px;">
+        Transparent pricing, medical-grade protocols, and complimentary 6-week touch-up assessments included with all signature packages.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="pmu-tabs mt-4">
+        <button class="pmu-tab-item active" data-category="all">All Treatments</button>
+        <button class="pmu-tab-item" data-category="brows">Eyebrows</button>
+        <button class="pmu-tab-item" data-category="lips">Lip Blush</button>
+        <button class="pmu-tab-item" data-category="touch-up">Touch-Ups & Correction</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section-padding bg-main">
+    <div class="container">
+      <div id="services-cards-grid" class="row g-4">
+        <!-- Static Fallback Cards (hydrated/filtered by JS) -->
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="service-card w-100">
+            <div class="service-card-img-wrap">
+              <img src="assets/images/brows/microblading.jpg" alt="Signature Microblading" loading="lazy">
+              <span class="service-card-price-badge">$550</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-card-meta">
+                <span><i class="fa-regular fa-clock"></i> 120 mins</span>
+                <span><i class="fa-solid fa-shield-heart"></i> 12-18 months</span>
+              </div>
+              <h4 class="font-serif mb-2">Signature Microblading</h4>
+              <p class="text-muted small mb-3 flex-grow-1">Hyper-realistic, hand-drawn hair strokes designed to mimic natural eyebrow hairs for fuller, seamless arches.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Natural 3D hair-like stroke effect</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Custom Golden Ratio brow mapping</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Ideal for normal to dry skin types</li>
+              </ul>
+              <div class="d-flex gap-2 mt-auto">
+                <a href="service-details.html?service=microblading" class="btn btn-sm btn-pmu-outline flex-grow-1">Details</a>
+                <a href="booking.html?service=srv-microblading" class="btn btn-sm btn-pmu-gold flex-grow-1">Book ($550)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="service-card w-100">
+            <div class="service-card-img-wrap">
+              <img src="assets/images/brows/powder-brows.jpg" alt="Ombré Powder Brows" loading="lazy">
+              <span class="service-card-price-badge">$580</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-card-meta">
+                <span><i class="fa-regular fa-clock"></i> 150 mins</span>
+                <span><i class="fa-solid fa-shield-heart"></i> 2-3 years</span>
+              </div>
+              <h4 class="font-serif mb-2">Ombré Powder Brows</h4>
+              <p class="text-muted small mb-3 flex-grow-1">Soft powdery makeup finish featuring lighter ombre bulb fronts fading into defined, velvety tails.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Soft misty powdered finish</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Superior retention for oily or large-pore skin</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Lasts up to 3 years</li>
+              </ul>
+              <div class="d-flex gap-2 mt-auto">
+                <a href="service-details.html?service=powder-brows" class="btn btn-sm btn-pmu-outline flex-grow-1">Details</a>
+                <a href="booking.html?service=srv-powder-brows" class="btn btn-sm btn-pmu-gold flex-grow-1">Book ($580)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="service-card w-100">
+            <div class="service-card-img-wrap">
+              <img src="assets/images/brows/combo-brows.jpg" alt="Combination Hybrid Brows" loading="lazy">
+              <span class="service-card-price-badge">$650</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-card-meta">
+                <span><i class="fa-regular fa-clock"></i> 165 mins</span>
+                <span><i class="fa-solid fa-shield-heart"></i> 18-24 months</span>
+              </div>
+              <h4 class="font-serif mb-2">Combination Hybrid Brows</h4>
+              <p class="text-muted small mb-3 flex-grow-1">The ultimate transformation combining hair strokes at the head with soft powder shading through the tail.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Combines realistic hair strokes + 3D depth</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Great for sparse or patchy brows</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Suitable for all skin types</li>
+              </ul>
+              <div class="d-flex gap-2 mt-auto">
+                <a href="service-details.html?service=combo-brows" class="btn btn-sm btn-pmu-outline flex-grow-1">Details</a>
+                <a href="booking.html?service=srv-combo-brows" class="btn btn-sm btn-pmu-gold flex-grow-1">Book ($650)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="service-card w-100">
+            <div class="service-card-img-wrap">
+              <img src="assets/images/brows/nano-brows.jpg" alt="Digital Nano Hairstrokes" loading="lazy">
+              <span class="service-card-price-badge">$720</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-card-meta">
+                <span><i class="fa-regular fa-clock"></i> 180 mins</span>
+                <span><i class="fa-solid fa-shield-heart"></i> 2-3 years</span>
+              </div>
+              <h4 class="font-serif mb-2">Digital Nano Hairstrokes</h4>
+              <p class="text-muted small mb-3 flex-grow-1">High-precision single acupuncture needle hair strokes made with medical digital device. Zero skin slicing.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Non-cutting digital technique</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Exceptional on oily/mature skin</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Zero scar tissue risk</li>
+              </ul>
+              <div class="d-flex gap-2 mt-auto">
+                <a href="service-details.html?service=nano-brows" class="btn btn-sm btn-pmu-outline flex-grow-1">Details</a>
+                <a href="booking.html?service=srv-nano-brows" class="btn btn-sm btn-pmu-gold flex-grow-1">Book ($720)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="service-card w-100">
+            <div class="service-card-img-wrap">
+              <img src="assets/images/lips/lip-blush-1.jpg" alt="Velvet Lip Blush & Tint" loading="lazy">
+              <span class="service-card-price-badge">$600</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-card-meta">
+                <span><i class="fa-regular fa-clock"></i> 150 mins</span>
+                <span><i class="fa-solid fa-shield-heart"></i> 2-4 years</span>
+              </div>
+              <h4 class="font-serif mb-2">Velvet Lip Blush & Tint</h4>
+              <p class="text-muted small mb-3 flex-grow-1">Translucent mineral wash that restores natural borders, balances lip symmetry, and provides a healthy flush.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Restores natural lip shape</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Enhances symmetry & volume illusion</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Custom shade range</li>
+              </ul>
+              <div class="d-flex gap-2 mt-auto">
+                <a href="service-details.html?service=lip-blush" class="btn btn-sm btn-pmu-outline flex-grow-1">Details</a>
+                <a href="booking.html?service=srv-lip-blush" class="btn btn-sm btn-pmu-gold flex-grow-1">Book ($600)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="service-card w-100">
+            <div class="service-card-img-wrap">
+              <img src="assets/images/lips/lip-neutralize.jpg" alt="Dark Lip Color Neutralization" loading="lazy">
+              <span class="service-card-price-badge">$650</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-card-meta">
+                <span><i class="fa-regular fa-clock"></i> 150 mins</span>
+                <span><i class="fa-solid fa-shield-heart"></i> 2-3 years</span>
+              </div>
+              <h4 class="font-serif mb-2">Dark Lip Color Neutralization</h4>
+              <p class="text-muted small mb-3 flex-grow-1">Specialized color corrective treatment neutralizing cool, dark, or hyper-pigmented tones before depositing target color.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Engineered for melanin-rich lips</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Cancels cool blue/purple undertones</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> Even, warm balanced tone</li>
+              </ul>
+              <div class="d-flex gap-2 mt-auto">
+                <a href="service-details.html?service=lip-neutralization" class="btn btn-sm btn-pmu-outline flex-grow-1">Details</a>
+                <a href="booking.html?service=srv-lip-neutralization" class="btn btn-sm btn-pmu-gold flex-grow-1">Book ($650)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bespoke Consultation Callout Section -->
+  <section class="py-5 bg-subtle border-top border-bottom">
+    <div class="container">
+      <div class="pmu-card p-4 p-lg-5 bg-card border border-2 border-gold-subtle rounded-4 shadow-sm">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="section-eyebrow mb-2 d-inline-block">Personalized Facial Assessment</span>
+            <h3 class="font-serif fw-bold mb-3">Unsure Which Treatment Is Best for You?</h3>
+            <p class="text-muted mb-4 lead" style="font-size: 1.05rem;">
+              Every face is uniquely proportioned. Meet with our certified master artists for a 1-on-1 facial symmetry analysis, digital 3D brow simulation, and hypoallergenic pigment patch test before booking your procedure.
+            </p>
+            <div class="d-flex flex-wrap gap-4 text-muted small">
+              <div><i class="fa-solid fa-compass-drafting text-gold me-2"></i> Golden Ratio Symmetry Mapping</div>
+              <div><i class="fa-solid fa-palette text-gold me-2"></i> Custom Undertone Pigment Matching</div>
+              <div><i class="fa-solid fa-shield-halved text-gold me-2"></i> 100% Medical-Grade Sterile Safety</div>
+            </div>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <div class="d-flex flex-column flex-sm-row flex-lg-column gap-3 justify-content-lg-end">
+              <a href="booking.html" class="btn btn-pmu-gold btn-pmu-lg w-100">
+                <span>Book Free Consultation</span>
+                <i class="fa-solid fa-calendar-check ms-2"></i>
+              </a>
+              <a href="consultation.html" class="btn btn-pmu-outline btn-pmu-lg w-100">
+                <i class="fa-solid fa-camera-rotate me-2"></i>
+                <span>Virtual Photo Assessment</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Treatment FAQ Accordion -->
+  <section class="section-padding bg-subtle">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Everything You Need To Know</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="pmu-accordion accordion max-w-2xl mx-auto" id="pmuServicesFaq" style="max-width: 800px;">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Does permanent makeup hurt?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#pmuServicesFaq">
+            <div class="accordion-body">
+              At Aura Studio, we use a two-step medical-grade topical anesthetic protocol (5% lidocaine cream prior to the procedure, followed by a secondary epinephrine gel during treatment). 95% of our clients rate the sensation 1 out of 5—many even fall asleep!
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              How long do brows and lips last?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pmuServicesFaq">
+            <div class="accordion-body">
+              Microblading typically lasts 12 to 18 months, Ombré Powder brows last 2 to 3 years, and Velvet Lip Blush lasts 2 to 4 years. Longevity varies depending on skin type (oily vs dry), sun exposure, retinol usage, and overall metabolic turnover.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Will my eyebrow pigment turn red or blue over time?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pmuServicesFaq">
+            <div class="accordion-body">
+              No. We exclusively use high-purity inorganic and hybrid pigment lines (Perma Blend Luxe and Tina Davies) that are rigorously formulated to prevent unwanted color shifts. As your skin naturally exfoliates over 1-2 years, the color simply fades into a lighter version of the original brown or rose.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              Is a touch-up session necessary?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#pmuServicesFaq">
+            <div class="accordion-body">
+              Yes, permanent makeup is a 2-step process. The initial session builds the foundation and contour. During the 6-8 week touch-up, we evaluate pigment retention and perfect any light spots to guarantee 18+ month durability.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Comparison Matrix Table -->
+  <section class="section-padding bg-main border-top">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Decision Guide</span>
+        <h2 class="section-title">Treatment Comparison Matrix</h2>
+        <p class="section-subtitle">Find the exact procedure tailored to your skin type, daily beauty routine, and aesthetic goals.</p>
+      </div>
+
+      <div class="table-responsive pmu-card p-4">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col" class="font-serif">Treatment</th>
+              <th scope="col">Ideal Skin Type</th>
+              <th scope="col">Technique</th>
+              <th scope="col">Healed Look</th>
+              <th scope="col">Longevity</th>
+              <th scope="col">Session Time</th>
+            </tr>
+          </thead>
+          <tbody class="small">
+            <tr>
+              <td><strong class="font-serif text-main">Signature Microblading</strong></td>
+              <td>Normal to dry; small pores</td>
+              <td>Manual hand micro-blade</td>
+              <td>Ultra-crisp 3D hair strokes mimicking natural brow growth</td>
+              <td>12 – 18 Months</td>
+              <td>2.5 Hours</td>
+            </tr>
+            <tr>
+              <td><strong class="font-serif text-main">Ombré Powder Brows</strong></td>
+              <td>All skin types (Ideal for oily & mature)</td>
+              <td>Digital machine pixel shading</td>
+              <td>Soft airbrushed makeup gradient, airy fronts, defined tails</td>
+              <td>2 – 3 Years</td>
+              <td>2.5 Hours</td>
+            </tr>
+            <tr>
+              <td><strong class="font-serif text-main">Combination Hybrid Brows</strong></td>
+              <td>All skin types; sparse to patchy arches</td>
+              <td>Microblading fronts + Powder tails</td>
+              <td>Best of both worlds: fluffy natural fronts with dense defined arches</td>
+              <td>18 – 24 Months</td>
+              <td>3 Hours</td>
+            </tr>
+            <tr>
+              <td><strong class="font-serif text-main">Digital Nano Brows</strong></td>
+              <td>Very sensitive, oily, or textured skin</td>
+              <td>Single-needle acoustic machine</td>
+              <td>Feather-light flexible hair strokes with zero blade slicing trauma</td>
+              <td>18 – 24 Months</td>
+              <td>3 Hours</td>
+            </tr>
+            <tr>
+              <td><strong class="font-serif text-main">Velvet Lip Blush</strong></td>
+              <td>All lips (loss of border, pale tone)</td>
+              <td>Digital acoustic nano-shading</td>
+              <td>Natural tinted lip balm flush, symmetrical borders, enhanced volume illusion</td>
+              <td>2 – 4 Years</td>
+              <td>2.5 Hours</td>
+            </tr>
+            <tr>
+              <td><strong class="font-serif text-main">Dark Lip Neutralization</strong></td>
+              <td>Cool, dark, or hyper-pigmented melanin lips</td>
+              <td>Color theory warm neutralization</td>
+              <td>Cancels purple/brown tones into balanced warm nude or coral-peach</td>
+              <td>2 – 3 Years</td>
+              <td>3 Hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Care Clinical Protocol -->
+  <section class="section-padding bg-subtle border-top">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Client Preparation</span>
+        <h2 class="section-title">Pre-Care Preparation Protocol</h2>
+        <p class="section-subtitle">Proper preparation ensures minimum bleeding, maximum pigment retention, and painless application.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="pmu-card p-4 h-100 border-start border-4 border-gold">
+            <span class="pmu-badge pmu-badge-gold mb-2">2 Weeks Prior</span>
+            <h5 class="font-serif mb-2">Skin Preparations</h5>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-2"><strong>No Botox or Fillers:</strong> Avoid neurotoxin or dermal filler injections in forehead or lip area for 14 days prior.</li>
+              <li class="mb-2"><strong>No Chemical Peels / Laser:</strong> Discontinue AHA/BHA, retinol, tretinoin, and laser facial treatments.</li>
+              <li class="mb-0"><strong>No Tanning or Sunburns:</strong> Skin must be calm and uncompromised on appointment day.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="pmu-card p-4 h-100 border-start border-4 border-warning">
+            <span class="pmu-badge pmu-badge-warning mb-2">48 Hours Prior</span>
+            <h5 class="font-serif mb-2">Blood Thinners</h5>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-2"><strong>No Alcohol:</strong> Avoid wine, beer, and spirits for 48 hours to prevent excess capillary bleeding.</li>
+              <li class="mb-2"><strong>No NSAIDs or Aspirin:</strong> Avoid ibuprofen, Advil, Aleve, or high-dose Vitamin E / Fish Oil supplements.</li>
+              <li class="mb-0"><strong>Cold Sore Precaution:</strong> If getting Lip Blush and prone to cold sores, take doctor-prescribed antiviral Valtrex 3 days prior.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="pmu-card p-4 h-100 border-start border-4 border-success">
+            <span class="pmu-badge pmu-badge-success mb-2">Day Of Appointment</span>
+            <h5 class="font-serif mb-2">Arrival Guidelines</h5>
+            <ul class="text-muted small ps-3 mb-0">
+              <li class="mb-2"><strong>No Caffeine:</strong> Avoid morning coffee, matcha, and energy drinks to keep heart rate and blood pressure calm.</li>
+              <li class="mb-2"><strong>No Heavy Workouts:</strong> Avoid strenuous cardiovascular workouts right before treatment.</li>
+              <li class="mb-0"><strong>Eat a Nourishing Meal:</strong> Ensure your blood sugar is stable before your session; arrive well-hydrated.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <!-- Standardized Studio Footer -->
+  <footer class="pmu-footer">
+    <div class="container pmu-footer-top">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Atelier Story -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pmu-brand mb-3">
+            <div class="pmu-brand-icon">A</div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">AURA</span>
+              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+            </div>
+          </div>
+          <p class="text-white-50 small mb-4">
+            Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="footer-badge-item"><i class="fa-solid fa-award"></i> PhiAcademy Grand Master</span>
+            <span class="footer-badge-item"><i class="fa-solid fa-shield-virus"></i> OSHA Certified</span>
+          </div>
+          <div class="pmu-footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Pinterest" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/15552347890" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Treatments -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Treatments</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="service-details.html?service=microblading">Microblading</a></li>
+            <li><a href="service-details.html?service=powder-brows">Ombré Powder Brows</a></li>
+            <li><a href="service-details.html?service=combo-brows">Combination Brows</a></li>
+            <li><a href="service-details.html?service=nano-brows">Digital Nano Brows</a></li>
+            <li><a href="service-details.html?service=lip-blush">Velvet Lip Blush</a></li>
+            <li><a href="service-details.html?service=annual-touchup">Annual Touch-Up</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Studio -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Studio</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="about.html">About Studio</a></li>
+            <li><a href="artists.html">Master Artists</a></li>
+            <li><a href="gallery.html">Before &amp; Afters</a></li>
+            <li><a href="aftercare.html">Aftercare Guide</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="contact.html">Studio Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="pmu-footer-title">Studio Concierge</h5>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>740 Madison Avenue, 4th Floor, New York, NY 10065</span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+15552347890" class="text-white-50 text-decoration-none">+1 (555) 234-7890</a></span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+          </div>
+
+          <div class="pmu-newsletter-box">
+            <form class="w-100 d-flex position-relative footer-newsletter-form" novalidate>
+              <input type="email" class="form-control footer-newsletter-input" placeholder="VIP beauty updates &amp; discounts..." required aria-label="VIP beauty updates &amp; discounts email">
+              <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <div class="footer-newsletter-feedback small mt-2" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pmu-footer-bottom">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="text-white-50 small">
+          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+        </div>
+        <div class="d-flex flex-wrap gap-3 small">
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
+          <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="btn-back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('services-cards-grid');
+      const tabs = document.querySelectorAll('.pmu-tab-item');
+      const services = PMUStorage.getServices();
+
+      function render(category = 'all') {
+        const filtered = category === 'all' 
+          ? services 
+          : services.filter(s => Array.isArray(s.category) ? s.category.includes(category) : s.category === category);
+        container.innerHTML = filtered.map(s => `
+          <div class="col-md-6 col-lg-4 d-flex">
+            <div class="service-card w-100">
+              <div class="service-card-img-wrap">
+                <img src="${s.image}" alt="${s.name}">
+                <span class="service-card-price-badge">$${s.price}</span>
+              </div>
+              <div class="service-card-body">
+                <div class="service-card-meta">
+                  <span><i class="fa-regular fa-clock"></i> ${s.duration}</span>
+                  <span><i class="fa-solid fa-shield-heart"></i> ${s.retention}</span>
+                </div>
+                <h4 class="font-serif mb-2">${s.name}</h4>
+                <p class="text-muted small mb-3 flex-grow-1">${s.shortDescription}</p>
+                <ul class="list-unstyled text-muted small mb-4">
+                  ${s.benefits.slice(0, 3).map(b => `<li class="mb-1"><i class="fa-solid fa-check text-gold me-2"></i> ${b}</li>`).join('')}
+                </ul>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="service-details.html?service=${s.slug}" class="btn btn-sm btn-pmu-outline flex-grow-1">Details</a>
+                  <a href="booking.html?service=${s.id}" class="btn btn-sm btn-pmu-gold flex-grow-1">Book ($${s.price})</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      render('all');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          render(tab.dataset.category);
+        });
+      });
+    });
+  </script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

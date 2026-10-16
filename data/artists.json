@@ -1,0 +1,86 @@
+[
+  {
+    "id": "art-elena",
+    "name": "Elena Rostova",
+    "role": "Founder & Master PMU Educator",
+    "specialties": ["Microblading", "Combination Brows", "Brow Correction"],
+    "experience": "10+ Years",
+    "rating": 5.0,
+    "reviewCount": 384,
+    "image": "assets/images/artists/artist-1.jpg",
+    "instagram": "@elena.aurabrows",
+    "certifications": [
+      "PhiBrows Grand Master Certificate #1042",
+      "SPMU World Championship Judge 2022-2024",
+      "OSHA Bloodborne Pathogens Certified",
+      "AAM Board Certified Micropigmentation Practitioner"
+    ],
+    "bio": "Elena has transformed over 6,500 pairs of brows over the past decade. Trained in Vienna, Munich, and Beverly Hills, she pioneered the Featherstroke 3D mapping method that harmonizes brow arching with individual cranial symmetry.",
+    "quote": "Eyebrows are sisters, not twins — but in our studio, they are royalty.",
+    "availability": ["Monday", "Tuesday", "Wednesday", "Friday"],
+    "startingPrice": 550
+  },
+  {
+    "id": "art-sofia",
+    "name": "Sofia Vance",
+    "role": "Senior Lip Blush & Pigment Specialist",
+    "specialties": ["Velvet Lip Blush", "Dark Lip Neutralization", "Lash Line PMU"],
+    "experience": "7 Years",
+    "rating": 4.9,
+    "reviewCount": 248,
+    "image": "assets/images/artists/artist-2.jpg",
+    "instagram": "@sofia.pmuvance",
+    "certifications": [
+      "Swiss Color International Lip Master Certified",
+      "Perma Blend Color Theory Specialist",
+      "OSHA Bloodborne Pathogens Certified",
+      "Advanced Facial Anatomy Diploma"
+    ],
+    "bio": "Sofia is internationally renowned for her velvety, natural lip blush results that look like effortless hydrated tinted lip balm. She specializes in corrective color neutralizing for cool and dark melanin lip tones.",
+    "quote": "Lip blush should never look like tattoo ink; it should look like youthful health restored.",
+    "availability": ["Tuesday", "Thursday", "Friday", "Saturday"],
+    "startingPrice": 600
+  },
+  {
+    "id": "art-maya",
+    "name": "Maya Lin",
+    "role": "Digital Nano & Powder Brow Master",
+    "specialties": ["Digital Nano Brows", "Ombré Powder Brows", "Correction"],
+    "experience": "6 Years",
+    "rating": 4.9,
+    "reviewCount": 195,
+    "image": "assets/images/artists/artist-3.jpg",
+    "instagram": "@maya.nanobrows",
+    "certifications": [
+      "Seoul PMU Master Academy Graduate",
+      "Microbeau International Pro Team Member",
+      "OSHA Bloodborne Pathogens Certified",
+      "Advanced Pixel Shading Master"
+    ],
+    "bio": "Maya specializes in zero-trauma digital nano machine hairstrokes, catering specifically to clients with oily, sensitive, or mature skin that cannot tolerate standard blading.",
+    "quote": "Precision down to the tenth of a millimeter is where true elegance lives.",
+    "availability": ["Wednesday", "Thursday", "Saturday", "Sunday"],
+    "startingPrice": 580
+  },
+  {
+    "id": "art-camilla",
+    "name": "Camilla Rossi",
+    "role": "Aesthetic PMU Artist & Symmetry Stylist",
+    "specialties": ["Microblading", "Hybrid Brows", "Annual Touch-ups"],
+    "experience": "5 Years",
+    "rating": 4.9,
+    "reviewCount": 162,
+    "image": "assets/images/artists/artist-4.jpg",
+    "instagram": "@camilla.rossi.pmu",
+    "certifications": [
+      "PhiAcademy Artist Certified #4892",
+      "Tina Davies I Love Ink Pro Certified",
+      "OSHA Bloodborne Pathogens Certified",
+      "Licensed Esthetician & PMU Practitioner"
+    ],
+    "bio": "With an eye for delicate, understated luxury, Camilla creates bespoke brow arches that highlight facial bone structure, opening up the eyes and taking years off her clients' appearance.",
+    "quote": "Confidence is the prettiest thing you can wear — great brows are just the frame.",
+    "availability": ["Monday", "Thursday", "Friday", "Sunday"],
+    "startingPrice": 500
+  }
+]

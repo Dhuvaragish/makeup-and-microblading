@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before & After Transformations Gallery | AURA PMU Studio</title>
+  <meta name="description" content="Explore real, unretouched healed before-and-after permanent makeup results: microblading, ombre powder brows, and velvet lip blush.">
+  
+  <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="pmu-topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span class="pmu-topbar-item"><i class="fa-solid fa-camera text-gold"></i> 100% Unretouched Healed Clinical Portfolio</span>
+        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="pmu-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="pmu-brand" href="index.html">
+          <div class="pmu-brand-icon">A</div>
+          <div class="pmu-brand-text">
+            <span class="pmu-brand-name">AURA</span>
+            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+          <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="pmuNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
+            <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="header-actions">
+            <!-- Language (RTL/LTR) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
+              <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
+              <span class="lang-label visually-hidden">EN (LTR)</span>
+            </button>
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+              <i class="fa-solid fa-moon theme-toggle-icon"></i>
+            </button>
+            <div class="header-user-status">
+              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+            </div>
+            <a href="booking.html" class="btn-pmu-gold">Book Appointment</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="pmu-page-banner pmu-banner-gallery py-5">
+    <div class="container text-center py-4">
+      <span class="section-eyebrow">Clinical Portfolio</span>
+      <h1 class="display-4 font-serif fw-bold mb-3">Before & After Transformations</h1>
+      <p class="text-muted lead mx-auto mb-4" style="max-width: 650px;">
+        All photographs showcase real clients under clinical daylight ring lighting. We emphasize fully healed results (6+ weeks) so you know exactly how your pigment will age.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="pmu-tabs mb-4">
+        <button class="pmu-tab-item active" data-gallery-filter="all">All Transformations</button>
+        <button class="pmu-tab-item" data-gallery-filter="microblading">Microblading</button>
+        <button class="pmu-tab-item" data-gallery-filter="powder-brows">Ombré Powder</button>
+        <button class="pmu-tab-item" data-gallery-filter="lips">Velvet Lip Blush</button>
+        <button class="pmu-tab-item" data-gallery-filter="correction">Color Correction</button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="max-w-md mx-auto" style="max-width: 440px;">
+        <div class="input-icon-group">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="gallery-search" class="form-control" placeholder="Search by artist, shade, or treatment...">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-Week Transformation Results Section -->
+  <section class="section-padding bg-main border-bottom transformation-section" id="six-week-transformations">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-eyebrow">Clinical Healed Results</span>
+        <h2 class="section-title font-serif">The 6-Week Transformation</h2>
+        <p class="section-subtitle mx-auto" style="max-width: 720px;">
+          Discover beautifully healed results with natural-looking brows and personalized permanent makeup.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Transformation Card 1: Person 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="transformation-card">
+            <div class="comparison-slider-wrapper">
+              <div class="comparison-slider">
+                <img class="img-after" src="assets/images/before-after/brow-sculpt-after.jpg" alt="Client 1 healed microblading results after six weeks">
+                <div class="img-before-wrapper">
+                  <img src="assets/images/before-after/brow-sparse-before.jpg" alt="Client 1 natural sparse eyebrows before treatment">
+                </div>
+                <div class="comparison-handle" role="slider" aria-label="Client 1 microblading before and healed after comparison slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <i class="fa-solid fa-left-right"></i>
+                </div>
+                <span class="slider-label slider-label-before">BEFORE</span>
+                <span class="slider-label slider-label-after">HEALED AFTER &middot; 6 WEEKS</span>
+              </div>
+            </div>
+            <div class="transformation-card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2 gap-2 flex-wrap">
+                <span class="transformation-treatment-badge">Signature Microblading</span>
+                <span class="transformation-healed-badge"><i class="fa-solid fa-check-circle me-1"></i>6 Weeks Healed</span>
+              </div>
+              <h3 class="transformation-card-title">Sparse Brows to Defined Featherstrokes</h3>
+              <p class="transformation-card-desc">
+                Clinical Demonstration Study: Restored arch symmetry and natural density using ultra-fine 3D nano microblading strokes with organic dark ash brown pigment.
+              </p>
+              <div class="transformation-card-footer">
+                <span class="small text-muted"><i class="fa-solid fa-droplet text-gold me-1"></i> Dark Ash Brown</span>
+                <button type="button" class="btn-view-transformation" data-transformation-idx="0" aria-label="View larger transformation comparison for Case 1">
+                  View Transformation <i class="fa-solid fa-expand ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Card 2: Person 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="transformation-card">
+            <div class="comparison-slider-wrapper">
+              <div class="comparison-slider">
+                <img class="img-after" src="assets/images/before-after/microblade-pair-after.jpg" alt="Client 2 healed 3D microblading after six weeks">
+                <div class="img-before-wrapper">
+                  <img src="assets/images/before-after/microblade-pair-before.jpg" alt="Client 2 natural brows before treatment">
+                </div>
+                <div class="comparison-handle" role="slider" aria-label="Client 2 3D microblading before and healed after comparison slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <i class="fa-solid fa-left-right"></i>
+                </div>
+                <span class="slider-label slider-label-before">BEFORE</span>
+                <span class="slider-label slider-label-after">HEALED AFTER &middot; 6 WEEKS</span>
+              </div>
+            </div>
+            <div class="transformation-card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2 gap-2 flex-wrap">
+                <span class="transformation-treatment-badge">3D Featherstroke</span>
+                <span class="transformation-healed-badge"><i class="fa-solid fa-check-circle me-1"></i>6 Weeks Healed</span>
+              </div>
+              <h3 class="transformation-card-title">Natural Brow Symmetry & Fullness</h3>
+              <p class="transformation-card-desc">
+                Clinical Demonstration Study: Golden ratio mapped symmetry and multi-directional hair-strokes woven into natural brow flow for effortless day-to-day fullness.
+              </p>
+              <div class="transformation-card-footer">
+                <span class="small text-muted"><i class="fa-solid fa-droplet text-gold me-1"></i> Brown 2 & Golden Brown</span>
+                <button type="button" class="btn-view-transformation" data-transformation-idx="1" aria-label="View larger transformation comparison for Case 2">
+                  View Transformation <i class="fa-solid fa-expand ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Card 3: Person 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="transformation-card">
+            <div class="comparison-slider-wrapper">
+              <div class="comparison-slider">
+                <img class="img-after" src="assets/images/before-after/annual-touchup-after.jpg" alt="Client 3 healed ombre powder brows after six weeks">
+                <div class="img-before-wrapper">
+                  <img src="assets/images/before-after/annual-touchup-before.jpg" alt="Client 3 natural faint blonde brows before treatment">
+                </div>
+                <div class="comparison-handle" role="slider" aria-label="Client 3 powder brows before and healed after comparison slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <i class="fa-solid fa-left-right"></i>
+                </div>
+                <span class="slider-label slider-label-before">BEFORE</span>
+                <span class="slider-label slider-label-after">HEALED AFTER &middot; 6 WEEKS</span>
+              </div>
+            </div>
+            <div class="transformation-card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2 gap-2 flex-wrap">
+                <span class="transformation-treatment-badge">Ombré Powder</span>
+                <span class="transformation-healed-badge"><i class="fa-solid fa-check-circle me-1"></i>6 Weeks Healed</span>
+              </div>
+              <h3 class="transformation-card-title">Soft Mist Ombré Arch Definition</h3>
+              <p class="transformation-card-desc">
+                Clinical Demonstration Study: Acoustic single-needle pixel shading restoring faint arches, healing 30% softer into a powdery golden-taupe bloom.
+              </p>
+              <div class="transformation-card-footer">
+                <span class="small text-muted"><i class="fa-solid fa-droplet text-gold me-1"></i> Taupe & Honey Brown</span>
+                <button type="button" class="btn-view-transformation" data-transformation-idx="2" aria-label="View larger transformation comparison for Case 3">
+                  View Transformation <i class="fa-solid fa-expand ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Card 4: Person 4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="transformation-card">
+            <div class="comparison-slider-wrapper">
+              <div class="comparison-slider">
+                <img class="img-after" src="assets/images/before-after/asian-brow-after.jpg" alt="Client 4 healed nano combination brows after six weeks">
+                <div class="img-before-wrapper">
+                  <img src="assets/images/before-after/asian-brow-before.jpg" alt="Client 4 naturally sparse fine brow hairs before treatment">
+                </div>
+                <div class="comparison-handle" role="slider" aria-label="Client 4 nano brows before and healed after comparison slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <i class="fa-solid fa-left-right"></i>
+                </div>
+                <span class="slider-label slider-label-before">BEFORE</span>
+                <span class="slider-label slider-label-after">HEALED AFTER &middot; 6 WEEKS</span>
+              </div>
+            </div>
+            <div class="transformation-card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2 gap-2 flex-wrap">
+                <span class="transformation-treatment-badge">Nano Combination</span>
+                <span class="transformation-healed-badge"><i class="fa-solid fa-check-circle me-1"></i>6 Weeks Healed</span>
+              </div>
+              <h3 class="transformation-card-title">Delicate Nano Strokes to Soft Arch</h3>
+              <p class="transformation-card-desc">
+                Clinical Demonstration Study: Precision nano hair strokes at the bulb softly blending into feather-light powder shading along the arch and tail without harsh contours.
+              </p>
+              <div class="transformation-card-footer">
+                <span class="small text-muted"><i class="fa-solid fa-droplet text-gold me-1"></i> Ebony & Charcoal Mist</span>
+                <button type="button" class="btn-view-transformation" data-transformation-idx="3" aria-label="View larger transformation comparison for Case 4">
+                  View Transformation <i class="fa-solid fa-expand ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Card 5: Person 5 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="transformation-card">
+            <div class="comparison-slider-wrapper">
+              <div class="comparison-slider">
+                <img class="img-after" src="assets/images/before-after/black-brow-after.jpg" alt="Client 5 healed rich ombre powder brows after six weeks">
+                <div class="img-before-wrapper">
+                  <img src="assets/images/before-after/black-brow-before.jpg" alt="Client 5 thinning brow tails on melanin-rich skin before treatment">
+                </div>
+                <div class="comparison-handle" role="slider" aria-label="Client 5 ombre powder brows before and healed after comparison slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <i class="fa-solid fa-left-right"></i>
+                </div>
+                <span class="slider-label slider-label-before">BEFORE</span>
+                <span class="slider-label slider-label-after">HEALED AFTER &middot; 6 WEEKS</span>
+              </div>
+            </div>
+            <div class="transformation-card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2 gap-2 flex-wrap">
+                <span class="transformation-treatment-badge">Rich Ombré Powder</span>
+                <span class="transformation-healed-badge"><i class="fa-solid fa-check-circle me-1"></i>6 Weeks Healed</span>
+              </div>
+              <h3 class="transformation-card-title">High-Definition Velvet Powder Brows</h3>
+              <p class="transformation-card-desc">
+                Clinical Demonstration Study: Customized high-density pixel layering for melanin-rich skin with warm undertone balancing and deep espresso-ebony pigment retention.
+              </p>
+              <div class="transformation-card-footer">
+                <span class="small text-muted"><i class="fa-solid fa-droplet text-gold me-1"></i> Deep Espresso & Ebony</span>
+                <button type="button" class="btn-view-transformation" data-transformation-idx="4" aria-label="View larger transformation comparison for Case 5">
+                  View Transformation <i class="fa-solid fa-expand ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transformation Card 6: Person 6 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="transformation-card">
+            <div class="comparison-slider-wrapper">
+              <div class="comparison-slider">
+                <img class="img-after" src="assets/images/before-after/latina-brow-after.jpg" alt="Client 6 healed combination brows after six weeks">
+                <div class="img-before-wrapper">
+                  <img src="assets/images/before-after/latina-brow-before.jpg" alt="Client 6 over-tweezed asymmetric eyebrows before treatment">
+                </div>
+                <div class="comparison-handle" role="slider" aria-label="Client 6 combination brows before and healed after comparison slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <i class="fa-solid fa-left-right"></i>
+                </div>
+                <span class="slider-label slider-label-before">BEFORE</span>
+                <span class="slider-label slider-label-after">HEALED AFTER &middot; 6 WEEKS</span>
+              </div>
+            </div>
+            <div class="transformation-card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2 gap-2 flex-wrap">
+                <span class="transformation-treatment-badge">Combination Brows</span>
+                <span class="transformation-healed-badge"><i class="fa-solid fa-check-circle me-1"></i>6 Weeks Healed</span>
+              </div>
+              <h3 class="transformation-card-title">Asymmetry Correction & Hybrid Lift</h3>
+              <p class="transformation-card-desc">
+                Clinical Demonstration Study: Balanced uneven brow heights and sparse tails through golden ratio re-mapping, pairing crisp micro-strokes with warm dark chocolate shading.
+              </p>
+              <div class="transformation-card-footer">
+                <span class="small text-muted"><i class="fa-solid fa-droplet text-gold me-1"></i> Dark Warm Chocolate</span>
+                <button type="button" class="btn-view-transformation" data-transformation-idx="5" aria-label="View larger transformation comparison for Case 6">
+                  View Transformation <i class="fa-solid fa-expand ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Gallery Grid -->
+  <section class="section-padding bg-main">
+    <div class="container">
+      <div id="gallery-container" class="gallery-grid">
+        <!-- Rendered dynamically by JS from PMUStorage.getGallery() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Healed vs Fresh Results Educational Breakdown -->
+  <section class="section-padding bg-subtle border-top">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Client Education</span>
+        <h2 class="section-title">Fresh Day-1 vs Healed 6-Week Results</h2>
+        <p class="section-subtitle">Understanding the biological healing shift helps you anticipate every stage of your transformation with total confidence.</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="pmu-card p-4 h-100 text-center">
+            <span class="pmu-badge pmu-badge-gold mb-3">Phase 1</span>
+            <h5 class="font-serif mb-2">Day 1: Sharp & Saturated</h5>
+            <p class="text-muted small mb-0">Pigment rests in both the epidermis and upper dermis. Strokes appear sharp, dark, and slightly elevated. Skin may exhibit subtle rosy undertones around mapped boundaries.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pmu-card p-4 h-100 text-center">
+            <span class="pmu-badge pmu-badge-warning mb-3">Phase 2</span>
+            <h5 class="font-serif mb-2">Days 7-14: Flaking & Ghosting</h5>
+            <p class="text-muted small mb-0">As the top stratum corneum layer naturally sloughs off, strokes temporarily appear milky or faded. This is completely normal as new collagen-rich skin covers the pigment.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pmu-card p-4 h-100 text-center">
+            <span class="pmu-badge pmu-badge-success mb-3">Phase 3</span>
+            <h5 class="font-serif mb-2">Weeks 4-6: True Color Bloom</h5>
+            <p class="text-muted small mb-0">The epidermis fully settles and becomes translucent. The true pigment color blooms to the surface, appearing 30-40% softer, 10-15% lighter, and perfectly integrated into real hair.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photography Integrity Guarantee -->
+      <div class="pmu-card p-4 p-md-5 border-2 border-gold-subtle">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-2 text-center text-lg-start">
+            <div class="rounded-circle bg-gold text-dark d-inline-flex align-items-center justify-content-center" style="width: 72px; height: 72px; font-size: 2rem;">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <h4 class="font-serif mb-2">The AURA 100% Untouched Photography Guarantee</h4>
+            <p class="text-muted small mb-0">
+              We never use Instagram beauty filters, skin-blurring AI tools, or digital retouching on our portfolio photos. What you see is genuine human skin texture, authentic healed hair strokes, and true natural lighting in our Madison Avenue clinical suites.
+            </p>
+          </div>
+          <div class="col-lg-3 text-lg-end">
+            <a href="booking.html" class="btn btn-pmu-gold w-100">Schedule Assessment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery FAQs -->
+  <section class="section-padding bg-main border-top">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Frequently Asked</span>
+        <h2 class="section-title">Portfolio & Results FAQ</h2>
+      </div>
+
+      <div class="accordion pmu-accordion max-w-2xl mx-auto" id="galleryFaqAccordion" style="max-width: 800px;">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq1">
+              Why do before-and-after results look slightly different on oily skin?
+            </button>
+          </h2>
+          <div id="gfaq1" class="accordion-collapse collapse show" data-bs-parent="#galleryFaqAccordion">
+            <div class="accordion-body small text-muted">
+              Oily skin naturally produces higher sebum lipid levels which soften individual microbladed hair strokes over time into a powdery shadow. For oily or combination skin with large pores, we strongly recommend Ombré Powder or Combination Hybrid brows for optimal 2-year retention.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq2">
+              Can I see results on older or mature clients?
+            </button>
+          </h2>
+          <div id="gfaq2" class="accordion-collapse collapse" data-bs-parent="#galleryFaqAccordion">
+            <div class="accordion-body small text-muted">
+              Yes! Over 40% of our clientele are women between ages 45 and 75 seeking to restore arches lost to hormonal thinning or over-tweezing. For mature, fragile skin, our digital single-needle nano brows deliver exquisite feathering with zero skin trauma.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gfaq3">
+              How do you prevent pigment from discoloring into gray or blue?
+            </button>
+          </h2>
+          <div id="gfaq3" class="accordion-collapse collapse" data-bs-parent="#galleryFaqAccordion">
+            <div class="accordion-body small text-muted">
+              Unwanted color shift is caused by poor pigment quality or implanting too deeply into the subcutaneous fat layer. Our master artists work strictly at the basal dermal membrane using medical-grade organic/hybrid formulas (Tina Davies I Love Ink & Perma Blend Luxe) that fade evenly into lighter browns.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <!-- Standardized Studio Footer -->
+  <footer class="pmu-footer">
+    <div class="container pmu-footer-top">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Atelier Story -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pmu-brand mb-3">
+            <div class="pmu-brand-icon">A</div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">AURA</span>
+              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+            </div>
+          </div>
+          <p class="text-white-50 small mb-4">
+            Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="footer-badge-item"><i class="fa-solid fa-award"></i> PhiAcademy Grand Master</span>
+            <span class="footer-badge-item"><i class="fa-solid fa-shield-virus"></i> OSHA Certified</span>
+          </div>
+          <div class="pmu-footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Pinterest" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/15552347890" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Treatments -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Treatments</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="service-details.html?service=microblading">Microblading</a></li>
+            <li><a href="service-details.html?service=powder-brows">Ombré Powder Brows</a></li>
+            <li><a href="service-details.html?service=combo-brows">Combination Brows</a></li>
+            <li><a href="service-details.html?service=nano-brows">Digital Nano Brows</a></li>
+            <li><a href="service-details.html?service=lip-blush">Velvet Lip Blush</a></li>
+            <li><a href="service-details.html?service=annual-touchup">Annual Touch-Up</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Studio -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Studio</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="about.html">About Studio</a></li>
+            <li><a href="artists.html">Master Artists</a></li>
+            <li><a href="gallery.html">Before &amp; Afters</a></li>
+            <li><a href="aftercare.html">Aftercare Guide</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="contact.html">Studio Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="pmu-footer-title">Studio Concierge</h5>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>740 Madison Avenue, 4th Floor, New York, NY 10065</span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+15552347890" class="text-white-50 text-decoration-none">+1 (555) 234-7890</a></span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+          </div>
+
+          <div class="pmu-newsletter-box">
+            <form class="w-100 d-flex position-relative footer-newsletter-form" novalidate>
+              <input type="email" class="form-control footer-newsletter-input" placeholder="VIP beauty updates &amp; discounts..." required aria-label="VIP beauty updates &amp; discounts email">
+              <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <div class="footer-newsletter-feedback small mt-2" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pmu-footer-bottom">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="text-white-50 small">
+          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+        </div>
+        <div class="d-flex flex-wrap gap-3 small">
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
+          <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="btn-back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <!-- Transformation Comparison Modal (Larger View) -->
+  <div class="modal fade pmu-transformation-modal" id="transformationModal" tabindex="-1" aria-labelledby="transformationModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="transformation-treatment-badge" id="modalTreatmentBadge">Signature Microblading</span>
+            <span class="transformation-healed-badge" id="modalHealedBadge"><i class="fa-solid fa-check-circle me-1"></i>6 Weeks Healed</span>
+            <h4 class="modal-title font-serif h5 mb-0 ms-2" id="transformationModalTitle">Transformation Details</h4>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4 align-items-center">
+            <!-- Large Interactive Slider Column -->
+            <div class="col-lg-8">
+              <div class="comparison-slider-wrapper modal-slider-wrapper">
+                <div class="comparison-slider" id="modalSlider">
+                  <img class="img-after" id="modalImgAfter" src="" alt="Healed Result After 6 Weeks">
+                  <div class="img-before-wrapper">
+                    <img id="modalImgBefore" src="" alt="Natural Brows Before Treatment">
+                  </div>
+                  <div class="comparison-handle" role="slider" aria-label="Large comparison slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                    <i class="fa-solid fa-left-right"></i>
+                  </div>
+                  <span class="slider-label slider-label-before">BEFORE</span>
+                  <span class="slider-label slider-label-after">HEALED AFTER &middot; 6 WEEKS</span>
+                </div>
+              </div>
+              <!-- View Mode Controls -->
+              <div class="d-flex justify-content-center align-items-center gap-2 mt-3 flex-wrap">
+                <button type="button" class="btn-modal-mode active" data-mode="slider"><i class="fa-solid fa-sliders me-1"></i> Interactive Slider</button>
+                <button type="button" class="btn-modal-mode" data-mode="before"><i class="fa-solid fa-eye me-1"></i> View Before</button>
+                <button type="button" class="btn-modal-mode" data-mode="after"><i class="fa-solid fa-sparkles me-1"></i> View Healed (6 Wks)</button>
+              </div>
+            </div>
+
+            <!-- Case Clinical Study Details Column -->
+            <div class="col-lg-4">
+              <div class="pmu-card p-4 h-100 bg-subtle">
+                <span class="section-eyebrow text-gold mb-1">Clinical Case Analysis</span>
+                <h4 class="font-serif h5 mb-2" id="modalCaseHeading">Sparse Brows to Defined Featherstrokes</h4>
+                <p class="text-muted small mb-4" id="modalCaseDesc">
+                  Detailed analysis...
+                </p>
+
+                <div class="modal-specs-list">
+                  <div class="spec-item mb-2 pb-2">
+                    <span class="spec-label text-muted small d-block">Starting Condition:</span>
+                    <strong class="spec-value small text-main" id="modalSpecStarting">Sparse, thinned arches</strong>
+                  </div>
+                  <div class="spec-item mb-2 pb-2">
+                    <span class="spec-label text-muted small d-block">Technique:</span>
+                    <strong class="spec-value small text-gold" id="modalSpecTechnique">Nano Microblading (0.18mm)</strong>
+                  </div>
+                  <div class="spec-item mb-2 pb-2">
+                    <span class="spec-label text-muted small d-block">Pigment Formulation:</span>
+                    <strong class="spec-value small text-main" id="modalSpecPigment">Tina Davies Dark Brown & Ash Brown</strong>
+                  </div>
+                  <div class="spec-item mb-2 pb-2">
+                    <span class="spec-label text-muted small d-block">Artist:</span>
+                    <strong class="spec-value small text-main" id="modalSpecArtist">Elena Rostova</strong>
+                  </div>
+                  <div class="spec-item mb-2 pb-2">
+                    <span class="spec-label text-muted small d-block">Healing Stage:</span>
+                    <strong class="spec-value small text-main" id="modalSpecHealing">Fully Healed (6 Weeks Post-Touchup)</strong>
+                  </div>
+                  <div class="spec-item pt-1">
+                    <span class="spec-label text-muted small d-block mb-1">Integrity Protocol:</span>
+                    <span class="pmu-badge pmu-badge-success small"><i class="fa-solid fa-shield-halved me-1"></i> 100% Untouched Clinical Lighting</span>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                  <button type="button" class="btn btn-sm btn-pmu-outline btn-modal-prev" aria-label="Previous Case"><i class="fa-solid fa-chevron-left me-1"></i> Previous</button>
+                  <span class="small text-muted fw-semibold" id="modalCaseCounter">Case 1 of 6</span>
+                  <button type="button" class="btn btn-sm btn-pmu-outline btn-modal-next" aria-label="Next Case">Next <i class="fa-solid fa-chevron-right ms-1"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/comparison-slider.js"></script>
+  <script src="js/transformations.js"></script>
+  <script src="js/gallery.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('gallery-container');
+      const items = PMUStorage.getGallery();
+
+      container.innerHTML = items.map(item => `
+        <div class="gallery-item" data-category="${item.category}" data-lightbox-img="${item.afterImg}" data-lightbox-title="${item.title}" data-lightbox-subtitle="${item.treatment} • ${item.artist}">
+          <div class="gallery-thumb-wrap">
+            <img src="${item.afterImg}" alt="${item.title}">
+            <div class="gallery-overlay">
+              <span class="pmu-badge pmu-badge-gold mb-1" style="width: fit-content;">${item.healingStage}</span>
+              <h5 class="gallery-info-title font-serif mb-1">${item.title}</h5>
+              <div class="gallery-info-subtitle">${item.artist} &bull; ${item.treatment}</div>
+            </div>
+          </div>
+          <div class="p-3 bg-surface">
+            <div class="d-flex justify-content-between align-items-center small text-muted">
+              <span><strong>Formula:</strong> ${item.pigmentUsed ? item.pigmentUsed.split('-')[0] : 'Custom Blend'}</span>
+              <i class="fa-solid fa-expand text-gold"></i>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Rebind lightbox triggers after dynamic render
+      if (window.PMUGallery) {
+        PMUGallery.bindLightboxTriggers();
+      }
+    });
+  </script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

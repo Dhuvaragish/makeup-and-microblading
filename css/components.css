@@ -1,0 +1,897 @@
+/* ==========================================================================
+   AURA PMU & MICROBLADING STUDIO - COMPONENTS & UI ELEMENTS
+   ========================================================================== */
+
+/* 1. BUTTONS */
+.btn-pmu-gold {
+  background: var(--pmu-gradient-gold);
+  color: #1a1b1f !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  padding: 0.82rem 1.85rem;
+  border-radius: var(--pmu-radius-full);
+  border: none;
+  box-shadow: 0 4px 16px rgba(197, 168, 128, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  white-space: nowrap !important;
+  transition: var(--pmu-transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-pmu-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 168, 128, 0.48);
+  filter: brightness(1.05);
+}
+
+.btn-pmu-outline {
+  background: transparent;
+  color: var(--pmu-primary) !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  padding: 0.78rem 1.85rem;
+  border-radius: var(--pmu-radius-full);
+  border: 1.5px solid var(--pmu-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  white-space: nowrap !important;
+  transition: var(--pmu-transition);
+  cursor: pointer;
+}
+
+.btn-pmu-outline:hover {
+  background-color: var(--pmu-primary);
+  color: #1a1b1f !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 168, 128, 0.3);
+}
+
+.btn-pmu-dark {
+  background-color: var(--pmu-secondary);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.82rem 1.85rem;
+  border-radius: var(--pmu-radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  transition: var(--pmu-transition);
+}
+
+.btn-pmu-dark:hover {
+  background-color: #1a1b1f;
+  color: var(--pmu-primary) !important;
+  border-color: var(--pmu-primary);
+  transform: translateY(-2px);
+}
+
+.btn-pmu-sm {
+  padding: 0.5rem 1.15rem;
+  font-size: 0.82rem;
+}
+
+.btn-pmu-lg {
+  padding: 1rem 2.4rem;
+  font-size: 1.05rem;
+}
+
+/* 2. CARDS */
+.pmu-card {
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  box-shadow: var(--pmu-shadow-sm);
+  transition: var(--pmu-transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pmu-card.h-100 {
+  height: 100%;
+}
+
+.pmu-card.text-center h5 {
+  min-height: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.pmu-card.text-center p {
+  min-height: 4.2rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pmu-card:hover {
+  border-color: var(--pmu-primary-light);
+  box-shadow: var(--pmu-shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Service Card */
+.service-card {
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  overflow: hidden;
+  transition: var(--pmu-transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  border-color: var(--pmu-primary);
+  transform: translateY(-5px);
+  box-shadow: var(--pmu-shadow-md);
+}
+
+.service-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+  flex-shrink: 0;
+}
+
+.service-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-card-img-wrap img {
+  transform: scale(1.06);
+}
+
+.service-card-price-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(20, 21, 24, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--pmu-primary-light);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--pmu-radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: 1px solid rgba(223, 202, 167, 0.3);
+  z-index: 2;
+}
+
+.service-card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.85rem;
+  color: var(--pmu-text-muted);
+}
+
+.service-card-meta i {
+  color: var(--pmu-primary);
+  margin-right: 0.35rem;
+}
+
+.service-card-title,
+.service-card-body h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+  min-height: 1.8rem;
+}
+
+.service-card-desc,
+.service-card-body p {
+  color: var(--pmu-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+  min-height: 4.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.service-card-body .btn,
+.service-card-body a.btn,
+.service-card-body .btn-pmu-outline,
+.service-card-body .btn-pmu-gold,
+.service-card-body > .d-flex {
+  margin-top: auto;
+}
+
+/* Artist Card */
+.artist-card {
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  overflow: hidden;
+  transition: var(--pmu-transition);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.artist-card:hover {
+  border-color: var(--pmu-primary);
+  transform: translateY(-5px);
+  box-shadow: var(--pmu-shadow-lg);
+}
+
+.artist-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+  flex-shrink: 0;
+}
+
+.artist-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.artist-card:hover .artist-img-wrap img {
+  transform: scale(1.05);
+}
+
+.artist-social-overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: var(--pmu-transition);
+}
+
+.artist-card:hover .artist-social-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.artist-social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1b1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: var(--pmu-transition-fast);
+}
+
+.artist-social-icon:hover {
+  background: var(--pmu-primary);
+  color: #ffffff;
+}
+
+.artist-card-body {
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.artist-card-body h5 {
+  font-size: 1.15rem;
+  min-height: 1.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.artist-card-body p {
+  min-height: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.artist-card-body .pmu-stars {
+  min-height: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.artist-card-body .btn {
+  margin-top: auto;
+}
+
+/* 3. BADGES & PILLS */
+.pmu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--pmu-radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.pmu-badge-gold {
+  background-color: var(--pmu-primary-ultra-light);
+  color: var(--pmu-primary-dark);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+[data-theme="dark"] .pmu-badge-gold {
+  color: var(--pmu-primary-light);
+}
+
+.pmu-badge-rose {
+  background-color: var(--pmu-rose-light);
+  color: #c0695b;
+  border: 1px solid rgba(217, 155, 143, 0.3);
+}
+
+.pmu-badge-success {
+  background-color: var(--pmu-success-bg);
+  color: var(--pmu-success);
+}
+
+.pmu-badge-warning {
+  background-color: var(--pmu-warning-bg);
+  color: var(--pmu-warning);
+}
+
+/* 4. ACCORDION */
+.pmu-accordion .accordion-item {
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-md) !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background-color: var(--pmu-bg-surface);
+}
+
+.pmu-accordion .accordion-button {
+  font-family: var(--pmu-font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--pmu-bg-surface);
+  color: var(--pmu-text-main);
+  box-shadow: none;
+}
+
+.pmu-accordion .accordion-button:not(.collapsed) {
+  color: var(--pmu-primary);
+  background-color: var(--pmu-bg-subtle);
+  border-bottom: 1px solid var(--pmu-border);
+}
+
+.pmu-accordion .accordion-button::after {
+  filter: sepia(100%) hue-rotate(350deg);
+}
+
+.pmu-accordion .accordion-body {
+  padding: 1.4rem 1.5rem;
+  color: var(--pmu-text-muted);
+  line-height: 1.7;
+}
+
+/* 5. TABS / PILLS */
+.pmu-tabs {
+  display: inline-flex;
+  background-color: var(--pmu-bg-subtle);
+  padding: 0.35rem;
+  border-radius: var(--pmu-radius-full);
+  border: 1px solid var(--pmu-border);
+  gap: 0.25rem;
+}
+
+.pmu-tab-item {
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--pmu-radius-full);
+  color: var(--pmu-text-muted);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--pmu-transition-fast);
+  border: none;
+  background: transparent;
+}
+
+.pmu-tab-item.active,
+.pmu-tab-item:hover {
+  background-color: var(--pmu-bg-surface);
+  color: var(--pmu-text-main);
+  box-shadow: var(--pmu-shadow-sm);
+}
+
+.pmu-tab-item.active {
+  color: var(--pmu-primary);
+}
+
+.nav-pills .nav-link {
+  color: var(--pmu-text-muted);
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--pmu-radius-full);
+  transition: var(--pmu-transition-fast);
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--pmu-text-main);
+  border-color: var(--pmu-primary);
+  background-color: var(--pmu-bg-subtle);
+}
+
+.nav-pills .nav-link.active {
+  background: var(--pmu-gradient-gold) !important;
+  color: #1a1b1f !important;
+  border-color: var(--pmu-primary) !important;
+  box-shadow: 0 4px 14px rgba(197, 168, 128, 0.35);
+}
+
+[data-theme="dark"] .nav-pills .nav-link {
+  background-color: var(--pmu-bg-surface);
+  color: var(--pmu-text-muted);
+  border-color: var(--pmu-border);
+}
+
+[data-theme="dark"] .nav-pills .nav-link:hover {
+  color: var(--pmu-text-main);
+  background-color: rgba(223, 202, 167, 0.08);
+}
+
+[data-theme="dark"] .nav-pills .nav-link.active {
+  background: var(--pmu-gradient-gold) !important;
+  color: #1a1b1f !important;
+  border-color: var(--pmu-primary) !important;
+  box-shadow: 0 4px 16px rgba(223, 202, 167, 0.35);
+}
+
+/* 6. STAT BOX */
+.pmu-stat-box {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  transition: var(--pmu-transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pmu-stat-box:hover {
+  border-color: var(--pmu-primary);
+  transform: translateY(-3px);
+}
+
+.pmu-stat-number {
+  font-family: var(--pmu-font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--pmu-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.pmu-stat-label {
+  font-size: 0.9rem;
+  color: var(--pmu-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 7. REVIEWS & STARS */
+.pmu-stars {
+  color: #eab308;
+  display: inline-flex;
+  gap: 0.2rem;
+  font-size: 0.95rem;
+}
+
+/* 8. BACK TO TOP BUTTON */
+.btn-back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--pmu-gradient-gold);
+  color: #1a1b1f;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: var(--pmu-transition);
+  z-index: 990;
+}
+
+.btn-back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btn-back-to-top:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+/* ==========================================================================
+   9. PAGE BANNERS & HERO BACKGROUND SYSTEM
+   ========================================================================== */
+.pmu-page-banner {
+  position: relative;
+  background-color: var(--pmu-bg-subtle);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--pmu-border);
+  isolation: isolate;
+  transition: border-color var(--pmu-transition);
+}
+
+/* Theme-specific dynamic overlay driven by CSS variables */
+.pmu-page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--pmu-banner-overlay);
+  transition: background 0.35s ease;
+}
+
+.pmu-page-banner > .container,
+.pmu-page-banner > * {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Banner Typography Contrast Preservation */
+.pmu-page-banner h1,
+.pmu-page-banner .display-4 {
+  color: var(--pmu-banner-title-color) !important;
+  text-shadow: var(--pmu-banner-title-shadow);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.pmu-page-banner p.lead,
+.pmu-page-banner .lead,
+.pmu-page-banner p.text-muted {
+  color: var(--pmu-banner-desc-color) !important;
+  text-shadow: var(--pmu-banner-desc-shadow);
+  font-weight: 500;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.pmu-page-banner .section-eyebrow {
+  color: var(--pmu-banner-eyebrow-color) !important;
+  text-shadow: var(--pmu-banner-eyebrow-shadow);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+/* Banner Interactive Controls, Badges & Cards */
+.pmu-page-banner .pmu-card {
+  background-color: var(--pmu-banner-glass-bg) !important;
+  border-color: var(--pmu-banner-glass-border) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: var(--pmu-transition);
+}
+
+.pmu-page-banner .pmu-tabs {
+  background-color: var(--pmu-banner-glass-bg) !important;
+  border: 1px solid var(--pmu-banner-glass-border) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.pmu-page-banner .pmu-tab-item {
+  color: var(--pmu-banner-desc-color);
+  font-weight: 600;
+}
+
+.pmu-page-banner .pmu-tab-item.active {
+  background: var(--pmu-gradient-gold);
+  color: #1a1b1f !important;
+}
+
+.pmu-page-banner .input-icon-group input {
+  background-color: var(--pmu-banner-glass-bg) !important;
+  border-color: var(--pmu-banner-glass-border) !important;
+  color: var(--pmu-text-main) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.pmu-page-banner .btn-pmu-outline {
+  background-color: var(--pmu-banner-glass-bg);
+  border-color: var(--pmu-primary);
+  color: var(--pmu-banner-title-color) !important;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.pmu-page-banner .btn-pmu-outline:hover {
+  background-color: var(--pmu-primary);
+  color: #1a1b1f !important;
+}
+
+.pmu-page-banner .bg-surface {
+  background-color: var(--pmu-banner-glass-bg) !important;
+  border-color: var(--pmu-banner-glass-border) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Individual Banner Backgrounds */
+.pmu-banner-about {
+  background-image: url('../assets/images/banners/about-banner.jpg');
+}
+
+.pmu-banner-gallery {
+  background-image: url('../assets/images/banners/gallery-banner.jpg');
+}
+
+.pmu-banner-aftercare {
+  background-image: url('../assets/images/banners/aftercare-banner.jpg');
+}
+
+.pmu-banner-contact {
+  background-image: url('../assets/images/banners/contact-banner.jpg');
+}
+
+.pmu-banner-services {
+  background-image: url('../assets/images/banners/services-banner.jpg');
+}
+
+.pmu-banner-artists {
+  background-image: url('../assets/images/banners/artists-banner.jpg');
+}
+
+/* Home Hero Section Backgrounds (Home 1, Home 2, Home 3) */
+.pmu-hero-home,
+.pmu-hero-home-2,
+.pmu-hero-home-3 {
+  position: relative;
+  background-color: var(--pmu-bg-main);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+.pmu-hero-home {
+  background-image: url('../assets/images/banners/home-banner.jpg');
+}
+
+.pmu-hero-home-2 {
+  background-image: url('../assets/images/banners/home-2-banner.jpg');
+}
+
+.pmu-hero-home-3 {
+  background-image: url('../assets/images/banners/home-3-banner.jpg');
+}
+
+.pmu-hero-home::before,
+.pmu-hero-home-2::before,
+.pmu-hero-home-3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--pmu-hero-overlay);
+  transition: background 0.35s ease;
+}
+
+.pmu-hero-home > .container,
+.pmu-hero-home-2 > .container,
+.pmu-hero-home-3 > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.pmu-hero-home h1,
+.pmu-hero-home-2 h1,
+.pmu-hero-home-3 h1 {
+  color: var(--pmu-banner-title-color) !important;
+  text-shadow: var(--pmu-banner-title-shadow);
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.pmu-hero-home h1 .text-gold-gradient,
+.pmu-hero-home-2 h1 .text-gold-gradient,
+.pmu-hero-home-3 h1 .text-gold-gradient {
+  text-shadow: none !important;
+}
+
+.pmu-hero-home p.lead,
+.pmu-hero-home-2 p.lead,
+.pmu-hero-home-3 p.lead {
+  color: var(--pmu-banner-desc-color) !important;
+  text-shadow: var(--pmu-banner-desc-shadow);
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.pmu-hero-home .section-eyebrow,
+.pmu-hero-home-2 .section-eyebrow,
+.pmu-hero-home-3 .section-eyebrow {
+  color: var(--pmu-banner-eyebrow-color) !important;
+  text-shadow: var(--pmu-banner-eyebrow-shadow);
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.pmu-hero-home .fw-semibold,
+.pmu-hero-home-2 .fw-semibold,
+.pmu-hero-home-3 .fw-semibold {
+  color: var(--pmu-banner-title-color) !important;
+  transition: color 0.35s ease;
+}
+
+.pmu-hero-home .btn-pmu-outline,
+.pmu-hero-home-2 .btn-pmu-outline,
+.pmu-hero-home-3 .btn-pmu-outline {
+  background-color: var(--pmu-banner-glass-bg);
+  border-color: var(--pmu-primary);
+  color: var(--pmu-banner-title-color) !important;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: var(--pmu-transition);
+}
+
+.pmu-hero-home .btn-pmu-outline:hover,
+.pmu-hero-home-2 .btn-pmu-outline:hover,
+.pmu-hero-home-3 .btn-pmu-outline:hover {
+  background-color: var(--pmu-primary);
+  color: #1a1b1f !important;
+}
+
+/* Portals Authentication & Dashboard Banners */
+.pmu-portal-auth-page {
+  position: relative;
+  background-color: var(--pmu-bg-subtle);
+  background-image: url('../assets/images/banners/portals-banner.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+.pmu-portal-auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--pmu-portal-overlay);
+  transition: background 0.35s ease;
+}
+
+.pmu-portal-auth-page > header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.pmu-portal-auth-page > main,
+.pmu-portal-auth-page > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.pmu-portal-banner {
+  position: relative;
+  background-color: var(--pmu-bg-surface);
+  background-image: url('../assets/images/banners/portals-banner.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.pmu-portal-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--pmu-portal-banner-overlay);
+  transition: background 0.35s ease;
+}
+
+.pmu-portal-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pmu-portal-banner h4,
+.pmu-portal-banner h5 {
+  color: var(--pmu-banner-title-color) !important;
+  text-shadow: var(--pmu-banner-title-shadow);
+  font-weight: 700;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.pmu-portal-banner p,
+.pmu-portal-banner .text-muted {
+  color: var(--pmu-banner-desc-color) !important;
+  text-shadow: var(--pmu-banner-desc-shadow);
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+/* 18. CONSULTATION SERVICE SELECTOR PILLS */
+.consult-service-pill {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.consult-service-pill:hover {
+  border-color: var(--pmu-primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(197, 168, 128, 0.18);
+}
+
+.consult-service-pill.active {
+  border-color: var(--pmu-primary) !important;
+  background-color: var(--pmu-primary-ultra-light) !important;
+  box-shadow: 0 0 0 1px var(--pmu-primary);
+}
+
+[data-theme="dark"] .consult-service-pill.active {
+  background-color: rgba(197, 168, 128, 0.15) !important;
+  border-color: var(--pmu-primary) !important;
+}

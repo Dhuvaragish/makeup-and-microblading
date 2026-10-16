@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | AURA PMU Studio Client & Admin Lounge</title>
+  <meta name="description" content="Sign in to your Aura Permanent Makeup account to manage upcoming appointments, review private treatment records, and aftercare.">
+  
+  <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body class="bg-subtle pmu-portal-auth-page" style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Simple Sticky Header -->
+  <header class="py-3 bg-surface border-bottom sticky-top pmu-header-simple">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="pmu-brand" href="index.html">
+        <div class="pmu-brand-icon">A</div>
+        <div class="pmu-brand-text">
+          <span class="pmu-brand-name">AURA</span>
+          <span class="pmu-brand-tagline">Permanent Makeup Studio</span>
+        </div>
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
+          <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
+          <span class="lang-label visually-hidden">EN (LTR)</span>
+        </button>
+        <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon theme-toggle-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Form Main Container -->
+  <main class="container my-auto py-4 py-md-5" style="max-width: 480px;">
+    <div class="pmu-card p-4 p-md-5">
+      <!-- 1. Header -->
+      <div class="text-center mb-4">
+        <span class="pmu-badge pmu-badge-gold mb-2">Private Lounge Portal</span>
+        <h3 class="font-serif fw-bold mb-1">Welcome Back</h3>
+        <p class="text-muted small mb-0">Sign in to manage appointments, treatment logs &amp; aftercare</p>
+      </div>
+
+      <!-- 2. Social Login -->
+      <div class="d-grid gap-2 mb-3">
+        <button type="button" id="btn-auth-apple" class="btn pmu-btn-social pmu-btn-apple">
+          <i class="fa-brands fa-apple fs-5"></i>
+          <span>Continue with Apple</span>
+        </button>
+        <button type="button" id="btn-auth-google" class="btn pmu-btn-social pmu-btn-google">
+          <i class="fa-brands fa-google text-gold"></i>
+          <span>Continue with Google</span>
+        </button>
+      </div>
+
+      <!-- 3. Divider -->
+      <div class="auth-divider">
+        <span>OR CONTINUE WITH EMAIL</span>
+      </div>
+
+      <!-- 4-8. Form -->
+      <form id="login-form" novalidate>
+        <!-- 4. Email Address -->
+        <div class="mb-3">
+          <label class="form-label" for="login-email">Email Address *</label>
+          <div class="input-icon-group">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" id="login-email" class="form-control" placeholder="name@domain.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <!-- 5. Password -->
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <label class="form-label mb-0" for="login-password">Password *</label>
+            <a href="forgot-password.html" class="small text-gold text-decoration-none">Forgot Password?</a>
+          </div>
+          <div class="input-icon-group position-relative">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="login-password" class="form-control pe-5" placeholder="••••••••" minlength="6" required autocomplete="current-password">
+            <button type="button" class="btn-toggle-password" id="btn-toggle-password" aria-label="Toggle password visibility" title="Show password">
+              <i class="fa-regular fa-eye" id="toggle-password-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. Remember Me -->
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+          <label class="form-check-label small" for="rememberMe">Remember this browser for 30 days</label>
+        </div>
+
+        <!-- 7. Primary Action -->
+        <button type="submit" class="btn-pmu-gold w-100 mb-3">
+          <span>Sign In to Lounge</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <!-- 8. Registration -->
+        <p class="text-center text-muted small mb-0">
+          New to Aura Studio? <a href="register.html" class="text-gold fw-semibold">Create Client Account</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Simple Footer -->
+    <!-- Standardized Studio Footer -->
+  <footer class="pmu-footer">
+    <div class="container pmu-footer-top">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Atelier Story -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pmu-brand mb-3">
+            <div class="pmu-brand-icon">A</div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">AURA</span>
+              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+            </div>
+          </div>
+          <p class="text-white-50 small mb-4">
+            Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="footer-badge-item"><i class="fa-solid fa-award"></i> PhiAcademy Grand Master</span>
+            <span class="footer-badge-item"><i class="fa-solid fa-shield-virus"></i> OSHA Certified</span>
+          </div>
+          <div class="pmu-footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Pinterest" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/15552347890" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Treatments -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Treatments</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="service-details.html?service=microblading">Microblading</a></li>
+            <li><a href="service-details.html?service=powder-brows">Ombré Powder Brows</a></li>
+            <li><a href="service-details.html?service=combo-brows">Combination Brows</a></li>
+            <li><a href="service-details.html?service=nano-brows">Digital Nano Brows</a></li>
+            <li><a href="service-details.html?service=lip-blush">Velvet Lip Blush</a></li>
+            <li><a href="service-details.html?service=annual-touchup">Annual Touch-Up</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Studio -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Studio</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="about.html">About Studio</a></li>
+            <li><a href="artists.html">Master Artists</a></li>
+            <li><a href="gallery.html">Before &amp; Afters</a></li>
+            <li><a href="aftercare.html">Aftercare Guide</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="contact.html">Studio Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="pmu-footer-title">Studio Concierge</h5>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>740 Madison Avenue, 4th Floor, New York, NY 10065</span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+15552347890" class="text-white-50 text-decoration-none">+1 (555) 234-7890</a></span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+          </div>
+
+          <div class="pmu-newsletter-box">
+            <form class="w-100 d-flex position-relative footer-newsletter-form" novalidate>
+              <input type="email" class="form-control footer-newsletter-input" placeholder="VIP beauty updates &amp; discounts..." required aria-label="VIP beauty updates &amp; discounts email">
+              <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <div class="footer-newsletter-feedback small mt-2" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pmu-footer-bottom">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="text-white-50 small">
+          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+        </div>
+        <div class="d-flex flex-wrap gap-3 small">
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
+          <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="btn-back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

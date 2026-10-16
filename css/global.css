@@ -1,0 +1,300 @@
+/* ==========================================================================
+   AURA PMU & MICROBLADING STUDIO - GLOBAL STYLES & TYPOGRAPHY
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--pmu-font-sans);
+  background-color: var(--pmu-bg-main);
+  color: var(--pmu-text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body > main,
+body > .page-wrapper,
+body > .dashboard-wrapper,
+body > .auth-wrapper,
+.pmu-page-main {
+  flex-grow: 1;
+}
+
+body > .pmu-footer,
+.dashboard-main > .pmu-footer {
+  margin-top: auto;
+}
+
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pmu-bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pmu-primary);
+  border-radius: var(--pmu-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pmu-primary-hover);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6,
+.font-serif,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: var(--pmu-font-serif);
+  color: var(--pmu-text-main);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+h1, .h1 { font-size: calc(1.75rem + 1.5vw); }
+h2, .h2 { font-size: calc(1.5rem + 1vw); }
+h3, .h3 { font-size: calc(1.25rem + 0.6vw); }
+h4, .h4 { font-size: 1.35rem; }
+h5, .h5 { font-size: 1.15rem; }
+h6, .h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--pmu-text-muted);
+}
+
+a {
+  color: var(--pmu-primary);
+  text-decoration: none;
+  transition: var(--pmu-transition);
+}
+
+a:hover {
+  color: var(--pmu-primary-hover);
+}
+
+/* Brand Text Classes */
+.text-gold {
+  color: var(--pmu-primary) !important;
+}
+
+.text-gold-gradient {
+  background: var(--pmu-gradient-gold-text, linear-gradient(135deg, #744e1d 0%, #9e712d 35%, #b6873c 65%, #6d4715 100%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #744e1d;
+  display: inline-block;
+  text-shadow: none !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .text-gold-gradient {
+  color: #fcedd8;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.65));
+}
+
+.text-main {
+  color: var(--pmu-text-main) !important;
+}
+
+.text-muted {
+  color: var(--pmu-text-muted) !important;
+}
+
+.bg-gold {
+  background: var(--pmu-gradient-gold) !important;
+  color: #1a1b1f !important;
+}
+
+.border-gold {
+  border-color: var(--pmu-primary) !important;
+}
+
+.bg-card {
+  background-color: var(--pmu-bg-surface) !important;
+}
+
+.bg-main {
+  background-color: var(--pmu-bg-main) !important;
+}
+
+/* Luxury Section Header */
+.section-header {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--pmu-primary);
+  margin-bottom: 0.85rem;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--pmu-primary);
+}
+
+.section-title {
+  margin-bottom: 1.1rem;
+}
+
+.section-subtitle {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05rem;
+  color: var(--pmu-text-muted);
+}
+
+/* Container polish */
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+/* Section Padding */
+.section-padding {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Background Patterns */
+.bg-subtle {
+  background-color: var(--pmu-bg-subtle) !important;
+}
+
+.bg-surface {
+  background-color: var(--pmu-bg-surface) !important;
+}
+
+.bg-pattern {
+  position: relative;
+}
+
+.bg-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--pmu-primary-ultra-light) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Universal Brand Logo & Monogram */
+.pmu-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pmu-brand:hover {
+  text-decoration: none;
+}
+
+.pmu-brand-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  border-radius: 50%;
+  background: var(--pmu-gradient-gold);
+  color: #1a1b1f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: var(--pmu-font-serif);
+  box-shadow: 0 4px 12px rgba(197, 168, 128, 0.35);
+  line-height: 1;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.pmu-brand-icon img,
+.pmu-brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.pmu-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pmu-brand-name {
+  font-family: var(--pmu-font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--pmu-text-main);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.pmu-brand-tagline {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--pmu-primary);
+  font-weight: 600;
+  line-height: 1;
+}
+
+[data-theme="dark"] .pmu-brand-name {
+  color: #f3efe9;
+}
+
+[data-theme="dark"] .pmu-brand-tagline {
+  color: var(--pmu-primary-light);
+}
+

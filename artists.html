@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Artists | AURA Permanent Makeup & Microblading Studio</title>
+  <meta name="description" content="Meet our board-certified master artists specializing in microblading, ombre powder brows, and velvet lip blush.">
+  
+  <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="pmu-topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
+        <span class="pmu-topbar-item"><i class="fa-regular fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="pmu-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="pmu-brand" href="index.html">
+          <div class="pmu-brand-icon">A</div>
+          <div class="pmu-brand-text">
+            <span class="pmu-brand-name">AURA</span>
+            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+          <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="pmuNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="services.html"><i class="fa-solid fa-list-check"></i> All PMU Services</a></li>
+                <li><a class="dropdown-item" href="service-details.html"><i class="fa-solid fa-circle-info"></i> Service Details</a></li>
+                <li><a class="dropdown-item" href="consultation.html"><i class="fa-solid fa-comments"></i> Virtual Consultation</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Artists</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="artists.html"><i class="fa-solid fa-users"></i> Master Artists Team</a></li>
+                <li><a class="dropdown-item" href="artist-details.html"><i class="fa-solid fa-id-card"></i> Artist Portfolio Details</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="header-actions">
+            <!-- Language (RTL/LTR) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
+              <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
+              <span class="lang-label visually-hidden">EN (LTR)</span>
+            </button>
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+              <i class="fa-solid fa-moon theme-toggle-icon"></i>
+            </button>
+            <div class="header-user-status">
+              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+            </div>
+            <a href="booking.html" class="btn-pmu-gold">Book Appointment</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="pmu-page-banner pmu-banner-artists py-5">
+    <div class="container text-center py-4">
+      <span class="section-eyebrow">World-Renowned Masters</span>
+      <h1 class="display-4 font-serif fw-bold mb-3">Meet Our Permanent Makeup Artists</h1>
+      <p class="text-muted lead mx-auto" style="max-width: 650px;">
+        Each of our practitioners is an internationally recognized artist with thousands of verified healed procedures and advanced training in facial symmetry.
+      </p>
+    </div>
+  </section>
+
+  <!-- Artists Grid Section -->
+  <section class="section-padding bg-main">
+    <div class="container">
+      <div id="artists-full-grid" class="row g-4">
+        <!-- Rendered dynamically via JS from PMUStorage -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Accreditation Banner -->
+  <section class="py-5 bg-subtle border-top border-bottom">
+    <div class="container text-center">
+      <h4 class="font-serif mb-4">Recognized & Certified by Global PMU Academies</h4>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 opacity-75">
+        <span class="fw-bold fs-5 text-muted"><i class="fa-solid fa-award text-gold me-2"></i> PhiAcademy Austria</span>
+        <span class="fw-bold fs-5 text-muted"><i class="fa-solid fa-shield-halved text-gold me-2"></i> AAM Board Certified</span>
+        <span class="fw-bold fs-5 text-muted"><i class="fa-solid fa-droplet text-gold me-2"></i> Swiss Color International</span>
+        <span class="fw-bold fs-5 text-muted"><i class="fa-solid fa-leaf text-gold me-2"></i> Tina Davies Pro Team</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Choose Your Specialist Guide -->
+  <section class="section-padding bg-main">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Personalized Selection</span>
+        <h2 class="section-title">How to Choose Your Artist</h2>
+        <p class="section-subtitle">Every artist at AURA is a board-certified master, yet each possesses distinct artistic signatures and stylistic strengths.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 border-top border-4 border-gold">
+            <span class="pmu-badge pmu-badge-gold mb-2">Grand Master</span>
+            <h5 class="font-serif mb-1">Elena Rostova</h5>
+            <small class="text-gold fw-semibold d-block mb-3">PhiBrows Master #1042</small>
+            <p class="text-muted small mb-3"><strong>Signature Style:</strong> Hyper-realistic 3D featherstrokes aligned with golden ratio cranial symmetry. Known for transforming thin, over-plucked 90s brows.</p>
+            <div class="p-2 bg-subtle rounded small text-muted"><strong>Best For:</strong> First-time microblading clients, asymmetrical brows & complex PMU corrections.</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 border-top border-4 border-rose">
+            <span class="pmu-badge pmu-badge-rose mb-2">Lip Authority</span>
+            <h5 class="font-serif mb-1">Sofia Vance</h5>
+            <small class="text-gold fw-semibold d-block mb-3">Swiss Color Specialist</small>
+            <p class="text-muted small mb-3"><strong>Signature Style:</strong> Velvety translucent lip watercolor flush. Renowned for restoring faded vermilion borders and warm melanin neutralization.</p>
+            <div class="p-2 bg-subtle rounded small text-muted"><strong>Best For:</strong> Velvet lip blush, pale borders, and cool/dark melanin color correction.</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 border-top border-4 border-primary">
+            <span class="pmu-badge pmu-badge-gold mb-2">Machine Master</span>
+            <h5 class="font-serif mb-1">Maya Lin</h5>
+            <small class="text-gold fw-semibold d-block mb-3">Seoul PMU Graduate</small>
+            <p class="text-muted small mb-3"><strong>Signature Style:</strong> Ultra-gentle single-needle digital nano strokes and airy pixelated ombré misting with zero skin cutting.</p>
+            <div class="p-2 bg-subtle rounded small text-muted"><strong>Best For:</strong> Oily skin, delicate mature skin, and airbrushed ombré powder brows.</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 border-top border-4 border-success">
+            <span class="pmu-badge pmu-badge-gold mb-2">Symmetry Stylist</span>
+            <h5 class="font-serif mb-1">Camilla Rossi</h5>
+            <small class="text-gold fw-semibold d-block mb-3">PhiAcademy Artist</small>
+            <p class="text-muted small mb-3"><strong>Signature Style:</strong> Bespoke hybrid arches, light brunette and blonde color blends, and soft effortless daytime brow definition.</p>
+            <div class="p-2 bg-subtle rounded small text-muted"><strong>Best For:</strong> Combination brows, annual color boosts, and soft blonde restorations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artist Credentials & Mentorship Standards -->
+  <section class="section-padding bg-subtle border-top">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="section-eyebrow">The Aura Standard</span>
+          <h2 class="font-serif mb-4">Elite Education & 500+ Supervised Clinical Hours</h2>
+          <p class="text-muted mb-3">
+            At typical studios, practitioners take a 3-day weekend crash course before working on paying clients. At AURA Atelier, our standard is radically different.
+          </p>
+          <p class="text-muted mb-4">
+            Every artist completes an intensive 6-month clinical residency under Founder Elena Rostova, including 500+ supervised procedure hours, dermatological histology modules, and advanced colorimetry tests before graduating to lead practitioner status.
+          </p>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle bg-gold text-dark p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div><strong>Triennial International Recertification</strong> <small class="text-muted d-block">Attending European PMU conferences in Vienna, Zurich, and Milan.</small></div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle bg-gold text-dark p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div><strong>Annual Bloodborne Pathogen Clearance</strong> <small class="text-muted d-block">Full OSHA and NYC Health Code compliance updated annually.</small></div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle bg-gold text-dark p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;"><i class="fa-solid fa-gem"></i></div>
+              <div><strong>100% Healed Results Portfolio Verification</strong> <small class="text-muted d-block">Each artist's public portfolio contains verified 6-8 week healed results.</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <!-- Artist FAQ Accordion -->
+          <div class="pmu-card p-4 p-md-5">
+            <h4 class="font-serif mb-3">Artist Selection FAQ</h4>
+            <div class="accordion pmu-accordion" id="artistFaqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#afaq1">
+                    Can I bring inspirational photo references?
+                  </button>
+                </h2>
+                <div id="afaq1" class="accordion-collapse collapse show" data-bs-parent="#artistFaqAccordion">
+                  <div class="accordion-body small text-muted">
+                    Yes! We encourage bringing photos of your everyday makeup and brow shapes you admire. Your artist will use them as a stylistic baseline, then tailor the shape to harmonize with your unique bone structure.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#afaq2">
+                    What if my preferred artist is fully booked?
+                  </button>
+                </h2>
+                <div id="afaq2" class="accordion-collapse collapse" data-bs-parent="#artistFaqAccordion">
+                  <div class="accordion-body small text-muted">
+                    You can join our concierge cancellation waitlist, or select "First Available Master." All four artists cross-train under Elena's exact mapping protocol and use identical clinical pigments.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#afaq3">
+                    Can a different artist perform my touch-up?
+                  </button>
+                </h2>
+                <div id="afaq3" class="accordion-collapse collapse" data-bs-parent="#artistFaqAccordion">
+                  <div class="accordion-body small text-muted">
+                    Yes. We keep meticulous clinical charts documenting your exact pigment formula (e.g. 70% Dark Brown + 30% Ash Brown), needle gauge, and depth measurements so any of our masters can seamlessly refine your brows.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <!-- Standardized Studio Footer -->
+  <footer class="pmu-footer">
+    <div class="container pmu-footer-top">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Atelier Story -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pmu-brand mb-3">
+            <div class="pmu-brand-icon">A</div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">AURA</span>
+              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+            </div>
+          </div>
+          <p class="text-white-50 small mb-4">
+            Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="footer-badge-item"><i class="fa-solid fa-award"></i> PhiAcademy Grand Master</span>
+            <span class="footer-badge-item"><i class="fa-solid fa-shield-virus"></i> OSHA Certified</span>
+          </div>
+          <div class="pmu-footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Pinterest" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/15552347890" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Treatments -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Treatments</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="service-details.html?service=microblading">Microblading</a></li>
+            <li><a href="service-details.html?service=powder-brows">Ombré Powder Brows</a></li>
+            <li><a href="service-details.html?service=combo-brows">Combination Brows</a></li>
+            <li><a href="service-details.html?service=nano-brows">Digital Nano Brows</a></li>
+            <li><a href="service-details.html?service=lip-blush">Velvet Lip Blush</a></li>
+            <li><a href="service-details.html?service=annual-touchup">Annual Touch-Up</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Studio -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Studio</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="about.html">About Studio</a></li>
+            <li><a href="artists.html">Master Artists</a></li>
+            <li><a href="gallery.html">Before &amp; Afters</a></li>
+            <li><a href="aftercare.html">Aftercare Guide</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="contact.html">Studio Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="pmu-footer-title">Studio Concierge</h5>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>740 Madison Avenue, 4th Floor, New York, NY 10065</span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+15552347890" class="text-white-50 text-decoration-none">+1 (555) 234-7890</a></span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+          </div>
+
+          <div class="pmu-newsletter-box">
+            <form class="w-100 d-flex position-relative footer-newsletter-form" novalidate>
+              <input type="email" class="form-control footer-newsletter-input" placeholder="VIP beauty updates &amp; discounts..." required aria-label="VIP beauty updates &amp; discounts email">
+              <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <div class="footer-newsletter-feedback small mt-2" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pmu-footer-bottom">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="text-white-50 small">
+          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+        </div>
+        <div class="d-flex flex-wrap gap-3 small">
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
+          <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="btn-back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('artists-full-grid');
+      const artists = PMUStorage.getArtists();
+
+      container.innerHTML = artists.map(a => `
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="artist-card w-100 d-flex flex-column">
+            <div class="artist-img-wrap">
+              <img src="${a.image}" alt="${a.name}">
+              <div class="artist-social-overlay">
+                <a href="#" class="artist-social-icon"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="artist-card-body d-flex flex-column flex-grow-1">
+              <h5 class="font-serif mb-1">${a.name}</h5>
+              <p class="text-gold small fw-semibold mb-2">${a.role}</p>
+              <div class="pmu-stars small mb-2"><i class="fa-solid fa-star"></i> 5.0 (${a.reviewCount} client reviews)</div>
+              <p class="text-muted small mb-3 flex-grow-1"><em>"${a.quote}"</em></p>
+              <div class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                ${a.specialties.map(s => `<span class="badge bg-subtle text-muted border">${s}</span>`).join('')}
+              </div>
+              <div class="d-flex gap-2 mt-auto">
+                <a href="artist-details.html?artist=${a.id}" class="btn btn-sm btn-pmu-outline flex-grow-1">Full Bio</a>
+                <a href="booking.html?artist=${a.id}" class="btn btn-sm btn-pmu-gold flex-grow-1">Book With ${a.name.split(' ')[0]}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

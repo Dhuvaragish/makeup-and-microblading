@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Aftercare Checklist | AURA Client Lounge</title>
+  
+  <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div class="sidebar-header">
+        <a class="pmu-brand" href="index.html">
+          <div class="pmu-brand-icon">A</div>
+          <div class="pmu-brand-text">
+            <span class="pmu-brand-name">AURA</span>
+            <span class="pmu-brand-tagline">Client Lounge</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="p-3 text-center border-bottom bg-subtle">
+        <img src="assets/images/testimonials/client-1.jpg" alt="Sarah Jenkins" class="rounded-circle mb-2" style="width: 60px; height: 60px; object-fit: cover;">
+        <h6 class="font-serif mb-0">Sarah Jenkins</h6>
+        <small class="text-muted">Client Member #8041</small>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-heading">Menu</li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="client-dashboard.html">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Overview</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="client-appointments.html">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>My Appointments</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="client-treatment-history.html">
+            <i class="fa-solid fa-notes-medical"></i>
+            <span>Treatment History</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link active" href="client-aftercare.html">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <span>Daily Aftercare</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="client-profile.html">
+            <i class="fa-regular fa-user"></i>
+            <span>Profile Settings</span>
+          </a>
+        </li>
+        <li class="sidebar-heading">Studio</li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="booking.html">
+            <i class="fa-solid fa-plus-circle text-gold"></i>
+            <span>Book New Treatment</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.html">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Return to Studio Website</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <button class="btn btn-sm btn-outline-danger w-100" onclick="PMUAuth.logout();">
+          <i class="fa-solid fa-right-from-bracket me-2"></i> Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="dashboard-main">
+      <div class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-outline-secondary d-lg-none" onclick="document.getElementById('dashboardSidebar').classList.toggle('show');">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h5 class="mb-0 font-serif">Personalized Recovery Routine</h5>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
+            <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
+            <span class="lang-label visually-hidden">EN (LTR)</span>
+          </button>
+          <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Theme">
+            <i class="fa-solid fa-moon theme-toggle-icon"></i>
+          </button>
+          <a href="tel:+15552347890" class="btn btn-sm btn-outline-danger">
+            <i class="fa-solid fa-phone me-1"></i> Priority Healing Hotline
+          </a>
+        </div>
+      </div>
+
+      <div class="dashboard-content">
+        <!-- Daily Progress Tracker Card -->
+        <div class="pmu-card p-4 mb-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <div>
+              <span class="pmu-badge pmu-badge-gold mb-2">Stage: Day 7 of 14</span>
+              <h4 class="font-serif mb-1">Today's Aftercare Compliance Checklist</h4>
+              <p class="text-muted small mb-0">Check off each task as you complete it today to maintain optimal pigment retention.</p>
+            </div>
+            <div class="text-end">
+              <span class="small text-muted d-block">Daily Completion</span>
+              <span class="fs-4 font-serif fw-bold text-gold" id="daily-care-progress">50%</span>
+            </div>
+          </div>
+
+          <div class="list-group list-group-flush border-top border-bottom py-2">
+            <label class="list-group-item d-flex align-items-center gap-3 border-0 bg-transparent px-0 py-2">
+              <input class="form-check-input healing-task-check" type="checkbox" checked>
+              <span>Morning gentle rinse with sterile cooled water (pat completely dry with clean lint-free tissue)</span>
+            </label>
+            <label class="list-group-item d-flex align-items-center gap-3 border-0 bg-transparent px-0 py-2">
+              <input class="form-check-input healing-task-check" type="checkbox" checked>
+              <span>Apply rice-grain size amount of Aura Botanical Healing Balm across both brows</span>
+            </label>
+            <label class="list-group-item d-flex align-items-center gap-3 border-0 bg-transparent px-0 py-2">
+              <input class="form-check-input healing-task-check" type="checkbox">
+              <span>Midday hydration check (ensure brows are neither bone dry nor greasy/suffocated)</span>
+            </label>
+            <label class="list-group-item d-flex align-items-center gap-3 border-0 bg-transparent px-0 py-2">
+              <input class="form-check-input healing-task-check" type="checkbox">
+              <span>Evening cleansing & thin layer balm re-application before sleep</span>
+            </label>
+          </div>
+
+          <div class="row g-3 mt-3">
+            <div class="col-md-6">
+              <div class="p-3 bg-subtle rounded-3">
+                <h6 class="font-serif mb-1"><i class="fa-solid fa-droplet text-primary me-2"></i> How to Wash:</h6>
+                <p class="small text-muted mb-0">Do not scrub in circles. Lightly pat clean foam over brows with fingertips and rinse gently with cupped hands.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 bg-subtle rounded-3">
+                <h6 class="font-serif mb-1"><i class="fa-solid fa-hand-dots text-warning me-2"></i> Balm Quantity:</h6>
+                <p class="small text-muted mb-0">Less is more! Half a grain of rice is enough for both eyebrows combined. Never suffocate the skin with thick layers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Touch-up Reminder Card -->
+        <div class="pmu-card p-4 bg-subtle">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div>
+              <span class="pmu-badge pmu-badge-success mb-2">Upcoming Touch-Up</span>
+              <h5 class="font-serif mb-1">Your 6-Week Touch-Up Window</h5>
+              <p class="text-muted small mb-0">Eligible between Nov 16 and Nov 30, 2026. Perfecting spots and color boost.</p>
+            </div>
+            <a href="booking.html?service=srv-annual-touchup" class="btn btn-pmu-gold btn-sm">Schedule Touch-Up ($150)</a>
+          </div>
+        </div>
+      </div>
+      <!-- Standardized Studio Footer -->
+  <footer class="pmu-footer">
+    <div class="container pmu-footer-top">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Atelier Story -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pmu-brand mb-3">
+            <div class="pmu-brand-icon">A</div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">AURA</span>
+              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+            </div>
+          </div>
+          <p class="text-white-50 small mb-4">
+            Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="footer-badge-item"><i class="fa-solid fa-award"></i> PhiAcademy Grand Master</span>
+            <span class="footer-badge-item"><i class="fa-solid fa-shield-virus"></i> OSHA Certified</span>
+          </div>
+          <div class="pmu-footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Pinterest" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/15552347890" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Treatments -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Treatments</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="service-details.html?service=microblading">Microblading</a></li>
+            <li><a href="service-details.html?service=powder-brows">Ombré Powder Brows</a></li>
+            <li><a href="service-details.html?service=combo-brows">Combination Brows</a></li>
+            <li><a href="service-details.html?service=nano-brows">Digital Nano Brows</a></li>
+            <li><a href="service-details.html?service=lip-blush">Velvet Lip Blush</a></li>
+            <li><a href="service-details.html?service=annual-touchup">Annual Touch-Up</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Studio -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Studio</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="about.html">About Studio</a></li>
+            <li><a href="artists.html">Master Artists</a></li>
+            <li><a href="gallery.html">Before &amp; Afters</a></li>
+            <li><a href="aftercare.html">Aftercare Guide</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="contact.html">Studio Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="pmu-footer-title">Studio Concierge</h5>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>740 Madison Avenue, 4th Floor, New York, NY 10065</span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+15552347890" class="text-white-50 text-decoration-none">+1 (555) 234-7890</a></span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+          </div>
+
+          <div class="pmu-newsletter-box">
+            <form class="w-100 d-flex position-relative footer-newsletter-form" novalidate>
+              <input type="email" class="form-control footer-newsletter-input" placeholder="VIP beauty updates &amp; discounts..." required aria-label="VIP beauty updates &amp; discounts email">
+              <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <div class="footer-newsletter-feedback small mt-2" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pmu-footer-bottom">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="text-white-50 small">
+          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+        </div>
+        <div class="d-flex flex-wrap gap-3 small">
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
+          <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="btn-back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+    </main>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/client-dashboard.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

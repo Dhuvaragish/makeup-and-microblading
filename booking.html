@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book An Appointment | AURA PMU Studio</title>
+  <meta name="description" content="Reserve your permanent makeup or microblading session. Select your treatment, master artist, date, and time slot with instant confirmation.">
+  
+  <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="pmu-topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span class="pmu-topbar-item"><i class="fa-solid fa-calendar-check text-gold"></i> Guaranteed Appointment Concierge</span>
+        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="pmu-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="pmu-brand" href="index.html">
+          <div class="pmu-brand-icon">A</div>
+          <div class="pmu-brand-text">
+            <span class="pmu-brand-name">AURA</span>
+            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+          <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="pmuNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="header-actions">
+            <!-- Language (RTL/LTR) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
+              <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
+              <span class="lang-label visually-hidden">EN (LTR)</span>
+            </button>
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+              <i class="fa-solid fa-moon theme-toggle-icon"></i>
+            </button>
+            <div class="header-user-status">
+              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+            </div>
+            <a href="client-dashboard.html" class="btn-pmu-outline btn-sm">Client Portal</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="py-5 bg-subtle border-bottom">
+    <div class="container text-center py-2">
+      <span class="section-eyebrow">Online Concierge</span>
+      <h1 class="display-4 font-serif fw-bold mb-2">Book Your Appointment</h1>
+      <p class="text-muted lead mx-auto" style="max-width: 600px;">
+        Follow our 5-step interactive scheduler to select your service, master artist, and desired time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Booking Wizard Section -->
+  <section class="section-padding bg-main">
+    <div class="container">
+      <!-- Wizard Wrapper -->
+      <div id="booking-wizard-wrapper">
+        <!-- 5-Step Stepper Header -->
+        <div class="wizard-stepper mb-5">
+          <div class="wizard-step-item active" data-step="1">
+            <div class="step-circle">1</div>
+            <span class="step-title">Treatment</span>
+          </div>
+          <div class="wizard-step-item" data-step="2">
+            <div class="step-circle">2</div>
+            <span class="step-title">Artist</span>
+          </div>
+          <div class="wizard-step-item" data-step="3">
+            <div class="step-circle">3</div>
+            <span class="step-title">Date & Time</span>
+          </div>
+          <div class="wizard-step-item" data-step="4">
+            <div class="step-circle">4</div>
+            <span class="step-title">Details & Health</span>
+          </div>
+          <div class="wizard-step-item" data-step="5">
+            <div class="step-circle">5</div>
+            <span class="step-title">Confirmation</span>
+          </div>
+        </div>
+
+        <div class="row g-5">
+          <!-- Wizard Steps Content (Left) -->
+          <div class="col-lg-8">
+            <!-- STEP 1: Select Service -->
+            <div class="booking-step-pane" data-step="1">
+              <div class="mb-4">
+                <h4 class="font-serif mb-1">Step 1: Choose Your Treatment</h4>
+                <p class="text-muted small">Select the cosmetic tattooing service you would like to reserve:</p>
+              </div>
+              <div id="booking-services-list" class="row">
+                <!-- Rendered dynamically by booking.js -->
+              </div>
+            </div>
+
+            <!-- STEP 2: Select Artist -->
+            <div class="booking-step-pane d-none" data-step="2">
+              <div class="mb-4">
+                <h4 class="font-serif mb-1">Step 2: Choose Your Specialist</h4>
+                <p class="text-muted small">Select an artist or choose first available for maximum scheduling flexibility:</p>
+              </div>
+              <div id="booking-artists-list" class="row">
+                <!-- Rendered dynamically by booking.js -->
+              </div>
+            </div>
+
+            <!-- STEP 3: Select Date & Time -->
+            <div class="booking-step-pane d-none" data-step="3">
+              <div class="mb-4">
+                <h4 class="font-serif mb-1">Step 3: Pick Date & Time Slot</h4>
+                <p class="text-muted small">Choose your preferred session date and available morning or afternoon appointment:</p>
+              </div>
+              
+              <div class="pmu-card p-4 mb-4">
+                <label class="form-label mb-2"><i class="fa-regular fa-calendar text-gold me-2"></i> Select Date</label>
+                <input type="date" id="booking-date-input" class="form-control mb-4" style="max-width: 300px;">
+
+                <label class="form-label mb-2"><i class="fa-regular fa-clock text-gold me-2"></i> Available Time Slots</label>
+                <div id="booking-time-slots" class="time-slot-grid">
+                  <!-- Rendered dynamically by booking.js -->
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4: Client Info & Medical Screening -->
+            <div class="booking-step-pane d-none" data-step="4">
+              <div class="mb-4">
+                <h4 class="font-serif mb-1">Step 4: Client Information & Medical Screening</h4>
+                <p class="text-muted small">Please provide your contact information and review clinical safety contraindications:</p>
+              </div>
+
+              <div class="pmu-card p-4 mb-4">
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Legal Name *</label>
+                    <input type="text" id="client-name" class="form-control" placeholder="e.g. Sarah Jenkins" value="Sarah Jenkins" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" id="client-email" class="form-control" placeholder="sarah@example.com" value="sarah.jenkins@example.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Mobile Telephone Number *</label>
+                    <input type="tel" id="client-phone" class="form-control" placeholder="+1 (555) 234-5678" value="+1 (555) 234-5678" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Emergency Contact Phone</label>
+                    <input type="tel" id="client-emerg-phone" class="form-control" placeholder="+1 (555) 987-6543">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Previous PMU or Skin Sensitivities Notes</label>
+                    <textarea id="client-notes" class="form-control" rows="2" placeholder="Mention previous tattoos, keloid history, or pigment preferences..."></textarea>
+                  </div>
+                </div>
+
+                <!-- Contraindications Checklist -->
+                <div class="p-3 bg-subtle rounded-3 border">
+                  <h6 class="font-serif mb-2"><i class="fa-solid fa-heart-pulse text-danger me-2"></i> Health & Safety Screening</h6>
+                  <p class="text-muted small mb-3">Permanent makeup is contraindicated under certain health conditions. Please verify:</p>
+                  
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="contra-pregnant">
+                    <label class="form-check-label small" for="contra-pregnant">
+                      I confirm I am NOT currently pregnant or breastfeeding.
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="contra-botox">
+                    <label class="form-check-label small" for="contra-botox">
+                      I have NOT received Botox or fillers in the treatment area within the last 14 days.
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="contra-accutane">
+                    <label class="form-check-label small" for="contra-accutane">
+                      I have NOT taken Accutane / Isotretinoin in the past 12 months.
+                    </label>
+                  </div>
+                  <div class="form-check mb-0">
+                    <input class="form-check-input" type="checkbox" id="client-contraindications-check" checked required>
+                    <label class="form-check-label small fw-semibold text-main" for="client-contraindications-check">
+                      I declare the above information is accurate and agree to Aura Studio's 48h cancellation policy. *
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 5: Final Review & Deposit -->
+            <div class="booking-step-pane d-none" data-step="5">
+              <div class="mb-4">
+                <h4 class="font-serif mb-1">Step 5: Review & Confirm Reservation</h4>
+                <p class="text-muted small">Please verify all appointment details before confirming:</p>
+              </div>
+
+              <div class="pmu-card p-4 mb-4">
+                <div id="booking-step5-review" class="mb-4">
+                  <!-- Rendered dynamically by booking.js -->
+                </div>
+
+                <div class="p-3 bg-subtle rounded-3 border">
+                  <h6 class="font-serif mb-1"><i class="fa-solid fa-credit-card text-gold me-2"></i> Demo Deposit Simulation</h6>
+                  <p class="text-muted small mb-0">
+                    In this demo prototype, clicking "Confirm & Pay Deposit" generates a verified studio appointment stored in your browser session. A secure payment gateway (Stripe/Square) is integrated on production.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step Navigation Buttons -->
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <button id="booking-prev-btn" class="btn btn-outline-secondary d-none">
+                <i class="fa-solid fa-arrow-left me-1"></i> Back
+              </button>
+              <div class="ms-auto">
+                <button id="booking-next-btn" class="btn-pmu-gold">
+                  <span>Continue</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wizard Sticky Summary Sidebar (Right) -->
+          <div class="col-lg-4">
+            <div id="booking-summary-box" class="sticky-top" style="top: 100px;">
+              <!-- Rendered dynamically by booking.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Screen (Shown upon booking confirmation) -->
+      <div id="booking-success-screen" class="d-none max-w-2xl mx-auto text-center" style="max-width: 680px;">
+        <div class="pmu-card p-5">
+          <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center mb-4" style="width: 72px; height: 72px; font-size: 2rem;">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="pmu-badge pmu-badge-success mb-2">Reservation Confirmed</span>
+          <h2 class="font-serif mb-2">You're Booked at AURA!</h2>
+          <p class="text-muted mb-4">
+            Your appointment has been logged in our studio scheduling system. We have prepared pre-procedure instructions for you.
+          </p>
+
+          <div class="p-4 bg-subtle rounded-4 text-start mb-4 border">
+            <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+              <span class="text-muted">Booking Reference:</span>
+              <strong id="booking-success-ref" class="text-gold">APT-8041</strong>
+            </div>
+            <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+              <span class="text-muted">Treatment:</span>
+              <strong id="booking-success-service">Signature Microblading</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-0">
+              <span class="text-muted">Date & Time:</span>
+              <strong id="booking-success-date">October 18, 2026 at 10:00 AM</strong>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="client-dashboard.html" class="btn-pmu-gold">Go to Client Dashboard</a>
+            <a href="aftercare.html" class="btn-pmu-outline">View Aftercare Preparation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <!-- Standardized Studio Footer -->
+  <footer class="pmu-footer">
+    <div class="container pmu-footer-top">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Atelier Story -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pmu-brand mb-3">
+            <div class="pmu-brand-icon">A</div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">AURA</span>
+              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+            </div>
+          </div>
+          <p class="text-white-50 small mb-4">
+            Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="footer-badge-item"><i class="fa-solid fa-award"></i> PhiAcademy Grand Master</span>
+            <span class="footer-badge-item"><i class="fa-solid fa-shield-virus"></i> OSHA Certified</span>
+          </div>
+          <div class="pmu-footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Pinterest" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/15552347890" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Treatments -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Treatments</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="service-details.html?service=microblading">Microblading</a></li>
+            <li><a href="service-details.html?service=powder-brows">Ombré Powder Brows</a></li>
+            <li><a href="service-details.html?service=combo-brows">Combination Brows</a></li>
+            <li><a href="service-details.html?service=nano-brows">Digital Nano Brows</a></li>
+            <li><a href="service-details.html?service=lip-blush">Velvet Lip Blush</a></li>
+            <li><a href="service-details.html?service=annual-touchup">Annual Touch-Up</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Studio -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="pmu-footer-title">Studio</h5>
+          <ul class="pmu-footer-links">
+            <li><a href="about.html">About Studio</a></li>
+            <li><a href="artists.html">Master Artists</a></li>
+            <li><a href="gallery.html">Before &amp; Afters</a></li>
+            <li><a href="aftercare.html">Aftercare Guide</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li><a href="contact.html">Studio Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Concierge -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="pmu-footer-title">Studio Concierge</h5>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>740 Madison Avenue, 4th Floor, New York, NY 10065</span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+15552347890" class="text-white-50 text-decoration-none">+1 (555) 234-7890</a></span>
+          </div>
+          <div class="pmu-footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+          </div>
+
+          <div class="pmu-newsletter-box">
+            <form class="w-100 d-flex position-relative footer-newsletter-form" novalidate>
+              <input type="email" class="form-control footer-newsletter-input" placeholder="VIP beauty updates &amp; discounts..." required aria-label="VIP beauty updates &amp; discounts email">
+              <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <div class="footer-newsletter-feedback small mt-2" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pmu-footer-bottom">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="text-white-50 small">
+          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+        </div>
+        <div class="d-flex flex-wrap gap-3 small">
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
+          <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="btn-back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

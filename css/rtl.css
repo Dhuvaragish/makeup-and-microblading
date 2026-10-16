@@ -1,0 +1,160 @@
+/* ==========================================================================
+   AURA PMU & MICROBLADING STUDIO - RTL (RIGHT-TO-LEFT) LANGUAGE SUPPORT
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Font adaptation for Arabic */
+[dir="rtl"] body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4, 
+[dir="rtl"] h5, 
+[dir="rtl"] h6,
+[dir="rtl"] .font-serif {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Flip Icons */
+[dir="rtl"] .fa-arrow-right::before {
+  content: "\f060"; /* fa-arrow-left */
+}
+
+[dir="rtl"] .fa-arrow-left::before {
+  content: "\f061"; /* fa-arrow-right */
+}
+
+[dir="rtl"] .fa-chevron-right::before {
+  content: "\f053"; /* fa-chevron-left */
+}
+
+[dir="rtl"] .fa-chevron-left::before {
+  content: "\f054"; /* fa-chevron-right */
+}
+
+/* Header & Navigation Mirroring */
+[dir="rtl"] .navbar-nav .nav-link::after {
+  left: 0.72rem;
+  right: 0.72rem;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+}
+
+[dir="rtl"] .dropdown-item {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .dropdown-item:hover {
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .pmu-footer-title::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .pmu-footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+/* Newsletter Input */
+[dir="rtl"] .pmu-newsletter-box input {
+  padding: 0.75rem 1rem 0.75rem 3.5rem;
+}
+
+[dir="rtl"] .pmu-newsletter-box button {
+  right: auto;
+  left: 4px;
+}
+
+/* Form Icons */
+[dir="rtl"] .input-icon-group i {
+  left: auto;
+  right: 1.15rem;
+}
+
+[dir="rtl"] .input-icon-group .form-control {
+  padding-left: 1.15rem;
+  padding-right: 2.85rem;
+}
+
+/* Dashboard Sidebar RTL */
+[dir="rtl"] .dashboard-sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--pmu-border);
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 280px;
+}
+
+@media (max-width: 991px) {
+  [dir="rtl"] .dashboard-sidebar {
+    transform: translateX(100%);
+  }
+
+  [dir="rtl"] .dashboard-sidebar.show {
+    transform: translateX(0);
+  }
+
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0;
+  }
+}
+
+/* Slider Badges RTL - keep aligned with image positions */
+[dir="rtl"] .slider-label-before {
+  left: 1rem;
+  right: auto;
+}
+
+[dir="rtl"] .slider-label-after {
+  right: 1rem;
+  left: auto;
+}
+
+/* Hero Overlay RTL Mirroring */
+[dir="rtl"] .pmu-hero-home::before,
+[dir="rtl"] .pmu-hero-home-2::before,
+[dir="rtl"] .pmu-hero-home-3::before {
+  background: linear-gradient(
+    270deg,
+    rgba(251, 249, 246, 0.88) 0%,
+    rgba(251, 249, 246, 0.78) 42%,
+    rgba(251, 249, 246, 0.35) 75%,
+    rgba(251, 249, 246, 0.20) 100%
+  );
+}
+
+[dir="rtl"][data-theme="dark"] .pmu-hero-home::before,
+[dir="rtl"][data-theme="dark"] .pmu-hero-home-2::before,
+[dir="rtl"][data-theme="dark"] .pmu-hero-home-3::before {
+  background: linear-gradient(
+    270deg,
+    rgba(14, 15, 18, 0.90) 0%,
+    rgba(14, 15, 18, 0.80) 42%,
+    rgba(14, 15, 18, 0.42) 75%,
+    rgba(14, 15, 18, 0.22) 100%
+  );
+}
+
+/* Back to Top RTL Mirror */
+[dir="rtl"] .btn-back-to-top {
+  right: auto;
+  left: 30px;
+}
+

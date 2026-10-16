@@ -1,0 +1,240 @@
+/* ==========================================================================
+   AURA PMU & MICROBLADING STUDIO - RESPONSIVE STYLES
+   ========================================================================== */
+
+@media (max-width: 1199.98px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .pmu-topbar {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .service-card-img-wrap {
+    height: 200px;
+  }
+
+  .artist-img-wrap {
+    height: 280px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .pmu-stat-number {
+    font-size: 2.2rem;
+  }
+
+  .wizard-stepper {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .wizard-stepper::before {
+    display: none;
+  }
+
+  .wizard-step-item {
+    flex: 1 1 40%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pmu-brand-name {
+    font-size: 1.25rem;
+  }
+
+  .header-actions .btn-pmu-gold {
+    display: none;
+  }
+
+  .time-slot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Banner Responsive Styles (Tablet & Mobile down to 360px) */
+@media (max-width: 991.98px) {
+  .pmu-page-banner {
+    min-height: 250px;
+    background-position: center center;
+  }
+
+  .pmu-hero-home::before,
+  .pmu-hero-home-2::before,
+  .pmu-hero-home-3::before {
+    background: linear-gradient(
+      180deg,
+      rgba(251, 249, 246, 0.94) 0%,
+      rgba(251, 249, 246, 0.88) 50%,
+      rgba(251, 249, 246, 0.70) 100%
+    );
+  }
+
+  [data-theme="dark"] .pmu-hero-home::before,
+  [data-theme="dark"] .pmu-hero-home-2::before,
+  [data-theme="dark"] .pmu-hero-home-3::before {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 15, 18, 0.94) 0%,
+      rgba(14, 15, 18, 0.88) 50%,
+      rgba(14, 15, 18, 0.70) 100%
+    );
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pmu-page-banner {
+    min-height: 220px;
+    background-position: center center;
+  }
+
+  .pmu-banner-gallery {
+    background-position: 50% 20%;
+  }
+
+  .pmu-banner-services {
+    background-position: 40% center;
+  }
+
+  .pmu-banner-artists {
+    background-position: 55% 15%;
+  }
+
+  .pmu-hero-home,
+  .pmu-hero-home-2,
+  .pmu-hero-home-3 {
+    background-position: 65% center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pmu-page-banner {
+    min-height: 200px;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .pmu-page-banner {
+    min-height: 190px;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .pmu-page-banner h1.display-4 {
+    font-size: 1.85rem !important;
+  }
+}
+
+/* Footer Responsive Optimization (Down to 360px) */
+@media (max-width: 991.98px) {
+  .pmu-footer-top {
+    padding: 3.75rem 1.5rem 2.5rem;
+  }
+  .pmu-footer-top .row {
+    --bs-gutter-x: 1.5rem !important;
+    --bs-gutter-y: 2.25rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pmu-footer-top {
+    padding: 3rem 1.25rem 2rem;
+  }
+  .pmu-footer-top .row {
+    --bs-gutter-x: 1.25rem !important;
+    --bs-gutter-y: 2rem !important;
+  }
+  .pmu-footer-title {
+    margin-bottom: 0.85rem;
+    font-size: 1.15rem;
+  }
+  .pmu-footer-links li {
+    margin-bottom: 0.5rem;
+  }
+  .pmu-footer-links a {
+    font-size: 0.88rem;
+    word-break: normal;
+    display: inline-block;
+    line-height: 1.35;
+  }
+  .pmu-footer-contact-item {
+    font-size: 0.88rem;
+  }
+  .pmu-footer-bottom {
+    padding: 1.25rem 1.25rem;
+    text-align: center;
+  }
+  .pmu-footer-bottom .container {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .pmu-footer-top {
+    padding: 2.5rem 1rem 1.75rem;
+  }
+  .pmu-footer-top .row {
+    --bs-gutter-x: 0.85rem !important;
+    --bs-gutter-y: 1.75rem !important;
+  }
+  .footer-badge-item {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+  }
+  .pmu-footer-social .footer-social-link {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    font-size: 0.85rem;
+  }
+  .pmu-footer-links a {
+    font-size: 0.82rem;
+  }
+  .pmu-newsletter-box input {
+    font-size: 0.82rem;
+    padding-right: 3rem;
+  }
+  .pmu-footer-bottom {
+    padding: 1.25rem 1rem;
+  }
+}
+
