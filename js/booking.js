@@ -1,33 +1,617 @@
 /**
- * VELOURA PMU & BROW STUDIO - MULTI-STEP BOOKING WIZARD ENGINE
+ * VELOURA PMU & BROW STUDIO - LUXURY APPOINTMENT BOOKING ENGINE
+ * 4-Step Interactive Scheduler with Real-Time Pricing & Reservation Flow
  */
 
 const PMUBooking = (function() {
   let currentStep = 1;
+  let servicesData = [];
+  let artistsData = [];
+
   const bookingData = {
-    serviceId: null,
-    serviceName: '',
-    servicePrice: 0,
-    serviceDuration: '',
-    artistId: 'any',
+    serviceId: 'srv-microblading',
+    serviceName: 'Signature Microblading',
+    servicePrice: 550,
+    serviceDuration: '120 mins',
+    serviceCategory: 'brows',
+    artistId: 'first-available',
     artistName: 'First Available Master Artist',
     date: '',
-    time: '',
+    time: '11:00 AM',
     clientName: '',
     clientEmail: '',
     clientPhone: '',
-    medicalNotes: '',
-    contraindicationsClear: false
+    emergencyPhone: '',
+    clientNotes: '',
+    contraindicationsClear: true
   };
 
   function init() {
-    renderServicesStep();
-    renderArtistsStep();
-    setupDatePicker();
-    setupTimeSlots();
-    setupStepNavigation();
-    setupUrlPreselect();
-    setupAuthUserPrefill();
+    loadData().then(() => {
+      populateServicesDropdown();
+      populateArtistsDropdown();
+      setupEventListeners();
+      setupDateAndTime();
+      setupAuthUserPrefill();
+      setupUrlPreselect();
+      updateStepUI();
+      updatePricingSummary();
+    });
+  }
+
+  async function loadData() {
+    // 1. Load Services
+    if (window.PMUStorage && typeof PMUStorage.getServices === 'function') {
+      servicesData = PMUStorage.getServices();
+    }
+    if (!servicesData || !servicesData.length) {
+      try {
+        const res = await fetch('data/services.json');
+        if (res.ok) servicesData = await res.json();
+      } catch (e) {
+        console.warn('Could not fetch services.json, using defaults', e);
+      }
+    }
+
+    // Fallback default services if needed
+    if (!servicesData || !servicesData.length) {
+      servicesData = [
+        { id: 'srv-microblading', name: 'Signature Microblading', price: 550, duration: '120 mins', category: 'brows' },
+        { id: 'srv-powder-brows', name: 'Ombré Powder Brows', price: 580, duration: '150 mins', category: 'brows' },
+        { id: 'srv-combo-brows', name: 'Combination Hybrid Brows', price: 650, duration: '150 mins', category: 'brows' },
+        { id: 'srv-nano-brows', name: 'Digital Nano Hairstrokes', price: 720, duration: '150 mins', category: 'brows' },
+        { id: 'srv-lip-blush', name: 'Velvet Lip Blush & Tint', price: 600, duration: '150 mins', category: 'lips' },
+        { id: 'srv-annual-touchup', name: 'Annual Color Boost & Touch-Up', price: 280, duration: '90 mins', category: 'touchup' }
+      ];
+    }
+
+    // 2. Load Artists
+    if (window.PMUStorage && typeof PMUStorage.getArtists === 'function') {
+      artistsData = PMUStorage.getArtists();
+    }
+    if (!artistsData || !artistsData.length) {
+      try {
+        const res = await fetch('data/artists.json');
+        if (res.ok) artistsData = await res.json();
+      } catch (e) {
+        console.warn('Could not fetch artists.json, using defaults', e);
+      }
+    }
+
+    if (!artistsData || !artistsData.length) {
+      artistsData = [
+        { id: 'art-elena', name: 'Elena Rostova', role: 'Founder & Master PMU Educator' },
+        { id: 'art-sofia', name: 'Sofia Vance', role: 'Senior Lip Blush & Pigment Specialist' },
+        { id: 'art-maya', name: 'Maya Lin', role: 'Digital Nano & Powder Brow Master' },
+        { id: 'art-camilla', name: 'Camilla Rossi', role: 'Aesthetic PMU Artist & Symmetry Stylist' }
+      ];
+    }
+  }
+
+  function populateServicesDropdown() {
+    const select = document.getElementById('booking-service-select');
+    if (!select) return;
+
+    select.innerHTML = servicesData.map(s => `
+      <option value="${s.id}" data-price="${s.price}" data-duration="${s.duration}" data-category="${s.category || 'brows'}">
+        ${s.name} ($${s.price}) — ${s.duration}
+      </option>
+    `).join('');
+
+    // Default to Signature Microblading ($550)
+    const microblading = servicesData.find(s => s.id === 'srv-microblading' || s.name.toLowerCase().includes('microblading'));
+    if (microblading) {
+      select.value = microblading.id;
+      applySelectedService(microblading);
+    } else if (servicesData.length > 0) {
+      select.value = servicesData[0].id;
+      applySelectedService(servicesData[0]);
+    }
+
+    select.addEventListener('change', function() {
+      const selectedId = this.value;
+      const srv = servicesData.find(s => s.id === selectedId);
+      if (srv) {
+        applySelectedService(srv);
+      }
+    });
+  }
+
+  function applySelectedService(srv) {
+    bookingData.serviceId = srv.id;
+    bookingData.serviceName = srv.name;
+    bookingData.servicePrice = parseFloat(srv.price) || 550;
+    bookingData.serviceDuration = srv.duration || '120 mins';
+    bookingData.serviceCategory = srv.category || 'brows';
+
+    // Update feature pills
+    const featDuration = document.getElementById('feat-duration');
+    const featPain = document.getElementById('feat-pain');
+    const featRetention = document.getElementById('feat-retention');
+
+    if (featDuration) featDuration.innerHTML = `<i class="fa-regular fa-clock text-gold"></i> ${srv.duration || '120 mins'}`;
+    if (featPain) featPain.innerHTML = `<i class="fa-solid fa-hand-holding-heart text-gold"></i> ${srv.painLevel || 'Minimal (Topical Numbing)'}`;
+    if (featRetention) featRetention.innerHTML = `<i class="fa-solid fa-sparkles text-gold"></i> ${srv.retention || '12-18 Months Retention'}`;
+
+    // Update popular badge
+    const badgePop = document.getElementById('treatment-badge-popular');
+    if (badgePop) {
+      badgePop.textContent = srv.popular ? 'Most Popular' : 'Signature Service';
+    }
+
+    updatePricingSummary();
+  }
+
+  function populateArtistsDropdown() {
+    const select = document.getElementById('booking-artist-select');
+    if (!select) return;
+
+    let html = `
+      <option value="first-available" selected>
+        First Available Master Artist (Fastest Scheduling)
+      </option>
+    `;
+
+    html += artistsData.map(a => `
+      <option value="${a.id}">
+        ${a.name} — ${a.role || 'Certified PMU Artist'}
+      </option>
+    `).join('');
+
+    select.innerHTML = html;
+
+    select.addEventListener('change', function() {
+      const selectedId = this.value;
+      if (selectedId === 'first-available') {
+        bookingData.artistId = 'first-available';
+        bookingData.artistName = 'First Available Master Artist';
+      } else {
+        const artist = artistsData.find(a => a.id === selectedId);
+        if (artist) {
+          bookingData.artistId = artist.id;
+          bookingData.artistName = artist.name;
+        }
+      }
+      updateStepUI();
+    });
+  }
+
+  function updatePricingSummary() {
+    const price = bookingData.servicePrice;
+    const deposit = Math.round(price * 0.25);
+    const balance = price - deposit;
+
+    const totalEl = document.getElementById('price-total-display');
+    const depositEl = document.getElementById('price-deposit-display');
+    const balanceEl = document.getElementById('price-balance-display');
+    const touchupBadge = document.getElementById('touchup-included-badge');
+
+    if (totalEl) totalEl.textContent = `$${price}`;
+    if (depositEl) depositEl.textContent = `$${deposit}`;
+    if (balanceEl) balanceEl.textContent = `$${balance}`;
+
+    // Touchup information: brow and lip PMU services include 6-week perfection touch-up
+    if (touchupBadge) {
+      const isTouchupAlready = bookingData.serviceId.includes('touchup') || bookingData.serviceCategory === 'touchup';
+      if (isTouchupAlready) {
+        touchupBadge.innerHTML = `
+          <i class="fa-solid fa-circle-check text-gold fs-6"></i>
+          <span class="small fw-semibold touchup-badge-text">Color Refresh &amp; Shape Perfection Session</span>
+        `;
+      } else {
+        touchupBadge.innerHTML = `
+          <i class="fa-solid fa-circle-check text-gold fs-6"></i>
+          <span class="small fw-semibold touchup-badge-text">Complimentary 6-Week Perfection Touch-Up Included</span>
+        `;
+      }
+    }
+  }
+
+  function setupDateAndTime() {
+    const dateInput = document.getElementById('booking-date-input');
+    if (!dateInput) return;
+
+    // Set min date to tomorrow
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const minIso = tomorrow.toISOString().split('T')[0];
+    dateInput.min = minIso;
+    dateInput.value = minIso;
+    bookingData.date = minIso;
+
+    dateInput.addEventListener('change', function() {
+      bookingData.date = this.value;
+      document.querySelectorAll('.date-shortcut-btn').forEach(btn => btn.classList.remove('active'));
+      updateSlotPreview();
+    });
+
+    // Date Shortcuts
+    document.querySelectorAll('.date-shortcut-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.date-shortcut-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const offset = parseInt(this.dataset.offset) || 1;
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + offset);
+        const iso = targetDate.toISOString().split('T')[0];
+
+        dateInput.value = iso;
+        bookingData.date = iso;
+        updateSlotPreview();
+      });
+    });
+
+    // Time Slots
+    document.querySelectorAll('.time-slot-modern-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.time-slot-modern-btn').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+        bookingData.time = this.dataset.time;
+        updateSlotPreview();
+      });
+    });
+
+    updateSlotPreview();
+  }
+
+  function updateSlotPreview() {
+    const previewEl = document.getElementById('selected-slot-preview-text');
+    if (!previewEl) return;
+
+    let formattedDate = bookingData.date;
+    try {
+      const parts = bookingData.date.split('-');
+      if (parts.length === 3) {
+        const d = new Date(parts[0], parts[1] - 1, parts[2]);
+        formattedDate = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+      }
+    } catch (e) {}
+
+    previewEl.textContent = `${formattedDate} at ${bookingData.time} with ${bookingData.artistName}`;
+  }
+
+  function setupEventListeners() {
+    // Step 1 -> Step 2
+    const step1Next = document.getElementById('booking-btn-step1-next');
+    if (step1Next) {
+      step1Next.addEventListener('click', () => {
+        if (!bookingData.serviceId) {
+          if (window.PMUNotifications) window.PMUNotifications.warning('Please select a treatment service.');
+          return;
+        }
+        goToStep(2);
+      });
+    }
+
+    // Step 2 Change Service link
+    const step2Change = document.getElementById('step2-change-service-btn');
+    if (step2Change) {
+      step2Change.addEventListener('click', () => goToStep(1));
+    }
+
+    // Step 2 -> Step 1
+    const step2Prev = document.getElementById('booking-btn-step2-prev');
+    if (step2Prev) {
+      step2Prev.addEventListener('click', () => goToStep(1));
+    }
+
+    // Step 2 -> Step 3
+    const step2Next = document.getElementById('booking-btn-step2-next');
+    if (step2Next) {
+      step2Next.addEventListener('click', () => {
+        if (!bookingData.date || !bookingData.time) {
+          if (window.PMUNotifications) window.PMUNotifications.warning('Please select your preferred appointment date and time slot.');
+          return;
+        }
+        goToStep(3);
+      });
+    }
+
+    // Step 3 -> Step 2
+    const step3Prev = document.getElementById('booking-btn-step3-prev');
+    if (step3Prev) {
+      step3Prev.addEventListener('click', () => goToStep(2));
+    }
+
+    // Step 3 -> Step 4
+    const step3Next = document.getElementById('booking-btn-step3-next');
+    if (step3Next) {
+      step3Next.addEventListener('click', () => {
+        if (!validateStep3()) return;
+        goToStep(4);
+      });
+    }
+
+    // Step 4 -> Step 3
+    const step4Prev = document.getElementById('booking-btn-step4-prev');
+    if (step4Prev) {
+      step4Prev.addEventListener('click', () => goToStep(3));
+    }
+
+    // Step 4 Final Confirm
+    const confirmBtn = document.getElementById('booking-btn-confirm');
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        finalizeBooking();
+      });
+    }
+
+    // Stepper direct clicks
+    document.querySelectorAll('.stepper-step').forEach(stepItem => {
+      stepItem.addEventListener('click', function() {
+        const target = parseInt(this.dataset.step);
+        if (target < currentStep) {
+          goToStep(target);
+        }
+      });
+    });
+
+    // Reset button on success screen
+    const resetBtn = document.getElementById('booking-reset-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        document.getElementById('booking-success-screen').classList.add('d-none');
+        document.querySelectorAll('.booking-step-content').forEach(p => p.classList.add('d-none'));
+        document.getElementById('booking-step-1').classList.remove('d-none');
+        goToStep(1);
+      });
+    }
+  }
+
+  function validateStep3() {
+    const nameInput = document.getElementById('client-name');
+    const emailInput = document.getElementById('client-email');
+    const phoneInput = document.getElementById('client-phone');
+    const emergInput = document.getElementById('client-emerg-phone');
+    const notesInput = document.getElementById('client-notes');
+    const contraCheckbox = document.getElementById('client-contraindications-check');
+
+    if (!nameInput || !emailInput || !phoneInput) return true;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    if (!name || !email || !phone) {
+      if (window.PMUNotifications) {
+        window.PMUNotifications.warning('Please complete all required contact fields (*).');
+      }
+      if (!name) nameInput.focus();
+      else if (!email) emailInput.focus();
+      else if (!phone) phoneInput.focus();
+      return false;
+    }
+
+    if (window.PMUValidation) {
+      if (!PMUValidation.validateName(name)) {
+        if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid legal full name (letters only).');
+        nameInput.focus();
+        return false;
+      }
+      if (!PMUValidation.validateEmail(email)) {
+        if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid email address (e.g., name@domain.com).');
+        emailInput.focus();
+        return false;
+      }
+      if (!PMUValidation.validatePhone(phone)) {
+        if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid telephone number.');
+        phoneInput.focus();
+        return false;
+      }
+    }
+
+    if (contraCheckbox && !contraCheckbox.checked) {
+      if (window.PMUNotifications) {
+        window.PMUNotifications.warning('Please confirm the health declaration & 48-hour cancellation policy agreement.');
+      }
+      contraCheckbox.focus();
+      return false;
+    }
+
+    bookingData.clientName = name;
+    bookingData.clientEmail = email;
+    bookingData.clientPhone = phone;
+    bookingData.emergencyPhone = emergInput ? emergInput.value.trim() : '';
+    bookingData.clientNotes = notesInput ? notesInput.value.trim() : '';
+
+    return true;
+  }
+
+  function goToStep(step) {
+    currentStep = step;
+
+    // Toggle step panes
+    for (let i = 1; i <= 4; i++) {
+      const pane = document.getElementById(`booking-step-${i}`);
+      if (pane) {
+        pane.classList.toggle('d-none', i !== currentStep);
+      }
+    }
+
+    // Update stepper classes
+    document.querySelectorAll('.stepper-step').forEach(stepItem => {
+      const s = parseInt(stepItem.dataset.step);
+      stepItem.classList.remove('active', 'completed');
+      const numEl = stepItem.querySelector('.stepper-num');
+
+      if (s === currentStep) {
+        stepItem.classList.add('active');
+        if (numEl) numEl.innerHTML = s;
+      } else if (s < currentStep) {
+        stepItem.classList.add('completed');
+        if (numEl) numEl.innerHTML = '<i class="fa-solid fa-check"></i>';
+      } else {
+        if (numEl) numEl.innerHTML = s;
+      }
+    });
+
+    // Update divider lines
+    for (let i = 1; i <= 3; i++) {
+      const div = document.getElementById(`step-divider-${i}`);
+      if (div) {
+        div.classList.toggle('completed', i < currentStep);
+      }
+    }
+
+    // Update Subtitles
+    const subtitle = document.getElementById('booking-step-subtitle');
+    if (subtitle) {
+      if (currentStep === 1) subtitle.textContent = 'Choose your treatment and specialist to continue.';
+      else if (currentStep === 2) subtitle.textContent = 'Select your preferred appointment date and time slot.';
+      else if (currentStep === 3) subtitle.textContent = 'Provide your contact information and health verification.';
+      else if (currentStep === 4) subtitle.textContent = 'Review your treatment reservation details before confirming.';
+    }
+
+    // Step 2 summaries
+    if (currentStep === 2) {
+      const srvEl = document.getElementById('step2-summary-service');
+      const artEl = document.getElementById('step2-summary-artist');
+      if (srvEl) srvEl.textContent = `${bookingData.serviceName} ($${bookingData.servicePrice})`;
+      if (artEl) artEl.textContent = bookingData.artistName;
+      updateSlotPreview();
+    }
+
+    // Step 4 Review Pane
+    if (currentStep === 4) {
+      renderStep4Review();
+    }
+
+    // Scroll to card top smoothly
+    const card = document.getElementById('booking-card-container');
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function renderStep4Review() {
+    const container = document.getElementById('booking-step4-review-container');
+    if (!container) return;
+
+    const deposit = Math.round(bookingData.servicePrice * 0.25);
+    const balance = bookingData.servicePrice - deposit;
+
+    let formattedDate = bookingData.date;
+    try {
+      const parts = bookingData.date.split('-');
+      if (parts.length === 3) {
+        const d = new Date(parts[0], parts[1] - 1, parts[2]);
+        formattedDate = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+      }
+    } catch (e) {}
+
+    container.innerHTML = `
+      <div class="p-4 rounded-4 mb-3" style="background: #FAF8F4; border: 1.5px solid #E8E0D5;">
+        <div class="row g-3">
+          <div class="col-md-6 border-bottom border-md-bottom-0 pb-3 pb-md-0">
+            <span class="text-muted small text-uppercase fw-bold letter-spacing-1 d-block mb-1" style="font-size: 0.72rem;">Treatment &amp; Specialist</span>
+            <h5 class="font-serif fw-bold text-main mb-1">${bookingData.serviceName}</h5>
+            <p class="text-muted small mb-2"><i class="fa-regular fa-clock text-gold me-1"></i> ${bookingData.serviceDuration} • Practitioner: <strong>${bookingData.artistName}</strong></p>
+            <span class="badge bg-gold-subtle text-gold-dark small"><i class="fa-solid fa-check me-1"></i> Complimentary 6-Week Touch-Up Included</span>
+          </div>
+
+          <div class="col-md-6">
+            <span class="text-muted small text-uppercase fw-bold letter-spacing-1 d-block mb-1" style="font-size: 0.72rem;">Scheduled Appointment</span>
+            <h5 class="font-serif fw-bold text-main mb-1">${bookingData.time}</h5>
+            <p class="text-muted small mb-2"><i class="fa-regular fa-calendar text-gold me-1"></i> ${formattedDate}</p>
+            <span class="small text-muted"><i class="fa-solid fa-location-dot text-gold me-1"></i> 740 Madison Avenue, 4th Fl, Manhattan</span>
+          </div>
+        </div>
+
+        <hr class="my-3" style="border-color: #E8E0D5;">
+
+        <div class="row g-2 small">
+          <div class="col-sm-6">
+            <span class="text-muted">Client:</span> <strong class="text-main">${bookingData.clientName}</strong>
+          </div>
+          <div class="col-sm-6">
+            <span class="text-muted">Email:</span> <strong class="text-main">${bookingData.clientEmail}</strong>
+          </div>
+          <div class="col-sm-6">
+            <span class="text-muted">Phone:</span> <strong class="text-main">${bookingData.clientPhone}</strong>
+          </div>
+          ${bookingData.clientNotes ? `
+          <div class="col-12 mt-1">
+            <span class="text-muted">Client Notes:</span> <em>"${bookingData.clientNotes}"</em>
+          </div>` : ''}
+        </div>
+      </div>
+
+      <!-- Financial Ledger -->
+      <div class="booking-pricing-summary-card mb-0">
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">Total Session Investment:</span>
+          <strong class="text-main fs-5 font-serif">$${bookingData.servicePrice}</strong>
+        </div>
+        <div class="d-flex justify-content-between mb-2 text-gold-dark">
+          <span class="fw-semibold">Deposit Due Today (25%):</span>
+          <strong class="fs-5 font-serif">$${deposit}</strong>
+        </div>
+        <div class="d-flex justify-content-between text-muted small pt-2 border-top" style="border-color: rgba(214, 188, 145, 0.3) !important;">
+          <span>Remaining Balance at Studio:</span>
+          <strong class="text-main">$${balance} (Payable on visit day)</strong>
+        </div>
+      </div>
+    `;
+  }
+
+  function finalizeBooking() {
+    const deposit = Math.round(bookingData.servicePrice * 0.25);
+    const balance = bookingData.servicePrice - deposit;
+
+    const newAppointment = {
+      clientName: bookingData.clientName,
+      clientEmail: bookingData.clientEmail,
+      clientPhone: bookingData.clientPhone,
+      emergencyPhone: bookingData.emergencyPhone,
+      serviceId: bookingData.serviceId,
+      serviceName: bookingData.serviceName,
+      artistId: bookingData.artistId,
+      artistName: bookingData.artistName,
+      date: bookingData.date,
+      time: bookingData.time,
+      status: "Confirmed",
+      depositPaid: deposit,
+      balanceDue: balance,
+      totalPrice: bookingData.servicePrice,
+      healingDay: null,
+      notes: bookingData.clientNotes || "Online self-service reservation"
+    };
+
+    let saved = null;
+    if (window.PMUStorage && typeof PMUStorage.createAppointment === 'function') {
+      saved = PMUStorage.createAppointment(newAppointment);
+    } else {
+      saved = Object.assign({ id: "APT-" + Math.floor(1000 + Math.random() * 9000) }, newAppointment);
+    }
+
+    // Hide steps, show success screen
+    document.querySelectorAll('.booking-step-content').forEach(p => p.classList.add('d-none'));
+    const successScreen = document.getElementById('booking-success-screen');
+    if (successScreen) {
+      successScreen.classList.remove('d-none');
+
+      const refEl = document.getElementById('booking-success-ref');
+      if (refEl) refEl.textContent = saved.id;
+
+      const srvEl = document.getElementById('booking-success-service');
+      if (srvEl) srvEl.textContent = saved.serviceName;
+
+      const artEl = document.getElementById('booking-success-artist');
+      if (artEl) artEl.textContent = saved.artistName;
+
+      const dateEl = document.getElementById('booking-success-date');
+      if (dateEl) dateEl.textContent = `${saved.date} at ${saved.time}`;
+
+      const depEl = document.getElementById('booking-success-deposit');
+      if (depEl) depEl.textContent = `$${deposit} Paid ($${balance} Remaining at Studio)`;
+
+      if (window.PMUNotifications) {
+        window.PMUNotifications.success(`Reservation ${saved.id} confirmed! Confirmation email dispatched.`, 5000);
+      }
+
+      successScreen.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   function setupAuthUserPrefill() {
@@ -51,415 +635,52 @@ const PMUBooking = (function() {
 
     if (serviceParam) {
       setTimeout(() => {
-        let card = document.querySelector(`[data-service-id="${serviceParam}"]`);
-        if (!card && !serviceParam.startsWith('srv-')) {
-          card = document.querySelector(`[data-service-id="srv-${serviceParam}"]`);
-        }
-        if (!card && window.PMUStorage && typeof PMUStorage.getServiceById === 'function') {
-          const srv = PMUStorage.getServiceById(serviceParam);
-          if (srv) {
-            card = document.querySelector(`[data-service-id="${srv.id}"]`);
+        const select = document.getElementById('booking-service-select');
+        if (select) {
+          let option = Array.from(select.options).find(opt => 
+            opt.value === serviceParam || opt.value === `srv-${serviceParam}`
+          );
+          if (option) {
+            select.value = option.value;
+            select.dispatchEvent(new Event('change'));
           }
         }
-        if (card) {
-          card.click();
-          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }, 150);
+      }, 100);
     }
 
     if (artistParam) {
       setTimeout(() => {
-        let card = document.querySelector(`[data-artist-id="${artistParam}"]`);
-        if (!card && !artistParam.startsWith('art-')) {
-          card = document.querySelector(`[data-artist-id="art-${artistParam}"]`);
-        }
-        if (card) {
-          card.click();
-        }
-      }, 200);
-    }
-  }
-
-  function renderServicesStep() {
-    const container = document.getElementById('booking-services-list');
-    if (!container) return;
-
-    const services = PMUStorage.getServices();
-    if (!services.length) return;
-
-    container.innerHTML = services.map(s => `
-      <div class="col-md-6 mb-3">
-        <div class="selectable-card h-100" data-service-id="${s.id}" data-service-name="${s.name}" data-service-price="${s.price}" data-service-duration="${s.duration}">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="mb-0 text-main font-serif">${s.name}</h5>
-            <span class="pmu-badge pmu-badge-gold">$${s.price}</span>
-          </div>
-          <p class="text-muted small mb-2">${s.shortDescription}</p>
-          <div class="d-flex align-items-center gap-3 small text-muted">
-            <span><i class="fa-regular fa-clock text-gold"></i> ${s.duration}</span>
-            <span><i class="fa-solid fa-sparkles text-gold"></i> ${s.retention}</span>
-          </div>
-        </div>
-      </div>
-    `).join('');
-
-    container.querySelectorAll('.selectable-card').forEach(card => {
-      card.addEventListener('click', () => {
-        container.querySelectorAll('.selectable-card').forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        bookingData.serviceId = card.dataset.serviceId;
-        bookingData.serviceName = card.dataset.serviceName;
-        bookingData.servicePrice = parseFloat(card.dataset.servicePrice);
-        bookingData.serviceDuration = card.dataset.serviceDuration;
-        updateSummaryUI();
-      });
-    });
-  }
-
-  function renderArtistsStep() {
-    const container = document.getElementById('booking-artists-list');
-    if (!container) return;
-
-    const artists = PMUStorage.getArtists();
-    let html = `
-      <div class="col-md-6 mb-3">
-        <div class="selectable-card selected h-100" data-artist-id="any" data-artist-name="First Available Master Artist">
-          <div class="d-flex align-items-center gap-3">
-            <div class="rounded-circle bg-gold text-dark d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.25rem;">
-              <i class="fa-solid fa-users"></i>
-            </div>
-            <div>
-              <h6 class="mb-1 font-serif">First Available Master</h6>
-              <p class="text-muted small mb-0">Fastest appointment booking with any certified specialist</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    html += artists.map(a => `
-      <div class="col-md-6 mb-3">
-        <div class="selectable-card h-100" data-artist-id="${a.id}" data-artist-name="${a.name}">
-          <div class="d-flex align-items-center gap-3">
-            <img src="${a.image}" alt="${a.name}" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
-            <div>
-              <h6 class="mb-1 font-serif">${a.name}</h6>
-              <p class="text-muted small mb-1">${a.role}</p>
-              <div class="pmu-stars small"><i class="fa-solid fa-star"></i> 5.0 (${a.reviewCount} reviews)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `).join('');
-
-    container.innerHTML = html;
-
-    container.querySelectorAll('.selectable-card').forEach(card => {
-      card.addEventListener('click', () => {
-        container.querySelectorAll('.selectable-card').forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        bookingData.artistId = card.dataset.artistId;
-        bookingData.artistName = card.dataset.artistName;
-        updateSummaryUI();
-      });
-    });
-  }
-
-  function setupDatePicker() {
-    const dateInput = document.getElementById('booking-date-input');
-    if (!dateInput) return;
-
-    // Set min date to tomorrow
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const minStr = tomorrow.toISOString().split('T')[0];
-    dateInput.min = minStr;
-    dateInput.value = minStr;
-    bookingData.date = minStr;
-
-    dateInput.addEventListener('change', (e) => {
-      bookingData.date = e.target.value;
-      updateSummaryUI();
-    });
-  }
-
-  function setupTimeSlots() {
-    const container = document.getElementById('booking-time-slots');
-    if (!container) return;
-
-    const slots = [
-      "09:30 AM", "11:00 AM", "01:00 PM", "02:30 PM", "04:00 PM", "05:30 PM"
-    ];
-
-    container.innerHTML = slots.map((time, idx) => `
-      <div class="time-slot-btn ${idx === 1 ? 'selected' : ''}" data-time="${time}">
-        ${time}
-      </div>
-    `).join('');
-
-    bookingData.time = slots[1];
-
-    container.querySelectorAll('.time-slot-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        container.querySelectorAll('.time-slot-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        bookingData.time = btn.dataset.time;
-        updateSummaryUI();
-      });
-    });
-  }
-
-  function setupStepNavigation() {
-    const nextBtn = document.getElementById('booking-next-btn');
-    const prevBtn = document.getElementById('booking-prev-btn');
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        if (validateStep(currentStep)) {
-          if (currentStep < 5) {
-            goToStep(currentStep + 1);
-          } else {
-            finalizeBooking();
+        const select = document.getElementById('booking-artist-select');
+        if (select) {
+          let option = Array.from(select.options).find(opt => 
+            opt.value === artistParam || opt.value === `art-${artistParam}`
+          );
+          if (option) {
+            select.value = option.value;
+            select.dispatchEvent(new Event('change'));
           }
         }
-      });
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        if (currentStep > 1) {
-          goToStep(currentStep - 1);
-        }
-      });
-    }
-
-    // Step item direct clicks (if completed)
-    document.querySelectorAll('.wizard-step-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const targetStep = parseInt(item.dataset.step);
-        if (targetStep < currentStep) {
-          goToStep(targetStep);
-        }
-      });
-    });
-  }
-
-  function validateStep(step) {
-    if (step === 1) {
-      if (!bookingData.serviceId) {
-        if (window.PMUNotifications) window.PMUNotifications.warning('Please select a treatment service to continue.');
-        return false;
-      }
-    } else if (step === 2) {
-      // Artist defaults to any
-      return true;
-    } else if (step === 3) {
-      if (!bookingData.date || !bookingData.time) {
-        if (window.PMUNotifications) window.PMUNotifications.warning('Please select appointment date and time slot.');
-        return false;
-      }
-    } else if (step === 4) {
-      const nameInput = document.getElementById('client-name');
-      const emailInput = document.getElementById('client-email');
-      const phoneInput = document.getElementById('client-phone');
-      const contraCheckbox = document.getElementById('client-contraindications-check');
-
-      if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim()) {
-        if (window.PMUNotifications) window.PMUNotifications.warning('Please fill in your name, email and phone number.');
-        return false;
-      }
-
-      if (window.PMUValidation) {
-        if (!PMUValidation.validateName(nameInput.value)) {
-          if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid legal name (letters only, cannot be numbers only).');
-          nameInput.focus();
-          return false;
-        }
-        if (!PMUValidation.validateEmail(emailInput.value)) {
-          if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid email address.');
-          emailInput.focus();
-          return false;
-        }
-        if (!PMUValidation.validatePhone(phoneInput.value)) {
-          if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid telephone number.');
-          phoneInput.focus();
-          return false;
-        }
-      }
-
-      if (contraCheckbox && !contraCheckbox.checked) {
-        if (window.PMUNotifications) window.PMUNotifications.warning('Please confirm the health & contraindications declaration.');
-        return false;
-      }
-
-      bookingData.clientName = nameInput.value.trim();
-      bookingData.clientEmail = emailInput.value.trim();
-      bookingData.clientPhone = phoneInput.value.trim();
-      const notes = document.getElementById('client-notes');
-      bookingData.medicalNotes = notes ? notes.value.trim() : '';
-    }
-
-    return true;
-  }
-
-  function goToStep(step) {
-    currentStep = step;
-
-    // Update wizard indicators
-    document.querySelectorAll('.wizard-step-item').forEach(item => {
-      const s = parseInt(item.dataset.step);
-      item.classList.remove('active', 'completed');
-      if (s === currentStep) item.classList.add('active');
-      else if (s < currentStep) item.classList.add('completed');
-    });
-
-    // Toggle step panes
-    document.querySelectorAll('.booking-step-pane').forEach(pane => {
-      const pStep = parseInt(pane.dataset.step);
-      pane.classList.toggle('d-none', pStep !== currentStep);
-    });
-
-    // Update buttons
-    const prevBtn = document.getElementById('booking-prev-btn');
-    const nextBtn = document.getElementById('booking-next-btn');
-
-    if (prevBtn) prevBtn.classList.toggle('d-none', currentStep === 1);
-    if (nextBtn) {
-      if (currentStep === 5) {
-        nextBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Confirm & Pay Deposit';
-        nextBtn.className = 'btn-pmu-gold btn-pmu-lg';
-      } else {
-        nextBtn.innerHTML = 'Continue <i class="fa-solid fa-arrow-right"></i>';
-        nextBtn.className = 'btn-pmu-gold';
-      }
-    }
-
-    updateSummaryUI();
-    window.scrollTo({ top: 300, behavior: 'smooth' });
-  }
-
-  function updateSummaryUI() {
-    const summaryCard = document.getElementById('booking-summary-box');
-    if (!summaryCard) return;
-
-    const deposit = Math.round(bookingData.servicePrice * 0.25);
-    const balance = bookingData.servicePrice - deposit;
-
-    summaryCard.innerHTML = `
-      <div class="pmu-card p-4">
-        <h5 class="font-serif border-bottom pb-3 mb-3">Booking Summary</h5>
-        <div class="mb-3">
-          <small class="text-muted d-block">Treatment</small>
-          <strong class="text-main">${bookingData.serviceName || 'Not Selected Yet'}</strong>
-          ${bookingData.serviceDuration ? `<span class="badge bg-light text-muted ms-1">${bookingData.serviceDuration}</span>` : ''}
-        </div>
-        <div class="mb-3">
-          <small class="text-muted d-block">Master Artist</small>
-          <strong class="text-main">${bookingData.artistName}</strong>
-        </div>
-        <div class="mb-3">
-          <small class="text-muted d-block">Date & Time</small>
-          <strong class="text-main">${bookingData.date || 'Pick date'} at ${bookingData.time || 'Pick time'}</strong>
-        </div>
-        <hr class="my-3">
-        <div class="d-flex justify-content-between mb-2">
-          <span>Treatment Total:</span>
-          <strong>$${bookingData.servicePrice || 0}</strong>
-        </div>
-        <div class="d-flex justify-content-between mb-2 text-gold">
-          <span>Deposit Due Today (25%):</span>
-          <strong>$${deposit || 0}</strong>
-        </div>
-        <div class="d-flex justify-content-between text-muted small">
-          <span>Remaining at Studio:</span>
-          <span>$${balance || 0}</span>
-        </div>
-      </div>
-    `;
-
-    // Also update Step 5 review pane if active
-    const reviewBox = document.getElementById('booking-step5-review');
-    if (reviewBox) {
-      reviewBox.innerHTML = `
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="p-3 bg-subtle rounded-3">
-              <small class="text-muted">Selected Treatment</small>
-              <h5 class="font-serif mb-1">${bookingData.serviceName}</h5>
-              <p class="text-muted small mb-0">Duration: ${bookingData.serviceDuration}</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="p-3 bg-subtle rounded-3">
-              <small class="text-muted">Specialist</small>
-              <h5 class="font-serif mb-1">${bookingData.artistName}</h5>
-              <p class="text-muted small mb-0">${bookingData.date} • ${bookingData.time}</p>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="p-3 bg-subtle rounded-3">
-              <small class="text-muted">Client Details</small>
-              <h6 class="mb-1">${bookingData.clientName} (${bookingData.clientEmail})</h6>
-              <p class="text-muted small mb-0">Phone: ${bookingData.clientPhone}</p>
-            </div>
-          </div>
-        </div>
-      `;
+      }, 100);
     }
   }
 
-  function finalizeBooking() {
-    const deposit = Math.round(bookingData.servicePrice * 0.25);
-    const newAppointment = {
-      clientName: bookingData.clientName,
-      clientEmail: bookingData.clientEmail,
-      clientPhone: bookingData.clientPhone,
-      serviceId: bookingData.serviceId,
-      serviceName: bookingData.serviceName,
-      artistId: bookingData.artistId,
-      artistName: bookingData.artistName,
-      date: bookingData.date,
-      time: bookingData.time,
-      status: "Confirmed",
-      depositPaid: deposit,
-      totalPrice: bookingData.servicePrice,
-      healingDay: null,
-      notes: bookingData.medicalNotes || "Online client self-booking"
-    };
-
-    const saved = PMUStorage.createAppointment(newAppointment);
-
-    // Show confirmation modal or success screen
-    const wizardWrap = document.getElementById('booking-wizard-wrapper');
-    const successScreen = document.getElementById('booking-success-screen');
-
-    if (wizardWrap && successScreen) {
-      wizardWrap.classList.add('d-none');
-      successScreen.classList.remove('d-none');
-
-      const refEl = document.getElementById('booking-success-ref');
-      if (refEl) refEl.textContent = saved.id;
-
-      const dateEl = document.getElementById('booking-success-date');
-      if (dateEl) dateEl.textContent = `${saved.date} at ${saved.time}`;
-
-      const srvEl = document.getElementById('booking-success-service');
-      if (srvEl) srvEl.textContent = saved.serviceName;
-
-      if (window.PMUNotifications) {
-        window.PMUNotifications.success(`Appointment ${saved.id} confirmed! We have emailed you pre-treatment guidelines.`, 5000);
-      }
-    }
+  function updateStepUI() {
+    // Keep initial UI synchronized
+    updatePricingSummary();
   }
 
+  // Auto initialize on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
 
-  return { init, bookingData, goToStep };
+  return {
+    init,
+    bookingData,
+    goToStep
+  };
 })();
 
 window.PMUBooking = PMUBooking;

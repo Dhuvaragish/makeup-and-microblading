@@ -5,7 +5,7 @@
   <link rel="alternate icon" href="assets/icons/favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Appointment | VELOURA Permanent Makeup & Brow Studio</title>
+  <title>Book Your Treatment | VELOURA Permanent Makeup & Brow Studio</title>
   <meta name="description" content="Reserve your bespoke cosmetic tattooing session with our master artists. Real-time calendar scheduling, service selection, and instant confirmation.">
   
   <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="css/rtl.css">
 </head>
 <body>
-
 
   <!-- Header -->
   <header class="pmu-header sticky-top">
@@ -60,7 +59,7 @@
 
           <div class="header-actions">
             <!-- Language (RTL/LTR) Toggle -->
-            <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
+            <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR">
               <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
               <span class="lang-label visually-hidden">EN (LTR)</span>
             </button>
@@ -79,7 +78,7 @@
             </div>
 
             <!-- Book Appointment CTA -->
-            <a href="booking.html" class="btn-header-cta">
+            <a href="booking.html" class="btn-header-cta active">
               <i class="fa-regular fa-calendar-check"></i>
               <span>Book Appointment</span>
             </a>
@@ -89,235 +88,485 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="py-5 bg-subtle border-bottom">
-    <div class="container text-center py-2">
-      <span class="section-eyebrow">Online Concierge</span>
-      <h1 class="display-4 font-serif fw-bold mb-2">Book Your Appointment</h1>
-      <p class="text-muted lead mx-auto" style="max-width: 600px;">
-        Follow our 5-step interactive scheduler to select your service, master artist, and desired time.
-      </p>
-    </div>
-  </section>
+  <!-- Luxury Two-Column Appointment Booking Section -->
+  <main class="booking-page-section">
+    <div class="container-xl">
+      <div class="row g-4 align-items-stretch">
 
-  <!-- Main Booking Wizard Section -->
-  <section class="section-padding bg-main">
-    <div class="container">
-      <!-- Wizard Wrapper -->
-      <div id="booking-wizard-wrapper">
-        <!-- 5-Step Stepper Header -->
-        <div class="wizard-stepper mb-5">
-          <div class="wizard-step-item active" data-step="1">
-            <div class="step-circle">1</div>
-            <span class="step-title">Treatment</span>
-          </div>
-          <div class="wizard-step-item" data-step="2">
-            <div class="step-circle">2</div>
-            <span class="step-title">Artist</span>
-          </div>
-          <div class="wizard-step-item" data-step="3">
-            <div class="step-circle">3</div>
-            <span class="step-title">Date & Time</span>
-          </div>
-          <div class="wizard-step-item" data-step="4">
-            <div class="step-circle">4</div>
-            <span class="step-title">Details & Health</span>
-          </div>
-          <div class="wizard-step-item" data-step="5">
-            <div class="step-circle">5</div>
-            <span class="step-title">Confirmation</span>
+        <!-- ==========================================
+             LEFT PANEL — BRAND EXPERIENCE (32–35%)
+             ========================================== -->
+        <div class="col-lg-4 col-xl-4 d-flex">
+          <div class="booking-brand-panel w-100">
+            <div class="booking-brand-panel-overlay">
+              
+              <!-- Brand Header -->
+              <div>
+                <div class="d-flex align-items-center gap-3 mb-4">
+                  <div class="pmu-brand-logo">
+                    <img src="assets/icons/logo.svg" alt="VELOURA Emblem" width="46" height="46">
+                  </div>
+                  <div>
+                    <div class="font-serif fw-bold text-main" style="font-size: 1.45rem; letter-spacing: 0.08em; line-height: 1.1;">VELOURA</div>
+                    <div class="small text-muted" style="font-size: 0.68rem; letter-spacing: 0.16em;">PERMANENT MAKEUP &amp; BROW STUDIO</div>
+                  </div>
+                </div>
+
+                <!-- Eyebrow & Main Heading -->
+                <span class="booking-brand-badge mb-3">
+                  <i class="fa-solid fa-gem text-gold"></i> Atelier Reservations
+                </span>
+                <h2 class="font-serif fw-bold mb-3" style="font-size: 2.15rem; color: #1a1817; line-height: 1.25;">
+                  Your Treatment Journey
+                </h2>
+                <p class="mb-4" style="color: #6B6258; font-size: 0.96rem; line-height: 1.6;">
+                  Personalized care, refined techniques, and results that feel like you.
+                </p>
+
+                <!-- Three Compact Brand Highlights -->
+                <div class="d-flex flex-column gap-3 mb-4">
+                  <!-- Highlight 1 -->
+                  <div class="brand-highlight-card">
+                    <div class="brand-highlight-icon">
+                      <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div>
+                      <h6 class="font-serif fw-bold mb-1" style="font-size: 0.98rem; color: #1a1817;">Brow Artistry</h6>
+                      <p class="mb-0 small" style="color: #6B6258; line-height: 1.45;">Natural, refined, personalized facial architecture.</p>
+                    </div>
+                  </div>
+
+                  <!-- Highlight 2 -->
+                  <div class="brand-highlight-card">
+                    <div class="brand-highlight-icon">
+                      <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                      <h6 class="font-serif fw-bold mb-1" style="font-size: 0.98rem; color: #1a1817;">Safe &amp; Professional</h6>
+                      <p class="mb-0 small" style="color: #6B6258; line-height: 1.45;">Clear treatment and single-use sterile hygiene practices.</p>
+                    </div>
+                  </div>
+
+                  <!-- Highlight 3 -->
+                  <div class="brand-highlight-card">
+                    <div class="brand-highlight-icon">
+                      <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <div>
+                      <h6 class="font-serif fw-bold mb-1" style="font-size: 0.98rem; color: #1a1817;">Tailored Experience</h6>
+                      <p class="mb-0 small" style="color: #6B6258; line-height: 1.45;">From pre-draw mapping to completed aftercare healing.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Concierge Note -->
+              <div class="pt-3 border-top d-flex align-items-center justify-content-between small text-muted" style="border-color: rgba(214, 188, 145, 0.35) !important;">
+                <span><i class="fa-solid fa-location-dot text-gold me-1"></i> 740 Madison Ave, Manhattan</span>
+                <a href="tel:+15552347890" class="text-gold text-decoration-none fw-semibold">
+                  <i class="fa-solid fa-phone me-1"></i> Concierge
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        <div class="row g-5">
-          <!-- Wizard Steps Content (Left) -->
-          <div class="col-lg-8">
-            <!-- STEP 1: Select Service -->
-            <div class="booking-step-pane" data-step="1">
-              <div class="mb-4">
-                <h4 class="font-serif mb-1">Step 1: Choose Your Treatment</h4>
-                <p class="text-muted small">Select the cosmetic tattooing service you would like to reserve:</p>
+        <!-- ==========================================
+             RIGHT PANEL — BOOKING FORM (65–68%)
+             ========================================== -->
+        <div class="col-lg-8 col-xl-8 d-flex">
+          <div class="booking-form-card w-100" id="booking-card-container">
+            
+            <!-- Centered Header -->
+            <div class="text-center mb-4">
+              <span class="booking-brand-badge mb-2">Step-by-Step Concierge</span>
+              <h1 class="font-serif fw-bold mb-2" style="font-size: 2.2rem; color: #1a1817;">Book Your Treatment</h1>
+              <p class="text-muted mb-0" id="booking-step-subtitle" style="font-size: 0.98rem;">
+                Choose your treatment and specialist to continue.
+              </p>
+            </div>
+
+            <!-- 4-Step Progress Indicator -->
+            <div class="booking-progress-stepper">
+              <div class="stepper-step active" data-step="1">
+                <div class="stepper-num">1</div>
+                <span class="stepper-label">Treatment</span>
               </div>
-              <div id="booking-services-list" class="row">
-                <!-- Rendered dynamically by booking.js -->
+              <div class="stepper-divider" id="step-divider-1"></div>
+              <div class="stepper-step" data-step="2">
+                <div class="stepper-num">2</div>
+                <span class="stepper-label">Date &amp; Time</span>
+              </div>
+              <div class="stepper-divider" id="step-divider-2"></div>
+              <div class="stepper-step" data-step="3">
+                <div class="stepper-num">3</div>
+                <span class="stepper-label">Your Details</span>
+              </div>
+              <div class="stepper-divider" id="step-divider-3"></div>
+              <div class="stepper-step" data-step="4">
+                <div class="stepper-num">4</div>
+                <span class="stepper-label">Confirmation</span>
               </div>
             </div>
 
-            <!-- STEP 2: Select Artist -->
-            <div class="booking-step-pane d-none" data-step="2">
-              <div class="mb-4">
-                <h4 class="font-serif mb-1">Step 2: Choose Your Specialist</h4>
-                <p class="text-muted small">Select an artist or choose first available for maximum scheduling flexibility:</p>
-              </div>
-              <div id="booking-artists-list" class="row">
-                <!-- Rendered dynamically by booking.js -->
-              </div>
-            </div>
-
-            <!-- STEP 3: Select Date & Time -->
-            <div class="booking-step-pane d-none" data-step="3">
-              <div class="mb-4">
-                <h4 class="font-serif mb-1">Step 3: Pick Date & Time Slot</h4>
-                <p class="text-muted small">Choose your preferred session date and available morning or afternoon appointment:</p>
-              </div>
+            <!-- ==========================================
+                 STEP 1: TREATMENT & SPECIALIST SELECTION
+                 ========================================== -->
+            <div class="booking-step-content" id="booking-step-1">
               
-              <div class="pmu-card p-4 mb-4">
-                <label class="form-label mb-2"><i class="fa-regular fa-calendar text-gold me-2"></i> Select Date</label>
-                <input type="date" id="booking-date-input" class="form-control mb-4" style="max-width: 300px;">
-
-                <label class="form-label mb-2"><i class="fa-regular fa-clock text-gold me-2"></i> Available Time Slots</label>
-                <div id="booking-time-slots" class="time-slot-grid">
-                  <!-- Rendered dynamically by booking.js -->
+              <!-- Treatment Selection Dropdown -->
+              <div class="mb-3">
+                <label class="form-label fw-bold d-flex align-items-center justify-content-between" for="booking-service-select">
+                  <span><i class="fa-solid fa-feather-pointed text-gold me-2"></i>Select Treatment</span>
+                  <span id="treatment-badge-popular" class="badge bg-gold-subtle text-gold-dark small">Signature Service</span>
+                </label>
+                <div class="input-group-luxury">
+                  <i class="fa-solid fa-wand-magic-sparkles input-luxury-icon"></i>
+                  <select id="booking-service-select" class="form-select form-select-luxury" aria-label="Select Treatment">
+                    <!-- Populated dynamically via JS -->
+                  </select>
+                </div>
+                
+                <!-- Micro Feature Badges -->
+                <div class="service-feature-strip" id="service-feature-strip">
+                  <span class="service-feature-pill" id="feat-duration"><i class="fa-regular fa-clock text-gold"></i> 120 mins</span>
+                  <span class="service-feature-pill" id="feat-pain"><i class="fa-solid fa-hand-holding-heart text-gold"></i> Minimal Pain</span>
+                  <span class="service-feature-pill" id="feat-retention"><i class="fa-solid fa-sparkles text-gold"></i> 12-18 Months Retention</span>
                 </div>
               </div>
-            </div>
 
-            <!-- STEP 4: Client Info & Medical Screening -->
-            <div class="booking-step-pane d-none" data-step="4">
+              <!-- Specialist Selection Dropdown -->
               <div class="mb-4">
-                <h4 class="font-serif mb-1">Step 4: Client Information & Medical Screening</h4>
-                <p class="text-muted small">Please provide your contact information and review clinical safety contraindications:</p>
+                <label class="form-label fw-bold d-flex align-items-center justify-content-between" for="booking-artist-select">
+                  <span><i class="fa-solid fa-user-doctor text-gold me-2"></i>Preferred Specialist</span>
+                  <span class="text-muted small">Certified PMU Artist</span>
+                </label>
+                <div class="input-group-luxury">
+                  <i class="fa-solid fa-user-tie input-luxury-icon"></i>
+                  <select id="booking-artist-select" class="form-select form-select-luxury" aria-label="Select Specialist">
+                    <!-- Populated dynamically via JS -->
+                  </select>
+                </div>
               </div>
 
-              <div class="pmu-card p-4 mb-4">
-                <div class="row g-3 mb-4">
-                  <div class="col-md-6">
-                    <label class="form-label" for="client-name">Full Legal Name *</label>
-                    <input type="text" id="client-name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+              <!-- Pricing Summary Card -->
+              <div class="booking-pricing-summary-card">
+                <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom" style="border-color: rgba(214, 188, 145, 0.3) !important;">
+                  <div>
+                    <span class="text-muted small text-uppercase fw-bold letter-spacing-1" style="font-size: 0.76rem;">Session Investment</span>
+                    <h3 id="price-total-display" class="font-serif fw-bold mb-0 text-main mt-1" style="font-size: 1.85rem;">$550</h3>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="client-email">Email Address *</label>
-                    <input type="email" id="client-email" class="form-control" placeholder="sarah@example.com" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="client-phone">Mobile Telephone Number *</label>
-                    <input type="tel" id="client-phone" class="form-control" placeholder="+1 (555) 234-5678" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Emergency Contact Phone</label>
-                    <input type="tel" id="client-emerg-phone" class="form-control" placeholder="+1 (555) 987-6543">
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label">Previous PMU or Skin Sensitivities Notes</label>
-                    <textarea id="client-notes" class="form-control" rows="2" placeholder="Mention previous tattoos, keloid history, or pigment preferences..."></textarea>
+                  <div class="text-end">
+                    <span class="small text-uppercase fw-bold letter-spacing-1" style="font-size: 0.76rem; color: #8c642c;">Deposit Due Today (25%)</span>
+                    <h3 id="price-deposit-display" class="font-serif fw-bold mb-0 mt-1" style="font-size: 1.85rem; color: #8c642c;">$138</h3>
                   </div>
                 </div>
 
-                <!-- Contraindications Checklist -->
-                <div class="p-3 bg-subtle rounded-3 border">
-                  <h6 class="font-serif mb-2"><i class="fa-solid fa-heart-pulse text-danger me-2"></i> Health & Safety Screening</h6>
-                  <p class="text-muted small mb-3">Permanent makeup is contraindicated under certain health conditions. Please verify:</p>
-                  
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" id="contra-pregnant">
-                    <label class="form-check-label small" for="contra-pregnant">
-                      I confirm I am NOT currently pregnant or breastfeeding.
-                    </label>
+                <div class="d-flex align-items-center justify-content-between mb-3 text-muted small">
+                  <span>Balance Due at Studio (on appointment day):</span>
+                  <strong id="price-balance-display" class="text-main fs-6">$412</strong>
+                </div>
+
+                <!-- Touch-up Badge -->
+                <div id="touchup-included-badge" class="d-flex align-items-center gap-2 p-2 rounded-3 mb-3" style="background: rgba(214, 188, 145, 0.16); border: 1px solid rgba(214, 188, 145, 0.38);">
+                  <i class="fa-solid fa-circle-check text-gold fs-6"></i>
+                  <span class="small fw-semibold touchup-badge-text">Complimentary 6-Week Perfection Touch-Up Included</span>
+                </div>
+
+                <p class="text-muted small mb-0" style="font-size: 0.8rem; line-height: 1.45;">
+                  <i class="fa-solid fa-circle-info text-gold me-1"></i> All taxes and sterile single-use nano-cartridge fees are included in the price. The remaining balance is payable at the studio via credit card, Apple Pay, or cash.
+                </p>
+              </div>
+
+              <!-- Primary & Secondary Actions -->
+              <div class="d-flex flex-column gap-2 mb-4">
+                <button type="button" id="booking-btn-step1-next" class="btn-pmu-gold w-100 py-3 fw-bold fs-6 d-flex align-items-center justify-content-center">
+                  <span>Proceed to Date &amp; Time</span>
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
+                </button>
+                <a href="consultation.html" class="btn btn-outline-charcoal w-100 py-2 d-flex align-items-center justify-content-center gap-2">
+                  <i class="fa-regular fa-comments text-gold"></i>
+                  <span>Book Free Consultation</span>
+                </a>
+              </div>
+
+              <!-- Trust and Policy Information Strip -->
+              <div class="booking-policy-strip pt-3 border-top" style="border-color: #E8E0D5 !important;">
+                <div class="row g-2 text-center">
+                  <div class="col-4">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                      <i class="fa-solid fa-rotate-left text-gold fs-6"></i>
+                      <span class="text-muted" style="font-size: 0.74rem; line-height: 1.25;">Free 48h Cancellation</span>
+                    </div>
                   </div>
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" id="contra-botox">
-                    <label class="form-check-label small" for="contra-botox">
-                      I have NOT received Botox or fillers in the treatment area within the last 14 days.
-                    </label>
+                  <div class="col-4">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                      <i class="fa-solid fa-shield-virus text-gold fs-6"></i>
+                      <span class="text-muted" style="font-size: 0.74rem; line-height: 1.25;">100% Sterile Disposable</span>
+                    </div>
                   </div>
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" id="contra-accutane">
-                    <label class="form-check-label small" for="contra-accutane">
-                      I have NOT taken Accutane / Isotretinoin in the past 12 months.
-                    </label>
-                  </div>
-                  <div class="form-check mb-0">
-                    <input class="form-check-input" type="checkbox" id="client-contraindications-check" checked required>
-                    <label class="form-check-label small fw-semibold text-main" for="client-contraindications-check">
-                      I declare the above information is accurate and agree to VELOURA Studio's 48h cancellation policy. *
-                    </label>
+                  <div class="col-4">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                      <i class="fa-solid fa-award text-gold fs-6"></i>
+                      <span class="text-muted" style="font-size: 0.74rem; line-height: 1.25;">EU REACH Pigments</span>
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
 
-            <!-- STEP 5: Final Review & Deposit -->
-            <div class="booking-step-pane d-none" data-step="5">
+            <!-- ==========================================
+                 STEP 2: DATE & TIME SELECTION
+                 ========================================== -->
+            <div class="booking-step-content d-none" id="booking-step-2">
+              
+              <!-- Selection Reminder Bar -->
+              <div class="p-3 rounded-3 mb-4 d-flex align-items-center justify-content-between" style="background: rgba(214, 188, 145, 0.12); border: 1px solid rgba(214, 188, 145, 0.3);">
+                <div>
+                  <small class="text-muted d-block" style="font-size: 0.75rem;">Selected Service &amp; Specialist</small>
+                  <strong class="text-main" id="step2-summary-service">Signature Microblading ($550)</strong>
+                  <span class="text-muted mx-1">•</span>
+                  <span class="text-gold-dark fw-semibold" id="step2-summary-artist">First Available Master Artist</span>
+                </div>
+                <button type="button" class="btn btn-sm btn-link text-gold text-decoration-none fw-semibold" id="step2-change-service-btn">Change</button>
+              </div>
+
+              <!-- Date Picker & Shortcuts -->
               <div class="mb-4">
-                <h4 class="font-serif mb-1">Step 5: Review & Confirm Reservation</h4>
-                <p class="text-muted small">Please verify all appointment details before confirming:</p>
-              </div>
-
-              <div class="pmu-card p-4 mb-4">
-                <div id="booking-step5-review" class="mb-4">
-                  <!-- Rendered dynamically by booking.js -->
+                <label class="form-label fw-bold mb-2" for="booking-date-input">
+                  <i class="fa-regular fa-calendar text-gold me-2"></i>Select Appointment Date
+                </label>
+                
+                <!-- Quick Date Pills -->
+                <div class="date-shortcut-pills" id="date-shortcut-container">
+                  <button type="button" class="date-shortcut-btn active" data-offset="1">Tomorrow</button>
+                  <button type="button" class="date-shortcut-btn" data-offset="3">In 3 Days</button>
+                  <button type="button" class="date-shortcut-btn" data-offset="5">This Weekend</button>
+                  <button type="button" class="date-shortcut-btn" data-offset="7">Next Week</button>
                 </div>
 
-                <div class="p-3 bg-subtle rounded-3 border">
-                  <h6 class="font-serif mb-1"><i class="fa-solid fa-credit-card text-gold me-2"></i> Demo Deposit Simulation</h6>
-                  <p class="text-muted small mb-0">
-                    In this demo prototype, clicking "Confirm & Pay Deposit" generates a verified studio appointment stored in your browser session. A secure payment gateway (Stripe/Square) is integrated on production.
-                  </p>
+                <input type="date" id="booking-date-input" class="form-control form-control-luxury" style="max-width: 320px;" required>
+              </div>
+
+              <!-- Time Slots Grid -->
+              <div class="mb-4">
+                <label class="form-label fw-bold mb-2">
+                  <i class="fa-regular fa-clock text-gold me-2"></i>Available Time Slots
+                </label>
+                
+                <!-- Morning -->
+                <div class="time-slot-category">
+                  <span class="time-slot-category-title"><i class="fa-regular fa-sun text-gold"></i> Morning Sessions</span>
+                  <div class="time-slot-grid-modern">
+                    <div class="time-slot-modern-btn" data-time="09:30 AM">09:30 AM</div>
+                    <div class="time-slot-modern-btn selected" data-time="11:00 AM">11:00 AM</div>
+                  </div>
+                </div>
+
+                <!-- Afternoon -->
+                <div class="time-slot-category">
+                  <span class="time-slot-category-title"><i class="fa-solid fa-sun text-gold"></i> Afternoon Sessions</span>
+                  <div class="time-slot-grid-modern">
+                    <div class="time-slot-modern-btn" data-time="01:00 PM">01:00 PM</div>
+                    <div class="time-slot-modern-btn" data-time="02:30 PM">02:30 PM</div>
+                    <div class="time-slot-modern-btn" data-time="04:00 PM">04:00 PM</div>
+                  </div>
+                </div>
+
+                <!-- Evening -->
+                <div class="time-slot-category">
+                  <span class="time-slot-category-title"><i class="fa-regular fa-moon text-gold"></i> Late Afternoon</span>
+                  <div class="time-slot-grid-modern">
+                    <div class="time-slot-modern-btn" data-time="05:30 PM">05:30 PM</div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Step Navigation Buttons -->
-            <div class="d-flex justify-content-between align-items-center mt-4">
-              <button id="booking-prev-btn" class="btn btn-outline-secondary d-none">
-                <i class="fa-solid fa-arrow-left me-1"></i> Back
-              </button>
-              <div class="ms-auto">
-                <button id="booking-next-btn" class="btn-pmu-gold">
-                  <span>Continue</span>
-                  <i class="fa-solid fa-arrow-right"></i>
+              <!-- Selected Slot Feedback -->
+              <div class="p-3 rounded-3 mb-4" style="background: #FAF8F4; border: 1px solid #E8E0D5;">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-calendar-check text-gold fs-5"></i>
+                  <div>
+                    <small class="text-muted d-block" style="font-size: 0.75rem;">Your Reserved Slot Preview</small>
+                    <strong class="text-main" id="selected-slot-preview-text">Loading selected slot...</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="d-flex gap-3">
+                <button type="button" class="btn btn-outline-secondary px-4" id="booking-btn-step2-prev">
+                  <i class="fa-solid fa-arrow-left me-1"></i> Back
+                </button>
+                <button type="button" class="btn-pmu-gold flex-grow-1 py-3 fw-bold fs-6 d-flex align-items-center justify-content-center" id="booking-btn-step2-next">
+                  <span>Proceed to Your Details</span>
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
                 </button>
               </div>
-            </div>
-          </div>
 
-          <!-- Wizard Sticky Summary Sidebar (Right) -->
-          <div class="col-lg-4">
-            <div id="booking-summary-box" class="sticky-top" style="top: 100px;">
-              <!-- Rendered dynamically by booking.js -->
             </div>
+
+            <!-- ==========================================
+                 STEP 3: YOUR DETAILS & HEALTH SCREENING
+                 ========================================== -->
+            <div class="booking-step-content d-none" id="booking-step-3">
+              
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label class="form-label" for="client-name">Full Legal Name *</label>
+                  <input type="text" id="client-name" class="form-control form-control-luxury" placeholder="e.g. Sarah Jenkins" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="client-email">Email Address *</label>
+                  <input type="email" id="client-email" class="form-control form-control-luxury" placeholder="sarah@example.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="client-phone">Mobile Phone Number *</label>
+                  <input type="tel" id="client-phone" class="form-control form-control-luxury" placeholder="+1 (555) 234-5678" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="client-emerg-phone">Emergency Contact Phone</label>
+                  <input type="tel" id="client-emerg-phone" class="form-control form-control-luxury" placeholder="+1 (555) 987-6543">
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="client-notes">Brow Goals, Skin Sensitivities or Notes</label>
+                  <textarea id="client-notes" class="form-control form-control-luxury" rows="2" placeholder="Mention previous PMU, keloid history, desired brow shape, or color preferences..."></textarea>
+                </div>
+              </div>
+
+              <!-- Clinical Safety Screening -->
+              <div class="p-3 rounded-3 mb-4" style="background: rgba(214, 188, 145, 0.08); border: 1.5px solid rgba(214, 188, 145, 0.35);">
+                <h6 class="font-serif fw-bold mb-2 d-flex align-items-center gap-2" style="color: #1a1817;">
+                  <i class="fa-solid fa-heart-pulse text-danger"></i> Clinical Safety &amp; Health Declaration
+                </h6>
+                <p class="text-muted small mb-3">Please verify that you meet our clinical safety criteria before proceeding:</p>
+                
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="contra-pregnant" checked>
+                  <label class="form-check-label small" for="contra-pregnant">
+                    I confirm I am NOT currently pregnant or breastfeeding.
+                  </label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="contra-botox" checked>
+                  <label class="form-check-label small" for="contra-botox">
+                    I have NOT received Botox or dermal fillers in the treatment area within the past 14 days.
+                  </label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="contra-accutane" checked>
+                  <label class="form-check-label small" for="contra-accutane">
+                    I have NOT taken Accutane / Isotretinoin in the past 12 months.
+                  </label>
+                </div>
+                <div class="form-check mb-0 pt-2 border-top" style="border-color: rgba(214, 188, 145, 0.25) !important;">
+                  <input class="form-check-input" type="checkbox" id="client-contraindications-check" checked required>
+                  <label class="form-check-label small fw-semibold text-main" for="client-contraindications-check">
+                    I agree to the VELOURA 48-hour cancellation policy and confirm the health declarations above are accurate. *
+                  </label>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="d-flex gap-3">
+                <button type="button" class="btn btn-outline-secondary px-4" id="booking-btn-step3-prev">
+                  <i class="fa-solid fa-arrow-left me-1"></i> Back
+                </button>
+                <button type="button" class="btn-pmu-gold flex-grow-1 py-3 fw-bold fs-6 d-flex align-items-center justify-content-center" id="booking-btn-step3-next">
+                  <span>Review Appointment</span>
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- ==========================================
+                 STEP 4: CONFIRMATION & REVIEW
+                 ========================================== -->
+            <div class="booking-step-content d-none" id="booking-step-4">
+              
+              <div id="booking-step4-review-container" class="mb-4">
+                <!-- Rendered dynamically by booking.js -->
+              </div>
+
+              <div class="p-3 rounded-3 mb-4" style="background: rgba(214, 188, 145, 0.1); border: 1px solid rgba(214, 188, 145, 0.35);">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="fa-solid fa-lock text-gold mt-1"></i>
+                  <div>
+                    <h6 class="font-serif fw-bold mb-1" style="font-size: 0.95rem;">Studio Reservation Confirmation</h6>
+                    <p class="text-muted small mb-0" style="font-size: 0.8rem; line-height: 1.45;">
+                      In demonstration prototype mode, confirming logs an authentic studio appointment into your client profile and studio database. A live payment terminal or card reader completes the balance upon your studio arrival.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="d-flex gap-3">
+                <button type="button" class="btn btn-outline-secondary px-4" id="booking-btn-step4-prev">
+                  <i class="fa-solid fa-arrow-left me-1"></i> Back
+                </button>
+                <button type="button" class="btn-pmu-gold flex-grow-1 py-3 fw-bold fs-6 d-flex align-items-center justify-content-center" id="booking-btn-confirm">
+                  <i class="fa-solid fa-lock me-2"></i>
+                  <span>Confirm &amp; Reserve Appointment</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- ==========================================
+                 BOOKING CONFIRMED SUCCESS SCREEN
+                 ========================================== -->
+            <div id="booking-success-screen" class="d-none text-center py-4">
+              <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; background: rgba(214, 188, 145, 0.22); border: 2px solid #D6BC91; color: #7a5423; font-size: 2rem;">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="booking-brand-badge mb-2">Reservation Confirmed</span>
+              <h2 class="font-serif fw-bold mb-2" style="font-size: 2rem; color: #1a1817;">You're Booked at VELOURA!</h2>
+              <p class="text-muted mb-4" style="max-width: 540px; margin: 0 auto;">
+                Your appointment has been registered in our Madison Avenue studio schedule. We look forward to welcoming you for your bespoke treatment.
+              </p>
+
+              <div class="p-4 rounded-4 text-start mb-4 mx-auto" style="max-width: 540px; background: #FAF8F4; border: 1.5px solid rgba(214, 188, 145, 0.4);">
+                <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                  <span class="text-muted small">Booking Reference:</span>
+                  <strong id="booking-success-ref" class="text-gold fw-bold">APT-8041</strong>
+                </div>
+                <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                  <span class="text-muted small">Treatment:</span>
+                  <strong id="booking-success-service" class="text-main">Signature Microblading</strong>
+                </div>
+                <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                  <span class="text-muted small">Specialist:</span>
+                  <strong id="booking-success-artist" class="text-main">First Available Master Artist</strong>
+                </div>
+                <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                  <span class="text-muted small">Date &amp; Time:</span>
+                  <strong id="booking-success-date" class="text-main">Tomorrow at 11:00 AM</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-0">
+                  <span class="text-muted small">Deposit Logged:</span>
+                  <strong id="booking-success-deposit" class="text-gold-dark fw-bold">$138 Paid (Balance $412 at Studio)</strong>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="client-dashboard.html" class="btn-pmu-gold">Go to Client Dashboard</a>
+                <a href="aftercare.html" class="btn-pmu-outline">View Aftercare Preparation</a>
+                <button type="button" class="btn btn-outline-secondary" id="booking-reset-btn">Book Another Session</button>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <!-- Success Screen (Shown upon booking confirmation) -->
-      <div id="booking-success-screen" class="d-none max-w-2xl mx-auto text-center" style="max-width: 680px;">
-        <div class="pmu-card p-5">
-          <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center mb-4" style="width: 72px; height: 72px; font-size: 2rem;">
-            <i class="fa-solid fa-check"></i>
-          </div>
-          <span class="pmu-badge pmu-badge-success mb-2">Reservation Confirmed</span>
-          <h2 class="font-serif mb-2">You're Booked at VELOURA!</h2>
-          <p class="text-muted mb-4">
-            Your appointment has been logged in our studio scheduling system. We have prepared pre-procedure instructions for you.
-          </p>
-
-          <div class="p-4 bg-subtle rounded-4 text-start mb-4 border">
-            <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
-              <span class="text-muted">Booking Reference:</span>
-              <strong id="booking-success-ref" class="text-gold">APT-8041</strong>
-            </div>
-            <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
-              <span class="text-muted">Treatment:</span>
-              <strong id="booking-success-service">Signature Microblading</strong>
-            </div>
-            <div class="d-flex justify-content-between mb-0">
-              <span class="text-muted">Date & Time:</span>
-              <strong id="booking-success-date">October 18, 2026 at 10:00 AM</strong>
-            </div>
-          </div>
-
-          <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="client-dashboard.html" class="btn-pmu-gold">Go to Client Dashboard</a>
-            <a href="aftercare.html" class="btn-pmu-outline">View Aftercare Preparation</a>
-          </div>
-        </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
-    <!-- Standardized Studio Footer -->
+  <!-- Standardized Studio Footer -->
   <footer class="pmu-footer">
     <div class="container pmu-footer-top">
       <div class="row g-5">
