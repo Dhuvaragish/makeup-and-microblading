@@ -654,18 +654,27 @@ header.sticky-top.scrolled,
 }
 
 .pmu-footer-links a {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 0.92rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: var(--pmu-transition-fast);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .pmu-footer-links a:hover {
-  color: var(--pmu-primary-light);
+  color: var(--pmu-primary-light, #D6BC91);
   transform: translateX(4px);
+  text-decoration: none;
+}
+
+.pmu-footer-links a:focus-visible {
+  outline: 2px solid var(--pmu-primary-light, #D6BC91);
+  outline-offset: 4px;
+  border-radius: 4px;
+  color: #D6BC91;
   text-decoration: none;
 }
 

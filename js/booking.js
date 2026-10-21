@@ -628,17 +628,57 @@ const PMUBooking = (function() {
     }
   }
 
+  const SERVICE_ALIASES = {
+    'microblading': 'srv-microblading',
+    'signature-microblading': 'srv-microblading',
+    'srv-microblading': 'srv-microblading',
+
+    'powder-brows': 'srv-powder-brows',
+    'ombre-powder-brows': 'srv-powder-brows',
+    'ombré-powder-brows': 'srv-powder-brows',
+    'ombre-powder': 'srv-powder-brows',
+    'srv-powder-brows': 'srv-powder-brows',
+
+    'combo-brows': 'srv-combo-brows',
+    'combination-brows': 'srv-combo-brows',
+    'combination-hybrid-brows': 'srv-combo-brows',
+    'hybrid-brows': 'srv-combo-brows',
+    'srv-combo-brows': 'srv-combo-brows',
+
+    'nano-brows': 'srv-nano-brows',
+    'digital-nano-brows': 'srv-nano-brows',
+    'digital-nano-hairstrokes': 'srv-nano-brows',
+    'srv-nano-brows': 'srv-nano-brows',
+
+    'lip-blush': 'srv-lip-blush',
+    'velvet-lip-blush': 'srv-lip-blush',
+    'srv-lip-blush': 'srv-lip-blush',
+
+    'annual-touchup': 'srv-annual-touchup',
+    'annual-touch-up': 'srv-annual-touchup',
+    'touchup': 'srv-annual-touchup',
+    'touch-up': 'srv-annual-touchup',
+    'srv-annual-touchup': 'srv-annual-touchup',
+
+    'lip-neutralization': 'srv-lip-neutralization',
+    'brow-correction': 'srv-brow-correction',
+    'duo-package': 'srv-duo-package'
+  };
+
   function setupUrlPreselect() {
     const urlParams = new URLSearchParams(window.location.search);
-    const serviceParam = urlParams.get('service');
+    let serviceParam = (urlParams.get('service') || '').toLowerCase().trim();
     const artistParam = urlParams.get('artist');
 
     if (serviceParam) {
+      if (SERVICE_ALIASES[serviceParam]) {
+        serviceParam = SERVICE_ALIASES[serviceParam];
+      }
       setTimeout(() => {
         const select = document.getElementById('booking-service-select');
         if (select) {
           let option = Array.from(select.options).find(opt => 
-            opt.value === serviceParam || opt.value === `srv-${serviceParam}`
+            opt.value === serviceParam || opt.value === `srv-${serviceParam}` || opt.value.toLowerCase().includes(serviceParam)
           );
           if (option) {
             select.value = option.value;

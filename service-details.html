@@ -114,7 +114,11 @@
           <div class="d-flex flex-column align-items-lg-end bg-surface p-4 rounded-4 border shadow-sm">
             <span class="small text-muted text-uppercase fw-semibold mb-1" style="letter-spacing: 0.05em;">Treatment Investment</span>
             <span class="display-5 font-serif fw-bold text-gold mb-1" id="detail-price">$550</span>
-            <span class="badge bg-subtle text-muted border px-3 py-1" id="detail-touchup-price"><i class="fa-solid fa-rotate-right text-gold me-1"></i> Includes 6-Week Touch-Up at $150</span>
+            <span class="badge bg-subtle text-muted border px-3 py-1 mb-3" id="detail-touchup-price"><i class="fa-solid fa-rotate-right text-gold me-1"></i> Includes 6-Week Touch-Up at $150</span>
+            <a id="header-book-btn" href="booking.html" class="btn btn-pmu-gold btn-sm w-100 d-flex align-items-center justify-content-center gap-2">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book This Treatment</span>
+            </a>
           </div>
         </div>
 
@@ -498,8 +502,8 @@
                   </small>
                 </div>
 
-                <a id="sidebar-book-btn" href="booking.html" class="btn-pmu-gold w-100 mb-3">
-                  <span>Proceed to Date &amp; Time</span>
+                <a id="sidebar-book-btn" href="booking.html" class="btn-pmu-gold w-100 mb-3 d-flex align-items-center justify-content-center gap-2">
+                  <span>Book This Treatment</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
 
@@ -583,7 +587,7 @@
           </div>
         </div>
 
-        <!-- Col 2: Treatments -->
+                <!-- Col 2: Treatments -->
         <div class="col-6 col-md-6 col-lg-2">
           <h5 class="pmu-footer-title">Treatments</h5>
           <ul class="pmu-footer-links">
@@ -1214,22 +1218,111 @@
         }
       };
 
+      // Canonical slug aliases for treatment routing
+      const SLUG_ALIASES = {
+        'microblading': 'microblading',
+        'signature-microblading': 'microblading',
+        'srv-microblading': 'microblading',
+        
+        'powder-brows': 'powder-brows',
+        'ombre-powder-brows': 'powder-brows',
+        'ombré-powder-brows': 'powder-brows',
+        'ombre-powder': 'powder-brows',
+        'ombré-powder': 'powder-brows',
+        'srv-powder-brows': 'powder-brows',
+        
+        'combo-brows': 'combo-brows',
+        'combination-brows': 'combo-brows',
+        'combination-hybrid-brows': 'combo-brows',
+        'hybrid-brows': 'combo-brows',
+        'srv-combo-brows': 'combo-brows',
+        
+        'nano-brows': 'nano-brows',
+        'digital-nano-brows': 'nano-brows',
+        'digital-nano-hairstrokes': 'nano-brows',
+        'nano-hairstrokes': 'nano-brows',
+        'srv-nano-brows': 'nano-brows',
+        
+        'lip-blush': 'lip-blush',
+        'velvet-lip-blush': 'lip-blush',
+        'lip-tint': 'lip-blush',
+        'srv-lip-blush': 'lip-blush',
+        
+        'annual-touchup': 'annual-touchup',
+        'annual-touch-up': 'annual-touchup',
+        'touchup': 'annual-touchup',
+        'touch-up': 'annual-touchup',
+        'color-boost': 'annual-touchup',
+        'srv-annual-touchup': 'annual-touchup',
+
+        'lip-neutralization': 'lip-neutralization',
+        'dark-lip-neutralization': 'lip-neutralization',
+        'brow-correction': 'brow-correction',
+        'duo-package': 'duo-package'
+      };
+
+      function escapeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
       // Function to render any service by slug
       function renderService(slug) {
-        let service = TREATMENT_CATALOG[slug];
+        const cleanSlug = (slug || '').toLowerCase().trim();
+        const canonical = SLUG_ALIASES[cleanSlug] || cleanSlug;
+        let service = TREATMENT_CATALOG[canonical];
         
         // If not in local catalog, try reading storage
         if (!service && typeof PMUStorage !== 'undefined') {
-          const stored = PMUStorage.getServiceById(slug);
+          const stored = PMUStorage.getServiceById(canonical) || PMUStorage.getServiceById(cleanSlug);
           if (stored) {
             service = Object.assign({}, TREATMENT_CATALOG['microblading'], stored);
           }
         }
         
-        // Default to microblading if still null
+        const mainContent = document.getElementById('service-details-content');
+        let notFoundBanner = document.getElementById('service-not-found-msg');
+
+        // Handle invalid or not-found service slug gracefully
         if (!service) {
-          service = TREATMENT_CATALOG['microblading'];
+          document.title = 'Treatment Not Found | VELOURA Permanent Makeup & Brow Studio';
+          if (!notFoundBanner) {
+            notFoundBanner = document.createElement('div');
+            notFoundBanner.id = 'service-not-found-msg';
+            notFoundBanner.className = 'container py-5 text-center';
+            notFoundBanner.innerHTML = `
+              <div class="pmu-card p-5 mx-auto my-5" style="max-width: 680px; border-radius: 20px;">
+                <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px; background: rgba(214, 188, 145, 0.18); color: #8c642c; font-size: 1.75rem;">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h2 class="font-serif fw-bold mb-2 text-main">Treatment Not Found</h2>
+                <p class="text-muted mb-4">We could not locate the treatment you requested ("${escapeHTML(slug)}"). Please explore our verified master treatments below:</p>
+                
+                <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                  <a href="service-details.html?service=microblading" class="btn btn-sm btn-outline-secondary">Microblading</a>
+                  <a href="service-details.html?service=powder-brows" class="btn btn-sm btn-outline-secondary">Ombré Powder Brows</a>
+                  <a href="service-details.html?service=combo-brows" class="btn btn-sm btn-outline-secondary">Combination Brows</a>
+                  <a href="service-details.html?service=nano-brows" class="btn btn-sm btn-outline-secondary">Digital Nano Brows</a>
+                  <a href="service-details.html?service=lip-blush" class="btn btn-sm btn-outline-secondary">Velvet Lip Blush</a>
+                  <a href="service-details.html?service=annual-touchup" class="btn btn-sm btn-outline-secondary">Annual Touch-Up</a>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="services.html" class="btn-pmu-gold">Browse All Services</a>
+                  <a href="booking.html" class="btn-pmu-outline">Open Appointment Scheduler</a>
+                </div>
+              </div>
+            `;
+            if (mainContent) mainContent.parentElement.insertBefore(notFoundBanner, mainContent);
+          }
+          if (mainContent) mainContent.classList.add('d-none');
+          if (notFoundBanner) notFoundBanner.classList.remove('d-none');
+          return;
         }
+
+        if (notFoundBanner) notFoundBanner.classList.add('d-none');
+        if (mainContent) mainContent.classList.remove('d-none');
 
         // 1. Page Title & Breadcrumbs
         document.title = `${service.name} | VELOURA Permanent Makeup & Brow Studio`;
@@ -1477,10 +1570,13 @@
         const sidebarSelect = document.getElementById('sidebar-service-select');
         const artistSelect = document.getElementById('sidebar-artist-select');
         const bookBtn = document.getElementById('sidebar-book-btn');
-        if (bookBtn && sidebarSelect) {
+        const headerBookBtn = document.getElementById('header-book-btn');
+        if (sidebarSelect) {
           const currentSlug = sidebarSelect.value;
           const currentArtist = artistSelect ? artistSelect.value : 'any';
-          bookBtn.href = `booking.html?service=${currentSlug}&artist=${currentArtist}`;
+          const targetUrl = `booking.html?service=${currentSlug}&artist=${currentArtist}`;
+          if (bookBtn) bookBtn.href = targetUrl;
+          if (headerBookBtn) headerBookBtn.href = targetUrl;
         }
       }
 
