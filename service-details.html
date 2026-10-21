@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="alternate icon" href="assets/icons/favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Treatment Details | AURA PMU Studio</title>
-  <meta name="description" content="In-depth treatment guide: benefits, step-by-step clinical procedure, pre-care guidelines, healing roadmap, and booking.">
+  <title>Treatment Details & Pre-Care Guide | VELOURA Brow & PMU Studio</title>
+  <meta name="description" content="Step-by-step treatment roadmaps, medical contraindications, pre-care instructions, and expected retention for all PMU procedures.">
   
   <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/tailwind.css">
@@ -21,71 +23,65 @@
 </head>
 <body>
 
-  <!-- Topbar -->
-  <div class="pmu-topbar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-4">
-        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
-        <span class="pmu-topbar-item"><i class="fa-regular fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</span>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
-      </div>
-    </div>
-  </div>
-
   <!-- Header -->
-  <header class="pmu-header">
+  <header class="pmu-header sticky-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
-        <a class="pmu-brand" href="index.html">
-          <div class="pmu-brand-icon">A</div>
+        <a class="pmu-brand" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio Homepage">
+          <div class="pmu-brand-logo">
+            <img src="assets/icons/logo.svg" alt="VELOURA Studio Logo" width="44" height="44">
+          </div>
           <div class="pmu-brand-text">
-            <span class="pmu-brand-name">AURA</span>
-            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+            <span class="pmu-brand-name">VELOURA</span>
+            <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
           </div>
         </a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar" aria-controls="pmuNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="pmuNavbar">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
                 <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services.html"><i class="fa-solid fa-list-check"></i> All PMU Services</a></li>
-                <li><a class="dropdown-item active" href="service-details.html"><i class="fa-solid fa-circle-info"></i> Service Details</a></li>
-                <li><a class="dropdown-item" href="consultation.html"><i class="fa-solid fa-comments"></i> Virtual Consultation</a></li>
-              </ul>
-            </li>
+            <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
 
           <div class="header-actions">
+            <!-- Language (RTL/LTR) Toggle -->
             <button class="icon-control-btn" data-action="toggle-language" title="Toggle RTL/LTR (English / العربية)" aria-label="Toggle RTL/LTR">
               <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
               <span class="lang-label visually-hidden">EN (LTR)</span>
             </button>
-            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+
+            <!-- Theme Mode (Light/Dark) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
               <i class="fa-solid fa-moon theme-toggle-icon"></i>
             </button>
+
+            <!-- Client Sign In -->
             <div class="header-user-status">
-              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+              <a href="login.html" class="btn-header-signin" title="Client Sign In">
+                <i class="fa-regular fa-user"></i>
+                <span>Client Sign In</span>
+              </a>
             </div>
-            <a href="booking.html" class="btn-pmu-gold">Book Treatment</a>
+
+            <!-- Book Appointment CTA -->
+            <a href="booking.html" class="btn-header-cta">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -148,7 +144,7 @@
               <img id="detail-hero-img" src="assets/images/brows/microblading.jpg" alt="Treatment Image" class="w-100 h-100 object-fit-cover">
               <div class="position-absolute top-0 start-0 m-3 d-flex flex-wrap gap-2">
                 <span class="badge bg-dark bg-opacity-75 text-gold px-3 py-2 rounded-pill border border-warning border-opacity-25 shadow-sm">
-                  <i class="fa-solid fa-award me-1"></i> AURA Master Technique
+                  <i class="fa-solid fa-award me-1"></i> VELOURA Master Technique
                 </span>
                 <span class="badge bg-gold text-dark px-3 py-2 rounded-pill fw-semibold shadow-sm" id="detail-badge-popular">
                   <i class="fa-solid fa-star me-1"></i> Most Requested
@@ -201,7 +197,7 @@
                   <div>
                     <strong class="text-main d-block mb-1">Cellular Micro-Encapsulation Guarantee</strong>
                     <p class="text-muted small mb-0">
-                      Unlike traditional deep body tattoos that enter the reticular dermis and blur over time, AURA pigments are micro-implanted strictly into the upper papillary layer (0.08mm to 0.15mm depth). This maintains razor-sharp definition, soft edges, and allows natural fading without unnatural gray, blue, or red discolouration.
+                      Unlike traditional deep body tattoos that enter the reticular dermis and blur over time, VELOURA pigments are micro-implanted strictly into the upper papillary layer (0.08mm to 0.15mm depth). This maintains razor-sharp definition, soft edges, and allows natural fading without unnatural gray, blue, or red discolouration.
                     </p>
                   </div>
                 </div>
@@ -392,7 +388,7 @@
               </div>
             </div>
 
-            <!-- The Aura 6-Week Touchup Protocol -->
+            <!-- The Veloura 6-Week Touchup Protocol -->
             <div class="pmu-card p-4 p-md-5 mb-5 bg-subtle">
               <span class="pmu-badge pmu-badge-gold mb-2">Essential Second Phase</span>
               <h4 class="font-serif mb-2">The 6-8 Week Perfecting Session</h4>
@@ -411,7 +407,7 @@
             <div class="mb-5">
               <span class="section-eyebrow">Studio Artisans</span>
               <h3 class="font-serif mb-2">Specialist Master Artists</h3>
-              <p class="text-muted small mb-4">Every procedure at AURA is performed exclusively by licensed, senior PMU artists with over 5+ years of clinical experience:</p>
+              <p class="text-muted small mb-4">Every procedure at VELOURA is performed exclusively by licensed, senior PMU artists with over 5+ years of clinical experience:</p>
               <div class="row g-4" id="detail-artists-list">
                 <!-- Dynamically populated with artist cards -->
               </div>
@@ -561,13 +557,15 @@
       <div class="row g-5">
         <!-- Col 1: Brand & Atelier Story -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="pmu-brand mb-3">
-            <div class="pmu-brand-icon">A</div>
-            <div class="pmu-brand-text">
-              <span class="pmu-brand-name text-white">AURA</span>
-              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+          <a class="pmu-brand mb-3 text-decoration-none" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio">
+            <div class="pmu-brand-logo">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="44" height="44">
             </div>
-          </div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">VELOURA</span>
+              <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
+            </div>
+          </a>
           <p class="text-white-50 small mb-4">
             Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
           </p>
@@ -624,7 +622,7 @@
           </div>
           <div class="pmu-footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+            <span><a href="mailto:concierge@velourastudio.com" class="text-white-50 text-decoration-none">concierge@velourastudio.com</a></span>
           </div>
 
           <div class="pmu-newsletter-box">
@@ -642,12 +640,15 @@
     <div class="pmu-footer-bottom">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="text-white-50 small">
-          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+          &copy; 2026 VELOURA Permanent Makeup &amp; Brow Studio. All Rights Reserved.
         </div>
-        <div class="d-flex flex-wrap gap-3 small">
+        <div class="d-flex flex-wrap gap-3 small align-items-center">
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
           <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+          <button class="border-0 bg-transparent text-white-50 p-0 text-decoration-none footer-legal-link d-inline-flex align-items-center gap-1" data-action="toggle-language" title="Toggle RTL / LTR Language" aria-label="Toggle RTL / LTR">
+            <i class="fa-solid fa-globe text-gold"></i><span class="lang-label">EN</span>
+          </button>
         </div>
       </div>
     </div>
@@ -718,7 +719,7 @@
           reviews: [
             { name: 'Samantha K.', time: 'Healed 8 Months', rating: 5, avatar: 'assets/images/testimonials/client-1.jpg', text: 'I have very oily T-zone skin and microblading never lasted for me in the past. Maya did my ombré powder brows and 8 months later they still look like fresh, soft powder perfection!' },
             { name: 'Rachel D.', time: 'Healed 1 Year', rating: 5, avatar: 'assets/images/testimonials/client-2.jpg', text: 'Zero pain! I literally fell asleep during the machine shading. The healing was so easy and I save 15 minutes every single morning not filling in my sparse arches.' },
-            { name: 'Chloe M.', time: 'Healed 4 Months', rating: 5, avatar: 'assets/images/testimonials/client-3.jpg', text: 'The color healed to the most gorgeous golden ash brown. It looks so natural and completely framed my eyes. Highly recommend Aura studio!' }
+            { name: 'Chloe M.', time: 'Healed 4 Months', rating: 5, avatar: 'assets/images/testimonials/client-3.jpg', text: 'The color healed to the most gorgeous golden ash brown. It looks so natural and completely framed my eyes. Highly recommend VELOURA studio!' }
           ],
           faqs: [
             { q: 'How does Ombré Powder differ from Microblading?', a: 'Microblading uses a manual hand blade to slice fine hair strokes into the skin, best suited for dry/normal skin. Ombré Powder uses an ultra-fine motorized needle to stipple microscopic pigment dots, creating a soft misty makeup look that lasts longer and works on all skin types, including oily and mature skin.' },
@@ -783,7 +784,7 @@
           ],
           faqs: [
             { q: 'What is the difference between Microblading and Machine Brows?', a: 'Microblading uses a hand-held pen with fine disposable needles in a blade formation to create individual hair strokes manually. Machine brows use a motorized needle for pixel shading or nano strokes.' },
-            { q: 'Will Microblading scar my skin?', a: 'When done properly by a certified master artist at AURA, no! We only implant pigment into the upper papillary dermis without deep cutting, preserving your skin tissue completely.' },
+            { q: 'Will Microblading scar my skin?', a: 'When done properly by a certified master artist at VELOURA, no! We only implant pigment into the upper papillary dermis without deep cutting, preserving your skin tissue completely.' },
             { q: 'How long before I can wear makeup again?', a: 'You may wear foundation and face makeup immediately, but you must avoid applying any cosmetic products or powders directly over your healing eyebrows for 10-14 days.' },
             { q: 'How often do I need a touch-up?', a: 'Microblading typically lasts 12-18 months. An annual color refresh is recommended to maintain crisp hair stroke definition.' }
           ]
@@ -1024,7 +1025,7 @@
           healingTime: '5-7 days surface / 4 weeks full',
           retention: '12-18 months',
           technique: 'Color Saturation Boost & Edge Sharpening',
-          skinTypes: 'Existing studio clients with previous AURA PMU',
+          skinTypes: 'Existing studio clients with previous VELOURA PMU',
           heroImage: 'assets/images/brows/annual-touchup.jpg',
           sliderBefore: 'assets/images/before-after/annual-touchup-before.jpg',
           sliderAfter: 'assets/images/before-after/annual-touchup-after.jpg',
@@ -1044,7 +1045,7 @@
             { title: 'Post-Care Re-application & Seal', duration: '10 mins', desc: 'Protective botanical finish and home care instructions.' }
           ],
           candidates: [
-            'Returning Aura studio clients whose permanent makeup is 12-24 months old.',
+            'Returning VELOURA studio clients whose permanent makeup is 12-24 months old.',
             'Clients whose color has faded by 40-50% and want a fresh vibrancy boost.',
             'Anyone wishing to make slight adjustments to arch height or thickness.'
           ],
@@ -1232,7 +1233,7 @@
         }
 
         // 1. Page Title & Breadcrumbs
-        document.title = `${service.name} | AURA Permanent Makeup & Brows`;
+        document.title = `${service.name} | VELOURA Permanent Makeup & Brow Studio`;
         const breadcrumbEl = document.getElementById('detail-breadcrumb-title');
         if (breadcrumbEl) breadcrumbEl.textContent = service.name;
         

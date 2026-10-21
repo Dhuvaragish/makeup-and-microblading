@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA PMU & MICROBLADING STUDIO - THEMES (LIGHT & DARK MODE)
+   VELOURA - PERMANENT MAKEUP & BROW STUDIO - THEMES (LIGHT & DARK MODE)
    WCAG AAA High-Contrast & Luxury Dark Mode Specifications
    ========================================================================== */
 
@@ -69,11 +69,10 @@
     rgba(14, 15, 18, 0.65) 100%
   );
   --pmu-hero-overlay: linear-gradient(
-    90deg,
-    rgba(14, 15, 18, 0.90) 0%,
-    rgba(14, 15, 18, 0.80) 42%,
-    rgba(14, 15, 18, 0.42) 75%,
-    rgba(14, 15, 18, 0.22) 100%
+    180deg,
+    rgba(14, 15, 18, 0.88) 0%,
+    rgba(14, 15, 18, 0.76) 45%,
+    rgba(14, 15, 18, 0.92) 100%
   );
   --pmu-portal-overlay: linear-gradient(
     135deg,
@@ -266,20 +265,7 @@ body, .theme-transition,
 /* --------------------------------------------------------------------------
    5. HEADER, NAVBAR & NAVIGATION (DARK MODE)
    -------------------------------------------------------------------------- */
-[data-theme="dark"] .pmu-topbar {
-  background-color: #0b0c0e !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  border-bottom: 1px solid var(--pmu-border) !important;
-}
 
-[data-theme="dark"] .pmu-topbar a,
-[data-theme="dark"] .pmu-topbar button {
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-
-[data-theme="dark"] .pmu-topbar a:hover {
-  color: var(--pmu-primary) !important;
-}
 
 [data-theme="dark"] .pmu-header {
   background-color: rgba(15, 16, 19, 0.95) !important;

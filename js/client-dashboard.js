@@ -1,13 +1,28 @@
 /**
- * AURA PMU STUDIO - CLIENT DASHBOARD CONTROLLER
+ * VELOURA PMU & BROW STUDIO - CLIENT DASHBOARD CONTROLLER
  */
 
 const PMUClientDashboard = (function() {
   function init() {
+    if (window.PMUAuth && !window.PMUAuth.requireAuth('client')) {
+      return;
+    }
+    updateClientProfileUI();
     renderClientOverview();
     renderClientAppointments();
     renderTreatmentHistory();
     setupHealingChecklist();
+  }
+
+  function updateClientProfileUI() {
+    const user = PMUStorage.getCurrentUser();
+    if (!user) return;
+    const nameEls = document.querySelectorAll('.client-user-name, aside h6.font-serif');
+    nameEls.forEach(el => el.textContent = user.name);
+    const emailEls = document.querySelectorAll('.client-user-email');
+    emailEls.forEach(el => el.textContent = user.email);
+    const avatarEls = document.querySelectorAll('.client-user-avatar, aside img.rounded-circle');
+    avatarEls.forEach(el => { if (user.avatar) el.src = user.avatar; });
   }
 
   function renderClientOverview() {
@@ -158,7 +173,71 @@ const PMUClientDashboard = (function() {
   function viewSlip(id) {
     const apt = PMUStorage.getAppointmentById(id);
     if (!apt) return;
-    alert(`AURA PMU STUDIO BOOKING SLIP\n------------------------------\nRef: ${apt.id}\nClient: ${apt.clientName}\nService: ${apt.serviceName}\nArtist: ${apt.artistName}\nDate: ${apt.date} at ${apt.time}\nDeposit Paid: $${apt.depositPaid || 0}\nStatus: ${apt.status}\n------------------------------\nPlease bring a government photo ID.`);
+
+    let modalEl = document.getElementById('dynamicBookingSlipModal');
+    if (!modalEl) {
+      modalEl = document.createElement('div');
+      modalEl.id = 'dynamicBookingSlipModal';
+      modalEl.className = 'modal fade';
+      modalEl.tabIndex = -1;
+      document.body.appendChild(modalEl);
+    }
+
+    modalEl.innerHTML = `
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <div class="modal-header bg-subtle border-bottom">
+            <div class="d-flex align-items-center gap-2">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="28" height="28">
+              <h5 class="modal-title font-serif mb-0">Official Booking Slip</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="p-3 bg-subtle rounded-3 mb-3 border">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted small">Appointment Reference:</span>
+                <span class="fw-bold font-monospace text-gold">${apt.id}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted small">Client Name:</span>
+                <span class="fw-semibold">${apt.clientName}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted small">PMU Treatment:</span>
+                <span class="fw-semibold">${apt.serviceName}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted small">Master Artist:</span>
+                <span class="fw-semibold">${apt.artistName}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted small">Date &amp; Time:</span>
+                <span class="fw-semibold">${apt.date} at ${apt.time}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted small">Status:</span>
+                <span class="badge bg-success-subtle text-success border border-success-subtle">${apt.status}</span>
+              </div>
+              <div class="d-flex justify-content-between pt-2 border-top">
+                <span class="text-muted small">Deposit Paid:</span>
+                <span class="fw-bold text-main">$${apt.depositPaid || 150}</span>
+              </div>
+            </div>
+            <p class="text-muted small mb-0">
+              <i class="fa-solid fa-circle-info text-gold me-1"></i> Please arrive 15 minutes before your scheduled slot for clinical numbing and 3D symmetry mapping.
+            </p>
+          </div>
+          <div class="modal-footer bg-subtle">
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-sm btn-pmu-gold" onclick="window.print();"><i class="fa-solid fa-print me-1"></i> Print Slip</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const bsModal = new bootstrap.Modal(modalEl);
+    bsModal.show();
   }
 
   function setupHealingChecklist() {

@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - AUTHENTICATION & DEMO SESSION CONTROLLER
+ * VELOURA PMU & BROW STUDIO - AUTHENTICATION & DEMO SESSION CONTROLLER
  */
 
 const PMUAuth = (function() {
@@ -7,7 +7,7 @@ const PMUAuth = (function() {
     client: {
       id: "usr-client-01",
       name: "Sarah Jenkins",
-      email: "client@aurapmu.com",
+      email: "client@velourapmu.com",
       role: "client",
       avatar: "assets/images/testimonials/client-1.jpg",
       phone: "+1 (555) 234-5678",
@@ -16,7 +16,7 @@ const PMUAuth = (function() {
     admin: {
       id: "usr-admin-01",
       name: "Elena Rostova (Studio Director)",
-      email: "admin@aurapmu.com",
+      email: "admin@velourapmu.com",
       role: "admin",
       avatar: "assets/images/artists/artist-1.jpg",
       phone: "+1 (555) 789-0123"
@@ -26,6 +26,17 @@ const PMUAuth = (function() {
   function init() {
     updateAuthHeaderUI();
     bindAuthForms();
+    checkAuthRedirectNotice();
+  }
+
+  function checkAuthRedirectNotice() {
+    const notice = sessionStorage.getItem('pmu_auth_redirect_msg');
+    if (notice) {
+      sessionStorage.removeItem('pmu_auth_redirect_msg');
+      if (window.PMUNotifications) {
+        window.PMUNotifications.warning(notice, 4000);
+      }
+    }
   }
 
   function login(email, password, roleHint = 'client') {
@@ -34,7 +45,7 @@ const PMUAuth = (function() {
       user = { ...DEMO_USERS.admin };
     } else {
       user = { ...DEMO_USERS.client };
-      if (email && email !== 'client@aurapmu.com') {
+      if (email && email !== 'client@velourapmu.com') {
         user.email = email;
         user.name = email.split('@')[0].replace('.', ' ');
       }
@@ -46,8 +57,13 @@ const PMUAuth = (function() {
       window.PMUNotifications.success(`Welcome back, ${user.name}!`, 2500);
     }
 
+    const params = new URLSearchParams(window.location.search);
+    const redirectUrl = params.get('redirect');
+
     setTimeout(() => {
-      if (user.role === 'admin') {
+      if (redirectUrl) {
+        window.location.href = redirectUrl;
+      } else if (user.role === 'admin') {
         window.location.href = 'admin-dashboard.html';
       } else {
         window.location.href = 'client-dashboard.html';
@@ -127,6 +143,25 @@ const PMUAuth = (function() {
     }, 500);
   }
 
+  function requireAuth(allowedRole = 'client') {
+    const user = PMUStorage.getCurrentUser();
+    const currentPath = window.location.pathname.split('/').pop() || 'client-dashboard.html';
+
+    if (!user) {
+      sessionStorage.setItem('pmu_auth_redirect_msg', 'Please sign in to access your customer dashboard.');
+      window.location.replace(`login.html?redirect=${encodeURIComponent(currentPath)}`);
+      return false;
+    }
+
+    if (allowedRole === 'admin' && user.role !== 'admin') {
+      sessionStorage.setItem('pmu_auth_redirect_msg', 'Access restricted. Studio Administrator credentials required.');
+      window.location.replace('client-dashboard.html');
+      return false;
+    }
+
+    return true;
+  }
+
   function updateAuthHeaderUI() {
     const user = PMUStorage.getCurrentUser();
     const authContainers = document.querySelectorAll('.header-user-status');
@@ -134,24 +169,26 @@ const PMUAuth = (function() {
     authContainers.forEach(container => {
       if (user) {
         const dashboardLink = user.role === 'admin' ? 'admin-dashboard.html' : 'client-dashboard.html';
+        const label = user.role === 'admin' ? 'Studio Admin' : user.name.split(' ')[0];
         container.innerHTML = `
           <div class="dropdown">
-            <button class="btn btn-sm btn-pmu-outline dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
+            <button class="btn-header-signin dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="${user.avatar || 'assets/images/testimonials/client-1.jpg'}" alt="${user.name}" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
-              <span>${user.name.split(' ')[0]}</span>
+              <span>${label}</span>
             </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="${dashboardLink}"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-              <li><a class="dropdown-item" href="${user.role === 'admin' ? 'admin-settings.html' : 'client-profile.html'}"><i class="fa-solid fa-user-gear"></i> Settings</a></li>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item" href="${dashboardLink}"><i class="fa-solid fa-gauge text-gold me-2"></i> Dashboard</a></li>
+              <li><a class="dropdown-item" href="${user.role === 'admin' ? 'admin-settings.html' : 'client-profile.html'}"><i class="fa-solid fa-user-gear text-gold me-2"></i> Profile &amp; Settings</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="#" onclick="PMUAuth.logout(); return false;"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+              <li><a class="dropdown-item text-danger" href="#" onclick="PMUAuth.logout(); return false;"><i class="fa-solid fa-right-from-bracket me-2"></i> Sign Out</a></li>
             </ul>
           </div>
         `;
       } else {
         container.innerHTML = `
-          <a href="login.html" class="icon-control-btn" title="Client / Admin Sign In">
+          <a href="login.html" class="btn-header-signin" title="Client Sign In">
             <i class="fa-regular fa-user"></i>
+            <span>Client Sign In</span>
           </a>
         `;
       }
@@ -166,7 +203,7 @@ const PMUAuth = (function() {
       const rememberCheckbox = document.getElementById('rememberMe');
 
       // Load remembered email if present
-      const rememberedEmail = localStorage.getItem('aura_remembered_email');
+      const rememberedEmail = localStorage.getItem('veloura_remembered_email');
       if (rememberedEmail && emailInput) {
         emailInput.value = rememberedEmail;
         if (rememberCheckbox) rememberCheckbox.checked = true;
@@ -181,9 +218,9 @@ const PMUAuth = (function() {
           const roleHint = loginForm.dataset.roleHint || (email.includes('admin') ? 'admin' : 'client');
 
           if (rememberCheckbox && rememberCheckbox.checked && email) {
-            localStorage.setItem('aura_remembered_email', email);
+            localStorage.setItem('veloura_remembered_email', email);
           } else {
-            localStorage.removeItem('aura_remembered_email');
+            localStorage.removeItem('veloura_remembered_email');
           }
 
           login(email, password, roleHint);
@@ -272,7 +309,7 @@ const PMUAuth = (function() {
     init();
   }
 
-  return { init, login, loginWithProvider, register, logout, DEMO_USERS };
+  return { init, login, loginWithProvider, register, logout, requireAuth, DEMO_USERS };
 })();
 
 window.PMUAuth = PMUAuth;

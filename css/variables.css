@@ -1,36 +1,38 @@
 /* ==========================================================================
-   AURA PMU & MICROBLADING STUDIO - CSS VARIABLES & DESIGN TOKENS
+   VELOURA PMU & BROW STUDIO - CSS VARIABLES & DESIGN TOKENS
    ========================================================================== */
 
 :root {
-  /* Brand Luxury Palette */
-  --pmu-primary: #c5a880;
-  --pmu-primary-hover: #b09166;
-  --pmu-primary-light: #dfcaa7;
-  --pmu-primary-ultra-light: #f6efe7;
-  --pmu-primary-dark: #8c6f47;
-  --pmu-primary-rgb: 197, 168, 128;
+  /* VELOURA Brand Luxury Palette */
+  --pmu-primary: #D6BC91;              /* Champagne Gold */
+  --pmu-primary-hover: #C5A878;
+  --pmu-primary-light: #EADBCE;
+  --pmu-primary-ultra-light: #F8F3EB;
+  --pmu-primary-dark: #9F8356;
+  --pmu-primary-rgb: 214, 188, 145;
 
-  --pmu-secondary: #2c2d35;
-  --pmu-secondary-rgb: 44, 45, 53;
+  --pmu-secondary: #201E1D;            /* Charcoal Black */
+  --pmu-secondary-rgb: 32, 30, 29;
+  --pmu-charcoal: #201E1D;
+  --pmu-champagne: #D6BC91;
+  --pmu-ivory: #FAF8F4;
 
   --pmu-rose: #d99b8f;
   --pmu-rose-light: #faece8;
-  --pmu-blush: #f8f1ec;
-  --pmu-champagne: #faedd9;
+  --pmu-blush: #FAF8F4;
 
-  /* Neutrals (Light Mode) */
-  --pmu-bg-main: #fbf9f6;
-  --pmu-bg-surface: #ffffff;
-  --pmu-bg-subtle: #f5f2ed;
-  --pmu-border: #ede7df;
-  --pmu-border-focus: #c5a880;
+  /* Neutrals (Light Mode - Warm Ivory & Charcoal) */
+  --pmu-bg-main: #FAF8F4;              /* Warm Ivory */
+  --pmu-bg-surface: #FFFFFF;           /* White */
+  --pmu-bg-subtle: #F4EFEA;
+  --pmu-border: #E8E0D5;               /* Subtle borders */
+  --pmu-border-focus: #D6BC91;
 
-  --pmu-text-main: #18191d;
-  --pmu-text-muted: #6b6e77;
-  --pmu-text-light: #9ea0a8;
-  --pmu-text-inverted: #ffffff;
-  --pmu-text-gold: #c5a880;
+  --pmu-text-main: #201E1D;            /* Primary text */
+  --pmu-text-muted: #6B6258;           /* Secondary text */
+  --pmu-text-light: #9C9388;
+  --pmu-text-inverted: #FFFFFF;
+  --pmu-text-gold: #D6BC91;
 
   /* Status Tokens */
   --pmu-success: #10b981;
@@ -43,21 +45,21 @@
   --pmu-info-bg: #eff6ff;
 
   /* Gradients */
-  --pmu-gradient-gold: linear-gradient(135deg, #c5a880 0%, #dfcaa7 50%, #a6875b 100%);
-  --pmu-gradient-dark: linear-gradient(135deg, #1b1c21 0%, #25262d 100%);
-  --pmu-gradient-hero: linear-gradient(180deg, rgba(20,21,24,0.65) 0%, rgba(20,21,24,0.3) 50%, rgba(20,21,24,0.85) 100%);
-  --pmu-gradient-card: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+  --pmu-gradient-gold: linear-gradient(135deg, #D6BC91 0%, #EADBCE 50%, #C4A778 100%);
+  --pmu-gradient-dark: linear-gradient(135deg, #201E1D 0%, #2D2B2A 100%);
+  --pmu-gradient-hero: linear-gradient(180deg, rgba(32,30,29,0.7) 0%, rgba(32,30,29,0.3) 50%, rgba(32,30,29,0.85) 100%);
+  --pmu-gradient-card: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(250,248,244,0.85) 100%);
 
   /* Typography */
   --pmu-font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   --pmu-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Shadows */
-  --pmu-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --pmu-shadow-md: 0 8px 24px rgba(24, 25, 29, 0.06);
-  --pmu-shadow-lg: 0 16px 40px rgba(24, 25, 29, 0.09);
-  --pmu-shadow-gold: 0 12px 32px rgba(197, 168, 128, 0.28);
-  --pmu-shadow-card: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --pmu-shadow-sm: 0 2px 8px rgba(32, 30, 29, 0.04);
+  --pmu-shadow-md: 0 8px 24px rgba(32, 30, 29, 0.06);
+  --pmu-shadow-lg: 0 16px 40px rgba(32, 30, 29, 0.09);
+  --pmu-shadow-gold: 0 12px 32px rgba(214, 188, 145, 0.32);
+  --pmu-shadow-card: 0 10px 30px rgba(32, 30, 29, 0.05);
 
   /* Radius */
   --pmu-radius-sm: 8px;
@@ -71,41 +73,40 @@
   --pmu-transition-fast: all 0.18s ease;
 
   /* Header & Navigation Height */
-  --pmu-header-height: 84px;
-  --pmu-topbar-height: 40px;
+  --pmu-header-height: 70px;
+  --pmu-topbar-height: 0px;
 
-  /* Banner Overlay & Contrast Tokens (Light Mode - Subtle warm beige luminous tint) */
+  /* Banner Overlay & Contrast Tokens (Light Mode - Warm Ivory luminous tint) */
   --pmu-banner-overlay: linear-gradient(
     180deg,
-    rgba(251, 249, 246, 0.58) 0%,
-    rgba(251, 249, 246, 0.42) 40%,
-    rgba(251, 249, 246, 0.62) 100%
+    rgba(250, 248, 244, 0.65) 0%,
+    rgba(250, 248, 244, 0.45) 40%,
+    rgba(250, 248, 244, 0.70) 100%
   );
   --pmu-hero-overlay: linear-gradient(
-    90deg,
-    rgba(251, 249, 246, 0.88) 0%,
-    rgba(251, 249, 246, 0.78) 42%,
-    rgba(251, 249, 246, 0.35) 75%,
-    rgba(251, 249, 246, 0.20) 100%
+    180deg,
+    rgba(250, 248, 244, 0.88) 0%,
+    rgba(250, 248, 244, 0.76) 45%,
+    rgba(250, 248, 244, 0.92) 100%
   );
   --pmu-portal-overlay: linear-gradient(
     135deg,
-    rgba(251, 249, 246, 0.45) 0%,
-    rgba(245, 242, 237, 0.22) 50%,
-    rgba(251, 249, 246, 0.50) 100%
+    rgba(250, 248, 244, 0.50) 0%,
+    rgba(244, 239, 234, 0.30) 50%,
+    rgba(250, 248, 244, 0.55) 100%
   );
   --pmu-portal-banner-overlay: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.60) 0%,
-    rgba(251, 249, 246, 0.38) 100%
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(250, 248, 244, 0.45) 100%
   );
-  --pmu-gradient-gold-text: linear-gradient(135deg, #744e1d 0%, #9e712d 35%, #b6873c 65%, #6d4715 100%);
-  --pmu-banner-title-color: #141518;
+  --pmu-gradient-gold-text: linear-gradient(135deg, #8A6D3F 0%, #B89762 35%, #D6BC91 70%, #7E6133 100%);
+  --pmu-banner-title-color: #201E1D;
   --pmu-banner-title-shadow: none;
-  --pmu-banner-desc-color: #383a42;
+  --pmu-banner-desc-color: #4A443E;
   --pmu-banner-desc-shadow: none;
-  --pmu-banner-eyebrow-color: #8c6f47;
+  --pmu-banner-eyebrow-color: #9F8356;
   --pmu-banner-eyebrow-shadow: none;
-  --pmu-banner-glass-bg: rgba(255, 255, 255, 0.88);
-  --pmu-banner-glass-border: rgba(197, 168, 128, 0.35);
+  --pmu-banner-glass-bg: rgba(255, 255, 255, 0.90);
+  --pmu-banner-glass-border: rgba(214, 188, 145, 0.40);
 }

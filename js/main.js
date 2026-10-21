@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - MAIN APPLICATION CONTROLLER
+ * VELOURA PMU & BROW STUDIO - MAIN APPLICATION CONTROLLER
  */
 
 document.addEventListener('DOMContentLoaded', function() {

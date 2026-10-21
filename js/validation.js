@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - FORM VALIDATION ENGINE
+ * VELOURA PMU & BROW STUDIO - FORM VALIDATION ENGINE
  */
 
 const PMUValidation = (function() {
@@ -11,6 +11,17 @@ const PMUValidation = (function() {
   function validatePhone(phone) {
     const cleaned = String(phone).replace(/[^\d+]/g, '');
     return cleaned.length >= 7;
+  }
+
+  function validateName(name) {
+    if (!name || typeof name !== 'string') return false;
+    const trimmed = name.trim();
+    if (trimmed.length < 2) return false;
+    // Prevent numeric-only or entries without alphabetical letters
+    if (/^\d+$/.test(trimmed)) return false;
+    if (!/[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF]/.test(trimmed)) return false;
+    if (/^[0-9\W]+$/.test(trimmed)) return false;
+    return true;
   }
 
   function validateForm(form) {
@@ -30,6 +41,19 @@ const PMUValidation = (function() {
           isValid = false;
         } else if (!input.value.trim()) {
           showError(input, 'This field is required.');
+          isValid = false;
+        }
+      }
+
+      // Check name fields
+      const isNameField = input.type === 'text' && (
+        (input.id && /name/i.test(input.id)) ||
+        (input.name && /name/i.test(input.name)) ||
+        (input.getAttribute('autocomplete') && /name/i.test(input.getAttribute('autocomplete')))
+      );
+      if (isNameField && input.value.trim()) {
+        if (!validateName(input.value)) {
+          showError(input, 'Please enter a valid full name (letters only, cannot be numbers only).');
           isValid = false;
         }
       }
@@ -83,6 +107,7 @@ const PMUValidation = (function() {
 
   return {
     validateForm,
+    validateName,
     validateEmail,
     validatePhone,
     showError,

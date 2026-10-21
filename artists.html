@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="alternate icon" href="assets/icons/favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Artists | AURA Permanent Makeup & Microblading Studio</title>
-  <meta name="description" content="Meet our board-certified master artists specializing in microblading, ombre powder brows, and velvet lip blush.">
+  <title>Master PMU Artists & Specialists | VELOURA Studio Manhattan</title>
+  <meta name="description" content="Meet our world-class cosmetic tattooing masters led by PhiBrows Grand Master Elena Rostova and senior pigment artists.">
   
   <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/tailwind.css">
@@ -21,61 +23,37 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="pmu-topbar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-4">
-        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
-        <span class="pmu-topbar-item"><i class="fa-regular fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</span>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
-      </div>
-    </div>
-  </div>
 
   <!-- Header -->
-  <header class="pmu-header">
+  <header class="pmu-header sticky-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
-        <a class="pmu-brand" href="index.html">
-          <div class="pmu-brand-icon">A</div>
+        <a class="pmu-brand" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio Homepage">
+          <div class="pmu-brand-logo">
+            <img src="assets/icons/logo.svg" alt="VELOURA Studio Logo" width="44" height="44">
+          </div>
           <div class="pmu-brand-text">
-            <span class="pmu-brand-name">AURA</span>
-            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+            <span class="pmu-brand-name">VELOURA</span>
+            <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
           </div>
         </a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar" aria-controls="pmuNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="pmuNavbar">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
                 <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services.html"><i class="fa-solid fa-list-check"></i> All PMU Services</a></li>
-                <li><a class="dropdown-item" href="service-details.html"><i class="fa-solid fa-circle-info"></i> Service Details</a></li>
-                <li><a class="dropdown-item" href="consultation.html"><i class="fa-solid fa-comments"></i> Virtual Consultation</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Artists</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item active" href="artists.html"><i class="fa-solid fa-users"></i> Master Artists Team</a></li>
-                <li><a class="dropdown-item" href="artist-details.html"><i class="fa-solid fa-id-card"></i> Artist Portfolio Details</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link active" href="artists.html">Artists</a></li>
             <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
@@ -86,27 +64,81 @@
               <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
               <span class="lang-label visually-hidden">EN (LTR)</span>
             </button>
-            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+
+            <!-- Theme Mode (Light/Dark) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
               <i class="fa-solid fa-moon theme-toggle-icon"></i>
             </button>
+
+            <!-- Client Sign In -->
             <div class="header-user-status">
-              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+              <a href="login.html" class="btn-header-signin" title="Client Sign In">
+                <i class="fa-regular fa-user"></i>
+                <span>Client Sign In</span>
+              </a>
             </div>
-            <a href="booking.html" class="btn-pmu-gold">Book Appointment</a>
+
+            <!-- Book Appointment CTA -->
+            <a href="booking.html" class="btn-header-cta">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </a>
           </div>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- Page Banner -->
+  <!-- Page Banner (VELOURA Artists Hero Banner Enhancement) -->
   <section class="pmu-page-banner pmu-banner-artists py-5">
     <div class="container text-center py-4">
-      <span class="section-eyebrow">World-Renowned Masters</span>
-      <h1 class="display-4 font-serif fw-bold mb-3">Meet Our Permanent Makeup Artists</h1>
-      <p class="text-muted lead mx-auto" style="max-width: 650px;">
-        Each of our practitioners is an internationally recognized artist with thousands of verified healed procedures and advanced training in facial symmetry.
+      <span class="section-eyebrow mx-auto mb-3">MEET THE ARTISTS BEHIND VELOURA</span>
+      <h1 class="display-4 font-serif fw-bold mb-3">
+        Meet Our <span class="text-gold-gradient">Permanent Makeup Artists</span>
+      </h1>
+      <p class="lead mx-auto mb-4" style="max-width: 720px; color: #4a4744; font-size: 1.12rem; line-height: 1.65;">
+        Discover our approach to personalized brow artistry and permanent makeup. Every consultation focuses on your preferences, facial features, and treatment goals.
       </p>
+
+      <!-- Four Refined Information Cards -->
+      <div class="row g-3 justify-content-center text-center" style="max-width: 980px; margin: 0 auto;">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Personalized Consultations</h6>
+            <span class="small" style="font-size: 0.78rem;">Discuss your preferred look, treatment options, and expectations</span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Artistry &amp; Precision</h6>
+            <span class="small" style="font-size: 0.78rem;">Careful brow mapping and attention to individual facial features</span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Treatment Planning</h6>
+            <span class="small" style="font-size: 0.78rem;">Clear explanations of the procedure and available options</span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Hygiene &amp; Aftercare</h6>
+            <span class="small" style="font-size: 0.78rem;">Information about hygiene practices, treatment preparation, and aftercare</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -138,7 +170,7 @@
       <div class="section-header text-center">
         <span class="section-eyebrow">Personalized Selection</span>
         <h2 class="section-title">How to Choose Your Artist</h2>
-        <p class="section-subtitle">Every artist at AURA is a board-certified master, yet each possesses distinct artistic signatures and stylistic strengths.</p>
+        <p class="section-subtitle">Every artist at VELOURA is a board-certified master, yet each possesses distinct artistic signatures and stylistic strengths.</p>
       </div>
 
       <div class="row g-4">
@@ -155,7 +187,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="pmu-card p-4 h-100 border-top border-4 border-rose">
             <span class="pmu-badge pmu-badge-rose mb-2">Lip Authority</span>
-            <h5 class="font-serif mb-1">Sofia Vance</h5>
+            <h5 class="font-serif mb-1">Sofia Laurent</h5>
             <small class="text-gold fw-semibold d-block mb-3">Swiss Color Specialist</small>
             <p class="text-muted small mb-3"><strong>Signature Style:</strong> Velvety translucent lip watercolor flush. Renowned for restoring faded vermilion borders and warm melanin neutralization.</p>
             <div class="p-2 bg-subtle rounded small text-muted"><strong>Best For:</strong> Velvet lip blush, pale borders, and cool/dark melanin color correction.</div>
@@ -190,10 +222,10 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <span class="section-eyebrow">The Aura Standard</span>
+          <span class="section-eyebrow">The VELOURA Standard</span>
           <h2 class="font-serif mb-4">Elite Education & 500+ Supervised Clinical Hours</h2>
           <p class="text-muted mb-3">
-            At typical studios, practitioners take a 3-day weekend crash course before working on paying clients. At AURA Atelier, our standard is radically different.
+            At typical studios, practitioners take a 3-day weekend crash course before working on paying clients. At VELOURA Atelier, our standard is radically different.
           </p>
           <p class="text-muted mb-4">
             Every artist completes an intensive 6-month clinical residency under Founder Elena Rostova, including 500+ supervised procedure hours, dermatological histology modules, and advanced colorimetry tests before graduating to lead practitioner status.
@@ -271,13 +303,15 @@
       <div class="row g-5">
         <!-- Col 1: Brand & Atelier Story -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="pmu-brand mb-3">
-            <div class="pmu-brand-icon">A</div>
-            <div class="pmu-brand-text">
-              <span class="pmu-brand-name text-white">AURA</span>
-              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+          <a class="pmu-brand mb-3 text-decoration-none" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio">
+            <div class="pmu-brand-logo">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="44" height="44">
             </div>
-          </div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">VELOURA</span>
+              <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
+            </div>
+          </a>
           <p class="text-white-50 small mb-4">
             Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
           </p>
@@ -334,7 +368,7 @@
           </div>
           <div class="pmu-footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+            <span><a href="mailto:concierge@velourastudio.com" class="text-white-50 text-decoration-none">concierge@velourastudio.com</a></span>
           </div>
 
           <div class="pmu-newsletter-box">
@@ -352,12 +386,15 @@
     <div class="pmu-footer-bottom">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="text-white-50 small">
-          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+          &copy; 2026 VELOURA Permanent Makeup &amp; Brow Studio. All Rights Reserved.
         </div>
-        <div class="d-flex flex-wrap gap-3 small">
+        <div class="d-flex flex-wrap gap-3 small align-items-center">
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
           <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+          <button class="border-0 bg-transparent text-white-50 p-0 text-decoration-none footer-legal-link d-inline-flex align-items-center gap-1" data-action="toggle-language" title="Toggle RTL / LTR Language" aria-label="Toggle RTL / LTR">
+            <i class="fa-solid fa-globe text-gold"></i><span class="lang-label">EN</span>
+          </button>
         </div>
       </div>
     </div>
@@ -383,20 +420,22 @@
             <div class="artist-img-wrap">
               <img src="${a.image}" alt="${a.name}">
               <div class="artist-social-overlay">
-                <a href="#" class="artist-social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="artist-social-icon" aria-label="${a.name} Instagram"><i class="fa-brands fa-instagram"></i></a>
               </div>
             </div>
             <div class="artist-card-body d-flex flex-column flex-grow-1">
-              <h5 class="font-serif mb-1">${a.name}</h5>
-              <p class="text-gold small fw-semibold mb-2">${a.role}</p>
-              <div class="pmu-stars small mb-2"><i class="fa-solid fa-star"></i> 5.0 (${a.reviewCount} client reviews)</div>
-              <p class="text-muted small mb-3 flex-grow-1"><em>"${a.quote}"</em></p>
-              <div class="d-flex flex-wrap gap-1 justify-content-center mb-3">
-                ${a.specialties.map(s => `<span class="badge bg-subtle text-muted border">${s}</span>`).join('')}
+              <h5 class="artist-card-name">${a.name}</h5>
+              <div class="artist-card-role">${a.role}</div>
+              <div class="artist-card-stars pmu-stars small"><i class="fa-solid fa-star"></i> 5.0 (${a.reviewCount} client reviews)</div>
+              <div class="artist-card-quote">"${a.quote}"</div>
+              <div class="artist-card-specialties">
+                ${a.specialties.map(s => `<span class="badge">${s}</span>`).join('')}
               </div>
-              <div class="d-flex gap-2 mt-auto">
-                <a href="artist-details.html?artist=${a.id}" class="btn btn-sm btn-pmu-outline flex-grow-1">Full Bio</a>
-                <a href="booking.html?artist=${a.id}" class="btn btn-sm btn-pmu-gold flex-grow-1">Book With ${a.name.split(' ')[0]}</a>
+              <div class="artist-card-action mt-auto">
+                <a href="booking.html?artist=${a.id}" class="btn btn-pmu-gold w-100 d-flex align-items-center justify-content-center gap-2">
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span>Book With ${a.name.split(' ')[0]}</span>
+                </a>
               </div>
             </div>
           </div>

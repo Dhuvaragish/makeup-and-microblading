@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="alternate icon" href="assets/icons/favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aftercare & Healing Guide | AURA PMU Studio</title>
-  <meta name="description" content="Complete clinical day-by-day aftercare protocols for microblading, ombre powder brows, velvet lip blush, eyeliner, and saline removal. Healing stages, wet vs dry healing, activity restrictions, and touch-up timing.">
+  <title>Day-by-Day Healing Roadmap & Aftercare Guide | VELOURA Brow & PMU Studio</title>
+  <meta name="description" content="Comprehensive day-by-day healing stages, dos & don’ts, touch-up window calculator, and post-treatment recovery care instructions.">
   
   <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/tailwind.css">
@@ -21,39 +23,29 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="pmu-topbar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-4">
-        <span class="pmu-topbar-item"><i class="fa-solid fa-notes-medical text-gold"></i> Clinical Post-Procedure Recovery Manual</span>
-        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
-      </div>
-    </div>
-  </div>
 
   <!-- Header -->
-  <header class="pmu-header">
+  <header class="pmu-header sticky-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
-        <a class="pmu-brand" href="index.html">
-          <div class="pmu-brand-icon">A</div>
+        <a class="pmu-brand" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio Homepage">
+          <div class="pmu-brand-logo">
+            <img src="assets/icons/logo.svg" alt="VELOURA Studio Logo" width="44" height="44">
+          </div>
           <div class="pmu-brand-text">
-            <span class="pmu-brand-name">AURA</span>
-            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+            <span class="pmu-brand-name">VELOURA</span>
+            <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
           </div>
         </a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar" aria-controls="pmuNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="pmuNavbar">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
                 <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
@@ -62,7 +54,6 @@
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link active" href="aftercare.html">Aftercare</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
@@ -73,71 +64,96 @@
               <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
               <span class="lang-label visually-hidden">EN (LTR)</span>
             </button>
-            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+
+            <!-- Theme Mode (Light/Dark) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
               <i class="fa-solid fa-moon theme-toggle-icon"></i>
             </button>
+
+            <!-- Client Sign In -->
             <div class="header-user-status">
-              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+              <a href="login.html" class="btn-header-signin" title="Client Sign In">
+                <i class="fa-regular fa-user"></i>
+                <span>Client Sign In</span>
+              </a>
             </div>
-            <a href="booking.html" class="btn-pmu-gold">Book Appointment</a>
+
+            <!-- Book Appointment CTA -->
+            <a href="booking.html" class="btn-header-cta">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </a>
           </div>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- Page Banner -->
+  <!-- Page Banner (VELOURA Aftercare Hero Banner Enhancement) -->
   <section class="pmu-page-banner pmu-banner-aftercare py-5">
     <div class="container text-center py-4">
-      <span class="section-eyebrow">Clinical Post-Care & Recovery</span>
-      <h1 class="display-4 font-serif fw-bold mb-3">Aftercare & Healing Protocol</h1>
-      <p class="text-muted lead mx-auto mb-4" style="max-width: 780px;">
-        Cosmetic tattooing is a biological collaboration between precision micro-pigmentation and your body's immune regenerative cycle. 50% of your healed color, crispness, and longevity depends on following these clinical protocols.
+      <span class="section-eyebrow mx-auto mb-3">CLINICAL POST-CARE &amp; RECOVERY</span>
+      <h1 class="display-4 font-serif fw-bold mb-3">
+        Aftercare &amp; <span class="text-gold-gradient">Healing Guide</span>
+      </h1>
+      <p class="lead mx-auto mb-4" style="max-width: 720px; color: #4a4744; font-size: 1.12rem; line-height: 1.65;">
+        Understand how to care for your brows and permanent makeup after treatment. Explore practical, treatment-specific guidance on healing, daily care, and when to contact your practitioner.
       </p>
 
-      <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
-        <button class="btn btn-pmu-gold" onclick="alert('Downloading AURA PMU Studio Complete Medical Aftercare Manual (PDF)...');">
-          <i class="fa-solid fa-file-pdf me-2"></i> Download Printable Clinical PDF Guide
-        </button>
-        <a href="#touchup-calculator" class="btn btn-pmu-outline">
-          <i class="fa-regular fa-calendar-check me-2"></i> Touch-Up Calculator
-        </a>
-        <a href="#healing-triage" class="btn btn-pmu-outline">
-          <i class="fa-solid fa-notes-medical me-2"></i> Symptom Triage Checker
-        </a>
+      <!-- Four Refined Information Cards -->
+      <div class="row g-3 justify-content-center text-center" style="max-width: 980px; margin: 0 auto;">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-hourglass-start"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Your First 72 Hours</h6>
+            <span class="small" style="font-size: 0.78rem;">Follow the personalized aftercare instructions provided by your practitioner</span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Healing Timeline</h6>
+            <span class="small" style="font-size: 0.78rem;">Understand the expected stages of healing and pigment settling for your specific treatment</span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Gentle Daily Care</h6>
+            <span class="small" style="font-size: 0.78rem;">Learn how to care for the treated area and avoid unnecessary irritation during recovery</span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Follow-Up Guidance</h6>
+            <span class="small" style="font-size: 0.78rem;">Understand when a review may be appropriate and how to contact the studio with concerns</span>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Quick Retention Metric Strip -->
-      <div class="row g-3 max-w-4xl mx-auto pt-2">
-        <div class="col-6 col-md-3">
-          <div class="p-3 bg-surface rounded-3 border h-100">
-            <div class="fw-bold fs-4 text-gold mb-1">50 / 50</div>
-            <div class="small text-muted fw-semibold">Artist & Client Share</div>
-            <div class="smaller text-muted mt-1" style="font-size: 0.76rem;">Post-care directly governs final healed opacity</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 bg-surface rounded-3 border h-100">
-            <div class="fw-bold fs-4 text-gold mb-1">4–6 Wks</div>
-            <div class="small text-muted fw-semibold">Cellular Turnover</div>
-            <div class="smaller text-muted mt-1" style="font-size: 0.76rem;">Complete stratum corneum renewal cycle</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 bg-surface rounded-3 border h-100">
-            <div class="fw-bold fs-4 text-gold mb-1">18–24 Mo</div>
-            <div class="small text-muted fw-semibold">Pigment Longevity</div>
-            <div class="smaller text-muted mt-1" style="font-size: 0.76rem;">Preserved with daily SPF & acid buffer zone</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 bg-surface rounded-3 border h-100">
-            <div class="fw-bold fs-4 text-gold mb-1">0%</div>
-            <div class="small text-muted fw-semibold">Scab-Picking Policy</div>
-            <div class="smaller text-muted mt-1" style="font-size: 0.76rem;">Natural flaking locks hair strokes into dermis</div>
-          </div>
-        </div>
-      </div>
+  <!-- Aftercare Tools Quick Action Bar -->
+  <section class="py-4 bg-surface border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center align-items-center gap-3">
+      <button class="btn btn-pmu-gold" onclick="window.print();" title="Print or save as PDF">
+        <i class="fa-solid fa-file-pdf me-2"></i> Print / Save Clinical PDF Guide
+      </button>
+      <a href="#touchup-calculator" class="btn btn-pmu-outline">
+        <i class="fa-regular fa-calendar-check me-2"></i> Touch-Up Calculator
+      </a>
+      <a href="#healing-triage" class="btn btn-pmu-outline">
+        <i class="fa-solid fa-notes-medical me-2"></i> Symptom Triage Checker
+      </a>
     </div>
   </section>
 
@@ -202,7 +218,7 @@
               <div class="pmu-card p-4 w-100 d-flex flex-column">
                 <span class="pmu-badge pmu-badge-warning mb-2 align-self-start">Days 5 – 8 &bull; Peeling</span>
                 <h5 class="font-serif mb-2">Micro-Flaking Stage</h5>
-                <p class="text-muted small mb-3"><strong>CRITICAL: Do not pick or scratch!</strong> Flakes will shed like dry oatmeal. Apply a microscopic rice-grain veil of AURA healing balm twice daily.</p>
+                <p class="text-muted small mb-3"><strong>CRITICAL: Do not pick or scratch!</strong> Flakes will shed like dry oatmeal. Apply a microscopic rice-grain veil of VELOURA healing balm twice daily.</p>
                 <div class="mt-auto pt-2 border-top border-light-subtle">
                   <span class="badge bg-subtle text-danger small"><i class="fa-solid fa-hand me-1"></i> Picking pulls dermis pigment</span>
                 </div>
@@ -248,7 +264,7 @@
               <div class="pmu-card p-4 w-100 d-flex flex-column">
                 <span class="pmu-badge pmu-badge-rose mb-2 align-self-start">Days 2 – 3 &bull; Tightness</span>
                 <h5 class="font-serif mb-2">Winter Chapped Feeling</h5>
-                <p class="text-muted small mb-3">Swelling completely subsides. Lips will feel intensely dry, taut, and chapped. Reapply AURA barrier ointment every 90 minutes. Avoid hot, citrus, or spicy foods.</p>
+                <p class="text-muted small mb-3">Swelling completely subsides. Lips will feel intensely dry, taut, and chapped. Reapply VELOURA barrier ointment every 90 minutes. Avoid hot, citrus, or spicy foods.</p>
                 <div class="mt-auto pt-2 border-top border-light-subtle">
                   <span class="badge bg-subtle text-gold small"><i class="fa-solid fa-shield me-1"></i> Constant lipid protection</span>
                 </div>
@@ -416,9 +432,9 @@
           <div class="pmu-card p-4 p-md-5 w-100 d-flex flex-column border-start border-4 border-gold">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <span class="pmu-badge pmu-badge-gold"><i class="fa-solid fa-star me-1"></i> Recommended for 90% of Clients</span>
-              <span class="text-gold fw-bold small">AURA Standard Protocol</span>
+              <span class="text-gold fw-bold small">VELOURA Standard Protocol</span>
             </div>
-            <h3 class="font-serif mb-3">The AURA Wet Healing Method</h3>
+            <h3 class="font-serif mb-3">The VELOURA Wet Healing Method</h3>
             <p class="text-muted small mb-4">
               Modern medical dermatology shows that controlled moist wound healing accelerates epidermal cellular migration by up to 40% compared to dry scab formation, resulting in significantly crispier microblading retention.
             </p>
@@ -436,7 +452,7 @@
             <ol class="text-muted small mb-4 ps-3">
               <li class="mb-2"><strong>Gentle Cleanse:</strong> Lather antibacterial foam wash with fingertips for 10 seconds; rinse with lukewarm distilled water.</li>
               <li class="mb-2"><strong>Pat Bone-Dry:</strong> Gently press with a single-use sterile paper towel. Never wipe or rub.</li>
-              <li class="mb-0"><strong>Microscopic Barrier Veil:</strong> Apply a rice-grain amount (split between both brows) of AURA balm. Skin must look matte, never shiny or greasy.</li>
+              <li class="mb-0"><strong>Microscopic Barrier Veil:</strong> Apply a rice-grain amount (split between both brows) of VELOURA balm. Skin must look matte, never shiny or greasy.</li>
             </ol>
 
             <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between text-muted small">
@@ -530,7 +546,7 @@
             <h5 class="font-serif mb-2">No Direct Shower Spray or Steam</h5>
             <p class="text-muted small mb-3">Do not let hot high-pressure shower jets hit your face. No saunas, steam rooms, Jacuzzis, or long hot baths. Prolonged hot steam softens healing crusts prematurely.</p>
             <div class="mt-auto small text-muted">
-              <strong>Pro Tip:</strong> Use the peel-and-stick forehead shower shields included in your AURA Recovery Kit.
+              <strong>Pro Tip:</strong> Use the peel-and-stick forehead shower shields included in your VELOURA Recovery Kit.
             </div>
           </div>
         </div>
@@ -656,7 +672,7 @@
             <h5 class="font-serif mb-2">Dry & Mature Skin</h5>
             <p class="text-muted small mb-3">Cell turnover is slower (taking 6–8 weeks). Flaking takes 10–12 days to begin. However, healed microblading strokes remain exceptionally crisp, clean, and defined.</p>
             <div class="bg-surface p-2 rounded-2 border small text-muted">
-              <strong class="text-gold">Recommendation:</strong> Strict AURA Wet Healing protocol with twice-daily micro-balm application to prevent fragile skin cracking.
+              <strong class="text-gold">Recommendation:</strong> Strict VELOURA Wet Healing protocol with twice-daily micro-balm application to prevent fragile skin cracking.
             </div>
           </div>
         </div>
@@ -715,7 +731,7 @@
           <div class="col-md-3">
             <div class="p-3 bg-subtle rounded-3 border h-100">
               <div class="fw-bold text-gold mb-1">Step 3: SEAL</div>
-              <p class="smaller text-muted mb-0" style="font-size: 0.82rem;">Apply a pinpoint microscopic dab of AURA healing ointment directly onto the exposed area to recreate an artificial sterile lipid shield.</p>
+              <p class="smaller text-muted mb-0" style="font-size: 0.82rem;">Apply a pinpoint microscopic dab of VELOURA healing ointment directly onto the exposed area to recreate an artificial sterile lipid shield.</p>
             </div>
           </div>
           <div class="col-md-3">
@@ -784,7 +800,7 @@
           <div class="pmu-card p-4 h-100 border-start border-4 border-success">
             <span class="pmu-badge pmu-badge-success mb-2">Completely Normal</span>
             <h5 class="font-serif mb-2">Tightness & Itching</h5>
-            <p class="text-muted small mb-0"><strong>Days 4–7:</strong> As collagen contracts and skin regenerates, itchiness peaks. <em>Action:</em> Apply a microscopic rice-grain veil of AURA healing balm. Never scratch or rub!</p>
+            <p class="text-muted small mb-0"><strong>Days 4–7:</strong> As collagen contracts and skin regenerates, itchiness peaks. <em>Action:</em> Apply a microscopic rice-grain veil of VELOURA healing balm. Never scratch or rub!</p>
           </div>
         </div>
 
@@ -818,11 +834,11 @@
         <div class="row align-items-center g-4">
           <div class="col-lg-7">
             <span class="pmu-badge pmu-badge-gold mb-2">Complimentary Take-Home</span>
-            <h3 class="font-serif mb-3">Your AURA Medical Take-Home Recovery Kit</h3>
+            <h3 class="font-serif mb-3">Your VELOURA Medical Take-Home Recovery Kit</h3>
             <p class="text-muted small mb-4">Every initial procedure includes our bespoke, sterile aftercare collection ($45 retail value) curated to guarantee clinical retention:</p>
             <div class="row g-3 small text-muted">
               <div class="col-sm-6"><i class="fa-solid fa-droplet text-gold me-2"></i> <strong>Medical Saline Blotting Pads:</strong> Sterile distilled 0.9% NaCl wipes for Day 1 lymph absorption.</div>
-              <div class="col-sm-6"><i class="fa-solid fa-pump-medical text-gold me-2"></i> <strong>AURA Restorative Balm:</strong> Organic grape seed oil & beeswax breathable barrier ointment.</div>
+              <div class="col-sm-6"><i class="fa-solid fa-pump-medical text-gold me-2"></i> <strong>VELOURA Restorative Balm:</strong> Organic grape seed oil & beeswax breathable barrier ointment.</div>
               <div class="col-sm-6"><i class="fa-solid fa-shower text-gold me-2"></i> <strong>Adhesive Shower Visor Shields:</strong> Peel-and-stick forehead visors to wash hair 100% water-free.</div>
               <div class="col-sm-6"><i class="fa-solid fa-wand-magic-sparkles text-gold me-2"></i> <strong>Anti-Static Micro-Spoolies:</strong> Lint-free sterile tools for sanitary application and grooming.</div>
             </div>
@@ -944,7 +960,7 @@
           </h2>
           <div id="collapseFaq1" class="accordion-collapse collapse" aria-labelledby="headingFaq1" data-bs-parent="#aftercareFaqAccordion">
             <div class="accordion-body">
-              During the first 10 days, shower with your back turned away from the showerhead so water does not stream over your face. Wash your hair by tilting your head backward. In your AURA Take-Home Kit, you will find peel-and-stick waterproof forehead visors—adhere one across your forehead right above your eyebrows before stepping in to deflect any splashing water. When washing your face, use a damp washcloth to cleanse around the brow area without touching the tattoo.
+              During the first 10 days, shower with your back turned away from the showerhead so water does not stream over your face. Wash your hair by tilting your head backward. In your VELOURA Take-Home Kit, you will find peel-and-stick waterproof forehead visors—adhere one across your forehead right above your eyebrows before stepping in to deflect any splashing water. When washing your face, use a damp washcloth to cleanse around the brow area without touching the tattoo.
             </div>
           </div>
         </div>
@@ -1050,6 +1066,81 @@
     </div>
   </section>
 
+  <!-- Section 10.5: Master Artists Healing Support Team -->
+  <section class="section-padding bg-subtle border-top border-bottom" id="aftercare-artists-team">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-eyebrow">Dedicated Clinical Specialists</span>
+        <h2 class="section-title">Master Artists Team &amp; Post-Care Support</h2>
+        <p class="section-subtitle mx-auto" style="max-width: 680px;">
+          Your recovery is overseen directly by our board-certified master practitioners. Direct access to your treating artist ensures optimal healed retention and peace of mind.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Elena -->
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 text-center d-flex flex-column bg-surface shadow-sm">
+            <div class="rounded-circle overflow-hidden mx-auto mb-3 border border-2 border-gold" style="width: 100px; height: 100px;">
+              <img src="assets/images/artists/artist-1.jpg" alt="Elena Rostova" class="w-100 h-100 object-fit-cover">
+            </div>
+            <h5 class="font-serif mb-1">Elena Rostova</h5>
+            <small class="text-gold fw-semibold mb-2 d-block">PhiBrows Grand Master</small>
+            <p class="text-muted small mb-3 flex-grow-1">Microblading &amp; 3D hair-stroke recovery specialist. Direct guidance on golden ratio healed symmetry and touch-up mapping.</p>
+            <a href="booking.html?artist=art-elena" class="btn btn-sm btn-pmu-gold mt-auto w-100">
+              <i class="fa-regular fa-calendar-check me-1"></i> Consult With Elena
+            </a>
+          </div>
+        </div>
+
+        <!-- Sofia -->
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 text-center d-flex flex-column bg-surface shadow-sm">
+            <div class="rounded-circle overflow-hidden mx-auto mb-3 border border-2 border-gold" style="width: 100px; height: 100px;">
+              <img src="assets/images/artists/artist-2.jpg" alt="Sofia Vance" class="w-100 h-100 object-fit-cover">
+            </div>
+            <h5 class="font-serif mb-1">Sofia Vance</h5>
+            <small class="text-gold fw-semibold mb-2 d-block">Lip Blush Specialist</small>
+            <p class="text-muted small mb-3 flex-grow-1">Mucosa hydration and pigment bloom advisor. Direct guidance on lip hydration protocols and melanin healing.</p>
+            <a href="booking.html?artist=art-sofia" class="btn btn-sm btn-pmu-gold mt-auto w-100">
+              <i class="fa-regular fa-calendar-check me-1"></i> Consult With Sofia
+            </a>
+          </div>
+        </div>
+
+        <!-- Maya -->
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 text-center d-flex flex-column bg-surface shadow-sm">
+            <div class="rounded-circle overflow-hidden mx-auto mb-3 border border-2 border-gold" style="width: 100px; height: 100px;">
+              <img src="assets/images/artists/artist-3.jpg" alt="Maya Lin" class="w-100 h-100 object-fit-cover">
+            </div>
+            <h5 class="font-serif mb-1">Maya Lin</h5>
+            <small class="text-gold fw-semibold mb-2 d-block">Digital Nano Specialist</small>
+            <p class="text-muted small mb-3 flex-grow-1">Oily &amp; sensitive skin recovery specialist. Expert advice on sebum management, barrier protection, and powder retention.</p>
+            <a href="booking.html?artist=art-maya" class="btn btn-sm btn-pmu-gold mt-auto w-100">
+              <i class="fa-regular fa-calendar-check me-1"></i> Consult With Maya
+            </a>
+          </div>
+        </div>
+
+        <!-- Camilla -->
+        <div class="col-md-6 col-lg-3">
+          <div class="pmu-card p-4 h-100 text-center d-flex flex-column bg-surface shadow-sm">
+            <div class="rounded-circle overflow-hidden mx-auto mb-3 border border-2 border-gold" style="width: 100px; height: 100px;">
+              <img src="assets/images/artists/artist-4.jpg" alt="Camilla Rossi" class="w-100 h-100 object-fit-cover">
+            </div>
+            <h5 class="font-serif mb-1">Camilla Rossi</h5>
+            <small class="text-gold fw-semibold mb-2 d-block">Hybrid Symmetry Stylist</small>
+            <p class="text-muted small mb-3 flex-grow-1">Combination brow recovery expert. Guidance on hybrid hair-stroke &amp; pixel-shading longevity and retention.</p>
+            <a href="booking.html?artist=art-camilla" class="btn btn-sm btn-pmu-gold mt-auto w-100">
+              <i class="fa-regular fa-calendar-check me-1"></i> Consult With Camilla
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section 11: Priority Concierge Support Banner -->
   <section class="py-5 bg-main border-bottom">
     <div class="container text-center py-4">
@@ -1080,13 +1171,15 @@
       <div class="row g-5">
         <!-- Col 1: Brand & Atelier Story -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="pmu-brand mb-3">
-            <div class="pmu-brand-icon">A</div>
-            <div class="pmu-brand-text">
-              <span class="pmu-brand-name text-white">AURA</span>
-              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+          <a class="pmu-brand mb-3 text-decoration-none" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio">
+            <div class="pmu-brand-logo">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="44" height="44">
             </div>
-          </div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">VELOURA</span>
+              <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
+            </div>
+          </a>
           <p class="text-white-50 small mb-4">
             Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
           </p>
@@ -1143,7 +1236,7 @@
           </div>
           <div class="pmu-footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+            <span><a href="mailto:concierge@velourastudio.com" class="text-white-50 text-decoration-none">concierge@velourastudio.com</a></span>
           </div>
 
           <div class="pmu-newsletter-box">
@@ -1161,12 +1254,15 @@
     <div class="pmu-footer-bottom">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="text-white-50 small">
-          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+          &copy; 2026 VELOURA Permanent Makeup &amp; Brow Studio. All Rights Reserved.
         </div>
-        <div class="d-flex flex-wrap gap-3 small">
+        <div class="d-flex flex-wrap gap-3 small align-items-center">
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
           <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+          <button class="border-0 bg-transparent text-white-50 p-0 text-decoration-none footer-legal-link d-inline-flex align-items-center gap-1" data-action="toggle-language" title="Toggle RTL / LTR Language" aria-label="Toggle RTL / LTR">
+            <i class="fa-solid fa-globe text-gold"></i><span class="lang-label">EN</span>
+          </button>
         </div>
       </div>
     </div>

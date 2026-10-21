@@ -1,18 +1,18 @@
 /* ==========================================================================
-   AURA PMU & MICROBLADING STUDIO - COMPONENTS & UI ELEMENTS
+   VELOURA - PERMANENT MAKEUP & BROW STUDIO - COMPONENTS & UI ELEMENTS
    ========================================================================== */
 
 /* 1. BUTTONS */
 .btn-pmu-gold {
-  background: var(--pmu-gradient-gold);
-  color: #1a1b1f !important;
+  background: var(--pmu-primary);
+  color: var(--pmu-charcoal) !important;
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.04em;
   padding: 0.82rem 1.85rem;
   border-radius: var(--pmu-radius-full);
   border: none;
-  box-shadow: 0 4px 16px rgba(197, 168, 128, 0.35);
+  box-shadow: 0 4px 16px rgba(214, 188, 145, 0.35);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -24,20 +24,21 @@
 }
 
 .btn-pmu-gold:hover {
+  background: var(--pmu-primary-hover);
+  color: var(--pmu-charcoal) !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(197, 168, 128, 0.48);
-  filter: brightness(1.05);
+  box-shadow: 0 8px 24px rgba(214, 188, 145, 0.48);
 }
 
 .btn-pmu-outline {
   background: transparent;
-  color: var(--pmu-primary) !important;
+  color: var(--pmu-charcoal) !important;
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.04em;
   padding: 0.78rem 1.85rem;
   border-radius: var(--pmu-radius-full);
-  border: 1.5px solid var(--pmu-primary);
+  border: 1.5px solid var(--pmu-charcoal);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -45,13 +46,15 @@
   white-space: nowrap !important;
   transition: var(--pmu-transition);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-pmu-outline:hover {
   background-color: var(--pmu-primary);
-  color: #1a1b1f !important;
+  border-color: var(--pmu-primary);
+  color: var(--pmu-charcoal) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(197, 168, 128, 0.3);
+  box-shadow: 0 6px 20px rgba(214, 188, 145, 0.3);
 }
 
 .btn-pmu-dark {
@@ -122,6 +125,78 @@
   border-color: var(--pmu-primary-light);
   box-shadow: var(--pmu-shadow-lg);
   transform: translateY(-4px);
+}
+
+/* Testimonials Equal Height & Razor-Sharp Alignment */
+.pmu-testimonial-card {
+  height: 100% !important;
+  width: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: var(--pmu-bg-surface);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--pmu-shadow-sm);
+  transition: var(--pmu-transition);
+}
+
+.pmu-testimonial-card:hover {
+  border-color: var(--pmu-primary-light);
+  box-shadow: var(--pmu-shadow-lg);
+  transform: translateY(-4px);
+}
+
+.pmu-testimonial-stars {
+  color: var(--pmu-primary);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pmu-testimonial-quote {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--pmu-text-muted);
+  flex-grow: 1 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.pmu-testimonial-footer {
+  margin-top: auto !important;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pmu-border) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.pmu-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--pmu-primary-light);
+  flex-shrink: 0;
+}
+
+.pmu-testimonial-name {
+  font-family: var(--pmu-font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pmu-text-main);
+  line-height: 1.25;
+  margin-bottom: 0.15rem;
+}
+
+.pmu-testimonial-service {
+  font-size: 0.82rem;
+  color: var(--pmu-primary-dark);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 /* Service Card */
@@ -301,30 +376,87 @@
 }
 
 .artist-card-body {
-  padding: 1.6rem 1.4rem;
+  padding: 1.5rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  text-align: center;
 }
 
-.artist-card-body h5 {
-  font-size: 1.15rem;
-  min-height: 1.6rem;
+.artist-card-name {
+  font-family: var(--pmu-font-serif);
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.25;
   margin-bottom: 0.35rem;
+  color: var(--pmu-text-main);
 }
 
-.artist-card-body p {
-  min-height: 1.35rem;
+.artist-card-role {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--pmu-primary);
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
   margin-bottom: 0.4rem;
 }
 
-.artist-card-body .pmu-stars {
-  min-height: 1.4rem;
-  margin-bottom: 1rem;
+.artist-card-stars {
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  color: var(--pmu-primary);
 }
 
-.artist-card-body .btn {
+.artist-card-quote {
+  min-height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--pmu-text-muted);
+  margin-bottom: 0.85rem;
+  padding: 0 0.25rem;
+}
+
+.artist-card-specialties {
+  min-height: 3.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.artist-card-specialties .badge {
+  font-size: 0.74rem;
+  padding: 0.3rem 0.55rem;
+  font-weight: 500;
+  background-color: var(--pmu-bg-subtle) !important;
+  color: var(--pmu-text-muted) !important;
+  border: 1px solid var(--pmu-border) !important;
+  border-radius: var(--pmu-radius-sm);
+}
+
+.artist-card-action {
   margin-top: auto;
+  width: 100%;
+}
+
+.artist-card-action .btn {
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.65rem 1rem;
 }
 
 /* 3. BADGES & PILLS */
@@ -563,9 +695,10 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 290px;
+  min-height: 480px;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-bottom: 1px solid var(--pmu-border);
   isolation: isolate;
@@ -625,6 +758,12 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: var(--pmu-transition);
+}
+
+.pmu-page-banner .pmu-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--pmu-primary) !important;
+  box-shadow: 0 6px 20px rgba(214, 188, 145, 0.28);
 }
 
 .pmu-page-banner .pmu-tabs {
@@ -713,18 +852,51 @@
 
 .pmu-hero-home {
   background-image: url('../assets/images/banners/home-banner.jpg');
+  background-position: center center;
+  background-size: cover;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
 
 .pmu-hero-home-2 {
   background-image: url('../assets/images/banners/home-2-banner.jpg');
+  background-position: center center;
+  background-size: cover;
+  min-height: 84vh;
+  display: flex;
+  align-items: center;
 }
 
 .pmu-hero-home-3 {
   background-image: url('../assets/images/banners/home-3-banner.jpg');
 }
 
-.pmu-hero-home::before,
-.pmu-hero-home-2::before,
+.pmu-hero-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(250, 248, 244, 0.18) 50%,
+    rgba(250, 248, 244, 0.04) 80%,
+    rgba(250, 248, 244, 0.0) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-hero-home::before {
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(32, 30, 29, 0.88) 0%,
+    rgba(32, 30, 29, 0.72) 50%,
+    rgba(32, 30, 29, 0.45) 100%
+  );
+}
+
 .pmu-hero-home-3::before {
   content: "";
   position: absolute;
@@ -735,6 +907,56 @@
   transition: background 0.35s ease;
 }
 
+.pmu-hero-home-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(250, 248, 244, 0.94) 0%,
+    rgba(250, 248, 244, 0.84) 48%,
+    rgba(250, 248, 244, 0.58) 78%,
+    rgba(250, 248, 244, 0.38) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-hero-home-2::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(32, 30, 29, 0.96) 0%,
+    rgba(32, 30, 29, 0.88) 48%,
+    rgba(32, 30, 29, 0.65) 78%,
+    rgba(32, 30, 29, 0.45) 100%
+  );
+}
+
+[dir="rtl"] .pmu-hero-home-2 {
+  background-position: center center;
+}
+
+[dir="rtl"] .pmu-hero-home-2::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(250, 248, 244, 0.94) 0%,
+    rgba(250, 248, 244, 0.84) 48%,
+    rgba(250, 248, 244, 0.58) 78%,
+    rgba(250, 248, 244, 0.38) 100%
+  );
+}
+
+[dir="rtl"][data-theme="dark"] .pmu-hero-home-2::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(32, 30, 29, 0.96) 0%,
+    rgba(32, 30, 29, 0.88) 48%,
+    rgba(32, 30, 29, 0.65) 78%,
+    rgba(32, 30, 29, 0.45) 100%
+  );
+}
+
 .pmu-hero-home > .container,
 .pmu-hero-home-2 > .container,
 .pmu-hero-home-3 > .container {
@@ -742,7 +964,6 @@
   z-index: 2;
 }
 
-.pmu-hero-home h1,
 .pmu-hero-home-2 h1,
 .pmu-hero-home-3 h1 {
   color: var(--pmu-banner-title-color) !important;
@@ -750,13 +971,11 @@
   transition: color 0.35s ease, text-shadow 0.35s ease;
 }
 
-.pmu-hero-home h1 .text-gold-gradient,
 .pmu-hero-home-2 h1 .text-gold-gradient,
 .pmu-hero-home-3 h1 .text-gold-gradient {
   text-shadow: none !important;
 }
 
-.pmu-hero-home p.lead,
 .pmu-hero-home-2 p.lead,
 .pmu-hero-home-3 p.lead {
   color: var(--pmu-banner-desc-color) !important;
@@ -764,7 +983,6 @@
   transition: color 0.35s ease, text-shadow 0.35s ease;
 }
 
-.pmu-hero-home .section-eyebrow,
 .pmu-hero-home-2 .section-eyebrow,
 .pmu-hero-home-3 .section-eyebrow {
   color: var(--pmu-banner-eyebrow-color) !important;
@@ -798,6 +1016,93 @@
   color: #1a1b1f !important;
 }
 
+/* Hero Detail Elements & Badges */
+.pmu-hero-status-pill {
+  background: var(--pmu-banner-glass-bg);
+  border: 1px solid var(--pmu-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: var(--pmu-transition-fast);
+}
+
+.pmu-status-dot.pulse {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pmu-status-pulse 2s infinite;
+}
+
+@keyframes pmu-status-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.pmu-service-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.95rem;
+  background: var(--pmu-banner-glass-bg);
+  border: 1px solid var(--pmu-border);
+  border-radius: var(--pmu-radius-full);
+  font-size: 0.84rem;
+  color: var(--pmu-text-main);
+  text-decoration: none;
+  transition: var(--pmu-transition-fast);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.pmu-service-badge:hover {
+  border-color: var(--pmu-primary);
+  background: var(--pmu-bg-surface);
+  color: var(--pmu-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(214, 188, 145, 0.22);
+}
+
+.pmu-hero-detail-card {
+  background: var(--pmu-banner-glass-bg);
+  border: 1px solid var(--pmu-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: var(--pmu-transition);
+}
+
+.pmu-hero-detail-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--pmu-primary) !important;
+  box-shadow: var(--pmu-shadow-md);
+}
+
+.pmu-hero-detail-card .icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pmu-primary-ultra-light);
+  color: var(--pmu-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--pmu-transition-fast);
+}
+
+.pmu-hero-detail-card:hover .icon-box {
+  background: var(--pmu-primary);
+  color: #1a1b1f;
+}
+
 /* Portals Authentication & Dashboard Banners */
 .pmu-portal-auth-page {
   position: relative;
@@ -820,9 +1125,12 @@
 }
 
 .pmu-portal-auth-page > header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1030;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1040;
 }
 
 .pmu-portal-auth-page > main,
@@ -894,4 +1202,2013 @@
 [data-theme="dark"] .consult-service-pill.active {
   background-color: rgba(197, 168, 128, 0.15) !important;
   border-color: var(--pmu-primary) !important;
+}
+
+/* 10. Methodology Treatment Journey Banner */
+.pmu-methodology-banner {
+  position: relative;
+  background-color: var(--pmu-bg-main);
+  background-image: url('../assets/images/banners/services-banner.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+  border-top: 1px solid var(--pmu-border);
+  border-bottom: 1px solid var(--pmu-border);
+}
+
+.pmu-methodology-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 248, 244, 0.88) 0%,
+    rgba(250, 248, 244, 0.78) 45%,
+    rgba(250, 248, 244, 0.92) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-methodology-banner::before {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 15, 18, 0.90) 0%,
+    rgba(14, 15, 18, 0.80) 45%,
+    rgba(14, 15, 18, 0.94) 100%
+  );
+}
+
+.pmu-methodology-banner > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.pmu-methodology-banner .section-title {
+  color: var(--pmu-banner-title-color) !important;
+  text-shadow: var(--pmu-banner-title-shadow);
+}
+
+.pmu-methodology-banner .section-subtitle {
+  color: var(--pmu-banner-desc-color) !important;
+  text-shadow: var(--pmu-banner-desc-shadow);
+}
+
+.pmu-methodology-banner .section-eyebrow {
+  color: var(--pmu-banner-eyebrow-color) !important;
+  text-shadow: var(--pmu-banner-eyebrow-shadow);
+}
+
+/* Methodology 5-Step Cards */
+.pmu-step-card {
+  height: 100% !important;
+  width: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  text-align: center;
+  background-color: var(--pmu-banner-glass-bg) !important;
+  border: 1px solid var(--pmu-banner-glass-border) !important;
+  border-radius: var(--pmu-radius-lg);
+  padding: 1.85rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(32, 30, 29, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: var(--pmu-transition);
+}
+
+.pmu-step-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--pmu-primary) !important;
+  box-shadow: 0 14px 32px rgba(214, 188, 145, 0.32);
+}
+
+.pmu-step-number {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+  background: var(--pmu-gradient-gold);
+  color: #1a1b1f !important;
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  box-shadow: 0 4px 14px rgba(214, 188, 145, 0.45);
+  transition: var(--pmu-transition-fast);
+}
+
+.pmu-step-card:hover .pmu-step-number {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(214, 188, 145, 0.6);
+}
+
+.pmu-step-title {
+  font-family: var(--pmu-font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--pmu-banner-title-color) !important;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.pmu-step-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--pmu-banner-desc-color) !important;
+  margin-bottom: 0;
+  margin-top: auto;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+}
+
+
+/* ========================================================
+   HOME 1 HERO EXACT REFERENCE STYLING (ELEGANCE IN EVERY DETAIL)
+   ======================================================== */
+.pmu-hero-home {
+  position: relative;
+  background-image: url('../assets/images/banners/home-banner.jpg') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.pmu-hero-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 255, 255, 0.60) 0%,
+    rgba(250, 248, 244, 0.42) 42%,
+    rgba(250, 248, 244, 0.16) 72%,
+    rgba(250, 248, 244, 0.04) 95%
+  ) !important;
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-hero-home::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(32, 30, 29, 0.88) 0%,
+    rgba(32, 30, 29, 0.75) 45%,
+    rgba(32, 30, 29, 0.42) 75%,
+    rgba(32, 30, 29, 0.20) 100%
+  ) !important;
+}
+
+.pmu-hero-home .pmu-hero-status-pill {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.45) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 9999px !important;
+  padding: 0.38rem 1.35rem !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .pmu-hero-home .pmu-hero-status-pill {
+  background: rgba(32, 30, 29, 0.92) !important;
+  border-color: rgba(214, 188, 145, 0.3) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
+}
+
+.pmu-hero-home .pmu-hero-status-pill .status-pill-link {
+  color: #201E1D !important;
+  transition: color 0.2s ease;
+}
+
+.pmu-hero-home .pmu-hero-status-pill a.status-pill-link:hover {
+  color: #bfa074 !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .pmu-hero-status-pill .status-pill-link {
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .pmu-hero-status-pill a.status-pill-link:hover {
+  color: #caa875 !important;
+}
+
+.pmu-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pmu-pulse 2s infinite;
+}
+
+@keyframes pmu-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.pmu-hero-home .section-eyebrow {
+  color: #7a5423 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 800 !important;
+  font-size: 0.84rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .section-eyebrow {
+  color: #dec59a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.pmu-hero-home .section-eyebrow::before,
+.pmu-hero-home .section-eyebrow::after {
+  content: "" !important;
+  display: inline-block !important;
+  background-color: #8c642c !important;
+  width: 32px !important;
+  height: 1.5px !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .section-eyebrow::before,
+[data-theme="dark"] .pmu-hero-home .section-eyebrow::after {
+  background-color: #dec59a !important;
+}
+
+.pmu-hero-home h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: #1a1817 !important;
+  font-weight: 800 !important;
+  font-size: clamp(2.35rem, 4.4vw, 3.85rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01em !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-theme="dark"] .pmu-hero-home h1 {
+  color: #FAF8F4 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.pmu-hero-home h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #744e1e 0%, #94692e 38%, #b38848 68%, #6a4618 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9)) !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .pmu-hero-home h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #f0dcbe 0%, #d6bc91 40%, #dec59a 70%, #caa875 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.pmu-hero-home p.lead {
+  color: #201E1D !important;
+  font-weight: 500 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="dark"] .pmu-hero-home p.lead {
+  color: rgba(250, 248, 244, 0.88) !important;
+}
+
+.pmu-hero-home .btn-pmu-gold {
+  background: linear-gradient(135deg, #d8bc93 0%, #caa677 100%) !important;
+  color: #201E1D !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 0.8rem 2rem !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(202, 166, 119, 0.35) !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.pmu-hero-home .btn-pmu-gold:hover {
+  background: linear-gradient(135deg, #caa677 0%, #b89360 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(202, 166, 119, 0.45) !important;
+  color: #201E1D !important;
+}
+
+.pmu-hero-home .btn-pmu-white {
+  background: #ffffff !important;
+  color: #201E1D !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 0.8rem 2rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.pmu-hero-home .btn-pmu-white:hover {
+  background: #FAF8F4 !important;
+  border-color: #caa677 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+  color: #201E1D !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .btn-pmu-white {
+  background: rgba(36, 34, 33, 0.95) !important;
+  color: #FAF8F4 !important;
+  border-color: rgba(214, 188, 145, 0.3) !important;
+}
+
+.pmu-hero-home .hero-phone-link {
+  color: #201E1D !important;
+  font-weight: 600 !important;
+  font-size: 0.98rem !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.pmu-hero-home .hero-phone-link:hover {
+  color: #bfa074 !important;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .pmu-hero-home .hero-phone-link {
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .hero-phone-link:hover {
+  color: #caa875 !important;
+}
+
+.pmu-hero-home .pmu-procedures-label {
+  color: #6d5027 !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.16em !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .pmu-procedures-label {
+  color: rgba(250, 248, 244, 0.72) !important;
+}
+
+.pmu-hero-home .pmu-service-badge {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.4) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 9999px !important;
+  padding: 0.45rem 1.2rem !important;
+  font-size: 0.86rem !important;
+  color: #201E1D !important;
+  text-decoration: none !important;
+  transition: all 0.22s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.pmu-hero-home .pmu-service-badge .badge-price {
+  color: #8c642c !important;
+  font-weight: 700 !important;
+}
+
+.pmu-hero-home .pmu-service-badge:hover {
+  border-color: #caa677 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(200, 171, 126, 0.28) !important;
+  color: #201E1D !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .pmu-service-badge {
+  background: rgba(36, 34, 33, 0.92) !important;
+  border-color: rgba(214, 188, 145, 0.28) !important;
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-hero-home .pmu-service-badge:hover {
+  background: rgba(48, 45, 43, 0.95) !important;
+  border-color: #caa677 !important;
+  color: #FAF8F4 !important;
+}
+
+@media (max-width: 991px) {
+  .pmu-hero-home h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pmu-hero-home {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .pmu-hero-home::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(250, 248, 244, 0.52) 48%,
+      rgba(250, 248, 244, 0.22) 100%
+    ) !important;
+  }
+  [data-theme="dark"] .pmu-hero-home::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(32, 30, 29, 0.92) 0%,
+      rgba(32, 30, 29, 0.80) 50%,
+      rgba(32, 30, 29, 0.45) 100%
+    ) !important;
+  }
+  .pmu-hero-home h1 {
+    font-size: 2.1rem !important;
+    line-height: 1.22 !important;
+  }
+  .pmu-hero-home .section-eyebrow {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .pmu-hero-home p.lead {
+    font-size: 1rem !important;
+  }
+  .pmu-hero-home .pmu-hero-status-pill {
+    padding: 0.35rem 0.9rem !important;
+    font-size: 0.78rem !important;
+  }
+  .pmu-hero-home .pmu-service-badge {
+    font-size: 0.80rem !important;
+    padding: 0.38rem 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pmu-hero-home .section-eyebrow {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.08em !important;
+    gap: 0.4rem !important;
+  }
+  .pmu-hero-home .section-eyebrow::before,
+  .pmu-hero-home .section-eyebrow::after {
+    width: 14px !important;
+  }
+  .pmu-hero-home h1 {
+    font-size: 1.85rem !important;
+  }
+  .pmu-hero-home p.lead {
+    font-size: 0.92rem !important;
+  }
+  .pmu-hero-home .btn-pmu-gold,
+  .pmu-hero-home .btn-pmu-white {
+    width: 100% !important;
+    max-width: 300px !important;
+    justify-content: center !important;
+  }
+}
+
+
+
+
+/* ========================================================
+   ENHANCED PMU HERO BANNER (GOLDEN RATIO BROW METHOD)
+   ======================================================== */
+.pmu-hero-home-2 {
+  position: relative;
+  background-color: var(--pmu-bg-main);
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 84vh;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+}
+
+.pmu-hero-home-2 {
+  background-image: url('../assets/images/banners/home-2-banner.jpg') !important;
+}
+
+.pmu-hero-home-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(250, 248, 244, 0.42) 38%,
+    rgba(250, 248, 244, 0.12) 65%,
+    rgba(250, 248, 244, 0.0) 85%
+  ) !important;
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-hero-home-2::before {
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(32, 30, 29, 0.90) 0%,
+    rgba(32, 30, 29, 0.75) 45%,
+    rgba(32, 30, 29, 0.35) 75%,
+    rgba(32, 30, 29, 0.10) 100%
+  ) !important;
+}
+
+.pmu-hero-home-2 .section-eyebrow {
+  color: #bfa074 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.pmu-hero-home-2 .section-eyebrow::before,
+.pmu-hero-home-2 .section-eyebrow::after {
+  content: "" !important;
+  display: inline-block !important;
+  background-color: #bfa074 !important;
+  width: 28px !important;
+  height: 1px !important;
+}
+
+.pmu-hero-home-2 h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  font-size: clamp(2.1rem, 3.4vw, 3.35rem) !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="dark"] .pmu-hero-home-2 h1 {
+  color: #FAF8F4 !important;
+}
+
+.pmu-hero-home-2 h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #a8844f 0%, #caa875 40%, #b89360 70%, #9e7943 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+}
+
+.pmu-hero-home-2 p.lead {
+  color: #4a4744 !important;
+  font-weight: 400 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.65 !important;
+  max-width: 680px !important;
+}
+
+[data-theme="dark"] .pmu-hero-home-2 p.lead {
+  color: rgba(250, 248, 244, 0.88) !important;
+}
+
+.pmu-hero-home-2 .pmu-hero-features-grid {
+  max-width: 620px !important;
+}
+
+.pmu-hero-home-2 .pmu-hero-features-grid .fa-circle-check {
+  color: #c4a275 !important;
+}
+
+.pmu-hero-home-2 .pmu-hero-features-grid span {
+  color: #201E1D !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .pmu-hero-home-2 .pmu-hero-features-grid span {
+  color: #FAF8F4 !important;
+}
+
+.pmu-hero-home-2 .btn-pmu-gold {
+  background: #c8ab7e !important;
+  color: #201E1D !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 0.82rem 2.2rem !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(200, 171, 126, 0.35) !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.pmu-hero-home-2 .btn-pmu-gold:hover {
+  background: #bfa074 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(200, 171, 126, 0.45) !important;
+  color: #201E1D !important;
+}
+
+.pmu-hero-home-2 .btn-pmu-white {
+  background: #ffffff !important;
+  color: #201E1D !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 0.82rem 2.2rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.pmu-hero-home-2 .btn-pmu-white:hover {
+  background: #FAF8F4 !important;
+  border-color: #caa677 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+  color: #201E1D !important;
+}
+
+[data-theme="dark"] .pmu-hero-home-2 .btn-pmu-white {
+  background: rgba(36, 34, 33, 0.95) !important;
+  color: #FAF8F4 !important;
+  border-color: rgba(214, 188, 145, 0.3) !important;
+}
+
+/* Responsive adjustments for mobile and tablet */
+@media (max-width: 991px) {
+  .pmu-hero-home h1,
+  .pmu-hero-home-2 h1 {
+    font-size: clamp(1.85rem, 5vw, 2.6rem) !important;
+  }
+  .pmu-hero-home h1 .text-gold-gradient,
+  .pmu-hero-home-2 h1 .text-gold-gradient {
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pmu-hero-home-2 {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .pmu-hero-home::before,
+  .pmu-hero-home-2::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.88) 0%,
+      rgba(250, 248, 244, 0.78) 50%,
+      rgba(250, 248, 244, 0.55) 85%,
+      rgba(250, 248, 244, 0.35) 100%
+    ) !important;
+  }
+  [data-theme="dark"] .pmu-hero-home::before,
+  [data-theme="dark"] .pmu-hero-home-2::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(32, 30, 29, 0.95) 0%,
+      rgba(32, 30, 29, 0.88) 50%,
+      rgba(32, 30, 29, 0.65) 100%
+    ) !important;
+  }
+  .pmu-hero-home h1,
+  .pmu-hero-home-2 h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  .pmu-hero-home .section-eyebrow,
+  .pmu-hero-home-2 .section-eyebrow {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .pmu-hero-home p.lead,
+  .pmu-hero-home-2 p.lead {
+    font-size: 0.98rem !important;
+  }
+  .pmu-hero-home .pmu-hero-features-grid,
+  .pmu-hero-home-2 .pmu-hero-features-grid {
+    max-width: 100% !important;
+  }
+  .pmu-hero-home .pmu-hero-features-grid .d-flex,
+  .pmu-hero-home-2 .pmu-hero-features-grid .d-flex {
+    justify-content: flex-start;
+  }
+  .pmu-hero-home .btn-pmu-gold,
+  .pmu-hero-home-2 .btn-pmu-gold,
+  .pmu-hero-home .btn-pmu-white,
+  .pmu-hero-home-2 .btn-pmu-white {
+    width: 100% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
+  }
+}
+
+
+/* ========================================================
+   ABOUT US HERO BANNER ENHANCEMENT
+   ======================================================== */
+.pmu-banner-about {
+  position: relative;
+  background-image: url('../assets/images/banners/about-banner.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.pmu-banner-about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 255, 255, 0.58) 0%,
+    rgba(250, 248, 244, 0.38) 45%,
+    rgba(250, 248, 244, 0.15) 75%,
+    rgba(250, 248, 244, 0.05) 100%
+  ) !important;
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-banner-about::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(32, 30, 29, 0.82) 0%,
+    rgba(32, 30, 29, 0.68) 48%,
+    rgba(32, 30, 29, 0.35) 80%,
+    rgba(32, 30, 29, 0.15) 100%
+  ) !important;
+}
+
+.pmu-banner-about .section-eyebrow {
+  color: #7a5423 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 800 !important;
+  font-size: 0.84rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .pmu-banner-about .section-eyebrow {
+  color: #dec59a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.pmu-banner-about .section-eyebrow::before,
+.pmu-banner-about .section-eyebrow::after {
+  content: "" !important;
+  display: inline-block !important;
+  background-color: #8c642c !important;
+  width: 32px !important;
+  height: 1.5px !important;
+}
+
+[data-theme="dark"] .pmu-banner-about .section-eyebrow::before,
+[data-theme="dark"] .pmu-banner-about .section-eyebrow::after {
+  background-color: #dec59a !important;
+}
+
+.pmu-banner-about h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="dark"] .pmu-banner-about h1 {
+  color: #FAF8F4 !important;
+}
+
+.pmu-banner-about h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #744e1e 0%, #94692e 38%, #b38848 68%, #6a4618 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9)) !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .pmu-banner-about h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #f0dcbe 0%, #d6bc91 40%, #dec59a 70%, #caa875 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.pmu-banner-about p.lead {
+  color: #201E1D !important;
+  font-weight: 500 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="dark"] .pmu-banner-about p.lead {
+  color: rgba(250, 248, 244, 0.88) !important;
+}
+
+.pmu-banner-about .pmu-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 14px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.25rem 1rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.pmu-banner-about .pmu-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #caa677 !important;
+  box-shadow: 0 8px 24px rgba(200, 171, 126, 0.22) !important;
+}
+
+.pmu-banner-about .pmu-card h6 {
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.pmu-banner-about .pmu-card span {
+  color: #6B6258 !important;
+  line-height: 1.4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-about .pmu-card {
+  background: rgba(32, 30, 29, 0.92) !important;
+  border-color: rgba(214, 188, 145, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .pmu-banner-about .pmu-card h6 {
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-about .pmu-card span {
+  color: rgba(250, 248, 244, 0.72) !important;
+}
+
+.pmu-banner-about .icon-box-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(214, 188, 145, 0.16);
+  border: 1px solid rgba(214, 188, 145, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pmu-banner-about .pmu-card:hover .icon-box-circle {
+  background: rgba(214, 188, 145, 0.28);
+  transform: scale(1.05);
+}
+
+.pmu-banner-about .icon-box-circle i {
+  color: #bfa074 !important;
+  font-size: 1.15rem !important;
+}
+
+@media (max-width: 991px) {
+  .pmu-banner-about h1 {
+    font-size: clamp(1.85rem, 5vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pmu-banner-about {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .pmu-banner-about::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.65) 0%,
+      rgba(250, 248, 244, 0.45) 50%,
+      rgba(250, 248, 244, 0.20) 100%
+    ) !important;
+  }
+  [data-theme="dark"] .pmu-banner-about::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(32, 30, 29, 0.90) 0%,
+      rgba(32, 30, 29, 0.75) 50%,
+      rgba(32, 30, 29, 0.45) 100%
+    ) !important;
+  }
+  .pmu-banner-about h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  .pmu-banner-about .section-eyebrow {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .pmu-banner-about p.lead {
+    font-size: 0.98rem !important;
+  }
+}
+/* ========================================================
+   SERVICES HERO BANNER ENHANCEMENT (HIGH-VISIBILITY TYPOGRAPHY)
+   ======================================================== */
+.pmu-banner-services {
+  position: relative;
+  background-image: url('../assets/images/banners/services-banner.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.pmu-banner-services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(250, 248, 244, 0.65) 45%,
+    rgba(250, 248, 244, 0.28) 75%,
+    rgba(250, 248, 244, 0.08) 100%
+  ) !important;
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-banner-services::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(32, 30, 29, 0.88) 0%,
+    rgba(32, 30, 29, 0.74) 48%,
+    rgba(32, 30, 29, 0.42) 80%,
+    rgba(32, 30, 29, 0.20) 100%
+  ) !important;
+}
+
+.pmu-banner-services .section-eyebrow {
+  color: #7a5423 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 800 !important;
+  font-size: 0.84rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .pmu-banner-services .section-eyebrow {
+  color: #dec59a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.pmu-banner-services .section-eyebrow::before,
+.pmu-banner-services .section-eyebrow::after {
+  content: "" !important;
+  display: inline-block !important;
+  background-color: #8c642c !important;
+  width: 32px !important;
+  height: 1.5px !important;
+}
+
+[data-theme="dark"] .pmu-banner-services .section-eyebrow::before,
+[data-theme="dark"] .pmu-banner-services .section-eyebrow::after {
+  background-color: #dec59a !important;
+}
+
+.pmu-banner-services h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: #1a1817 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-theme="dark"] .pmu-banner-services h1 {
+  color: #FAF8F4 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.pmu-banner-services h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #744e1e 0%, #94692e 38%, #b38848 68%, #6a4618 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9)) !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .pmu-banner-services h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #f0dcbe 0%, #d6bc91 40%, #dec59a 70%, #caa875 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.pmu-banner-services p.lead {
+  color: #201E1D !important;
+  font-weight: 500 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="dark"] .pmu-banner-services p.lead {
+  color: rgba(250, 248, 244, 0.92) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+  font-weight: 400 !important;
+}
+
+.pmu-banner-services .pmu-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.45) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 14px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.35rem 1.1rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.pmu-banner-services .pmu-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #caa677 !important;
+  box-shadow: 0 10px 28px rgba(200, 171, 126, 0.25) !important;
+}
+
+.pmu-banner-services .pmu-card h6 {
+  color: #1a1817 !important;
+  font-weight: 700 !important;
+  font-size: 0.96rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.pmu-banner-services .pmu-card span {
+  color: #443e38 !important;
+  font-weight: 500 !important;
+  font-size: 0.82rem !important;
+  line-height: 1.45 !important;
+}
+
+[data-theme="dark"] .pmu-banner-services .pmu-card {
+  background: rgba(32, 30, 29, 0.94) !important;
+  border-color: rgba(214, 188, 145, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .pmu-banner-services .pmu-card h6 {
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-services .pmu-card span {
+  color: rgba(250, 248, 244, 0.80) !important;
+}
+
+.pmu-banner-services .icon-box-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(214, 188, 145, 0.20);
+  border: 1px solid rgba(214, 188, 145, 0.40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pmu-banner-services .pmu-card:hover .icon-box-circle {
+  background: rgba(214, 188, 145, 0.32);
+  transform: scale(1.05);
+}
+
+.pmu-banner-services .icon-box-circle i {
+  color: #8c642c !important;
+  font-size: 1.2rem !important;
+}
+
+[data-theme="dark"] .pmu-banner-services .icon-box-circle i {
+  color: #d6bc91 !important;
+}
+
+@media (max-width: 991px) {
+  .pmu-banner-services h1 {
+    font-size: clamp(1.85rem, 5vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pmu-banner-services {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .pmu-banner-services::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(250, 248, 244, 0.48) 50%,
+      rgba(250, 248, 244, 0.22) 100%
+    ) !important;
+  }
+  [data-theme="dark"] .pmu-banner-services::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(32, 30, 29, 0.90) 0%,
+      rgba(32, 30, 29, 0.75) 50%,
+      rgba(32, 30, 29, 0.45) 100%
+    ) !important;
+  }
+  .pmu-banner-services h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  .pmu-banner-services .section-eyebrow {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .pmu-banner-services p.lead {
+    font-size: 0.98rem !important;
+  }
+}
+/* ========================================================
+   ARTISTS HERO BANNER ENHANCEMENT
+   ======================================================== */
+.pmu-banner-artists {
+  position: relative;
+  background-image: url('../assets/images/banners/artists-banner.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.pmu-banner-artists::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(250, 248, 244, 0.65) 45%,
+    rgba(250, 248, 244, 0.28) 75%,
+    rgba(250, 248, 244, 0.08) 100%
+  ) !important;
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-banner-artists::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(32, 30, 29, 0.85) 0%,
+    rgba(32, 30, 29, 0.70) 48%,
+    rgba(32, 30, 29, 0.38) 80%,
+    rgba(32, 30, 29, 0.18) 100%
+  ) !important;
+}
+
+.pmu-banner-artists .section-eyebrow {
+  color: #7a5423 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 800 !important;
+  font-size: 0.84rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists .section-eyebrow {
+  color: #dec59a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.pmu-banner-artists .section-eyebrow::before,
+.pmu-banner-artists .section-eyebrow::after {
+  content: "" !important;
+  display: inline-block !important;
+  background-color: #8c642c !important;
+  width: 32px !important;
+  height: 1.5px !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists .section-eyebrow::before,
+[data-theme="dark"] .pmu-banner-artists .section-eyebrow::after {
+  background-color: #dec59a !important;
+}
+
+.pmu-banner-artists h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists h1 {
+  color: #FAF8F4 !important;
+}
+
+.pmu-banner-artists h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #744e1e 0%, #94692e 38%, #b38848 68%, #6a4618 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9)) !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #f0dcbe 0%, #d6bc91 40%, #dec59a 70%, #caa875 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.pmu-banner-artists p.lead {
+  color: #201E1D !important;
+  font-weight: 500 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists p.lead {
+  color: rgba(250, 248, 244, 0.88) !important;
+}
+
+.pmu-banner-artists .pmu-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 14px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.25rem 1rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.pmu-banner-artists .pmu-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #caa677 !important;
+  box-shadow: 0 8px 24px rgba(200, 171, 126, 0.22) !important;
+}
+
+.pmu-banner-artists .pmu-card h6 {
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.pmu-banner-artists .pmu-card span {
+  color: #6B6258 !important;
+  line-height: 1.4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists .pmu-card {
+  background: rgba(32, 30, 29, 0.92) !important;
+  border-color: rgba(214, 188, 145, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists .pmu-card h6 {
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-artists .pmu-card span {
+  color: rgba(250, 248, 244, 0.72) !important;
+}
+
+.pmu-banner-artists .icon-box-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(214, 188, 145, 0.16);
+  border: 1px solid rgba(214, 188, 145, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pmu-banner-artists .pmu-card:hover .icon-box-circle {
+  background: rgba(214, 188, 145, 0.28);
+  transform: scale(1.05);
+}
+
+.pmu-banner-artists .icon-box-circle i {
+  color: #bfa074 !important;
+  font-size: 1.15rem !important;
+}
+
+@media (max-width: 991px) {
+  .pmu-banner-artists h1 {
+    font-size: clamp(1.85rem, 5vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pmu-banner-artists {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .pmu-banner-artists::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(250, 248, 244, 0.48) 50%,
+      rgba(250, 248, 244, 0.22) 100%
+    ) !important;
+  }
+  [data-theme="dark"] .pmu-banner-artists::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(32, 30, 29, 0.90) 0%,
+      rgba(32, 30, 29, 0.75) 50%,
+      rgba(32, 30, 29, 0.45) 100%
+    ) !important;
+  }
+  .pmu-banner-artists h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  .pmu-banner-artists .section-eyebrow {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .pmu-banner-artists p.lead {
+    font-size: 0.98rem !important;
+  }
+}
+/* ========================================================
+   AFTERCARE HERO BANNER ENHANCEMENT
+   ======================================================== */
+.pmu-banner-aftercare {
+  position: relative;
+  background-image: url('../assets/images/banners/aftercare-banner.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.pmu-banner-aftercare::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(250, 248, 244, 0.65) 45%,
+    rgba(250, 248, 244, 0.28) 75%,
+    rgba(250, 248, 244, 0.08) 100%
+  ) !important;
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(32, 30, 29, 0.85) 0%,
+    rgba(32, 30, 29, 0.70) 48%,
+    rgba(32, 30, 29, 0.38) 80%,
+    rgba(32, 30, 29, 0.18) 100%
+  ) !important;
+}
+
+.pmu-banner-aftercare .section-eyebrow {
+  color: #7a5423 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 800 !important;
+  font-size: 0.84rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare .section-eyebrow {
+  color: #dec59a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.pmu-banner-aftercare .section-eyebrow::before,
+.pmu-banner-aftercare .section-eyebrow::after {
+  content: "" !important;
+  display: inline-block !important;
+  background-color: #8c642c !important;
+  width: 32px !important;
+  height: 1.5px !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare .section-eyebrow::before,
+[data-theme="dark"] .pmu-banner-aftercare .section-eyebrow::after {
+  background-color: #dec59a !important;
+}
+
+.pmu-banner-aftercare h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare h1 {
+  color: #FAF8F4 !important;
+}
+
+.pmu-banner-aftercare h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #744e1e 0%, #94692e 38%, #b38848 68%, #6a4618 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9)) !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #f0dcbe 0%, #d6bc91 40%, #dec59a 70%, #caa875 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.pmu-banner-aftercare p.lead {
+  color: #201E1D !important;
+  font-weight: 500 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare p.lead {
+  color: rgba(250, 248, 244, 0.88) !important;
+}
+
+.pmu-banner-aftercare .pmu-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 14px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.25rem 1rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.pmu-banner-aftercare .pmu-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #caa677 !important;
+  box-shadow: 0 8px 24px rgba(200, 171, 126, 0.22) !important;
+}
+
+.pmu-banner-aftercare .pmu-card h6 {
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.pmu-banner-aftercare .pmu-card span {
+  color: #6B6258 !important;
+  line-height: 1.4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare .pmu-card {
+  background: rgba(32, 30, 29, 0.92) !important;
+  border-color: rgba(214, 188, 145, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare .pmu-card h6 {
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-aftercare .pmu-card span {
+  color: rgba(250, 248, 244, 0.72) !important;
+}
+
+.pmu-banner-aftercare .icon-box-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(214, 188, 145, 0.16);
+  border: 1px solid rgba(214, 188, 145, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pmu-banner-aftercare .pmu-card:hover .icon-box-circle {
+  background: rgba(214, 188, 145, 0.28);
+  transform: scale(1.05);
+}
+
+.pmu-banner-aftercare .icon-box-circle i {
+  color: #bfa074 !important;
+  font-size: 1.15rem !important;
+}
+
+@media (max-width: 991px) {
+  .pmu-banner-aftercare h1 {
+    font-size: clamp(1.85rem, 5vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pmu-banner-aftercare {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .pmu-banner-aftercare::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(250, 248, 244, 0.48) 50%,
+      rgba(250, 248, 244, 0.22) 100%
+    ) !important;
+  }
+  [data-theme="dark"] .pmu-banner-aftercare::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(32, 30, 29, 0.90) 0%,
+      rgba(32, 30, 29, 0.75) 50%,
+      rgba(32, 30, 29, 0.45) 100%
+    ) !important;
+  }
+  .pmu-banner-aftercare h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  .pmu-banner-aftercare .section-eyebrow {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .pmu-banner-aftercare p.lead {
+    font-size: 0.98rem !important;
+  }
+}
+
+
+/* ========================================================
+   CONTACT HERO BANNER ENHANCEMENT
+   ======================================================== */
+.pmu-banner-contact {
+  position: relative;
+  background-image: url('../assets/images/banners/contact-banner.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.pmu-banner-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(250, 248, 244, 0.65) 45%,
+    rgba(250, 248, 244, 0.28) 75%,
+    rgba(250, 248, 244, 0.08) 100%
+  ) !important;
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .pmu-banner-contact::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(32, 30, 29, 0.85) 0%,
+    rgba(32, 30, 29, 0.70) 48%,
+    rgba(32, 30, 29, 0.38) 80%,
+    rgba(32, 30, 29, 0.18) 100%
+  ) !important;
+}
+
+.pmu-banner-contact .section-eyebrow {
+  color: #7a5423 !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 800 !important;
+  font-size: 0.84rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact .section-eyebrow {
+  color: #dec59a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.pmu-banner-contact .section-eyebrow::before,
+.pmu-banner-contact .section-eyebrow::after {
+  content: "" !important;
+  display: inline-block !important;
+  background-color: #8c642c !important;
+  width: 32px !important;
+  height: 1.5px !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact .section-eyebrow::before,
+[data-theme="dark"] .pmu-banner-contact .section-eyebrow::after {
+  background-color: #dec59a !important;
+}
+
+.pmu-banner-contact h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact h1 {
+  color: #FAF8F4 !important;
+}
+
+.pmu-banner-contact h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #744e1e 0%, #94692e 38%, #b38848 68%, #6a4618 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9)) !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact h1 .text-gold-gradient {
+  background: linear-gradient(135deg, #f0dcbe 0%, #d6bc91 40%, #dec59a 70%, #caa875 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.pmu-banner-contact p.lead {
+  color: #201E1D !important;
+  font-weight: 500 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact p.lead {
+  color: rgba(250, 248, 244, 0.88) !important;
+}
+
+.pmu-banner-contact .pmu-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 14px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.25rem 1rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.pmu-banner-contact .pmu-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #caa677 !important;
+  box-shadow: 0 8px 24px rgba(200, 171, 126, 0.22) !important;
+}
+
+.pmu-banner-contact .pmu-card h6 {
+  color: #201E1D !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.pmu-banner-contact .pmu-card span {
+  color: #6B6258 !important;
+  line-height: 1.4 !important;
+}
+
+.pmu-banner-contact .pmu-card a {
+  color: #6B6258 !important;
+  transition: color 0.2s ease;
+}
+
+.pmu-banner-contact .pmu-card a:hover {
+  color: #bfa074 !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact .pmu-card {
+  background: rgba(32, 30, 29, 0.92) !important;
+  border-color: rgba(214, 188, 145, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact .pmu-card h6 {
+  color: #FAF8F4 !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact .pmu-card span,
+[data-theme="dark"] .pmu-banner-contact .pmu-card a {
+  color: rgba(250, 248, 244, 0.72) !important;
+}
+
+[data-theme="dark"] .pmu-banner-contact .pmu-card a:hover {
+  color: #caa875 !important;
+}
+
+.pmu-banner-contact .icon-box-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(214, 188, 145, 0.16);
+  border: 1px solid rgba(214, 188, 145, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pmu-banner-contact .pmu-card:hover .icon-box-circle {
+  background: rgba(214, 188, 145, 0.28);
+  transform: scale(1.05);
+}
+
+.pmu-banner-contact .icon-box-circle i {
+  color: #bfa074 !important;
+  font-size: 1.15rem !important;
+}
+
+@media (max-width: 991px) {
+  .pmu-banner-contact h1 {
+    font-size: clamp(1.85rem, 5vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pmu-banner-contact {
+    min-height: auto !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  .pmu-banner-contact::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(250, 248, 244, 0.48) 50%,
+      rgba(250, 248, 244, 0.22) 100%
+    ) !important;
+  }
+  [data-theme="dark"] .pmu-banner-contact::before {
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(32, 30, 29, 0.90) 0%,
+      rgba(32, 30, 29, 0.75) 50%,
+      rgba(32, 30, 29, 0.45) 100%
+    ) !important;
+  }
+  .pmu-banner-contact h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  .pmu-banner-contact .section-eyebrow {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .pmu-banner-contact p.lead {
+    font-size: 0.98rem !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .pmu-banner-contact .section-eyebrow {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.08em !important;
+    gap: 0.4rem !important;
+  }
+  .pmu-banner-contact .section-eyebrow::before,
+  .pmu-banner-contact .section-eyebrow::after {
+    width: 14px !important;
+  }
+  .pmu-banner-contact h1 {
+    font-size: 1.62rem !important;
+  }
+  .pmu-banner-contact p.lead {
+    font-size: 0.90rem !important;
+  }
+}
+
+
+/* ========================================================
+   ATELIER VISIT JOURNEY STAGE CARDS (EXACT ALIGNMENT)
+   ======================================================== */
+.atelier-stage-card {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(214, 188, 145, 0.40) !important;
+  border-radius: 16px !important;
+  padding: 1.75rem 1.45rem !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.25s ease !important;
+}
+
+.atelier-stage-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #caa677 !important;
+  box-shadow: 0 10px 28px rgba(200, 171, 126, 0.22) !important;
+}
+
+[data-theme="dark"] .atelier-stage-card {
+  background: rgba(32, 30, 29, 0.94) !important;
+  border-color: rgba(214, 188, 145, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.atelier-stage-card .stage-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 1.15rem !important;
+  width: 100% !important;
+}
+
+.atelier-stage-card .stage-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: rgba(214, 188, 145, 0.16) !important;
+  border: 1px solid rgba(214, 188, 145, 0.45) !important;
+  color: #7a5423 !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  padding: 0.3rem 0.85rem !important;
+  border-radius: 9999px !important;
+  width: fit-content !important;
+  margin-bottom: 0 !important;
+  transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .atelier-stage-card .stage-pill {
+  background: rgba(214, 188, 145, 0.18) !important;
+  border-color: rgba(214, 188, 145, 0.35) !important;
+  color: #dec59a !important;
+}
+
+.atelier-stage-card .stage-icon-circle {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: rgba(214, 188, 145, 0.14) !important;
+  border: 1px solid rgba(214, 188, 145, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #8c642c !important;
+  font-size: 0.95rem !important;
+  flex-shrink: 0 !important;
+  transition: all 0.25s ease;
+}
+
+.atelier-stage-card:hover .stage-icon-circle {
+  background: rgba(214, 188, 145, 0.28) !important;
+  transform: scale(1.08) !important;
+}
+
+[data-theme="dark"] .atelier-stage-card .stage-icon-circle {
+  color: #d6bc91 !important;
+}
+
+.atelier-stage-card h5 {
+  font-family: 'Playfair Display', serif !important;
+  color: #1a1817 !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.75rem !important;
+  min-height: 3.1rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+[data-theme="dark"] .atelier-stage-card h5 {
+  color: #FAF8F4 !important;
+}
+
+.atelier-stage-card p {
+  color: #554e48 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.62 !important;
+  margin-bottom: 0 !important;
+  flex-grow: 1 !important;
+  text-align: left !important;
+}
+
+[data-theme="dark"] .atelier-stage-card p {
+  color: rgba(250, 248, 244, 0.78) !important;
+}
+
+@media (max-width: 991px) {
+  .atelier-stage-card h5 {
+    min-height: auto !important;
+  }
 }

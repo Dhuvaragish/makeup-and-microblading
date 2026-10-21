@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - 6-WEEK TRANSFORMATION CONTROLLER
+ * VELOURA PMU & BROW STUDIO - 6-WEEK TRANSFORMATION CONTROLLER
  * Manages the 6-Week Healed Results section, independent comparison sliders,
  * and the larger comparison modal/lightbox.
  */

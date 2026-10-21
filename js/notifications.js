@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - NOTIFICATION & TOAST SYSTEM
+ * VELOURA PMU & BROW STUDIO - NOTIFICATION & TOAST SYSTEM
  */
 
 const PMUNotifications = (function() {

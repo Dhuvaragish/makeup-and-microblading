@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - NAVIGATION & HEADER CONTROLLER
+ * VELOURA PMU & BROW STUDIO - NAVIGATION & HEADER CONTROLLER
  */
 
 const PMUNavigation = (function() {
@@ -15,7 +15,8 @@ const PMUNavigation = (function() {
     if (!header) return;
 
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      if (scrollY > 15) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
@@ -23,22 +24,33 @@ const PMUNavigation = (function() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
   }
 
   function setupActiveLinks() {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPath = window.location.pathname.split('/').pop() || 'index.html';
+    const path = rawPath.split('?')[0].split('#')[0] || 'index.html';
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item, .sidebar-link');
     
+    // Clear pre-existing active classes to ensure exact active matching
+    navLinks.forEach(link => link.classList.remove('active'));
+
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (href && (href === path || (path === '' && href === 'index.html'))) {
-        link.classList.add('active');
-        // If inside dropdown, highlight parent nav-link too
-        const parentDropdown = link.closest('.dropdown');
-        if (parentDropdown) {
-          const toggle = parentDropdown.querySelector('.nav-link');
-          if (toggle) toggle.classList.add('active');
+      if (href) {
+        const cleanHref = href.split('?')[0].split('#')[0];
+        const isServicesMatch = cleanHref === 'services.html' && (path === 'services.html' || path === 'service-details.html' || path === 'consultation.html');
+        const isDashboardMatch = (cleanHref === 'client-dashboard.html' || cleanHref === 'dashboard.html') && 
+          (path === 'client-dashboard.html' || path === 'dashboard.html' || path === 'client-appointments.html' || path === 'client-treatment-history.html' || path === 'client-profile.html' || path === 'client-aftercare.html');
+        if (cleanHref === path || (path === '' && cleanHref === 'index.html') || isServicesMatch || isDashboardMatch) {
+          link.classList.add('active');
+          // If inside dropdown, highlight parent nav-link too
+          const parentDropdown = link.closest('.dropdown');
+          if (parentDropdown) {
+            const toggle = parentDropdown.querySelector('.nav-link');
+            if (toggle) toggle.classList.add('active');
+          }
         }
       }
     });

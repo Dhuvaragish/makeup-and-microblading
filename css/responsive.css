@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA PMU & MICROBLADING STUDIO - RESPONSIVE STYLES
+   VELOURA - PERMANENT MAKEUP & BROW STUDIO - RESPONSIVE STYLES
    ========================================================================== */
 
 @media (max-width: 1199.98px) {
@@ -9,10 +9,6 @@
 }
 
 @media (max-width: 991.98px) {
-  .pmu-topbar {
-    display: none;
-  }
-
   .hero-title {
     font-size: 2.75rem;
   }
@@ -77,8 +73,18 @@
     font-size: 1.25rem;
   }
 
+  .header-actions .btn-header-cta,
   .header-actions .btn-pmu-gold {
-    display: none;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 0.25rem;
+  }
+
+  .header-actions .btn-header-signin,
+  .header-actions .btn-header-mode {
+    flex: 1 1 auto;
+    justify-content: center;
   }
 
   .time-slot-grid {

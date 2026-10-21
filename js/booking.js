@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - MULTI-STEP BOOKING WIZARD ENGINE
+ * VELOURA PMU & BROW STUDIO - MULTI-STEP BOOKING WIZARD ENGINE
  */
 
 const PMUBooking = (function() {
@@ -27,6 +27,21 @@ const PMUBooking = (function() {
     setupTimeSlots();
     setupStepNavigation();
     setupUrlPreselect();
+    setupAuthUserPrefill();
+  }
+
+  function setupAuthUserPrefill() {
+    if (window.PMUStorage && typeof PMUStorage.getCurrentUser === 'function') {
+      const user = PMUStorage.getCurrentUser();
+      if (user) {
+        const nameInput = document.getElementById('client-name');
+        const emailInput = document.getElementById('client-email');
+        const phoneInput = document.getElementById('client-phone');
+        if (nameInput && !nameInput.value) nameInput.value = user.name || '';
+        if (emailInput && !emailInput.value) emailInput.value = user.email || '';
+        if (phoneInput && !phoneInput.value) phoneInput.value = user.phone || '';
+      }
+    }
   }
 
   function setupUrlPreselect() {
@@ -36,15 +51,32 @@ const PMUBooking = (function() {
 
     if (serviceParam) {
       setTimeout(() => {
-        const card = document.querySelector(`[data-service-id="${serviceParam}"]`);
-        if (card) card.click();
-      }, 200);
+        let card = document.querySelector(`[data-service-id="${serviceParam}"]`);
+        if (!card && !serviceParam.startsWith('srv-')) {
+          card = document.querySelector(`[data-service-id="srv-${serviceParam}"]`);
+        }
+        if (!card && window.PMUStorage && typeof PMUStorage.getServiceById === 'function') {
+          const srv = PMUStorage.getServiceById(serviceParam);
+          if (srv) {
+            card = document.querySelector(`[data-service-id="${srv.id}"]`);
+          }
+        }
+        if (card) {
+          card.click();
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 150);
     }
 
     if (artistParam) {
       setTimeout(() => {
-        const card = document.querySelector(`[data-artist-id="${artistParam}"]`);
-        if (card) card.click();
+        let card = document.querySelector(`[data-artist-id="${artistParam}"]`);
+        if (!card && !artistParam.startsWith('art-')) {
+          card = document.querySelector(`[data-artist-id="art-${artistParam}"]`);
+        }
+        if (card) {
+          card.click();
+        }
       }, 200);
     }
   }
@@ -236,6 +268,24 @@ const PMUBooking = (function() {
       if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim()) {
         if (window.PMUNotifications) window.PMUNotifications.warning('Please fill in your name, email and phone number.');
         return false;
+      }
+
+      if (window.PMUValidation) {
+        if (!PMUValidation.validateName(nameInput.value)) {
+          if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid legal name (letters only, cannot be numbers only).');
+          nameInput.focus();
+          return false;
+        }
+        if (!PMUValidation.validateEmail(emailInput.value)) {
+          if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid email address.');
+          emailInput.focus();
+          return false;
+        }
+        if (!PMUValidation.validatePhone(phoneInput.value)) {
+          if (window.PMUNotifications) window.PMUNotifications.warning('Please enter a valid telephone number.');
+          phoneInput.focus();
+          return false;
+        }
       }
 
       if (contraCheckbox && !contraCheckbox.checked) {

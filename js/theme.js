@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - THEME MANAGER (LIGHT & DARK MODE)
+ * VELOURA PMU & BROW STUDIO - THEME MANAGER (LIGHT & DARK MODE)
  */
 
 const PMUTheme = (function() {

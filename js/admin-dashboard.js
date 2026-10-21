@@ -1,9 +1,12 @@
 /**
- * AURA PMU STUDIO - ADMIN DASHBOARD CONTROLLER
+ * VELOURA PMU & BROW STUDIO - ADMIN DASHBOARD CONTROLLER
  */
 
 const PMUAdminDashboard = (function() {
   function init() {
+    if (window.PMUAuth && !window.PMUAuth.requireAuth('admin')) {
+      return;
+    }
     renderAdminKPIs();
     renderAppointmentsTable();
     renderClientsTable();
@@ -29,7 +32,8 @@ const PMUAdminDashboard = (function() {
     if (confirmedEl) confirmedEl.textContent = confirmed;
 
     const clientsEl = document.getElementById('admin-kpi-clients');
-    if (clientsEl) clientsEl.textContent = 142 + apts.length;
+    const uniqueClients = new Set(apts.map(a => a.clientEmail || a.clientName)).size;
+    if (clientsEl) clientsEl.textContent = uniqueClients || apts.length;
   }
 
   function renderAppointmentsTable() {
@@ -161,7 +165,7 @@ const PMUAdminDashboard = (function() {
         <td><strong class="text-gold">$${c.totalSpend}</strong></td>
         <td>${c.lastVisit}</td>
         <td>
-          <button class="btn btn-sm btn-pmu-outline" onclick="alert('Viewing client clinical chart for: ${c.name}');">
+          <button class="btn btn-sm btn-pmu-outline" onclick="if (window.PMUNotifications) { PMUNotifications.info('Client clinical file for ${c.name} opened.'); }">
             <i class="fa-regular fa-folder-open"></i> Clinical File
           </button>
         </td>
@@ -190,7 +194,7 @@ const PMUAdminDashboard = (function() {
         <td>${a.experience}</td>
         <td><span class="pmu-badge pmu-badge-success">Active & Bookable</span></td>
         <td>
-          <button class="btn btn-sm btn-outline-secondary" onclick="alert('Editing schedule for Master ${a.name}');">
+          <button class="btn btn-sm btn-outline-secondary" onclick="if (window.PMUNotifications) { PMUNotifications.info('Schedule for Master ${a.name} synced with studio calendar.'); }">
             <i class="fa-solid fa-pen-to-square"></i> Schedule
           </button>
         </td>
@@ -220,7 +224,7 @@ const PMUAdminDashboard = (function() {
         <td>${s.retention}</td>
         <td><span class="pmu-badge pmu-badge-success">Live on Site</span></td>
         <td>
-          <button class="btn btn-sm btn-outline-secondary" onclick="alert('Edit service pricing dialog: ${s.name}');">
+          <button class="btn btn-sm btn-outline-secondary" onclick="if (window.PMUNotifications) { PMUNotifications.info('Service pricing for ${s.name}: $${s.price} base / $${s.touchUpPrice} touch-up active.'); }">
             <i class="fa-solid fa-sliders"></i> Edit
           </button>
         </td>
@@ -256,7 +260,7 @@ const PMUAdminDashboard = (function() {
   function replyEnquiry(id) {
     const enq = PMUStorage.getEnquiries().find(e => e.id === id);
     if (!enq) return;
-    const reply = prompt(`Reply to ${enq.name} (${enq.email}):\nMessage: "${enq.message}"`, "Dear " + enq.name + ", Thank you for reaching out to Aura Studio! Regarding your enquiry...");
+    const reply = prompt(`Reply to ${enq.name} (${enq.email}):\nMessage: "${enq.message}"`, "Dear " + enq.name + ", Thank you for reaching out to VELOURA Studio! Regarding your enquiry...");
     if (reply) {
       PMUStorage.updateEnquiryStatus(id, 'Replied');
       if (window.PMUNotifications) window.PMUNotifications.success(`Reply sent to ${enq.email}!`);

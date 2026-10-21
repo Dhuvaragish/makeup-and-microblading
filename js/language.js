@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - LANGUAGE & RTL/LTR MANAGER
+ * VELOURA PMU & BROW STUDIO - LANGUAGE & RTL/LTR MANAGER
  */
 
 const PMULanguage = (function() {

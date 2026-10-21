@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="alternate icon" href="assets/icons/favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact & Studio Location | AURA PMU Studio</title>
-  <meta name="description" content="Visit Aura Permanent Makeup Studio at 740 Madison Ave, New York. Contact our studio concierge, view opening hours, and submit inquiries.">
+  <title>Contact & Manhattan Atelier Location | VELOURA Brow & PMU Studio</title>
+  <meta name="description" content="Visit VELOURA Studio at 740 Madison Avenue, New York. Contact our studio concierge, view opening hours, transit directions, or send an inquiry.">
   
   <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/tailwind.css">
@@ -21,39 +23,29 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="pmu-topbar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-4">
-        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
-        <span class="pmu-topbar-item"><i class="fa-regular fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</span>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
-      </div>
-    </div>
-  </div>
 
   <!-- Header -->
-  <header class="pmu-header">
+  <header class="pmu-header sticky-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
-        <a class="pmu-brand" href="index.html">
-          <div class="pmu-brand-icon">A</div>
+        <a class="pmu-brand" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio Homepage">
+          <div class="pmu-brand-logo">
+            <img src="assets/icons/logo.svg" alt="VELOURA Studio Logo" width="44" height="44">
+          </div>
           <div class="pmu-brand-text">
-            <span class="pmu-brand-name">AURA</span>
-            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+            <span class="pmu-brand-name">VELOURA</span>
+            <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
           </div>
         </a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar" aria-controls="pmuNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="pmuNavbar">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
                 <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
@@ -62,7 +54,6 @@
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
             <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
           </ul>
@@ -73,45 +64,85 @@
               <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
               <span class="lang-label visually-hidden">EN (LTR)</span>
             </button>
-            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+
+            <!-- Theme Mode (Light/Dark) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
               <i class="fa-solid fa-moon theme-toggle-icon"></i>
             </button>
+
+            <!-- Client Sign In -->
             <div class="header-user-status">
-              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+              <a href="login.html" class="btn-header-signin" title="Client Sign In">
+                <i class="fa-regular fa-user"></i>
+                <span>Client Sign In</span>
+              </a>
             </div>
-            <a href="booking.html" class="btn-pmu-gold">Book Appointment</a>
+
+            <!-- Book Appointment CTA -->
+            <a href="booking.html" class="btn-header-cta">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </a>
           </div>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- Page Banner -->
+  <!-- Page Banner (VELOURA Contact Hero Banner Enhancement) -->
   <section class="pmu-page-banner pmu-banner-contact py-5">
     <div class="container text-center py-4">
-      <span class="section-eyebrow">Studio Concierge & Atelier Visit</span>
-      <h1 class="display-4 font-serif fw-bold mb-3">Connect With Our Manhattan Atelier</h1>
-      <p class="text-muted lead mx-auto mb-4" style="max-width: 720px;">
-        Conveniently situated on Madison Avenue in Manhattan's historic Upper East Side. Our dedicated concierge and master artist clinical team are available 7 days a week to answer treatment inquiries, coordinate out-of-town visits, and ensure an effortless experience.
+      <span class="section-eyebrow mx-auto mb-3">STUDIO CONCIERGE &amp; APPOINTMENTS</span>
+      <h1 class="display-4 font-serif fw-bold mb-3">
+        Connect With the <span class="text-gold-gradient">VELOURA Team</span>
+      </h1>
+      <p class="lead mx-auto mb-4" style="max-width: 720px; color: #4a4744; font-size: 1.12rem; line-height: 1.65;">
+        Have questions about our treatments or booking options? Contact our team for service information, appointment assistance, and guidance before your consultation.
       </p>
 
-      <!-- Key Contact Highlights Pills -->
-      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 text-start">
-        <div class="pmu-card px-3 py-2 d-flex align-items-center gap-2 small">
-          <i class="fa-solid fa-location-dot text-gold fs-6"></i>
-          <div><span class="fw-semibold text-main">740 Madison Ave, 4th Fl</span> <span class="text-muted d-block" style="font-size: 0.75rem;">Between 64th & 65th St, NYC</span></div>
+      <!-- Four Refined Information Cards -->
+      <div class="row g-3 justify-content-center text-center" style="max-width: 980px; margin: 0 auto;">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Studio Location</h6>
+            <span class="small" style="font-size: 0.78rem;">
+              <a href="#studio-map" class="text-decoration-none">740 Madison Ave, New York, NY</a>
+            </span>
+          </div>
         </div>
-        <div class="pmu-card px-3 py-2 d-flex align-items-center gap-2 small">
-          <i class="fa-regular fa-clock text-gold fs-6"></i>
-          <div><span class="fw-semibold text-main">Open 7 Days a Week</span> <span class="text-muted d-block" style="font-size: 0.75rem;">Mon–Sat 9–7 | Sun 10–5</span></div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Opening Hours</h6>
+            <span class="small" style="font-size: 0.78rem;">Mon–Sat: 9:00 AM – 7:00 PM</span>
+          </div>
         </div>
-        <div class="pmu-card px-3 py-2 d-flex align-items-center gap-2 small">
-          <i class="fa-solid fa-phone text-gold fs-6"></i>
-          <div><a href="tel:+15552347890" class="fw-semibold text-main text-decoration-none">+1 (555) 234-7890</a> <span class="text-muted d-block" style="font-size: 0.75rem;">Studio Concierge Desk</span></div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Call Our Team</h6>
+            <span class="small" style="font-size: 0.78rem;">
+              <a href="tel:+15552347890" class="text-decoration-none">+1 (555) 234-7890</a>
+            </span>
+          </div>
         </div>
-        <div class="pmu-card px-3 py-2 d-flex align-items-center gap-2 small">
-          <i class="fa-brands fa-whatsapp text-success fs-6"></i>
-          <div><a href="https://wa.me/15552347890" target="_blank" class="fw-semibold text-main text-decoration-none">WhatsApp Concierge</a> <span class="text-muted d-block" style="font-size: 0.75rem;">Instant Photo Chat</span></div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pmu-card h-100">
+            <div class="icon-box-circle">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">WhatsApp Enquiries</h6>
+            <span class="small" style="font-size: 0.78rem;">
+              <a href="https://wa.me/15552347890" target="_blank" rel="noopener noreferrer" class="text-decoration-none">Direct Messaging</a>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -252,7 +283,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="contact-consent" checked>
                     <label class="form-check-label text-muted small" for="contact-consent">
-                      I agree to receive communications regarding my appointment inquiry. AURA enforces strict HIPAA-compliant client privacy and never shares private data.
+                      I agree to receive communications regarding my appointment inquiry. VELOURA enforces strict HIPAA-compliant client privacy and never shares private data.
                     </label>
                   </div>
                 </div>
@@ -341,7 +372,7 @@
               <h5 class="font-serif mb-0"><i class="fa-solid fa-location-dot text-gold me-2"></i> Atelier Address</h5>
               <span class="pmu-badge pmu-badge-gold">4th Floor</span>
             </div>
-            <p class="text-main fw-semibold mb-1">AURA Permanent Makeup Atelier</p>
+            <p class="text-main fw-semibold mb-1">VELOURA Permanent Makeup Atelier</p>
             <p class="text-muted small mb-3">
               740 Madison Avenue, 4th Floor<br>
               (Between East 64th & 65th Streets)<br>
@@ -375,7 +406,7 @@
               </li>
               <li class="d-flex justify-content-between py-2">
                 <span class="text-muted"><i class="fa-regular fa-calendar-days text-gold me-2"></i>Sunday:</span>
-                <strong class="text-main">10:00 AM – 5:00 PM EST</strong>
+                <strong class="text-main">By Appointment Only</strong>
               </li>
             </ul>
             <div class="p-2 px-3 bg-subtle rounded-2 small text-muted d-flex align-items-center gap-2">
@@ -394,7 +425,7 @@
                   <span class="badge bg-subtle text-muted">Ext. 1</span>
                 </div>
                 <div class="text-muted">Telephone: <a href="tel:+15552347890" class="text-main fw-semibold text-decoration-none">+1 (555) 234-7890</a></div>
-                <div class="text-muted">Email: <a href="mailto:concierge@aurapmustudio.com" class="text-gold text-decoration-none">concierge@aurapmustudio.com</a></div>
+                <div class="text-muted">Email: <a href="mailto:concierge@velourastudio.com" class="text-gold text-decoration-none">concierge@velourastudio.com</a></div>
               </div>
 
               <div class="pb-2 border-bottom">
@@ -403,7 +434,7 @@
                   <span class="badge bg-subtle text-muted">Ext. 2</span>
                 </div>
                 <div class="text-muted">Direct: <a href="tel:+15552347891" class="text-main fw-semibold text-decoration-none">+1 (555) 234-7891</a></div>
-                <div class="text-muted">Email: <a href="mailto:clinical@aurapmustudio.com" class="text-gold text-decoration-none">clinical@aurapmustudio.com</a></div>
+                <div class="text-muted">Email: <a href="mailto:clinical@velourastudio.com" class="text-gold text-decoration-none">clinical@velourastudio.com</a></div>
               </div>
 
               <div class="pb-2 border-bottom">
@@ -412,7 +443,7 @@
                   <span class="badge bg-danger-subtle text-danger">Priority Line</span>
                 </div>
                 <div class="text-muted">Hotline: <a href="tel:+15552347892" class="text-main fw-semibold text-decoration-none">+1 (555) 234-7892</a></div>
-                <div class="text-muted">Email: <a href="mailto:aftercare@aurapmustudio.com" class="text-gold text-decoration-none">aftercare@aurapmustudio.com</a></div>
+                <div class="text-muted">Email: <a href="mailto:aftercare@velourastudio.com" class="text-gold text-decoration-none">aftercare@velourastudio.com</a></div>
               </div>
 
               <div>
@@ -421,7 +452,7 @@
                   <span class="badge bg-subtle text-gold">Discreet NDA</span>
                 </div>
                 <div class="text-muted">Desk: <a href="tel:+15552347893" class="text-main fw-semibold text-decoration-none">+1 (555) 234-7893</a></div>
-                <div class="text-muted">Email: <a href="mailto:vip@aurapmustudio.com" class="text-gold text-decoration-none">vip@aurapmustudio.com</a></div>
+                <div class="text-muted">Email: <a href="mailto:vip@velourastudio.com" class="text-gold text-decoration-none">vip@velourastudio.com</a></div>
               </div>
             </div>
           </div>
@@ -439,46 +470,66 @@
         <p class="section-subtitle">From the moment you step out of the private elevator onto Madison Avenue, your comfort, safety, and aesthetic vision guide every stage of our clinical protocol.</p>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4 align-items-stretch">
         <!-- Stage 1 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="pmu-card p-4 h-100 position-relative">
-            <span class="badge bg-subtle text-gold border border-warning-subtle mb-3 fw-bold px-2 py-1">STAGE 01</span>
-            <h5 class="font-serif mb-2">Arrival & Welcome Ritual</h5>
-            <p class="text-muted small mb-0">
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="pmu-card atelier-stage-card w-100">
+            <div class="stage-header">
+              <span class="stage-pill">STAGE 01</span>
+              <div class="stage-icon-circle">
+                <i class="fa-solid fa-bell-concierge"></i>
+              </div>
+            </div>
+            <h5 class="font-serif">Arrival &amp; Welcome Ritual</h5>
+            <p>
               Check in with our concierge 10 minutes prior to your session. Enjoy a warm botanical herbal infusion or sparkling mineral water in our tranquil lounge while reviewing your digital health intake and Fitzpatrick profile.
             </p>
           </div>
         </div>
 
         <!-- Stage 2 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="pmu-card p-4 h-100 position-relative">
-            <span class="badge bg-subtle text-gold border border-warning-subtle mb-3 fw-bold px-2 py-1">STAGE 02</span>
-            <h5 class="font-serif mb-2">Golden Ratio Facial Mapping</h5>
-            <p class="text-muted small mb-0">
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="pmu-card atelier-stage-card w-100">
+            <div class="stage-header">
+              <span class="stage-pill">STAGE 02</span>
+              <div class="stage-icon-circle">
+                <i class="fa-solid fa-compass-drafting"></i>
+              </div>
+            </div>
+            <h5 class="font-serif">Golden Ratio Facial Mapping</h5>
+            <p>
               Your master artist conducts a 45-minute bespoke pre-drawing session using surgical calipers and bone structure analysis. Nothing begins until you personally review, approve, and love the hand-drawn pencil outline.
             </p>
           </div>
         </div>
 
         <!-- Stage 3 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="pmu-card p-4 h-100 position-relative">
-            <span class="badge bg-subtle text-gold border border-warning-subtle mb-3 fw-bold px-2 py-1">STAGE 03</span>
-            <h5 class="font-serif mb-2">Dual-Stage Topical Anesthesia</h5>
-            <p class="text-muted small mb-0">
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="pmu-card atelier-stage-card w-100">
+            <div class="stage-header">
+              <span class="stage-pill">STAGE 03</span>
+              <div class="stage-icon-circle">
+                <i class="fa-solid fa-feather-pointed"></i>
+              </div>
+            </div>
+            <h5 class="font-serif">Dual-Stage Topical Anesthesia</h5>
+            <p>
               We apply pharmaceutical-grade 5% lidocaine and prilocaine topical numbing cream for 25 minutes prior to and continuously during treatment, ensuring a calm, painless, and serene experience. Most clients drift off to sleep.
             </p>
           </div>
         </div>
 
         <!-- Stage 4 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="pmu-card p-4 h-100 position-relative">
-            <span class="badge bg-subtle text-gold border border-warning-subtle mb-3 fw-bold px-2 py-1">STAGE 04</span>
-            <h5 class="font-serif mb-2">The Reveal & Aftercare Kit</h5>
-            <p class="text-muted small mb-0">
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="pmu-card atelier-stage-card w-100">
+            <div class="stage-header">
+              <span class="stage-pill">STAGE 04</span>
+              <div class="stage-icon-circle">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+            </div>
+            <h5 class="font-serif">The Reveal &amp; Aftercare Kit</h5>
+            <p>
               Admire your fresh enhancement under 5000K daylight photography rings. We provide an unboxing of your complimentary Clinical Recovery Kit (medical balm, sterile cleansing wipes, barrier shield, and instruction card).
             </p>
           </div>
@@ -488,7 +539,7 @@
   </section>
 
   <!-- Interactive Map & Comprehensive Madison Ave Neighborhood Guide -->
-  <section class="section-padding bg-main border-top">
+  <section id="studio-map" class="section-padding bg-main border-top">
     <div class="container">
       <div class="section-header text-center mb-5">
         <span class="section-eyebrow">Neighborhood & Directions</span>
@@ -505,7 +556,7 @@
             <div class="pmu-icon-circle bg-subtle text-gold mx-auto mb-3" style="width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">
               <i class="fa-solid fa-map-location-dot"></i>
             </div>
-            <h4 class="font-serif mb-1">AURA Permanent Makeup Atelier</h4>
+            <h4 class="font-serif mb-1">VELOURA Permanent Makeup Atelier</h4>
             <p class="text-main fw-semibold mb-1">740 Madison Avenue, 4th Floor</p>
             <p class="text-muted small mb-4">Corner of Madison Ave & East 64th Street, Upper East Side, Manhattan, NY 10065</p>
             
@@ -616,7 +667,7 @@
               <span><strong>Private Chauffeur Service:</strong> Direct airport transfers to our Madison Avenue entrance coordinated upon request.</span>
             </div>
           </div>
-          <a href="mailto:concierge@aurapmustudio.com?subject=Out%20of%20Town%20Travel%20Inquiry" class="btn btn-pmu-gold">
+          <a href="mailto:concierge@velourastudio.com?subject=Out%20of%20Town%20Travel%20Inquiry" class="btn btn-pmu-gold">
             <i class="fa-solid fa-plane-arrival me-1"></i> Inquire Travel Package
           </a>
         </div>
@@ -752,7 +803,7 @@
             </div>
             <h3 class="font-serif mb-2 text-main">VIP, Celebrity & Private Atelier Buyouts</h3>
             <p class="text-muted small mb-3">
-              For high-profile clientele requiring complete privacy and security discretion, AURA offers exclusive full-facility atelier buyouts and discreet private scheduling:
+              For high-profile clientele requiring complete privacy and security discretion, VELOURA offers exclusive full-facility atelier buyouts and discreet private scheduling:
             </p>
             <div class="row g-2 small text-muted mb-3">
               <div class="col-md-6">
@@ -770,7 +821,7 @@
             </div>
           </div>
           <div class="col-lg-4 text-lg-end">
-            <a href="mailto:vip@aurapmustudio.com?subject=VIP%20Atelier%20Buyout%20Inquiry" class="btn btn-pmu-gold btn-pmu-lg w-100 w-lg-auto">
+            <a href="mailto:vip@velourastudio.com?subject=VIP%20Atelier%20Buyout%20Inquiry" class="btn btn-pmu-gold btn-pmu-lg w-100 w-lg-auto">
               <i class="fa-solid fa-shield-halved me-1"></i> Inquire VIP Buyout
             </a>
             <div class="text-muted small mt-2">Direct line: <a href="tel:+15552347893" class="text-main text-decoration-none">+1 (555) 234-7893</a></div>
@@ -857,7 +908,7 @@
               </h2>
               <div id="collapseContact5" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
                 <div class="accordion-body">
-                  Yes. All pigments used at AURA are cruelty-free, gamma-ray sterilized, and formulated without heavy metals or common allergens. However, for clients with documented nickel sensitivities, reactive mast-cell disorders, or multiple contact dermatitis allergies, we offer a complimentary 15-minute behind-the-ear scratch patch test 48 to 72 hours before your scheduled session.
+                  Yes. All pigments used at VELOURA are cruelty-free, gamma-ray sterilized, and formulated without heavy metals or common allergens. However, for clients with documented nickel sensitivities, reactive mast-cell disorders, or multiple contact dermatitis allergies, we offer a complimentary 15-minute behind-the-ear scratch patch test 48 to 72 hours before your scheduled session.
                 </div>
               </div>
             </div>
@@ -902,13 +953,15 @@
       <div class="row g-5">
         <!-- Col 1: Brand & Atelier Story -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="pmu-brand mb-3">
-            <div class="pmu-brand-icon">A</div>
-            <div class="pmu-brand-text">
-              <span class="pmu-brand-name text-white">AURA</span>
-              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+          <a class="pmu-brand mb-3 text-decoration-none" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio">
+            <div class="pmu-brand-logo">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="44" height="44">
             </div>
-          </div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">VELOURA</span>
+              <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
+            </div>
+          </a>
           <p class="text-white-50 small mb-4">
             Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
           </p>
@@ -965,7 +1018,7 @@
           </div>
           <div class="pmu-footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+            <span><a href="mailto:concierge@velourastudio.com" class="text-white-50 text-decoration-none">concierge@velourastudio.com</a></span>
           </div>
 
           <div class="pmu-newsletter-box">
@@ -983,12 +1036,15 @@
     <div class="pmu-footer-bottom">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="text-white-50 small">
-          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+          &copy; 2026 VELOURA Permanent Makeup &amp; Brow Studio. All Rights Reserved.
         </div>
-        <div class="d-flex flex-wrap gap-3 small">
+        <div class="d-flex flex-wrap gap-3 small align-items-center">
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
           <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+          <button class="border-0 bg-transparent text-white-50 p-0 text-decoration-none footer-legal-link d-inline-flex align-items-center gap-1" data-action="toggle-language" title="Toggle RTL / LTR Language" aria-label="Toggle RTL / LTR">
+            <i class="fa-solid fa-globe text-gold"></i><span class="lang-label">EN</span>
+          </button>
         </div>
       </div>
     </div>

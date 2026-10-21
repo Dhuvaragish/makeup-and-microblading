@@ -1,5 +1,5 @@
 /**
- * AURA PMU & MICROBLADING STUDIO - SHARED FOOTER CONTROLLER
+ * VELOURA PMU & BROW STUDIO - SHARED FOOTER CONTROLLER
  * Standardizes footer behavior, newsletter validation, back-to-top & legal modals
  */
 
@@ -63,7 +63,7 @@ const PMUFooter = (function() {
         }
 
         // 3. Realistic feedback - no false claims of active backend email dispatch
-        const msg = 'Subscription request recorded. Note: Email service is currently in demonstration mode. For immediate VIP booking assistance, contact concierge@aurapmustudio.com.';
+        const msg = 'Subscription request recorded. Note: Email service is currently in demonstration mode. For immediate VIP booking assistance, contact concierge@velourastudio.com.';
         showFeedback(feedback, msg, 'gold');
 
         if (window.PMUNotifications) {
@@ -127,18 +127,18 @@ const PMUFooter = (function() {
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border">
             <div class="modal-header border-bottom">
-              <h5 class="modal-title font-serif" id="modalPrivacyPolicyLabel"><i class="fa-solid fa-shield-halved text-gold me-2"></i>AURA Studio Privacy Policy</h5>
+              <h5 class="modal-title font-serif" id="modalPrivacyPolicyLabel"><i class="fa-solid fa-shield-halved text-gold me-2"></i>VELOURA Studio Privacy Policy</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body small text-muted lh-base">
               <h6 class="font-serif text-main fw-bold mb-2">1. Client Confidentiality &amp; Health Records</h6>
-              <p>At AURA Permanent Makeup &amp; Brows, we safeguard client medical history, allergy disclosures, and skin evaluation records with strict medical-grade encryption. Information submitted via our booking and consultation forms is strictly used for treatment qualification and artist preparation.</p>
+              <p>At VELOURA Permanent Makeup &amp; Brow Studio, we safeguard client medical history, allergy disclosures, and skin evaluation records with strict medical-grade encryption. Information submitted via our booking and consultation forms is strictly used for treatment qualification and artist preparation.</p>
               
               <h6 class="font-serif text-main fw-bold mb-2">2. Photographic Documentation &amp; Consent</h6>
               <p>Before-and-after procedural photographs are taken for clinical documentation. Images are only published or featured in our portfolio gallery with explicit, written client consent.</p>
 
               <h6 class="font-serif text-main fw-bold mb-2">3. Communications &amp; Data Rights</h6>
-              <p>We do not sell, rent, or trade your contact information to third parties. You may request data deletion or update your communication preferences at any time by contacting <a href="mailto:concierge@aurapmustudio.com" class="text-gold">concierge@aurapmustudio.com</a>.</p>
+              <p>We do not sell, rent, or trade your contact information to third parties. You may request data deletion or update your communication preferences at any time by contacting <a href="mailto:concierge@velourastudio.com" class="text-gold">concierge@velourastudio.com</a>.</p>
             </div>
             <div class="modal-footer border-top py-2">
               <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Close</button>
@@ -155,7 +155,7 @@ const PMUFooter = (function() {
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border">
             <div class="modal-header border-bottom">
-              <h5 class="modal-title font-serif" id="modalTermsTreatmentLabel"><i class="fa-solid fa-file-contract text-gold me-2"></i>AURA Studio Terms of Treatment</h5>
+              <h5 class="modal-title font-serif" id="modalTermsTreatmentLabel"><i class="fa-solid fa-file-contract text-gold me-2"></i>VELOURA Studio Terms of Treatment</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body small text-muted lh-base">
@@ -188,13 +188,15 @@ const PMUFooter = (function() {
       <div class="row g-5">
         <!-- Col 1: Brand & Atelier Story -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="pmu-brand mb-3">
-            <div class="pmu-brand-icon">A</div>
-            <div class="pmu-brand-text">
-              <span class="pmu-brand-name text-white">AURA</span>
-              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+          <a class="pmu-brand mb-3 text-decoration-none" href="index.html" aria-label="VELOURA Permanent Makeup Studio">
+            <div class="pmu-brand-logo">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="44" height="44">
             </div>
-          </div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">VELOURA</span>
+              <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
+            </div>
+          </a>
           <p class="text-white-50 small mb-4">
             Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
           </p>
@@ -251,7 +253,7 @@ const PMUFooter = (function() {
           </div>
           <div class="pmu-footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+            <span><a href="mailto:concierge@velourastudio.com" class="text-white-50 text-decoration-none">concierge@velourastudio.com</a></span>
           </div>
 
           <div class="pmu-newsletter-box">
@@ -269,12 +271,15 @@ const PMUFooter = (function() {
     <div class="pmu-footer-bottom">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="text-white-50 small">
-          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+          &copy; 2026 VELOURA Permanent Makeup &amp; Brow Studio. All Rights Reserved.
         </div>
-        <div class="d-flex flex-wrap gap-3 small">
+        <div class="d-flex flex-wrap gap-3 small align-items-center">
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
           <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+          <button class="border-0 bg-transparent text-white-50 p-0 text-decoration-none footer-legal-link d-inline-flex align-items-center gap-1" data-action="toggle-language" title="Toggle RTL / LTR Language" aria-label="Toggle RTL / LTR">
+            <i class="fa-solid fa-globe text-gold"></i><span class="lang-label">EN</span>
+          </button>
         </div>
       </div>
     </div>

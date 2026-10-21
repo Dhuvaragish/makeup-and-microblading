@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="alternate icon" href="assets/icons/favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book An Appointment | AURA PMU Studio</title>
-  <meta name="description" content="Reserve your permanent makeup or microblading session. Select your treatment, master artist, date, and time slot with instant confirmation.">
+  <title>Book Appointment | VELOURA Permanent Makeup & Brow Studio</title>
+  <meta name="description" content="Reserve your bespoke cosmetic tattooing session with our master artists. Real-time calendar scheduling, service selection, and instant confirmation.">
   
   <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/tailwind.css">
@@ -21,39 +23,29 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="pmu-topbar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-4">
-        <span class="pmu-topbar-item"><i class="fa-solid fa-calendar-check text-gold"></i> Guaranteed Appointment Concierge</span>
-        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, New York</span>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
-      </div>
-    </div>
-  </div>
 
   <!-- Header -->
-  <header class="pmu-header">
+  <header class="pmu-header sticky-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
-        <a class="pmu-brand" href="index.html">
-          <div class="pmu-brand-icon">A</div>
+        <a class="pmu-brand" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio Homepage">
+          <div class="pmu-brand-logo">
+            <img src="assets/icons/logo.svg" alt="VELOURA Studio Logo" width="44" height="44">
+          </div>
           <div class="pmu-brand-text">
-            <span class="pmu-brand-name">AURA</span>
-            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+            <span class="pmu-brand-name">VELOURA</span>
+            <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
           </div>
         </a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#pmuNavbar" aria-controls="pmuNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars-staggered fs-3 text-gold"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="pmuNavbar">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
                 <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
@@ -62,7 +54,6 @@
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
@@ -73,13 +64,25 @@
               <i class="fa-solid fa-right-left rtl-toggle-icon"></i>
               <span class="lang-label visually-hidden">EN (LTR)</span>
             </button>
-            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+
+            <!-- Theme Mode (Light/Dark) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
               <i class="fa-solid fa-moon theme-toggle-icon"></i>
             </button>
+
+            <!-- Client Sign In -->
             <div class="header-user-status">
-              <a href="login.html" class="icon-control-btn"><i class="fa-regular fa-user"></i></a>
+              <a href="login.html" class="btn-header-signin" title="Client Sign In">
+                <i class="fa-regular fa-user"></i>
+                <span>Client Sign In</span>
+              </a>
             </div>
-            <a href="client-dashboard.html" class="btn-pmu-outline btn-sm">Client Portal</a>
+
+            <!-- Book Appointment CTA -->
+            <a href="booking.html" class="btn-header-cta">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -179,16 +182,16 @@
               <div class="pmu-card p-4 mb-4">
                 <div class="row g-3 mb-4">
                   <div class="col-md-6">
-                    <label class="form-label">Full Legal Name *</label>
-                    <input type="text" id="client-name" class="form-control" placeholder="e.g. Sarah Jenkins" value="Sarah Jenkins" required>
+                    <label class="form-label" for="client-name">Full Legal Name *</label>
+                    <input type="text" id="client-name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label">Email Address *</label>
-                    <input type="email" id="client-email" class="form-control" placeholder="sarah@example.com" value="sarah.jenkins@example.com" required>
+                    <label class="form-label" for="client-email">Email Address *</label>
+                    <input type="email" id="client-email" class="form-control" placeholder="sarah@example.com" required>
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label">Mobile Telephone Number *</label>
-                    <input type="tel" id="client-phone" class="form-control" placeholder="+1 (555) 234-5678" value="+1 (555) 234-5678" required>
+                    <label class="form-label" for="client-phone">Mobile Telephone Number *</label>
+                    <input type="tel" id="client-phone" class="form-control" placeholder="+1 (555) 234-5678" required>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">Emergency Contact Phone</label>
@@ -226,7 +229,7 @@
                   <div class="form-check mb-0">
                     <input class="form-check-input" type="checkbox" id="client-contraindications-check" checked required>
                     <label class="form-check-label small fw-semibold text-main" for="client-contraindications-check">
-                      I declare the above information is accurate and agree to Aura Studio's 48h cancellation policy. *
+                      I declare the above information is accurate and agree to VELOURA Studio's 48h cancellation policy. *
                     </label>
                   </div>
                 </div>
@@ -284,7 +287,7 @@
             <i class="fa-solid fa-check"></i>
           </div>
           <span class="pmu-badge pmu-badge-success mb-2">Reservation Confirmed</span>
-          <h2 class="font-serif mb-2">You're Booked at AURA!</h2>
+          <h2 class="font-serif mb-2">You're Booked at VELOURA!</h2>
           <p class="text-muted mb-4">
             Your appointment has been logged in our studio scheduling system. We have prepared pre-procedure instructions for you.
           </p>
@@ -320,13 +323,15 @@
       <div class="row g-5">
         <!-- Col 1: Brand & Atelier Story -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="pmu-brand mb-3">
-            <div class="pmu-brand-icon">A</div>
-            <div class="pmu-brand-text">
-              <span class="pmu-brand-name text-white">AURA</span>
-              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+          <a class="pmu-brand mb-3 text-decoration-none" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio">
+            <div class="pmu-brand-logo">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="44" height="44">
             </div>
-          </div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">VELOURA</span>
+              <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
+            </div>
+          </a>
           <p class="text-white-50 small mb-4">
             Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
           </p>
@@ -383,7 +388,7 @@
           </div>
           <div class="pmu-footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+            <span><a href="mailto:concierge@velourastudio.com" class="text-white-50 text-decoration-none">concierge@velourastudio.com</a></span>
           </div>
 
           <div class="pmu-newsletter-box">
@@ -401,12 +406,15 @@
     <div class="pmu-footer-bottom">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="text-white-50 small">
-          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+          &copy; 2026 VELOURA Permanent Makeup &amp; Brow Studio. All Rights Reserved.
         </div>
-        <div class="d-flex flex-wrap gap-3 small">
+        <div class="d-flex flex-wrap gap-3 small align-items-center">
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
           <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+          <button class="border-0 bg-transparent text-white-50 p-0 text-decoration-none footer-legal-link d-inline-flex align-items-center gap-1" data-action="toggle-language" title="Toggle RTL / LTR Language" aria-label="Toggle RTL / LTR">
+            <i class="fa-solid fa-globe text-gold"></i><span class="lang-label">EN</span>
+          </button>
         </div>
       </div>
     </div>

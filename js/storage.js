@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - STORAGE MANAGER
+ * VELOURA PMU & BROW STUDIO - STORAGE MANAGER
  * Handles localStorage persistence and data layer initialization
  */
 
@@ -13,7 +13,7 @@ const PMUStorage = (function() {
     SETTINGS: 'pmu_settings',
     AUTH_USER: 'pmu_auth_user'
   };
-  const DATA_VERSION = 'v1.7';
+  const DATA_VERSION = 'v2.0-veloura';
 
   const DEFAULT_SERVICES = [
     {
@@ -169,6 +169,7 @@ const PMUStorage = (function() {
         localStorage.removeItem(KEYS.SERVICES);
         localStorage.removeItem(KEYS.ARTISTS);
         localStorage.removeItem(KEYS.GALLERY);
+        localStorage.removeItem(KEYS.SETTINGS);
         localStorage.setItem('pmu_data_version', DATA_VERSION);
       }
 
@@ -212,9 +213,9 @@ const PMUStorage = (function() {
 
       if (!localStorage.getItem(KEYS.SETTINGS)) {
         const defaultSettings = {
-          studioName: "AURA Permanent Makeup & Microblading",
+          studioName: "VELOURA Permanent Makeup & Brow Studio",
           phone: "+1 (555) 234-7890",
-          email: "concierge@aurapmustudio.com",
+          email: "concierge@velourastudio.com",
           address: "740 Madison Avenue, 4th Floor, New York, NY 10065",
           currency: "$",
           depositPercentage: 25,

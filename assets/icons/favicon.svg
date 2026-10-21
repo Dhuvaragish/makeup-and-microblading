@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Charcoal Black Background with rounded luxury corners -->
+  <rect width="32" height="32" rx="7" fill="#201E1D"/>
+  
+  <!-- Subtle Champagne Gold Border -->
+  <rect x="1" y="1" width="30" height="30" rx="6" fill="none" stroke="#D6BC91" stroke-width="1.2"/>
+
+  <!-- High-legibility Champagne Gold Serif V -->
+  <path d="M 8 9 H 13.5 L 12 11.5 L 15.2 23 H 16.8 L 21.8 11.5 L 20.2 9 H 24 L 23 11.5 L 17.2 24.5 H 14.8 L 9 11.5 Z" 
+        fill="#D6BC91"/>
+
+  <!-- Mini aesthetics sparkle accent -->
+  <circle cx="16" cy="6.2" r="1.1" fill="#D6BC91"/>
+</svg>

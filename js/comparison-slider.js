@@ -1,5 +1,5 @@
 /**
- * AURA PMU STUDIO - BEFORE & AFTER COMPARISON SLIDER
+ * VELOURA PMU & BROW STUDIO - BEFORE & AFTER COMPARISON SLIDER
  * Supports pointer events (mouse, touch, pen), drag, click, keyboard accessibility, and dynamic resizing
  * Guarantees 100% independence across multiple slider instances
  */

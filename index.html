@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="alternate icon" href="assets/icons/favicon.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA | Permanent Makeup & Microblading Studio</title>
-  <meta name="description" content="New York's premier luxury permanent makeup studio. Specializing in bespoke microblading, ombre powder brows, digital nano hairstrokes, and velvet lip blush.">
+  <title>VELOURA | Luxury Permanent Makeup & Brow Studio Manhattan</title>
+  <meta name="description" content="Manhattan’s premier permanent makeup atelier specializing in hyper-realistic microblading, ombré powder brows, digital nano brows, and velvet lip blush.">
   
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css">
@@ -22,28 +24,18 @@
 </head>
 <body>
 
-  <!-- 1. Top Announcement Bar -->
-  <div class="pmu-topbar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-4">
-        <span class="pmu-topbar-item"><i class="fa-solid fa-location-dot"></i> 740 Madison Ave, 4th Fl, New York, NY</span>
-        <span class="pmu-topbar-item"><i class="fa-regular fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</span>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+15552347890" class="pmu-topbar-item"><i class="fa-solid fa-phone"></i> +1 (555) 234-7890</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- 2. Main Header Navbar -->
-  <header class="pmu-header">
+  <!-- Header -->
+  <header class="pmu-header sticky-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
-        <a class="pmu-brand" href="index.html">
-          <div class="pmu-brand-icon">A</div>
+        <a class="pmu-brand" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio Homepage">
+          <div class="pmu-brand-logo">
+            <img src="assets/icons/logo.svg" alt="VELOURA Studio Logo" width="44" height="44">
+          </div>
           <div class="pmu-brand-text">
-            <span class="pmu-brand-name">AURA</span>
-            <span class="pmu-brand-tagline">Permanent Makeup & Brows</span>
+            <span class="pmu-brand-name">VELOURA</span>
+            <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
           </div>
         </a>
 
@@ -54,40 +46,17 @@
         <div class="collapse navbar-collapse" id="pmuNavbar">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item active" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
+                <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-gem"></i> Home 1 - Luxury Studio</a></li>
                 <li><a class="dropdown-item" href="home-2.html"><i class="fa-solid fa-feather"></i> Home 2 - Eyebrow Specialist</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services.html"><i class="fa-solid fa-list-check"></i> All PMU Services</a></li>
-                <li><a class="dropdown-item" href="service-details.html"><i class="fa-solid fa-circle-info"></i> Service Details</a></li>
-                <li><a class="dropdown-item" href="consultation.html"><i class="fa-solid fa-comments"></i> Virtual Consultation</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Artists</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="artists.html"><i class="fa-solid fa-users"></i> Master Artists Team</a></li>
-                <li><a class="dropdown-item" href="artist-details.html"><i class="fa-solid fa-id-card"></i> Artist Portfolio Details</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
             <li class="nav-item"><a class="nav-link" href="aftercare.html">Aftercare</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Portals</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="client-dashboard.html"><i class="fa-solid fa-user-heart"></i> Client Lounge</a></li>
-                <li><a class="dropdown-item" href="admin-dashboard.html"><i class="fa-solid fa-gauge-high"></i> Studio Admin</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a></li>
-              </ul>
-            </li>
           </ul>
 
           <div class="header-actions">
@@ -97,22 +66,23 @@
               <span class="lang-label visually-hidden">EN (LTR)</span>
             </button>
 
-            <!-- Theme Toggle -->
-            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">
+            <!-- Theme Mode (Light/Dark) Toggle -->
+            <button class="icon-control-btn" data-action="toggle-theme" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
               <i class="fa-solid fa-moon theme-toggle-icon"></i>
             </button>
-            
-            <!-- User Status Dropdown -->
+
+            <!-- Client Sign In -->
             <div class="header-user-status">
-              <a href="login.html" class="icon-control-btn" title="Sign In">
+              <a href="login.html" class="btn-header-signin" title="Client Sign In">
                 <i class="fa-regular fa-user"></i>
+                <span>Client Sign In</span>
               </a>
             </div>
 
-            <!-- Book Button -->
-            <a href="booking.html" class="btn-pmu-gold">
+            <!-- Book Appointment CTA -->
+            <a href="booking.html" class="btn-header-cta">
+              <i class="fa-regular fa-calendar-check"></i>
               <span>Book Appointment</span>
-              <i class="fa-solid fa-calendar-check"></i>
             </a>
           </div>
         </div>
@@ -120,73 +90,160 @@
     </div>
   </header>
 
-  <!-- 3. Hero Section (Modern Luxury Layout) -->
-  <section class="pmu-hero-home position-relative py-5 py-lg-6 overflow-hidden" style="min-height: 85vh; display: flex; align-items: center;">
+  <!-- 3. Hero Section (VELOURA Home 1 Hero Banner Enhancement) -->
+  <section class="pmu-hero-home position-relative py-5 py-lg-6 overflow-hidden" style="min-height: 88vh; display: flex; align-items: center;">
     <div class="container position-relative z-2">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <div class="section-eyebrow">Haute Micropigmentation Clinic</div>
-          <h1 class="display-3 font-serif fw-bold mb-4" style="line-height: 1.15;">
-            Effortless Elegance, <br>
-            <span class="text-gold-gradient">Masterfully Crafted</span>
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-11 col-xl-10">
+
+          <!-- Top Status / Location / Hours Pill Badge -->
+          <div class="pmu-hero-status-pill d-inline-flex flex-wrap align-items-center justify-content-center gap-2 mb-4 mx-auto">
+            <a href="booking.html" class="d-inline-flex align-items-center gap-2 fw-semibold text-charcoal text-decoration-none small status-pill-link">
+              <span class="pmu-pulse-dot"></span>
+              <span>Accepting Appointments</span>
+            </a>
+            <span class="text-muted opacity-50 small d-none d-sm-inline">•</span>
+            <a href="contact.html#studio-map" class="text-decoration-none text-muted small d-inline-flex align-items-center gap-1 status-pill-link">
+              <i class="fa-solid fa-location-dot text-gold"></i>
+              <span>740 Madison Ave, Upper East Side, NYC</span>
+            </a>
+            <span class="text-muted opacity-50 small d-none d-sm-inline">•</span>
+            <a href="contact.html" class="text-decoration-none text-muted small d-inline-flex align-items-center gap-1 status-pill-link">
+              <i class="fa-regular fa-clock text-gold"></i>
+              <span>Mon–Sat: 9AM–7PM</span>
+            </a>
+          </div>
+
+          <!-- Eyebrow -->
+          <div class="section-eyebrow mx-auto mb-3">
+            <span>HAUTE MICROPIGMENTATION &amp; BROW ARCHITECTURE</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="display-3 font-serif fw-bold mb-3" style="line-height: 1.15;">
+            Elegance in <br class="d-none d-sm-inline">
+            <span class="text-gold-gradient">Every Detail.</span>
           </h1>
-          <p class="lead text-muted mb-4" style="font-size: 1.15rem; max-width: 520px;">
-            Wake up flawless every day. Bespoke microblading, ombré pixel shading, and velvet lip blush tailored to your individual facial anatomy and golden ratio harmony.
+
+          <!-- Lead Paragraph -->
+          <p class="lead mb-4 mx-auto" style="font-size: 1.15rem; max-width: 760px; line-height: 1.65; color: #4a4744;">
+            Discover bespoke brow architecture and permanent makeup engineered to harmonize with your natural facial morphology. Featuring hyper-realistic hair strokes, soft velvety shading, and medical-grade clinical precision.
           </p>
 
-          <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
-            <a href="booking.html" class="btn-pmu-gold btn-pmu-lg">
-              <span>Book Your Session</span>
-              <i class="fa-solid fa-arrow-right"></i>
+          <!-- Primary & Secondary CTAs + Direct Call Link -->
+          <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4 pb-1">
+            <a href="booking.html" class="btn-pmu-gold btn-pmu-lg shadow-sm">
+              <i class="fa-regular fa-calendar-check me-2"></i>
+              <span>Book Appointment</span>
+              <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
-            <a href="gallery.html" class="btn-pmu-outline btn-pmu-lg">
-              <i class="fa-solid fa-camera"></i>
-              <span>View Results</span>
+            <a href="#signature-services" class="btn-pmu-white btn-pmu-lg shadow-sm">
+              <span>Explore Our Services</span>
+            </a>
+            <a href="tel:+12125550198" class="hero-phone-link d-inline-flex align-items-center gap-2 text-decoration-none px-2 py-1">
+              <i class="fa-solid fa-phone text-gold"></i>
+              <span class="fw-semibold text-charcoal">(212) 555–0198</span>
             </a>
           </div>
 
-          <!-- Trust Badges -->
-          <div class="d-flex flex-wrap align-items-center gap-4 pt-3 border-top border-secondary-subtle">
-            <div class="d-flex align-items-center gap-2">
-              <div class="pmu-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <span class="fw-semibold small">4.9/5 (850+ Reviews)</span>
+          <!-- Signature Procedures Quick Pills Strip -->
+          <div class="pmu-hero-procedures-strip mx-auto pt-2" style="max-width: 860px;">
+            <div class="pmu-procedures-label text-uppercase fw-bold mb-2" style="font-size: 0.74rem; letter-spacing: 0.16em; color: #8A8177;">
+              SIGNATURE PROCEDURES
             </div>
-            <div class="d-flex align-items-center gap-2">
-              <i class="fa-solid fa-shield-virus text-gold fs-5"></i>
-              <span class="small text-muted">100% Sterile Hospital Protocol</span>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+              <a href="booking.html?service=srv-microblading" class="pmu-service-badge" title="Book Signature Microblading ($550)">
+                <span>Microblading</span>
+                <span class="badge-price ms-1">$550</span>
+              </a>
+              <a href="booking.html?service=srv-powder-brows" class="pmu-service-badge" title="Book Ombré Powder Brows ($580)">
+                <span>Ombré Powder Brows</span>
+                <span class="badge-price ms-1">$580</span>
+              </a>
+              <a href="booking.html?service=srv-combo-brows" class="pmu-service-badge" title="Book Combination Hybrid Brows ($650)">
+                <span>Combination Hybrid</span>
+                <span class="badge-price ms-1">$650</span>
+              </a>
+              <a href="booking.html?service=srv-nano-brows" class="pmu-service-badge" title="Book Digital Nano Brows ($720)">
+                <span>Digital Nano Brows</span>
+                <span class="badge-price ms-1">$720</span>
+              </a>
             </div>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <a href="booking.html?service=srv-lip-blush" class="pmu-service-badge" title="Book Velvet Lip Blush ($600)">
+                <span>Velvet Lip Blush</span>
+                <span class="badge-price ms-1">$600</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3b. The 3 Pillars of PMU Excellence & Trust Badges -->
+  <section class="py-4 bg-surface border-bottom">
+    <div class="container">
+      <div class="row g-3 justify-content-center text-start mb-3">
+        <div class="col-md-4">
+          <div class="pmu-hero-detail-card h-100 p-3 rounded-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="icon-box">
+                <i class="fa-solid fa-compass-drafting small"></i>
+              </div>
+              <h6 class="font-serif fw-bold mb-0" style="font-size: 0.95rem;">Golden Ratio Mapping</h6>
+            </div>
+            <p class="small text-muted mb-0" style="font-size: 0.82rem; line-height: 1.45;">
+              Custom 1:1.618 facial morphology mapping tailored to natural bone structure before pigment placement.
+            </p>
           </div>
         </div>
-
-        <div class="col-lg-6">
-          <div class="position-relative">
-            <!-- Hero main image with luxury frame -->
-            <div class="rounded-4 overflow-hidden shadow-lg border border-2 border-white" style="height: 520px;">
-              <img src="assets/images/hero/hero-main.jpg" alt="Professional Eyebrow Microblading Treatment at Aura Studio" class="w-100 h-100 object-fit-cover">
-            </div>
-
-            <!-- Floating Badge Card 1 -->
-            <div class="position-absolute bg-surface p-3 rounded-4 shadow-lg border" style="bottom: 2rem; left: -1.5rem; max-width: 230px;">
-              <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle bg-gold text-dark d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
-                  <i class="fa-solid fa-award fs-5"></i>
-                </div>
-                <div>
-                  <h6 class="mb-0 font-serif fw-bold">PhiBrows Master</h6>
-                  <small class="text-muted">Grand Master Certified</small>
-                </div>
+        <div class="col-md-4">
+          <div class="pmu-hero-detail-card h-100 p-3 rounded-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="icon-box">
+                <i class="fa-solid fa-shield-virus small"></i>
               </div>
+              <h6 class="font-serif fw-bold mb-0" style="font-size: 0.95rem;">Hospital-Grade Sterility</h6>
             </div>
-
-            <!-- Floating Badge Card 2 -->
-            <div class="position-absolute bg-surface p-3 rounded-4 shadow-lg border" style="top: 2rem; right: -1.5rem; max-width: 210px;">
-              <div class="d-flex align-items-center gap-2 mb-1">
-                <i class="fa-solid fa-leaf text-success"></i>
-                <span class="fw-bold small">Vegan Pigments</span>
-              </div>
-              <small class="text-muted d-block">Hypoallergenic & Heavy Metal Free</small>
-            </div>
+            <p class="small text-muted mb-0" style="font-size: 0.82rem; line-height: 1.45;">
+              100% single-use EO-gas sterilized membrane cartridges opened before you. OSHA-compliant clinical protocols.
+            </p>
           </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pmu-hero-detail-card h-100 p-3 rounded-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="icon-box">
+                <i class="fa-solid fa-certificate small"></i>
+              </div>
+              <h6 class="font-serif fw-bold mb-0" style="font-size: 0.95rem;">True-To-Tone Retention</h6>
+            </div>
+            <p class="small text-muted mb-0" style="font-size: 0.82rem; line-height: 1.45;">
+              EU REACH vegan mineral pigments formulated to age naturally over 2–3 years with zero red or gray shift.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Badges & Guarantees -->
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 pt-2">
+        <div class="d-flex align-items-center gap-2">
+          <div class="pmu-stars text-gold"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <span class="fw-semibold small text-charcoal">4.9/5 (850+ Verified Reviews)</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-award text-gold fs-6"></i>
+          <span class="small text-muted">PhiBrows &amp; SPCP Certified</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-circle-check text-gold fs-6"></i>
+          <span class="small text-muted">Complimentary 6-Week Touch-Up</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-building-shield text-gold fs-6"></i>
+          <span class="small text-muted">Licensed NYC Health Facility</span>
         </div>
       </div>
     </div>
@@ -225,7 +282,7 @@
   </section>
 
   <!-- 5. Signature Treatments Section -->
-  <section class="section-padding bg-main">
+  <section id="signature-services" class="section-padding bg-main">
     <div class="container">
       <div class="section-header text-center">
         <span class="section-eyebrow">Signature Services</span>
@@ -426,7 +483,7 @@
               <h5 class="font-serif mb-1">Elena Rostova</h5>
               <p class="text-muted small mb-2">PhiBrows Grand Master</p>
               <div class="pmu-stars small mb-3"><i class="fa-solid fa-star"></i> 5.0 (384 reviews)</div>
-              <a href="artist-details.html?artist=art-elena" class="btn btn-sm btn-pmu-outline w-100 mt-auto">View Bio & Works</a>
+              <a href="booking.html?artist=art-elena" class="btn btn-sm btn-pmu-outline w-100 mt-auto">Book With Elena</a>
             </div>
           </div>
         </div>
@@ -445,7 +502,7 @@
               <h5 class="font-serif mb-1">Sofia Vance</h5>
               <p class="text-muted small mb-2">Lip Blush Specialist</p>
               <div class="pmu-stars small mb-3"><i class="fa-solid fa-star"></i> 4.9 (248 reviews)</div>
-              <a href="artist-details.html?artist=art-sofia" class="btn btn-sm btn-pmu-outline w-100 mt-auto">View Bio & Works</a>
+              <a href="booking.html?artist=art-sofia" class="btn btn-sm btn-pmu-outline w-100 mt-auto">Book With Sofia</a>
             </div>
           </div>
         </div>
@@ -464,7 +521,7 @@
               <h5 class="font-serif mb-1">Maya Lin</h5>
               <p class="text-muted small mb-2">Digital Nano Brow Master</p>
               <div class="pmu-stars small mb-3"><i class="fa-solid fa-star"></i> 4.9 (195 reviews)</div>
-              <a href="artist-details.html?artist=art-maya" class="btn btn-sm btn-pmu-outline w-100 mt-auto">View Bio & Works</a>
+              <a href="booking.html?artist=art-maya" class="btn btn-sm btn-pmu-outline w-100 mt-auto">Book With Maya</a>
             </div>
           </div>
         </div>
@@ -483,7 +540,7 @@
               <h5 class="font-serif mb-1">Camilla Rossi</h5>
               <p class="text-muted small mb-2">Hybrid Symmetry Stylist</p>
               <div class="pmu-stars small mb-3"><i class="fa-solid fa-star"></i> 4.9 (162 reviews)</div>
-              <a href="artist-details.html?artist=art-camilla" class="btn btn-sm btn-pmu-outline w-100 mt-auto">View Bio & Works</a>
+              <a href="booking.html?artist=art-camilla" class="btn btn-sm btn-pmu-outline w-100 mt-auto">Book With Camilla</a>
             </div>
           </div>
         </div>
@@ -491,12 +548,12 @@
     </div>
   </section>
 
-  <!-- 8. The 5-Step Treatment Journey -->
-  <section class="section-padding bg-subtle">
-    <div class="container">
+  <!-- 8. The 5-Step Treatment Journey Banner -->
+  <section class="pmu-methodology-banner section-padding position-relative overflow-hidden">
+    <div class="container position-relative z-2">
       <div class="section-header text-center">
         <span class="section-eyebrow">Our Methodology</span>
-        <h2 class="section-title">The Aura 5-Step Journey</h2>
+        <h2 class="section-title">The VELOURA 5-Step Journey</h2>
         <p class="section-subtitle">
           We take the anxiety out of semi-permanent makeup with complete transparency, pain-free numbing, and client approval before any blading begins.
         </p>
@@ -504,38 +561,38 @@
 
       <div class="row g-4 align-items-stretch">
         <div class="col-md-4 col-lg d-flex">
-          <div class="pmu-card p-4 w-100 text-center d-flex flex-column">
-            <div class="rounded-circle bg-gold text-dark d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 48px; height: 48px; font-weight: 700;">1</div>
-            <h5 class="font-serif mb-2">Facial Mapping</h5>
-            <p class="text-muted small mb-0">We measure your bone structure using calipers and the Golden Ratio, creating a custom symmetry outline.</p>
+          <div class="pmu-step-card">
+            <div class="pmu-step-number">1</div>
+            <h5 class="pmu-step-title">Facial Mapping</h5>
+            <p class="pmu-step-desc">We measure your bone structure using calipers and the Golden Ratio, creating a custom symmetry outline.</p>
           </div>
         </div>
         <div class="col-md-4 col-lg d-flex">
-          <div class="pmu-card p-4 w-100 text-center d-flex flex-column">
-            <div class="rounded-circle bg-gold text-dark d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 48px; height: 48px; font-weight: 700;">2</div>
-            <h5 class="font-serif mb-2">Pigment Matching</h5>
-            <p class="text-muted small mb-0">We swatch pigments directly on your forehead or jawline to formulate the exact undertone complement.</p>
+          <div class="pmu-step-card">
+            <div class="pmu-step-number">2</div>
+            <h5 class="pmu-step-title">Pigment Matching</h5>
+            <p class="pmu-step-desc">We swatch pigments directly on your forehead or jawline to formulate the exact undertone complement.</p>
           </div>
         </div>
         <div class="col-md-4 col-lg d-flex">
-          <div class="pmu-card p-4 w-100 text-center d-flex flex-column">
-            <div class="rounded-circle bg-gold text-dark d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 48px; height: 48px; font-weight: 700;">3</div>
-            <h5 class="font-serif mb-2">Dual Numbing</h5>
-            <p class="text-muted small mb-0">Medical-grade topical lidocaine numbing cream ensures a virtually painless, relaxing spa experience.</p>
+          <div class="pmu-step-card">
+            <div class="pmu-step-number">3</div>
+            <h5 class="pmu-step-title">Dual Numbing</h5>
+            <p class="pmu-step-desc">Medical-grade topical lidocaine numbing cream ensures a virtually painless, relaxing spa experience.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg d-flex">
-          <div class="pmu-card p-4 w-100 text-center d-flex flex-column">
-            <div class="rounded-circle bg-gold text-dark d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 48px; height: 48px; font-weight: 700;">4</div>
-            <h5 class="font-serif mb-2">Precision Work</h5>
-            <p class="text-muted small mb-0">Using 0.18mm disposable blades or nano-needles, micro-strokes are deposited with millimeter precision.</p>
+          <div class="pmu-step-card">
+            <div class="pmu-step-number">4</div>
+            <h5 class="pmu-step-title">Precision Work</h5>
+            <p class="pmu-step-desc">Using 0.18mm disposable blades or nano-needles, micro-strokes are deposited with millimeter precision.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg d-flex">
-          <div class="pmu-card p-4 w-100 text-center d-flex flex-column">
-            <div class="rounded-circle bg-gold text-dark d-inline-flex align-items-center justify-content-center mb-3 mx-auto" style="width: 48px; height: 48px; font-weight: 700;">5</div>
-            <h5 class="font-serif mb-2">6-Week Touch-Up</h5>
-            <p class="text-muted small mb-0">Once your skin heals, we refine any subtle spots to lock in lasting pigment retention and vibrancy.</p>
+          <div class="pmu-step-card">
+            <div class="pmu-step-number">5</div>
+            <h5 class="pmu-step-title">6-Week Touch-Up</h5>
+            <p class="pmu-step-desc">Once your skin heals, we refine any subtle spots to lock in lasting pigment retention and vibrancy.</p>
           </div>
         </div>
       </div>
@@ -553,48 +610,54 @@
 
       <div class="row g-4 align-items-stretch">
         <div class="col-md-4 d-flex">
-          <div class="pmu-card p-4 w-100 d-flex flex-column">
-            <div class="pmu-stars mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="text-muted mb-4 flex-grow-1">
-              "Elena completely transformed my face! I had thin 90s plucked brows that never grew back. After microblading at Aura, I constantly get compliments on my natural brows. Best beauty investment ever."
+          <div class="pmu-testimonial-card">
+            <div class="pmu-testimonial-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="pmu-testimonial-quote">
+              "Elena completely transformed my face! I had thin 90s plucked brows that never grew back. After microblading at Veloura, I constantly get compliments on my natural brows. Best beauty investment ever."
             </p>
-            <div class="d-flex align-items-center gap-3 mt-auto pt-2 border-top">
-              <img src="assets/images/testimonials/client-1.jpg" alt="Sarah J." class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
+            <div class="pmu-testimonial-footer">
+              <img src="assets/images/testimonials/client-1.jpg" alt="Sarah Jenkins" class="pmu-testimonial-avatar">
               <div>
-                <h6 class="mb-0 font-serif">Sarah Jenkins</h6>
-                <small class="text-muted">Signature Microblading</small>
+                <h6 class="pmu-testimonial-name">Sarah Jenkins</h6>
+                <div class="pmu-testimonial-service">Signature Microblading</div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-4 d-flex">
-          <div class="pmu-card p-4 w-100 d-flex flex-column">
-            <div class="pmu-stars mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="text-muted mb-4 flex-grow-1">
+          <div class="pmu-testimonial-card">
+            <div class="pmu-testimonial-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="pmu-testimonial-quote">
               "I was terrified lip blush would hurt or look unnatural. Sofia was gentle, and I actually fell asleep! My lips are healed now and look like I always have a juicy sheer tinted lip balm on."
             </p>
-            <div class="d-flex align-items-center gap-3 mt-auto pt-2 border-top">
-              <img src="assets/images/testimonials/client-2.jpg" alt="Emily C." class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
+            <div class="pmu-testimonial-footer">
+              <img src="assets/images/testimonials/client-2.jpg" alt="Emily Carter" class="pmu-testimonial-avatar">
               <div>
-                <h6 class="mb-0 font-serif">Emily Carter</h6>
-                <small class="text-muted">Velvet Lip Blush</small>
+                <h6 class="pmu-testimonial-name">Emily Carter</h6>
+                <div class="pmu-testimonial-service">Velvet Lip Blush</div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-4 d-flex">
-          <div class="pmu-card p-4 w-100 d-flex flex-column">
-            <div class="pmu-stars mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="text-muted mb-4 flex-grow-1">
+          <div class="pmu-testimonial-card">
+            <div class="pmu-testimonial-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="pmu-testimonial-quote">
               "I have oily skin and work out daily. Maya recommended Ombre Powder brows instead of blading. It has been 14 months and the shape is still flawless! No sweating off my brow powder at the gym."
             </p>
-            <div class="d-flex align-items-center gap-3 mt-auto pt-2 border-top">
-              <img src="assets/images/testimonials/client-3.jpg" alt="Jessica R." class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
+            <div class="pmu-testimonial-footer">
+              <img src="assets/images/testimonials/client-3.jpg" alt="Jessica Reynolds" class="pmu-testimonial-avatar">
               <div>
-                <h6 class="mb-0 font-serif">Jessica Reynolds</h6>
-                <small class="text-muted">Ombré Powder Brows</small>
+                <h6 class="pmu-testimonial-name">Jessica Reynolds</h6>
+                <div class="pmu-testimonial-service">Ombré Powder Brows</div>
               </div>
             </div>
           </div>
@@ -692,6 +755,145 @@
     </div>
   </section>
 
+  <!-- 10.6 Frequently Asked Questions -->
+  <section class="section-padding bg-main border-top">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Client Inquiries</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about preparation, procedural comfort, and long-term pigment longevity at VELOURA.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="accordion pmu-accordion" id="faqAccordionHome">
+            
+            <!-- Item 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFaq1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq1" aria-expanded="true" aria-controls="collapseFaq1">
+                  How long do VELOURA permanent makeup treatments last?
+                </button>
+              </h2>
+              <div id="collapseFaq1" class="accordion-collapse collapse show" aria-labelledby="headingFaq1" data-bs-parent="#faqAccordionHome">
+                <div class="accordion-body">
+                  Semi-permanent cosmetic tattooing typically maintains optimal vibrancy for 18 to 36 months, depending on skin metabolism, lifestyle, sun exposure, and daily skincare. Signature Microblading on normal-to-dry skin retains crisp definition for 18–24 months, while Ombré Powder brows and Velvet Lip Blush often last 2 to 3+ years. We recommend a complimentary 12-to-18-month color refresher to maintain sharp lines and warm radiance.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFaq2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq2" aria-expanded="false" aria-controls="collapseFaq2">
+                  Does microblading or lip blush hurt?
+                </button>
+              </h2>
+              <div id="collapseFaq2" class="accordion-collapse collapse" aria-labelledby="headingFaq2" data-bs-parent="#faqAccordionHome">
+                <div class="accordion-body">
+                  Client comfort is our highest priority. We use a dual-stage medical topical numbing protocol: a 5% lidocaine pre-numbing formulation applied for 25 minutes prior to blading, followed by a secondary lidocaine-epinephrine gel during the session. Over 95% of our clients rate the discomfort a 1 or 2 out of 5—describing it as a light electric toothbrush vibration or mild scratching. Many of our clients actually relax and fall asleep.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFaq3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq3" aria-expanded="false" aria-controls="collapseFaq3">
+                  What is the difference between Microblading and Ombré Powder Brows?
+                </button>
+              </h2>
+              <div id="collapseFaq3" class="accordion-collapse collapse" aria-labelledby="headingFaq3" data-bs-parent="#faqAccordionHome">
+                <div class="accordion-body">
+                  Microblading utilizes a hand-held ultra-fine blade to sculpt crisp, individual 3D hair strokes into the upper dermal layer—ideal for clients with normal-to-dry skin desiring an undetectable, natural enhancement. Ombré Powder Brows uses a specialized digital machine to deposit thousands of microscopic pigment pixels, creating a soft, misty gradient finish that mimics filled-in cosmetic powder. Ombré is universally suited for all skin types, including oily, active, and mature skin.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFaq4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq4" aria-expanded="false" aria-controls="collapseFaq4">
+                  What should I expect during the 10-day healing phase?
+                </button>
+              </h2>
+              <div id="collapseFaq4" class="accordion-collapse collapse" aria-labelledby="headingFaq4" data-bs-parent="#faqAccordionHome">
+                <div class="accordion-body">
+                  During Days 1–3, pigment appears 20–30% darker and bolder than your final healed result as skin oxidizes. By Days 4–7, light micro-flaking occurs as the upper stratum corneum exfoliates; apply a rice-grain veil of your complimentary VELOURA healing ointment and avoid picking. By Week 2, pigment softens significantly during the natural collagen "ghosting" phase, before blooming into its true, soft hue around Weeks 4–6.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFaq5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq5" aria-expanded="false" aria-controls="collapseFaq5">
+                  Are your pigments safe, vegan, and heavy-metal free?
+                </button>
+              </h2>
+              <div id="collapseFaq5" class="accordion-collapse collapse" aria-labelledby="headingFaq5" data-bs-parent="#faqAccordionHome">
+                <div class="accordion-body">
+                  Without exception. VELOURA formulates exclusively with next-generation organic and hybrid mineral pigments certified under strict EU REACH 2022 safety directives. Every batch is gamma-ray sterilized, 100% vegan, cruelty-free, and formulated without nickel, iron oxides, or heavy metal carriers. Our pigments fade down gracefully true-to-tone without morphing into unnatural blue, red, or gray undertones.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10.7 Final Appointment Booking Section -->
+  <section class="section-padding bg-subtle position-relative overflow-hidden border-top">
+    <div class="container position-relative z-2">
+      <div class="pmu-card p-4 p-md-5 text-center mx-auto shadow-sm" style="max-width: 900px; background: linear-gradient(135deg, rgba(214, 188, 145, 0.08) 0%, var(--pmu-bg-surface) 100%); border: 1px solid var(--pmu-border);">
+        <span class="section-eyebrow">Your Transformation Awaits</span>
+        <h2 class="font-serif display-5 fw-bold mb-3">Elegance in Every Detail.</h2>
+        <p class="lead text-muted mb-4 mx-auto" style="max-width: 620px;">
+          Experience bespoke brow artistry and micropigmentation designed to celebrate your bone structure and elevate your natural beauty. Reserve your private session with our master artists.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
+          <a href="booking.html" class="btn-pmu-gold btn-pmu-lg">
+            <i class="fa-regular fa-calendar-check me-2"></i>
+            <span>Book Appointment</span>
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
+          <a href="consultation.html" class="btn-pmu-outline btn-pmu-lg">
+            <i class="fa-solid fa-camera me-2"></i>
+            <span>Virtual Photo Consult</span>
+          </a>
+          <a href="contact.html" class="btn-pmu-outline btn-pmu-lg">
+            <i class="fa-solid fa-phone me-2"></i>
+            <span>Contact Studio</span>
+          </a>
+        </div>
+
+        <div class="pt-3 border-top d-flex flex-wrap justify-content-center gap-4 text-muted small">
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-check text-gold"></i>
+            <span>Golden Ratio Brow Mapping</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-check text-gold"></i>
+            <span>100% Sterile Hospital Protocol</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-check text-gold"></i>
+            <span>EU REACH Certified Pigments</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-check text-gold"></i>
+            <span>6-Week Perfection Touch-Up Included</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 11. Luxury Footer -->
     <!-- Standardized Studio Footer -->
   <footer class="pmu-footer">
@@ -699,13 +901,15 @@
       <div class="row g-5">
         <!-- Col 1: Brand & Atelier Story -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="pmu-brand mb-3">
-            <div class="pmu-brand-icon">A</div>
-            <div class="pmu-brand-text">
-              <span class="pmu-brand-name text-white">AURA</span>
-              <span class="pmu-brand-tagline">Permanent Makeup &amp; Brows</span>
+          <a class="pmu-brand mb-3 text-decoration-none" href="index.html" aria-label="VELOURA Permanent Makeup & Brow Studio">
+            <div class="pmu-brand-logo">
+              <img src="assets/icons/logo.svg" alt="VELOURA Logo" width="44" height="44">
             </div>
-          </div>
+            <div class="pmu-brand-text">
+              <span class="pmu-brand-name text-white">VELOURA</span>
+              <span class="pmu-brand-tagline">PERMANENT MAKEUP &amp; BROW STUDIO</span>
+            </div>
+          </a>
           <p class="text-white-50 small mb-4">
             Manhattan's premier destination for bespoke semi-permanent cosmetic tattooing. Emphasizing subtle enhancement, clinical precision, and golden ratio harmony.
           </p>
@@ -762,7 +966,7 @@
           </div>
           <div class="pmu-footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:concierge@aurapmustudio.com" class="text-white-50 text-decoration-none">concierge@aurapmustudio.com</a></span>
+            <span><a href="mailto:concierge@velourastudio.com" class="text-white-50 text-decoration-none">concierge@velourastudio.com</a></span>
           </div>
 
           <div class="pmu-newsletter-box">
@@ -780,12 +984,15 @@
     <div class="pmu-footer-bottom">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div class="text-white-50 small">
-          &copy; 2026 AURA Permanent Makeup &amp; Microblading Studio. All Rights Reserved.
+          &copy; 2026 VELOURA Permanent Makeup &amp; Brow Studio. All Rights Reserved.
         </div>
-        <div class="d-flex flex-wrap gap-3 small">
+        <div class="d-flex flex-wrap gap-3 small align-items-center">
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalPrivacyPolicy">Privacy Policy</a>
           <a href="#" class="text-white-50 text-decoration-none footer-legal-link" data-bs-toggle="modal" data-bs-target="#modalTermsTreatment">Terms of Treatment</a>
           <a href="client-dashboard.html" class="text-gold text-decoration-none">Client Lounge</a>
+          <button class="border-0 bg-transparent text-white-50 p-0 text-decoration-none footer-legal-link d-inline-flex align-items-center gap-1" data-action="toggle-language" title="Toggle RTL / LTR Language" aria-label="Toggle RTL / LTR">
+            <i class="fa-solid fa-globe text-gold"></i><span class="lang-label">EN</span>
+          </button>
         </div>
       </div>
     </div>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="velouraGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EADBCE"/>
+      <stop offset="45%" stop-color="#D6BC91"/>
+      <stop offset="100%" stop-color="#B89B6A"/>
+    </linearGradient>
+    <linearGradient id="velouraCharcoal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D2A29"/>
+      <stop offset="100%" stop-color="#201E1D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circular luxury badge background with subtle border -->
+  <circle cx="24" cy="24" r="22.5" fill="#FAF8F4" stroke="url(#velouraGold)" stroke-width="1.2"/>
+  <circle cx="24" cy="24" r="20.5" stroke="#E8E0D5" stroke-width="0.6" stroke-dasharray="2 2"/>
+
+  <!-- Minimalist V Monogram - Serif High-End Geometry -->
+  <!-- Left thick stroke with top serif -->
+  <path d="M 14.5 14.5 H 19.5 L 17.8 17.2 L 23.2 32.8 H 25.2 L 31.8 17.2 L 30.2 14.5 H 34.5" 
+        stroke="none" fill="none"/>
+  
+  <!-- Solid V letterform filled with champagne gold -->
+  <path d="M 14 14.5 H 20 L 18.2 17.5 L 23.3 32.5 H 24.8 L 31.5 17.5 L 30 14.5 H 34.5 L 33 17.5 L 25.3 34.5 H 22.8 L 15.5 17.5 Z" 
+        fill="url(#velouraGold)"/>
+
+  <!-- Left Stem Serif Highlight -->
+  <path d="M 13.5 14.5 H 20.5 V 15.8 H 13.5 Z" fill="url(#velouraGold)"/>
+  <path d="M 28.5 14.5 H 34.5 V 15.8 H 28.5 Z" fill="url(#velouraGold)"/>
+
+  <!-- Refined Central Microblade Hairline Brow Arch across the V -->
+  <path d="M 12 24 C 18 19 30 19 36 24" stroke="url(#velouraGold)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.85"/>
+
+  <!-- Diamond Aesthetics Star at Top-Center -->
+  <path d="M 24 9 L 24.8 11.2 L 27 12 L 24.8 12.8 L 24 15 L 23.2 12.8 L 21 12 L 23.2 11.2 Z" fill="url(#velouraGold)"/>
+</svg>

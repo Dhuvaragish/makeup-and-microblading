@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="velouraGoldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5D0"/>
+      <stop offset="45%" stop-color="#D6BC91"/>
+      <stop offset="100%" stop-color="#B89B6A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Charcoal circular base for dark themes -->
+  <circle cx="24" cy="24" r="22.5" fill="#201E1D" stroke="url(#velouraGoldDark)" stroke-width="1.2"/>
+  <circle cx="24" cy="24" r="20.5" stroke="rgba(214, 188, 145, 0.3)" stroke-width="0.6" stroke-dasharray="2 2"/>
+
+  <!-- Solid V letterform filled with champagne gold -->
+  <path d="M 14 14.5 H 20 L 18.2 17.5 L 23.3 32.5 H 24.8 L 31.5 17.5 L 30 14.5 H 34.5 L 33 17.5 L 25.3 34.5 H 22.8 L 15.5 17.5 Z" 
+        fill="url(#velouraGoldDark)"/>
+
+  <!-- Left Stem Serif Highlight -->
+  <path d="M 13.5 14.5 H 20.5 V 15.8 H 13.5 Z" fill="url(#velouraGoldDark)"/>
+  <path d="M 28.5 14.5 H 34.5 V 15.8 H 28.5 Z" fill="url(#velouraGoldDark)"/>
+
+  <!-- Refined Central Microblade Hairline Brow Arch across the V -->
+  <path d="M 12 24 C 18 19 30 19 36 24" stroke="url(#velouraGoldDark)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.95"/>
+
+  <!-- Diamond Aesthetics Star at Top-Center -->
+  <path d="M 24 9 L 24.8 11.2 L 27 12 L 24.8 12.8 L 24 15 L 23.2 12.8 L 21 12 L 23.2 11.2 Z" fill="url(#velouraGoldDark)"/>
+</svg>
